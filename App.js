@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import axios from 'axios';
+import { VictoryBar, VictoryChart, VictoryGroup, VictoryTooltip, VictoryPortal, VictoryTheme } from 'victory-native';
 
 class App extends Component {
 
@@ -9,7 +10,9 @@ class App extends Component {
     this.state= {
       isLoaded: true,
       error: null,
-      populations: [],
+      sumPopulation: [],
+      manPopulation: [],
+      womanPopulation: [],
     }
   }
 
@@ -25,19 +28,42 @@ class App extends Component {
     axios.get(GET_URL)
     .then(
       (result) =>{
-        let populationBox = [];
+        let ageStart = 0;
+        let ageEnd = 98;
+        let sumPopulationBox = [];
         let sumStart = 1;
         let sumEnd = 99;
+        let manPopulationBox = [];
+        let manStart = 205;
+        let manEnd = 303;
+        let womanPopulationBox = [];
+        let womanStart = 409;
+        let womanEnd = 507;
         //console.log(result);
+        for(let i = ageStart; i <= ageEnd; i++){
+          sumPopulationBox.push({});
+          manPopulationBox.push({});
+          womanPopulationBox.push({});
+        };
         for(let i = 0; i <= 98; i++){
-          populationBox.push({});
-        };
+          sumPopulationBox[i].x = i;
+          manPopulationBox[i].x = i;
+          womanPopulationBox[i].x = i;
+        }
         for(let i = sumStart; i <= sumEnd; i++){
-          populationBox[i-sumStart].総人口 = Number(result.data.GET_STATS_DATA.STATISTICAL_DATA.DATA_INF.VALUE[i].$)
+          sumPopulationBox[i-sumStart].y = Number(result.data.GET_STATS_DATA.STATISTICAL_DATA.DATA_INF.VALUE[i].$)
         };
+        for(let i = manStart; i <= manEnd; i++){
+          manPopulationBox[i-manStart].y = Number(result.data.GET_STATS_DATA.STATISTICAL_DATA.DATA_INF.VALUE[i].$)
+        };
+        for(let i = womanStart; i <= womanEnd; i++){
+          womanPopulationBox[i-womanStart].y = Number(result.data.GET_STATS_DATA.STATISTICAL_DATA.DATA_INF.VALUE[i].$)
+        }
         this.setState({
           isLoaded: true,
-          populations: populationBox,
+          sumPopulation: sumPopulationBox,
+          manPopulation: manPopulationBox,
+          womanPopulation: womanPopulationBox,
         });
       },
       (error) => {
@@ -51,17 +77,42 @@ class App extends Component {
 
    render(){
      const { error, isLoaded } = this.state;
-     const data = this.state.populations;
-     //console.log(data);
+     sumData = this.state.sumPopulation;
+     manData = this.state.manPopulation;
+     womanData = this.state.womanPopulation;
+     console.log("hoge");
      if(error){
        return <Text>Error: {error.message}</Text>;
      } else if (!isLoaded) {
        return <Text>Loading...</Text>;
      } else {
        return(
-         <Text>hoge</Text>
+         <View>
+           <Text>日本の人口</Text>
+           <VictoryChart
+             theme={VictoryTheme.material}
+             domainPadding={10}>
+             <VictoryGroup
+               colorScale={["#66CC66", "#3399FF", "#FF66CC"]}
+               offset={10}
+               style={{ data: { width: 3 } }}
+             >
+               <VictoryBar
+                 data={sumData}
+                 labels={({ datum }) => `年齢: ${datum.x}, 人口: ${datum.y/10}万`}
+                 labelComponent={<VictoryTooltip dy={0} centerOffset={{ x: 25 }} />}
+               />
+               <VictoryBar
+                 data={manData}
+               />
+               <VictoryBar
+                 data={womanData}
+               />
+             </VictoryGroup>
+           </VictoryChart>
+         </View>
        )
-       }
+     }
    }
 }
 
