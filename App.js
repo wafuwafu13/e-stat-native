@@ -1,7 +1,11 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, ScrollView } from 'react-native';
 import axios from 'axios';
 import { VictoryBar, VictoryChart, VictoryGroup, VictoryTooltip, VictoryPortal, VictoryTheme } from 'victory-native';
+import { Card } from 'react-native-elements';
+
+let Dimensions = require('Dimensions');
+let { width, height, scale } = Dimensions.get('window'); //get window size
 
 class App extends Component {
 
@@ -80,40 +84,48 @@ class App extends Component {
      sumData = this.state.sumPopulation;
      manData = this.state.manPopulation;
      womanData = this.state.womanPopulation;
-     console.log("hoge");
      if(error){
        return <Text>Error: {error.message}</Text>;
      } else if (!isLoaded) {
        return <Text>Loading...</Text>;
      } else {
        return(
-         <View>
-           <Text>日本の人口</Text>
-           <VictoryChart
-             theme={VictoryTheme.material}
-             domainPadding={10}>
-             <VictoryGroup
-               colorScale={["#66CC66", "#3399FF", "#FF66CC"]}
-               offset={10}
-               style={{ data: { width: 3 } }}
-             >
-               <VictoryBar
-                 data={sumData}
-                 labels={({ datum }) => `年齢: ${datum.x}, 人口: ${datum.y/10}万`}
-                 labelComponent={<VictoryTooltip dy={0} centerOffset={{ x: 25 }} />}
-               />
-               <VictoryBar
-                 data={manData}
-               />
-               <VictoryBar
-                 data={womanData}
-               />
-             </VictoryGroup>
-           </VictoryChart>
+        <ScrollView>
+         <View style={styles.container}>
+           <Card title="日本の人口" style={{height: 200, width:300}}>
+             <VictoryChart
+               theme={VictoryTheme.material}
+               domainPadding={10}>
+               <VictoryGroup
+                 colorScale={["#66CC66", "#3399FF", "#FF66CC"]}
+                 offset={10}
+                 style={{data:{width: 3}}}
+               >
+                 <VictoryBar
+                   data={sumData}
+                 />
+                 <VictoryBar
+                   data={manData}
+                 />
+                 <VictoryBar
+                   data={womanData}
+                 />
+               </VictoryGroup>
+             </VictoryChart>
+           </Card>
          </View>
+         </ScrollView>
        )
      }
    }
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#C0C0C0',
+    justifyContent: 'center',
+  }
+});
 
 export default App;
