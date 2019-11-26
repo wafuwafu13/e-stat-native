@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import { Text } from 'react-native';
+import AverageBody from './AverageBody'
 
 class Body extends Component {
     render() {
         return(
-            <Text>身長の情報を集めてくる</Text>
+            <AverageBody />
         )
     }
 }
