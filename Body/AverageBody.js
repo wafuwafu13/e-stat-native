@@ -57,7 +57,7 @@ class AverageBody extends Component {
         <ScrollView>
          <View style={styles.container}>
            <Card title="身長・体重の平均(男)" style={{height: 200, width:300}}>
-             {number}
+
            </Card>
          </View>
          </ScrollView>
