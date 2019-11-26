@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
-import Menu from './Menu/Menu';
-import NationwideMenu from './Menu/NationwideMenu';
-import SumPopulation from './Nationwide/SumPopulation';
-import PrefectureMenu from './Menu/PrefectureMenu';
-import Hokkaido from './Prefecture/Hokkaido';
+import Menu from './Menu';
+import Population from './Population/Population';
+import Body from './Body/Body'
 import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 
@@ -12,10 +10,8 @@ class App extends Component {
         const RootStack= createStackNavigator(
             {
               Home: Menu,
-              NationwideMenu: NationwideMenu,
-              SumPopulation: SumPopulation,
-              PrefectureMenu: PrefectureMenu,
-              Hokkaido: Hokkaido
+              Population: Population,
+              Body: Body,
             },
             {
               initialRouteName: 'Home',
