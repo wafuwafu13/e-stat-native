@@ -7,12 +7,12 @@ class Menu extends Component {
             <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
             <Text>メニューページ</Text>
             <Button
-             title="全国"
-             onPress= {() => this.props.navigation.navigate('NationwideMenu')}
+             title="人口"
+             onPress= {() => this.props.navigation.navigate('Population')}
             />
             <Button
-             title="都道府県"
-             onPress= {() => this.props.navigation.navigate('PrefectureMenu')}
+             title="身長・体重"
+             onPress= {() => this.props.navigation.navigate('Body')}
             />
             </View>
         )
