@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View, ScrollView } from 'react-native';
+import { Text, ScrollView, Dimensions } from 'react-native';
 import axios from 'axios';
-import { VictoryBar, VictoryChart, VictoryGroup, VictoryTheme } from 'victory-native';
+import { VictoryBar, VictoryChart, VictoryGroup, VictoryTheme, VictoryAxis } from 'victory-native';
 import { Card } from 'react-native-elements';
 
 class SexPopulation extends Component {
@@ -107,8 +107,7 @@ class SexPopulation extends Component {
         const isLoaded = this.state.isLoaded;
         const mandata = this.state.manPopulation;
         const womandata = this.state.womanPopulation;
-        //console.log(mandata);
-        //console.log(womandata);
+        const height = Dimensions.get('window').height;
         if(error){
             return <Text>Error: {error.message}</Text>;
           } else if (!isLoaded) {
@@ -116,14 +115,23 @@ class SexPopulation extends Component {
           } else
           return(
             <ScrollView>
-              <Card title="日本の総人口男女">
+              <Card title="総人口男女" height={height*0.95} containerStyle={{paddingTop: 20}}>
                 <VictoryChart
                  theme={VictoryTheme.material}
-                 domainPadding={10}>
+                 height={height*0.8}
+                 margin={2}
+                >
+                  <VictoryAxis
+               　   tickValues={[5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95]}
+                  />
+                  <VictoryAxis dependentAxis
+                    tickFormat={(y) => (`${y/10000}万`)}
+                    tickValues={[250000, 500000, 750000, 1000000, 1250000]}
+                  />
                      <VictoryGroup
                       colorScale={["#3399FF", "#FF66CC"]}
-                      offset={10}
-                      style={{data:{width: 3}}}
+                      offset={2}
+                      style={{data:{width:1.5}}}
                      >
                        <VictoryBar
                         data={mandata}
@@ -137,7 +145,6 @@ class SexPopulation extends Component {
             </ScrollView>
           )
      }
-     
 }
 
 export default SexPopulation;

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View, ScrollView } from 'react-native';
+import { Text, ScrollView, Dimensions } from 'react-native';
 import axios from 'axios';
-import { VictoryBar, VictoryChart, VictoryGroup, VictoryTheme } from 'victory-native';
+import { VictoryBar, VictoryChart, VictoryTheme, VictoryAxis, VictoryTooltip } from 'victory-native';
 import { Card } from 'react-native-elements';
 
 class SumPopulation extends Component {
@@ -32,7 +32,6 @@ class SumPopulation extends Component {
       GET_URL += "&cdCat01=" + cdCat01;
       GET_URL += "&appId=" + escape(APP_ID);
       GET_URL += "&statsDataId=" + escape(statsDataId);
-      //console.log(GET_URL);
       axios.get(GET_URL)
       .then(
         (result) => {
@@ -65,6 +64,7 @@ class SumPopulation extends Component {
         const error = this.state.error;
         const isLoaded = this.state.isLoaded;
         const data = this.state.sumPopulation;
+        const height = Dimensions.get('window').height; 
         if(error){
             return <Text>Error: {error.message}</Text>;
           } else if (!isLoaded) {
@@ -72,14 +72,23 @@ class SumPopulation extends Component {
           } else
           return(
             <ScrollView>
-              <Card title="日本の総人口">
-              <VictoryChart
-               theme={VictoryTheme.material}
-               domainPadding={10}>
-                <VictoryBar
-                   data={data}
-                 />
-              </VictoryChart>
+              <Card title="総人口" height={height*0.95} containerStyle={{paddingTop: 20}}>
+                <VictoryChart
+                 theme={VictoryTheme.material}
+                 height={height*0.8}
+                >
+                  <VictoryAxis
+               　   tickValues={[5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95]}
+                  />
+                  <VictoryAxis dependentAxis
+                    tickFormat={(y) => (`${y/10000}万`)}
+                    tickValues={[250000, 500000, 750000, 1000000, 1250000, 1500000, 1750000, 2000000]}
+                  />
+                    <VictoryBar
+                       data={data}
+                       style={{data: {fill: "#66CC66"}}}
+                     />
+                 </VictoryChart>
               </Card>
             </ScrollView>
           )
