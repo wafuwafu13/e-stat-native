@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View, ScrollView } from 'react-native';
+import { Text, View, ScrollView, Dimensions } from 'react-native';
 import axios from 'axios';
-import { VictoryBar, VictoryChart, VictoryGroup, VictoryTheme } from 'victory-native';
+import { VictoryBar, VictoryChart, VictoryGroup, VictoryTheme, VictoryAxis } from 'victory-native';
 import { Card } from 'react-native-elements';
 
 class EstimatePopulation extends Component {
@@ -40,7 +40,6 @@ class EstimatePopulation extends Component {
         let womanPopulationBox = [];
         let womanStart = 409;
         let womanEnd = 507;
-        //console.log(result);
         for(let i = ageStart; i <= ageEnd; i++){
           sumPopulationBox.push({});
           manPopulationBox.push({});
@@ -82,6 +81,7 @@ class EstimatePopulation extends Component {
      const sumData = this.state.sumPopulation;
      const manData = this.state.manPopulation;
      const womanData = this.state.womanPopulation;
+     const height = Dimensions.get('window').height;
      if(error){
        return <Text>Error: {error.message}</Text>;
      } else if (!isLoaded) {
@@ -89,15 +89,24 @@ class EstimatePopulation extends Component {
      } else {
        return(
         <ScrollView>
-         <View style={styles.container}>
-           <Card title="日本の推定人口" style={{height: 200, width:300}}>
+         <View>
+           <Card title="推定人口" height={height*0.95} containerStyle={{paddingTop: 20,}}>
              <VictoryChart
                theme={VictoryTheme.material}
-               domainPadding={10}>
+               height={height*0.8}
+               margin={2}
+             >
+               <VictoryAxis
+               　tickValues={[5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95]}
+               />
+               <VictoryAxis dependentAxis
+                 tickFormat={(y) => (`${y/10}万`)}
+                 tickValues={[250, 500, 750, 1000, 1250, 1500, 1750, 2000]}
+               />
                <VictoryGroup
                  colorScale={["#66CC66", "#3399FF", "#FF66CC"]}
-                 offset={10}
-                 style={{data:{width: 3}}}
+                 offset={2}
+                 style={{data:{width:1.5}}}
                >
                  <VictoryBar
                    data={sumData}
@@ -117,13 +126,5 @@ class EstimatePopulation extends Component {
      }
    }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#C0C0C0',
-    justifyContent: 'center',
-  }
-});
 
 export default EstimatePopulation;
