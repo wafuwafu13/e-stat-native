@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import { Text, ScrollView, Dimensions } from 'react-native';
+import { Text, View, ScrollView, Dimensions } from 'react-native';
 import axios from 'axios';
-import { VictoryBar, VictoryChart, VictoryTheme, VictoryAxis, VictoryTooltip } from 'victory-native';
+import { VictoryBar, VictoryChart, VictoryTheme, VictoryAxis } from 'victory-native';
 import { Card } from 'react-native-elements';
+import Icon from 'react-native-vector-icons/SimpleLineIcons';
 
 class SumPopulation extends Component {
 
@@ -64,7 +65,7 @@ class SumPopulation extends Component {
         const error = this.state.error;
         const isLoaded = this.state.isLoaded;
         const data = this.state.sumPopulation;
-        const height = Dimensions.get('window').height; 
+        const height = Dimensions.get('window').height;
         if(error){
             return <Text>Error: {error.message}</Text>;
           } else if (!isLoaded) {
@@ -89,6 +90,12 @@ class SumPopulation extends Component {
                        style={{data: {fill: "#66CC66"}}}
                      />
                  </VictoryChart>
+              </Card>
+              <View style={{alignItems: 'center', marginTop: 20}}>
+                <Icon name="arrow-down-circle" size={50}/>
+              </View>
+              <Card>
+              <Text style={{marginBottom: 10}}>父「このグラフを見て気づいたことはあるかな？」</Text>
               </Card>
             </ScrollView>
           )
