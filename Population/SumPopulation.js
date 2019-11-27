@@ -65,7 +65,6 @@ class SumPopulation extends Component {
         const error = this.state.error;
         const isLoaded = this.state.isLoaded;
         const data = this.state.sumPopulation;
-        console.log(data);
         if(error){
             return <Text>Error: {error.message}</Text>;
           } else if (!isLoaded) {
@@ -73,7 +72,7 @@ class SumPopulation extends Component {
           } else
           return(
             <ScrollView>
-              <Card tytle="日本の総人口">
+              <Card title="日本の総人口">
               <VictoryChart
                theme={VictoryTheme.material}
                domainPadding={10}>
