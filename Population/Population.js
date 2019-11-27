@@ -4,6 +4,8 @@ import EstimatePopulation from './EstimatePopulation';
 import SumPopulation from './SumPopulation';
 import SexPopulation from './SexPopulation';
 import Descripiton from './Description';
+import Birthrate from './Birthrate';
+import TransitionPopulation from './TransitionPopulation';
 
 class Population extends Component {
     render() {
@@ -13,6 +15,8 @@ class Population extends Component {
               <SumPopulation />
               <SexPopulation />
               <EstimatePopulation />
+              <TransitionPopulation />
+              <Birthrate />
             </ScrollView>
         )
     }
