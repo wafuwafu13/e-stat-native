@@ -1,10 +1,19 @@
 import React, { Component } from 'react';
-import { Text } from 'react-native';
+import { ScrollView } from 'react-native';
+import SumMariage from './SumMariage';
+import Unmarrid from './Unmarried';
+import Descripiton from './Description';
+import Divorcerate from './Divorcerate';
 
 class Marriage extends Component {
     render() {
         return(
-            <Text>結婚の情報を集めてくる</Text>
+            <ScrollView style={{backgroundColor: '#DDDDDD'}}>
+              <Descripiton />
+              <SumMariage />
+              <Unmarrid />
+              <Divorcerate />
+            </ScrollView>
         )
     }
 }
