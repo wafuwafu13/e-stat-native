@@ -1,10 +1,15 @@
 import React, { Component } from 'react';
-import { Text } from 'react-native';
+import { ScrollView } from 'react-native';
+import AnnualIncome from './AnnualIncome';
+import Descripiton from './Description';
 
 class Income extends Component {
     render() {
         return(
-            <Text>収入の情報を集めてくる</Text>
+            <ScrollView style={{backgroundColor: '#DDDDDD'}}>
+              <Descripiton />
+              <AnnualIncome />
+            </ScrollView>
         )
     }
 }
