@@ -1,10 +1,15 @@
 import React, { Component } from 'react';
-import { Text } from 'react-native';
+import { ScrollView } from 'react-native';
+import Condition from './Condition';
+import Descripiton from './Description';
 
 class Economy extends Component {
     render() {
         return(
-            <Text>経済の情報を集めてくる</Text>
+            <ScrollView>
+              <Descripiton />
+              <Condition />
+            </ScrollView>
         )
     }
 }
