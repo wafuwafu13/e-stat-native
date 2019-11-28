@@ -1,11 +1,17 @@
 import React, { Component } from 'react';
-import { Text } from 'react-native';
-import AverageBody from './AverageBody'
+import { ScrollView } from 'react-native';
+import Height from './Height';
+import Weight from './Weight';
+import Descripiton from './Description';
 
 class Body extends Component {
     render() {
         return(
-            <AverageBody />
+            <ScrollView>
+              <Descripiton />
+              <Height />
+              <Weight />
+            </ScrollView>
         )
     }
 }
