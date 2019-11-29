@@ -1,19 +1,32 @@
 import React, { Component } from 'react';
-import { ScrollView } from 'react-native';
+import { ScrollView, Dimensions, View, Image } from 'react-native';
+import ParallaxScrollView from 'react-native-parallax-scroll-view';
 import SumMariage from './SumMariage';
 import Unmarrid from './Unmarried';
 import Descripiton from './Description';
 import Divorcerate from './Divorcerate';
+import top from '../assets/Marriage.png';
 
 class Marriage extends Component {
     render() {
+        let width = Dimensions.get('window').width;
+        let height = Dimensions.get('window').height;
         return(
-            <ScrollView style={{backgroundColor: '#DDDDDD'}}>
-              <Descripiton />
-              <SumMariage />
-              <Unmarrid />
-              <Divorcerate />
-            </ScrollView>
+            <ParallaxScrollView
+            backgroundImage="url(${top})"
+            parallaxHeaderHeight={300}
+            renderForeground={() => (
+              <View>
+                <Image source={top} style={{width: width, height: height}}/>
+              </View>
+            )}>
+              <ScrollView style={{backgroundColor: '#DDDDDD'}}>
+                <Descripiton />
+                <SumMariage />
+                <Unmarrid />
+                <Divorcerate />
+              </ScrollView>
+            </ParallaxScrollView>
         )
     }
 }
