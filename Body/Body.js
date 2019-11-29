@@ -7,7 +7,7 @@ import Descripiton from './Description';
 class Body extends Component {
     render() {
         return(
-            <ScrollView>
+            <ScrollView style={{backgroundColor: '#DDDDDD'}}>
               <Descripiton />
               <Height />
               <Weight />
