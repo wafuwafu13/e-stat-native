@@ -20,7 +20,6 @@ class Menu extends Component {
              onPress= {() => this.props.navigation.navigate('Population')}
             />
             <Button
-             
              title="身長・体重"
              type="outline"
              raised
@@ -28,7 +27,6 @@ class Menu extends Component {
              onPress= {() => this.props.navigation.navigate('Body')}
             />
             <Button
-             
              title="結婚"
              type="outline"
              raised
@@ -36,36 +34,11 @@ class Menu extends Component {
              onPress= {() => this.props.navigation.navigate('Marriage')}
             />
             <Button
-             
-             title="収入"
+             title="年収"
              type="outline"
              raised
              style={{marginTop: 5}}
              onPress= {() => this.props.navigation.navigate('Income')}
-            />
-            <Button
-             
-             title="経済"
-             type="outline"
-             raised
-             style={{marginTop: 5}}
-             onPress= {() => this.props.navigation.navigate('Economy')}
-            />
-            <Button
-             
-             title="教育"
-             type="outline"
-             raised
-             style={{marginTop: 5}}
-             onPress= {() => this.props.navigation.navigate('Education')}
-            />
-            <Button
-             
-             title="自殺"
-             type="outline"
-             raised
-             style={{marginTop: 5}}
-             onPress= {() => this.props.navigation.navigate('Suicide')}
             />
             </View>
         )
