@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { ScrollView } from 'react-native'
+import { ScrollView } from 'react-native';
 import EstimatePopulation from './EstimatePopulation';
 import SumPopulation from './SumPopulation';
 import SexPopulation from './SexPopulation';
