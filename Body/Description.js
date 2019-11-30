@@ -7,8 +7,11 @@ class Descripiton extends Component {
         return(
             <ScrollView>
               <Card>
-                <Text style={{marginBottom: 10}}>父「このページでは、身長・体重のデータを見ていくぞ！」</Text>
-                <Text style={{marginBottom: 10}}>息子「わかったよ父さん！」</Text>
+                <Text style={{marginBottom: 10}}>オス「わんわん！」</Text>
+                <Text style={{marginBottom: 10}}>メス「ん、どうしたの？何かくわえてるじゃない。」</Text>
+                <Text style={{marginBottom: 10}}>オス「わんわん！人の身長と体重のデータだわん！」</Text>
+                <Text style={{marginBottom: 10}}>メス「面白そうね。一緒に見ましょう。」</Text>
+                <Text style={{marginBottom: 10}}>オス「わんわん！わんわん！わんわん！わんわん！わんわん！わんわん！」</Text>
               </Card>
             </ScrollView>
         )
