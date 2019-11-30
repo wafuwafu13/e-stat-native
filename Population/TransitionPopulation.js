@@ -69,13 +69,6 @@ class TransitionPopulation extends Component {
                      />
                  </VictoryChart>
              </Card>
-             <Card>
-              <Text style={{marginBottom: 10}}>父「これは、人口の増加が停止しているのがはっきりと分かるな。」</Text>
-              <Text style={{marginBottom: 10}}>息子「2005年に初めて総人口が減少したんだよ。」</Text>
-              <Text style={{marginBottom: 10}}>父「うーむ。これから日本はどうなっていくのだろう。」</Text>
-              <Text style={{marginBottom: 10}}>息子「内閣府の推計では、2048年には総人口が1億人を下回るというデータもあるからねぇ。」</Text>
-              <Text style={{marginBottom: 10}}>父「。。。」</Text>
-             </Card>
              <View style={{alignItems: 'center', marginTop: 20}}>
                <Icon name="human-handsdown" size={50}/>
              </View>

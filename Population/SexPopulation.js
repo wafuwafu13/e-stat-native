@@ -142,16 +142,6 @@ class SexPopulation extends Component {
                    </VictoryGroup>
                 </VictoryChart>
               </Card>
-              <Card>
-                <Text style={{marginBottom: 10}}>息子「形はもちろんだけど総人口とほぼ同じだね。」</Text>
-                <Text style={{marginBottom: 10}}>父「女性の方が多いことが分かるなぁ。」</Text>
-                <Text style={{marginBottom: 10}}>息子「この時点では男性が6千184万人、女性が6千523万人だよ。」</Text>
-                <Text style={{marginBottom: 10}}>父「女性の方が長生きなんだな〜。」</Text>
-                <Text style={{marginBottom: 10}}>息子「平成29年の簡易生命表によると平均寿命は男性が81.09歳、女性が87.26歳なんだ。」</Text>
-                <Text style={{marginBottom: 10}}>父「さっきから5年前のデータを見てるけど、もっと最新のデータはないのかい？」</Text>
-                <Text style={{marginBottom: 10}}>息子「国勢調査を基礎として政府が人口を予測する推計人口のデータならあるはずだよ。」</Text>
-                <Text style={{marginBottom: 10}}>父「(ゴソゴソゴソゴソ)」</Text>
-              </Card>
             </ScrollView>
           )
      }

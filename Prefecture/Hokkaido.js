@@ -3,6 +3,11 @@ import { Text, ScrollView } from 'react-native';
 import { Card } from 'react-native-elements';
 
 class Hokkaido extends Component {
+    static navigationOptions = {
+        title: '北海道',
+        headerTintColor: '#000080',
+    }
+
     render(){
         return(
             <ScrollView　style={{backgroundColor: '#DDDDDD'}}>

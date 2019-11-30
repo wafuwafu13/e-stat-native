@@ -3,8 +3,26 @@ import {View, Dimensions, ScrollView, Image } from 'react-native';
 import ParallaxScrollView from 'react-native-parallax-scroll-view';
 import { Button } from 'react-native-elements';
 import top from '../assets/Prefecture.png';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
+
+class LogoTitle extends React.Component {
+  render() {
+    return (
+      <Icon
+        name="human-handsdown" size={30} 
+      />
+    );
+  }
+}
 
 class Menu extends Component {
+
+    static navigationOptions = {
+      headerTitle: () => <LogoTitle />,
+      title: '戻る',
+      headerTintColor: 'red',
+    };
+
     render(){
         let width = Dimensions.get('window').width;
         let height = Dimensions.get('window').height;

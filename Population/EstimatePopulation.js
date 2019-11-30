@@ -119,14 +119,6 @@ class EstimatePopulation extends Component {
                </VictoryGroup>
              </VictoryChart>
            </Card>
-           <Card>
-            <Text style={{marginBottom: 10}}>父「うーん。0~5歳あたりを見ても人口は増えていないなー。」</Text>
-            <Text style={{marginBottom: 10}}>息子「2016年に初めて出生数が100万人を割ったんだよ。」</Text>
-            <Text style={{marginBottom: 10}}>息子「出生数だけでいうとベビーブームの時は250万人を超えていたんだよ。」</Text>
-            <Text style={{marginBottom: 10}}>父「その頃と比べてだいたい4割しかうまれていないのか。。。」</Text>
-            <Text style={{marginBottom: 10}}>息子「合計特殊出生率を見たらもっと分かりやすいんじゃない？」</Text>
-            <Text style={{marginBottom: 10}}>父「(ゴソゴソゴソゴソ)」</Text>
-           </Card>
          </ScrollView>
        )
      }
