@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { ScrollView, Dimensions, View, Image } from 'react-native';
 import ParallaxScrollView from 'react-native-parallax-scroll-view';
 import AnnualIncome from './AnnualIncome';
-import Descripiton from './Description';
 import top from '../assets/Income.png';
 
 class Income extends Component {
@@ -19,7 +18,6 @@ class Income extends Component {
               </View>
             )}>
               <ScrollView style={{backgroundColor: '#DDDDDD'}}>
-                <Descripiton />
                 <AnnualIncome />
               </ScrollView>
             </ParallaxScrollView>

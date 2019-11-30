@@ -70,7 +70,7 @@ class TransitionPopulation extends Component {
                  </VictoryChart>
              </Card>
              <View style={{alignItems: 'center', marginTop: 20}}>
-               <Icon name="human-handsdown" size={50}/>
+               <Icon name="human-handsdown" size={50} style={{color: 'white'}}/>
              </View>
           </ScrollView>
       )

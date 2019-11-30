@@ -3,7 +3,6 @@ import { ScrollView, Dimensions, View, Image } from 'react-native';
 import ParallaxScrollView from 'react-native-parallax-scroll-view';
 import SumMariage from './SumMariage';
 import Unmarrid from './Unmarried';
-import Descripiton from './Description';
 import Divorcerate from './Divorcerate';
 import top from '../assets/Marriage.png';
 
@@ -21,7 +20,6 @@ class Marriage extends Component {
               </View>
             )}>
               <ScrollView style={{backgroundColor: '#DDDDDD'}}>
-                <Descripiton />
                 <SumMariage />
                 <Unmarrid />
                 <Divorcerate />

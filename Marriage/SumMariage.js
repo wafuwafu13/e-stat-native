@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text, ScrollView, Dimensions } from 'react-native';
+import { ScrollView, Dimensions } from 'react-native';
 import { VictoryLine, VictoryChart, VictoryTheme, VictoryAxis } from 'victory-native';
 import { Card } from 'react-native-elements';
 
@@ -104,19 +104,6 @@ class SumMariage extends Component {
                           style={{data: {stroke: "gold"}}}
                         />
                    </VictoryChart>
-               </Card>
-               <Card>
-                <Text style={{marginBottom: 10}}>チャラ男「見ろよこのグラフ！結婚件数だってよ！」</Text>
-                <Text style={{marginBottom: 10}}>チャラ女「さすがグラフ博覧会！いいグラフ揃ってるわね！」</Text>
-                <Text style={{marginBottom: 10}}>チャラ男「結婚件数だから、結婚した人数はこの倍いることに注意しろよ！」</Text>
-                <Text style={{marginBottom: 10}}>チャラ女「はぁ〜い！」</Text>
-                <Text style={{marginBottom: 10}}>チャラ男「やっぱり戦後の第一次ベビーブームあたりに1つのピークを迎えているな。」</Text>
-                <Text style={{marginBottom: 10}}>チャラ男「子供を作る人も多かったように、結婚する人も多かったようだな。」</Text>
-                <Text style={{marginBottom: 10}}>チャラ女「その後も伸び続けているわね。」</Text>
-                <Text style={{marginBottom: 10}}>チャラ男「そう。1954年~1973年、日本は高度経済成長期でとても景気が良かったんだ。」</Text>
-                <Text style={{marginBottom: 10}}>チャラ女「フォォォォォ〜！！！！」</Text>
-                <Text style={{marginBottom: 10}}>チャラ男「(いい女だ。)でもそれ以降、結婚する人の数は概ね減り続けているな。」</Text>
-                <Text style={{marginBottom: 10}}>チャラ女「・・・」</Text>
                </Card>
             </ScrollView>
         )

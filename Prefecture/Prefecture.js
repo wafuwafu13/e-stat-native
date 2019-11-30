@@ -6,6 +6,12 @@ import Hokkaido from './Hokkaido';
 
 class Prefecture extends Component {
 
+    static navigationOptions = {
+        headerStyle: {
+          backgroundColor: 'red',
+        },
+      };
+
     render(){
         const RootStack = createStackNavigator(
             {
@@ -14,7 +20,14 @@ class Prefecture extends Component {
             },
             {
                 initialRouteName: 'Home',
+
+                defaultNavigationOptions: {
+                    headerStyle: {
+                      backgroundColor: '#DDDDDD',
+                    },
+                  },
             },
+            
         );
 
         const AppContainer = createAppContainer(RootStack);

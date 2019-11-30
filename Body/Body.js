@@ -3,7 +3,6 @@ import { ScrollView, Dimensions, View, Image } from 'react-native';
 import ParallaxScrollView from 'react-native-parallax-scroll-view';
 import Height from './Height';
 import Weight from './Weight';
-import Descripiton from './Description';
 import top from '../assets/Body.png';
 
 class Body extends Component {
@@ -20,7 +19,6 @@ class Body extends Component {
               </View>
             )}>
               <ScrollView style={{backgroundColor: '#DDDDDD'}}>
-                <Descripiton />
                 <Height />
                 <Weight />
               </ScrollView>
