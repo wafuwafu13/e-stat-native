@@ -7,8 +7,10 @@ class Descripiton extends Component {
         return(
             <ScrollView>
               <Card>
-                <Text style={{marginBottom: 10}}>父「このページでは、年収のデータを見ていくぞ！」</Text>
-                <Text style={{marginBottom: 10}}>息子「わかったよ父さん！」</Text>
+                <Text style={{marginBottom: 10}}>エリート「おれは商社で働くエリートサラリーマン。」</Text>
+                <Text style={{marginBottom: 10}}>エリート「年収1500万円だぜ。庶民とは格が違うんだ。」</Text>
+                <Text style={{marginBottom: 10}}>エリート「庶民には興味はないが、せっかくだから年収のグラフでも見てやるか」</Text>
+                <Text style={{marginBottom: 10}}>エリート「煙草スパー」</Text>
               </Card>
             </ScrollView>
         )

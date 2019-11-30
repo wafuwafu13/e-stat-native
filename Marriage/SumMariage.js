@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import { Text, View, ScrollView, Dimensions } from 'react-native';
-import { VictoryScatter, VictoryChart, VictoryTheme, VictoryAxis } from 'victory-native';
+import { Text, ScrollView, Dimensions } from 'react-native';
+import { VictoryLine, VictoryChart, VictoryTheme, VictoryAxis } from 'victory-native';
 import { Card } from 'react-native-elements';
-import Icon from 'react-native-vector-icons/SimpleLineIcons';
 
 class SumMariage extends Component {
 
@@ -88,7 +87,7 @@ class SumMariage extends Component {
         }
         return(
           <ScrollView>
-              <Card title="結婚件数" height={height*0.95} containerStyle={{paddingTop: 20}}>
+              <Card title="結婚件数 (人口動態調査)" height={height*0.95} containerStyle={{paddingTop: 20}}>
                   <VictoryChart
                    theme={VictoryTheme.material}
                    height={height*0.8}
@@ -100,17 +99,24 @@ class SumMariage extends Component {
                       tickFormat={(y) => (`${y/10000}万`)}
                       tickValues={[500000,600000,700000,800000,900000,1000000,1100000]}
                     />
-                        <VictoryScatter
+                        <VictoryLine
                           data={data}
-                          style={{data: {fill: "gold"}}}
+                          style={{data: {stroke: "gold"}}}
                         />
                    </VictoryChart>
                </Card>
-                 <View style={{alignItems: 'center', marginTop: 20}}>
-                   <Icon name="arrow-down-circle" size={50}/>
-                 </View>
                <Card>
-                <Text style={{marginBottom: 10}}>父「このグラフを見て気づいたことはあるかな？」</Text>
+                <Text style={{marginBottom: 10}}>チャラ男「見ろよこのグラフ！結婚件数だってよ！」</Text>
+                <Text style={{marginBottom: 10}}>チャラ女「さすがグラフ博覧会！いいグラフ揃ってるわね！」</Text>
+                <Text style={{marginBottom: 10}}>チャラ男「結婚件数だから、結婚した人数はこの倍いることに注意しろよ！」</Text>
+                <Text style={{marginBottom: 10}}>チャラ女「はぁ〜い！」</Text>
+                <Text style={{marginBottom: 10}}>チャラ男「やっぱり戦後の第一次ベビーブームあたりに1つのピークを迎えているな。」</Text>
+                <Text style={{marginBottom: 10}}>チャラ男「子供を作る人も多かったように、結婚する人も多かったようだな。」</Text>
+                <Text style={{marginBottom: 10}}>チャラ女「その後も伸び続けているわね。」</Text>
+                <Text style={{marginBottom: 10}}>チャラ男「そう。1954年~1973年、日本は高度経済成長期でとても景気が良かったんだ。」</Text>
+                <Text style={{marginBottom: 10}}>チャラ女「フォォォォォ〜！！！！」</Text>
+                <Text style={{marginBottom: 10}}>チャラ男「(いい女だ。)でもそれ以降、結婚する人の数は概ね減り続けているな。」</Text>
+                <Text style={{marginBottom: 10}}>チャラ女「・・・」</Text>
                </Card>
             </ScrollView>
         )
