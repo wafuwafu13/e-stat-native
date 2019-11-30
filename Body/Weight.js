@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text, View, ScrollView, Dimensions } from 'react-native';
+import { View, ScrollView, Dimensions } from 'react-native';
 import { VictoryLine, VictoryChart, VictoryTheme, VictoryAxis, VictoryGroup } from 'victory-native';
 import { Card } from 'react-native-elements';
 import Icon from 'react-native-vector-icons/FontAwesome5'
@@ -139,7 +139,7 @@ class Weight extends Component {
         const height = Dimensions.get('window').height;
         return(
           <ScrollView>
-              <Card title="体重 (平成28年国民健康・栄養調査)" height={height*0.95} containerStyle={{paddingTop: 20}}>
+              <Card title="男女別体重 (平成28年国民健康・栄養調査)" height={height*0.95} containerStyle={{paddingTop: 20}}>
                   <VictoryChart
                    theme={VictoryTheme.material}
                    height={height*0.8}
@@ -164,15 +164,8 @@ class Weight extends Component {
                       </VictoryGroup>
                    </VictoryChart>
                </Card>
-               <Card>
-                <Text style={{marginBottom: 10}}>メス「次は人間の体重ね。」</Text>
-                <Text style={{marginBottom: 10}}>オス「これも12歳あたりで男の子が女の子に差を開けているわん！」</Text>
-                <Text style={{marginBottom: 10}}>オス「身長が伸びれば体重も増える、これが自然の原理だわん！」</Text>
-                <Text style={{marginBottom: 10}}>オス「ちなみに25歳の平均体重は男性が64.5kg、女性が50.2kgだわん！」</Text>
-                <Text style={{marginBottom: 10}}>メス「わんわんわんわんわんわんわんわんわんわんわん！」</Text>
-               </Card>
                <View style={{alignItems: 'center', marginTop: 20}}>
-                 <Icon name="weight" size={50}/>
+                 <Icon name="weight" size={50} style={{color: 'white'}}/>
                </View>
             </ScrollView>
         )

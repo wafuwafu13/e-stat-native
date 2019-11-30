@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text, View, ScrollView, Dimensions } from 'react-native';
+import { ScrollView, Dimensions } from 'react-native';
 import { VictoryLine, VictoryChart, VictoryTheme, VictoryAxis, VictoryGroup } from 'victory-native';
 import { Card } from 'react-native-elements';
 
@@ -133,7 +133,7 @@ class Height extends Component {
       const height = Dimensions.get('window').height;
       return(
         <ScrollView>
-            <Card title="身長 (平成28年国民健康・栄養調査)" height={height*0.95} containerStyle={{paddingTop: 20}}>
+            <Card title="男女別身長 (平成28年国民健康・栄養調査)" height={height*0.95} containerStyle={{paddingTop: 20}}>
                 <VictoryChart
                  theme={VictoryTheme.material}
                  height={height*0.8}
@@ -157,20 +157,6 @@ class Height extends Component {
                       />
                     </VictoryGroup>
                  </VictoryChart>
-             </Card>
-             <Card>
-              <Text style={{marginBottom: 10}}>オス「人間は背が高くて羨ましいわん！」</Text>
-              <Text style={{marginBottom: 10}}>メス「そうね。私もたまに二足歩行に憧れるわ。」</Text>
-              <Text style={{marginBottom: 10}}>メス「そんなことより、これを見て何か気になることはない？」</Text>
-              <Text style={{marginBottom: 10}}>オス「12歳で一気に男の子と女の子の差が開いてるわん！」</Text>
-              <Text style={{marginBottom: 10}}>メス「そのとうりね。12歳というと、小6か中1ね。」</Text>
-              <Text style={{marginBottom: 10}}>メス「男の子の成長期がくると一気に差が開くのね。」</Text>
-              <Text style={{marginBottom: 10}}>オス「人間は背が高くて羨ましいわん！」</Text>
-              <Text style={{marginBottom: 10}}>メス「ちなみに25歳の平均身長は男性が170.5cm、女性が155.2cmよ。」</Text>
-              <Text style={{marginBottom: 10}}>オス「人間は背が高くて羨ましいわん！」</Text>
-              <Text style={{marginBottom: 10}}>メス「どんなに羨んだってあなたの身長は変わらないわ。」</Text>
-              <Text style={{marginBottom: 10}}>メス「ありのままの自分を受け入れなさい。」</Text>
-              <Text style={{marginBottom: 10}}>オス「・・・」</Text>
              </Card>
           </ScrollView>
       )

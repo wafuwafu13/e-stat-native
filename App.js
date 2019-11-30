@@ -5,7 +5,6 @@ import PopulationNavigation from './Population/PopulationNavigation';
 import Body from './Body/Body';
 import Marriage from './Marriage/Marriage';
 import Income from './Income/Income';
-import Test from './Population/Test';
 
 class App extends Component {
     render(){

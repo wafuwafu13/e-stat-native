@@ -3,13 +3,13 @@ import {View, Dimensions, ScrollView, Image } from 'react-native';
 import ParallaxScrollView from 'react-native-parallax-scroll-view';
 import { Button } from 'react-native-elements';
 import top from '../assets/Prefecture.png';
-import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
+import Icon from 'react-native-vector-icons/FontAwesome5'
 
 class LogoTitle extends React.Component {
   render() {
     return (
       <Icon
-        name="human-handsdown" size={30} 
+        name="money-bill-wave-alt" size={30} style={{color:'white'}}
       />
     );
   }
@@ -35,11 +35,12 @@ class Menu extends Component {
                 <Image source={top} style={{width: width, height: height}}/>
               </View>
             )}>
-              <ScrollView >
+              <ScrollView style={{backgroundColor: '#DDDDDD'}}>
                 <Button
                   title="北海道"
                   onPress= {()=> this.props.navigation.navigate('Hokkaido')}
-                  type="outline"
+                  type="clear"
+                  titleStyle= {{color:'#000080'}}
                 />
               </ScrollView>
             </ParallaxScrollView>

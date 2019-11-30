@@ -74,15 +74,8 @@ class Divorcerate extends Component {
                         />
                    </VictoryChart>
                </Card>
-               <Card>
-                <Text style={{marginBottom: 10}}>チャラ女「フォォォォ〜〜！！最後は離婚率ね！」</Text>
-                <Text style={{marginBottom: 10}}>チャラ男「離婚率は年々上がってきていて、今は大体4組に1組が離婚しているんだな。」</Text>
-                <Text style={{marginBottom: 10}}>チャラ女「今の時代、様々な価値観が生じてきている。」</Text>
-                <Text style={{marginBottom: 10}}>チャラ女「我々は何が幸せなのか、何が普通なのか、結婚とはなんなのか。」</Text>
-                <Text style={{marginBottom: 10}}>チャラ女「それをもう一度見つめ直す局面にきているのかもしれない。」</Text>
-               </Card>
                <View style={{alignItems: 'center', marginTop: 20}}>
-                 <Icon name="heart" size={50}/>
+                 <Icon name="heart" size={50} style={{color: 'white'}}/>
                </View>
             </ScrollView>
         )

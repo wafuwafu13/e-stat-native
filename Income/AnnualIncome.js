@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text, View, ScrollView, Dimensions } from 'react-native';
+import { View, ScrollView, Dimensions } from 'react-native';
 import { VictoryBar, VictoryChart, VictoryTheme, VictoryAxis, VictoryGroup } from 'victory-native';
 import { Card } from 'react-native-elements';
 import Icon from 'react-native-vector-icons/FontAwesome5';
@@ -99,21 +99,8 @@ class AnnualIncome extends Component {
                     </VictoryGroup>
                  </VictoryChart>
              </Card>
-             <Card>
-              <Text style={{marginBottom: 10}}>エリート「20台前半は大体270万年程度か。」</Text>
-              <Text style={{marginBottom: 10}}>エリート「年功序列と男女不平等はこんなにもグラフではっきり分かんだな。」</Text>
-              <Text style={{marginBottom: 10}}>エリート「まあ、おれからしたら似たり寄ったり、虫けらばっかだな。」</Text>
-              <Text style={{marginBottom: 10}}>仙人「...本当にそうかな。」</Text>
-              <Text style={{marginBottom: 10}}>仙人「我々人間は数字による価値判断とカテゴライズが大好きなんだ。」</Text>
-              <Text style={{marginBottom: 10}}>仙人「年収、身長、偏差値、賞状の数、友達の数、褒められた数、努力した数...」</Text>
-              <Text style={{marginBottom: 10}}>仙人「でもな、我々人間の価値は数字ではないんだ。」</Text>
-              <Text style={{marginBottom: 10}}>チャラ女「今の時代、様々な価値観が生じてきている。」</Text>
-              <Text style={{marginBottom: 10}}>チャラ女「我々は何が幸せなのか、何が普通なのか、価値とはなんなのか。」</Text>
-              <Text style={{marginBottom: 10}}>チャラ女「それをもう一度見つめ直す局面にきているのかもしれない。」</Text>
-              <Text style={{marginBottom: 10}}>エリート「...煙草スパー」</Text>
-             </Card>
              <View style={{alignItems: 'center', marginTop: 20}}>
-              <Icon name="money-bill" size={50}/>
+              <Icon name="money-bill" size={50} style={{color: 'white'}}/>
              </View>
           </ScrollView>
       )
