@@ -28,8 +28,8 @@ class Population extends Component {
                 <SumPopulation />
                 <SexPopulation />
                 <EstimatePopulation />
-                <TransitionPopulation />
                 <Birthrate />
+                <TransitionPopulation />
               </ScrollView>
             </ParallaxScrollView>
         )

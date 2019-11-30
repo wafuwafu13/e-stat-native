@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text, View, ScrollView, Dimensions } from 'react-native';
+import { Text, ScrollView, Dimensions } from 'react-native';
 import axios from 'axios';
 import { VictoryBar, VictoryChart, VictoryGroup, VictoryTheme, VictoryAxis } from 'victory-native';
 import { Card } from 'react-native-elements';
@@ -89,8 +89,7 @@ class EstimatePopulation extends Component {
      } else {
        return(
         <ScrollView>
-         <View>
-           <Card title="推定人口" height={height*0.95} containerStyle={{paddingTop: 20,}}>
+           <Card title="人口推計 (平成30年10月1日)" height={height*0.95} containerStyle={{paddingTop: 20,}}>
              <VictoryChart
                theme={VictoryTheme.material}
                height={height*0.8}
@@ -120,7 +119,14 @@ class EstimatePopulation extends Component {
                </VictoryGroup>
              </VictoryChart>
            </Card>
-         </View>
+           <Card>
+            <Text style={{marginBottom: 10}}>父「うーん。0~5歳あたりを見ても人口は増えていないなー。」</Text>
+            <Text style={{marginBottom: 10}}>息子「2016年に初めて出生数が100万人を割ったんだよ。」</Text>
+            <Text style={{marginBottom: 10}}>息子「出生数だけでいうとベビーブームの時は250万人を超えていたんだよ。」</Text>
+            <Text style={{marginBottom: 10}}>父「その頃と比べてだいたい4割しかうまれていないのか。。。」</Text>
+            <Text style={{marginBottom: 10}}>息子「合計特殊出生率を見たらもっと分かりやすいんじゃない？」</Text>
+            <Text style={{marginBottom: 10}}>父「(ゴソゴソゴソゴソ)」</Text>
+           </Card>
          </ScrollView>
        )
      }
