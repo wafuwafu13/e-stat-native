@@ -108,27 +108,6 @@ class Birthrate extends Component {
                      />
                  </VictoryChart>
              </Card>
-             <Card>
-              <Text style={{marginBottom: 10}}>父「そもそも合計特殊出生率ってなんだったけ？」</Text>
-              <Text style={{marginBottom: 10}}>息子「1人の女性が15歳から49歳までに産む子供の数の平均だよ。」</Text>
-              <Text style={{marginBottom: 10}}>息子「全ての女性が49歳以上まで生きると仮定するよ。」</Text>
-              <Text style={{marginBottom: 10}}>息子「すると、合計特殊出生率が2だったら人口は横ばいだよね。」</Text>
-              <Text style={{marginBottom: 10}}>息子「でも実際はそうじゃないから、先進国では2.07が横ばいになる数字なんだ。」</Text>
-              <Text style={{marginBottom: 10}}>父「ベビーブームのすごさが分かるなあ。」</Text>
-              <Text style={{marginBottom: 10}}>息子「逆に近年低下し続けているとも取れるよね。」</Text>
-              <Text style={{marginBottom: 10}}>息子「2017年の時点で1.44だから到底、人口を維持できる数字ではないんだよ。」</Text>
-              <Text style={{marginBottom: 10}}>息子「さらに子供が生まれないと必然的に高齢化が進むよね。」</Text>
-              <Text style={{marginBottom: 10}}>父「高齢化にもなんかいろいろ種類ってなかったけ？」</Text>
-              <Text style={{marginBottom: 10}}>息子「うん。まずは、高齢者、つまり65歳以上が人口の7%を超えてると高齢化社会なんだ。」</Text>
-              <Text style={{marginBottom: 10}}>息子「日本が高齢化社会に突入したのは1970年なんだ。」</Text>
-              <Text style={{marginBottom: 10}}>父「意外と昔だな。」</Text>
-              <Text style={{marginBottom: 10}}>息子「高齢化率が14%を超えると高齢社会で、1994年に突入したんだ。」</Text>
-              <Text style={{marginBottom: 10}}>父「出生率も下がり続けてるから高齢化率が上がるのは当然か。。。」</Text>
-              <Text style={{marginBottom: 10}}>息子「そして最後に高齢化率が21%を超えると超高齢社会で、2007年に突入したんだ。」</Text>
-              <Text style={{marginBottom: 10}}>父「13年前か。」</Text>
-              <Text style={{marginBottom: 10}}>息子「出生率はこれぐらいにして、最後に全体の人口推移を見たいよ〜。」</Text>
-              <Text style={{marginBottom: 10}}>父「しょうがないな〜(ゴソゴソ)」</Text>
-             </Card>
           </ScrollView>
       )
     }
