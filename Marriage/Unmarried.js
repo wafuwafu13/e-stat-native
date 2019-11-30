@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import { Text, View, ScrollView, Dimensions } from 'react-native';
+import { Text, ScrollView, Dimensions } from 'react-native';
 import { VictoryLine, VictoryChart, VictoryTheme, VictoryAxis, VictoryGroup } from 'victory-native';
 import { Card } from 'react-native-elements';
-import Icon from 'react-native-vector-icons/SimpleLineIcons';
 
 class Unmarrid extends Component {
 
@@ -109,7 +108,7 @@ class Unmarrid extends Component {
       }
       return(
         <ScrollView>
-            <Card title="未婚率" height={height*0.95} containerStyle={{paddingTop: 20}}>
+            <Card title="40~45歳男女の未婚率 (国勢調査)" height={height*0.95} containerStyle={{paddingTop: 20}}>
                 <VictoryChart
                  theme={VictoryTheme.material}
                  height={height*0.8}
@@ -121,7 +120,7 @@ class Unmarrid extends Component {
                     tickValues={tickYBox}
                   />
                     <VictoryGroup
-                      colorScale={["blue", "red"]}
+                      colorScale={["#3399FF", "#FF66CC"]}
                       offset={2}
                       style={{data:{width:1.5}}}
                     >
@@ -134,11 +133,18 @@ class Unmarrid extends Component {
                     </VictoryGroup>
                  </VictoryChart>
              </Card>
-               <View style={{alignItems: 'center', marginTop: 20}}>
-                 <Icon name="arrow-down-circle" size={50}/>
-               </View>
              <Card>
-              <Text style={{marginBottom: 10}}>父「このグラフを見て気づいたことはあるかな？」</Text>
+              <Text style={{marginBottom: 10}}>チャラ女「フォォォォォォ〜〜！！次は未婚率よ！」</Text>
+              <Text style={{marginBottom: 10}}>チャラ男「結婚件数が減っているのは確認したが、未婚率で見るとより分かりやすいな。」</Text>
+              <Text style={{marginBottom: 10}}>チャラ女「どうして女性の未婚率より男性の未婚率の方が高いの？」</Text>
+              <Text style={{marginBottom: 10}}>チャラ男「それは1人の男性が複数の女性と複数回結婚するケースが多いのが理由の1つだろうね。」</Text>
+              <Text style={{marginBottom: 10}}>チャラ女「そうだったんだ。。。でも、女性の未婚率が上回っている時期もあるわね。」</Text>
+              <Text style={{marginBottom: 10}}>チャラ男「それは戦争で男性の死傷者が増えた影響もあるからだろうね。」</Text>
+              <Text style={{marginBottom: 10}}>チャラ男「今では男性の30%、女性の20%近くの人が結婚を選択していないね。」</Text>
+              <Text style={{marginBottom: 10}}>チャラ女「今の時代、様々な価値観が生じてきている。」</Text>
+              <Text style={{marginBottom: 10}}>チャラ女「我々は何が幸せなのか、何が普通なのか、結婚とはなんなのか。」</Text>
+              <Text style={{marginBottom: 10}}>チャラ女「それをもう一度見つめ直す局面にきているのかもしれない。」</Text>
+              <Text style={{marginBottom: 10}}>チャラ男「フォォォォォォ〜〜！！」</Text>
              </Card>
           </ScrollView>
       )
