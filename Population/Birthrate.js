@@ -29,7 +29,7 @@ class Birthrate extends Component {
         .then(
           (result) => {
               let start = 0;
-              let end = 20;
+              let end = 23;
               let birthrateBox = [];
               for(let i = start; i <= end; i++){
                 birthrateBox.push({});
@@ -55,9 +55,15 @@ class Birthrate extends Component {
               birthrateBox[18].x = 1970;
               birthrateBox[19].x = 1965;
               birthrateBox[20].x = 1960;
-              for(let i = start; i <= end; i++){
+              birthrateBox[21].x = 1955;
+              birthrateBox[22].x = 1950;
+              birthrateBox[23].x = 1947;
+              for(let i = start; i <= 20; i++){
                 birthrateBox[i].y = Number(result.data.GET_STATS_DATA.STATISTICAL_DATA.DATA_INF.VALUE[i].$);
               }
+              birthrateBox[21].y = 2.37;
+              birthrateBox[22].y = 3.65;
+              birthrateBox[23].y = 4.54;
               this.setState({
                 isLoaded: true,
                 birthrate: birthrateBox,
@@ -89,10 +95,10 @@ class Birthrate extends Component {
                  height={height*0.8}
                 >
                   <VictoryAxis
-               　   tickValues={[1960,1965,1970,1975,1980,1985,1990,1995,2000,2005,2010,2015]}
+               　   tickValues={[1945,1950,1955,1960,1965,1970,1975,1980,1985,1990,1995,2000,2005,2010,2015]}
                   />
                   <VictoryAxis dependentAxis
-                    tickValues={[1.0,1.1,1.2,1.3,1.4,1.5,1.6,1.7,1.8,1.9,2.0,2.1,2.2]}
+                    tickValues={[1.0,1.2,1.4,1.6,1.8,2.0,2.2,2.4,2.6,2.8,3.0,3.2,3.4,3.6,3.8,4.0,4.2,4.4,4.6,4.8]}
                   />
                     <VictoryLine
                        data={data}
@@ -102,11 +108,26 @@ class Birthrate extends Component {
                      />
                  </VictoryChart>
              </Card>
-               <View style={{alignItems: 'center', marginTop: 20}}>
-                 <Icon name="arrow-down-circle" size={50}/>
-               </View>
              <Card>
-              <Text style={{marginBottom: 10}}>父「このグラフを見て気づいたことはあるかな？」</Text>
+              <Text style={{marginBottom: 10}}>父「そもそも合計特殊出生率ってなんだったけ？」</Text>
+              <Text style={{marginBottom: 10}}>息子「1人の女性が15歳から49歳までに産む子供の数の平均だよ。」</Text>
+              <Text style={{marginBottom: 10}}>息子「全ての女性が49歳以上まで生きると仮定するよ。」</Text>
+              <Text style={{marginBottom: 10}}>息子「すると、合計特殊出生率が2だったら人口は横ばいだよね。」</Text>
+              <Text style={{marginBottom: 10}}>息子「でも実際はそうじゃないから、先進国では2.07が横ばいになる数字なんだ。」</Text>
+              <Text style={{marginBottom: 10}}>父「ベビーブームのすごさが分かるなあ。」</Text>
+              <Text style={{marginBottom: 10}}>息子「逆に近年低下し続けているとも取れるよね。」</Text>
+              <Text style={{marginBottom: 10}}>息子「2017年の時点で1.44だから到底、人口を維持できる数字ではないんだよ。」</Text>
+              <Text style={{marginBottom: 10}}>息子「さらに子供が生まれないと必然的に高齢化が進むよね。」</Text>
+              <Text style={{marginBottom: 10}}>父「高齢化にもなんかいろいろ種類ってなかったけ？」</Text>
+              <Text style={{marginBottom: 10}}>息子「うん。まずは、高齢者、つまり65歳以上が人口の7%を超えてると高齢化社会なんだ。」</Text>
+              <Text style={{marginBottom: 10}}>息子「日本が高齢化社会に突入したのは1970年なんだ。」</Text>
+              <Text style={{marginBottom: 10}}>父「意外と昔だな。」</Text>
+              <Text style={{marginBottom: 10}}>息子「高齢化率が14%を超えると高齢社会で、1994年に突入したんだ。」</Text>
+              <Text style={{marginBottom: 10}}>父「出生率も下がり続けてるから高齢化率が上がるのは当然か。。。」</Text>
+              <Text style={{marginBottom: 10}}>息子「そして最後に高齢化率が21%を超えると超高齢社会で、2007年に突入したんだ。」</Text>
+              <Text style={{marginBottom: 10}}>父「13年前か。」</Text>
+              <Text style={{marginBottom: 10}}>息子「出生率はこれぐらいにして、最後に全体の人口推移を見たいよ〜。」</Text>
+              <Text style={{marginBottom: 10}}>父「しょうがないな〜(ゴソゴソ)」</Text>
              </Card>
           </ScrollView>
       )

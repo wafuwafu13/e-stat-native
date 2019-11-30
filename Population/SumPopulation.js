@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-import { Text, View, ScrollView, Dimensions } from 'react-native';
+import { Text, ScrollView, Dimensions } from 'react-native';
 import axios from 'axios';
 import { VictoryBar, VictoryChart, VictoryTheme, VictoryAxis } from 'victory-native';
 import { Card } from 'react-native-elements';
-import Icon from 'react-native-vector-icons/SimpleLineIcons';
 
 class SumPopulation extends Component {
 
@@ -73,7 +72,7 @@ class SumPopulation extends Component {
           } else
           return(
             <ScrollView>
-              <Card title="総人口" height={height*0.95} containerStyle={{paddingTop: 20}}>
+              <Card title="年齢別総人口 (平成27年国勢調査)" height={height*0.95} containerStyle={{paddingTop: 20}}>
                 <VictoryChart
                  theme={VictoryTheme.material}
                  height={height*0.8}
@@ -91,11 +90,44 @@ class SumPopulation extends Component {
                      />
                  </VictoryChart>
               </Card>
-              <View style={{alignItems: 'center', marginTop: 20}}>
-                <Icon name="arrow-down-circle" size={50}/>
-              </View>
               <Card>
-              <Text style={{marginBottom: 10}}>父「このグラフを見て気づいたことはあるかな？」</Text>
+                <Text style={{marginBottom: 10}}>息子「これ5年前の国勢調査のやつじゃん、懐かし〜。」</Text>
+                <Text style={{marginBottom: 10}}>父「5年前ってことはお前がまだ胎児のときか。」</Text>
+                <Text style={{marginBottom: 10}}>息子「そうだね。国勢調査は5年に1度開催されるんだよ！」</Text>
+                <Text style={{marginBottom: 10}}>父「ってことは今年開催されるのか？」</Text>
+                <Text style={{marginBottom: 10}}>息子「うん、10月にあるんだ〜楽しみ〜。」</Text>
+                <Text style={{marginBottom: 10}}>息子「国政調査っていうのはね、日本に居住してる人全員が対象なんだよ！」</Text>
+                <Text style={{marginBottom: 10}}>父「ってことは国籍が外国の方も含まれているのか。」</Text>
+                <Text style={{marginBottom: 10}}>息子「そう、この年の総人口は1億2千7百万人だったよ！」</Text>
+                <Text style={{marginBottom: 10}}>父「よく覚えてるな〜。」</Text>
+                <Text style={{marginBottom: 10}}>息子「お父さん、このグラフを見て気づくことない？」</Text>
+                <Text style={{marginBottom: 10}}>父「うーむ。まず気になるのはグラフの山が2つあることだな。」</Text>
+                <Text style={{marginBottom: 10}}>息子「いいところに気がついたね！じゃあ1番大きな山から説明するよ。」</Text>
+                <Text style={{marginBottom: 10}}>息子「66~68歳のところにできてる山は、1947年~1949年に生まれた団塊の世代の人たちなんだ。」</Text>
+                <Text style={{marginBottom: 10}}>息子「第二次世界大戦が終わると、兵士が日本に帰ってきたり、国民が安心したりするよね。」</Text>
+                <Text style={{marginBottom: 10}}>息子「そういった時代だったから、子供を作る人がたくさん出てきたんだよ。」</Text>
+                <Text style={{marginBottom: 10}}>息子「この現象を第一次ベビーブームと呼ぶよね。」</Text>
+                <Text style={{marginBottom: 10}}>父「分かりやす過ぎる！続けてくれぃ！」</Text>
+                <Text style={{marginBottom: 10}}>息子「2つ目の41~44歳のところにできてる山は、1971~1974年に生まれた団塊ジュニアだよ」</Text>
+                <Text style={{marginBottom: 10}}>息子「団塊の世代の人たちが子供を作ったら必然的に人口は増えるよね。」</Text>
+                <Text style={{marginBottom: 10}}>息子「この現象を第二次ベビーブームと呼ぶんだよ。」</Text>
+                <Text style={{marginBottom: 10}}>父「なるほどー。でも、だとすれば後ろにもう1つ山がなかったらおかしくないかい？」</Text>
+                <Text style={{marginBottom: 10}}>父「団塊ジュニアもお父さんやお母さんになる年代があるはずだよ。」</Text>
+                <Text style={{marginBottom: 10}}>息子「理由の1つとしては景気の悪化が挙げられると思うよ。」</Text>
+                <Text style={{marginBottom: 10}}>息子「バブル崩壊、アジア通貨危機、消費税増税が起こった時期でもあったしね。」</Text>
+                <Text style={{marginBottom: 10}}>父「そうか。。。他にもなにが原因として挙げられるのか調べるのも良さそうだな。」</Text>
+                <Text style={{marginBottom: 10}}>父「あと気になるのが谷のところだな。」</Text>
+                <Text style={{marginBottom: 10}}>父「69歳、70歳、つまり、1945,46年生まれが少ないのは戦争の影響だろうな。」</Text>
+                <Text style={{marginBottom: 10}}>父「もう1つの凹みは何が原因か分かるかい？」</Text>
+                <Text style={{marginBottom: 10}}>息子「48歳、つまり1966年生まれの人がやけに少ないよね。これは実は干支が関係してるんだ。」</Text>
+                <Text style={{marginBottom: 10}}>父「えっえっえっえっえっえっえっえっえっえっえっえっえっえっえっ干支？？？？？？？」</Text>
+                <Text style={{marginBottom: 10}}>息子「いきなりそんなにびっくりしないでよ〜引いちゃうじゃん。」</Text>
+                <Text style={{marginBottom: 10}}>息子「この年は丙午(ひのえうま)だったんだ。西暦年を60で割って46が余る年が丙午の年だよ。」</Text>
+                <Text style={{marginBottom: 10}}>息子「丙午年の生まれの女性は気性が激しく夫の命を縮めるっていう迷信があるんだよ。」</Text>
+                <Text style={{marginBottom: 10}}>父「へ〜面白いな。迷信を信じる人が多かったんだなー。」</Text>
+                <Text style={{marginBottom: 10}}>息子「次の丙午は2026年だからどうなるんだろうね。」</Text>
+                <Text style={{marginBottom: 10}}>息子「総人口はこれぐらいにして、次は男女別のやつ見たいよ〜。」</Text>
+                <Text style={{marginBottom: 10}}>父「それもくじで当てたはずだ。待ってろ。（ゴソゴソゴソゴソ）」</Text>
               </Card>
             </ScrollView>
           )
