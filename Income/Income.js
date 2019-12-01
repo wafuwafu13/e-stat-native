@@ -3,6 +3,8 @@ import { ScrollView, Dimensions, View, Image } from 'react-native';
 import ParallaxScrollView from 'react-native-parallax-scroll-view';
 import AnnualIncome from './AnnualIncome';
 import top from '../assets/Income.png';
+import { Button } from 'react-native-elements';
+import Icon from 'react-native-vector-icons/FontAwesome5';
 
 class Income extends Component {
     render() {
@@ -19,6 +21,15 @@ class Income extends Component {
             )}>
               <ScrollView style={{backgroundColor: '#DDDDDD'}}>
                 <AnnualIncome />
+                <Button
+                  title="解説を見る"
+                  onPress= {()=> this.props.navigation.navigate('Test')}
+                  type="clear"
+                  titleStyle= {{color:'#000080'}}
+                />
+                <View style={{alignItems: 'center', marginTop: 20}}>
+                 <Icon name="money-bill" size={50} style={{color: 'white'}}/>
+                </View>
               </ScrollView>
             </ParallaxScrollView>
         )

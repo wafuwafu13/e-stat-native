@@ -8,6 +8,7 @@ import Birthrate from './Birthrate';
 import TransitionPopulation from './TransitionPopulation';
 import top from '../assets/Population.png';
 import { Button } from 'react-native-elements';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
 
 class Population extends Component {
 
@@ -35,6 +36,9 @@ class Population extends Component {
                 <EstimatePopulation />
                 <Birthrate />
                 <TransitionPopulation />
+                <View style={{alignItems: 'center', marginTop: 20}}>
+                  <Icon name="human-handsdown" size={50} style={{color: 'white'}}/>
+                </View>
               </ScrollView>
             </ParallaxScrollView>
         )

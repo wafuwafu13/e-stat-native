@@ -4,6 +4,8 @@ import ParallaxScrollView from 'react-native-parallax-scroll-view';
 import Height from './Height';
 import Weight from './Weight';
 import top from '../assets/Body.png';
+import { Button } from 'react-native-elements';
+import Icon from 'react-native-vector-icons/FontAwesome5'
 
 class Body extends Component {
     render() {
@@ -20,7 +22,16 @@ class Body extends Component {
             )}>
               <ScrollView style={{backgroundColor: '#DDDDDD'}}>
                 <Height />
+                <Button
+                  title="解説を見る"
+                  onPress= {()=> this.props.navigation.navigate('Test')}
+                  type="clear"
+                  titleStyle= {{color:'#000080'}}
+                />
                 <Weight />
+                <View style={{alignItems: 'center', marginTop: 20}}>
+                 <Icon name="weight" size={50} style={{color: 'white'}}/>
+               </View>
               </ScrollView>
             </ParallaxScrollView>
         )

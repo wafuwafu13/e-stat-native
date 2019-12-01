@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Text, View, ScrollView, Dimensions } from 'react-native';
 import { VictoryLine, VictoryChart, VictoryTheme, VictoryAxis } from 'victory-native';
 import { Card } from 'react-native-elements';
-import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
 
 class TransitionPopulation extends Component {
 
@@ -69,9 +68,6 @@ class TransitionPopulation extends Component {
                      />
                  </VictoryChart>
              </Card>
-             <View style={{alignItems: 'center', marginTop: 20}}>
-               <Icon name="human-handsdown" size={50} style={{color: 'white'}}/>
-             </View>
           </ScrollView>
       )
     }

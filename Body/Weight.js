@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { View, ScrollView, Dimensions } from 'react-native';
 import { VictoryLine, VictoryChart, VictoryTheme, VictoryAxis, VictoryGroup } from 'victory-native';
 import { Card } from 'react-native-elements';
-import Icon from 'react-native-vector-icons/FontAwesome5'
 
 class Weight extends Component {
 
@@ -164,9 +163,6 @@ class Weight extends Component {
                       </VictoryGroup>
                    </VictoryChart>
                </Card>
-               <View style={{alignItems: 'center', marginTop: 20}}>
-                 <Icon name="weight" size={50} style={{color: 'white'}}/>
-               </View>
             </ScrollView>
         )
     }
