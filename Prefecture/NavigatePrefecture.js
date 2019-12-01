@@ -4,7 +4,7 @@ import { createStackNavigator } from 'react-navigation-stack';
 import Menu from './Menu';
 import Hokkaido from './Hokkaido';
 
-class Prefecture extends Component {
+class NavigatePrefecture extends Component {
 
     static navigationOptions = {
         headerStyle: {
@@ -27,7 +27,6 @@ class Prefecture extends Component {
                     },
                   },
             },
-            
         );
 
         const AppContainer = createAppContainer(RootStack);
@@ -38,4 +37,4 @@ class Prefecture extends Component {
     }
 }
 
-export default Prefecture;
+export default NavigatePrefecture;

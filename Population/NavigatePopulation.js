@@ -4,7 +4,7 @@ import { createStackNavigator } from 'react-navigation-stack';
 import Population from './Population';
 import Test from './Test';
 
-class PopulationNavigation extends Component {
+class NavigatePopulation extends Component {
 
     render(){
         const RootStack = createStackNavigator(
@@ -25,4 +25,4 @@ class PopulationNavigation extends Component {
     }
 }
 
-export default PopulationNavigation;
+export default NavigatePopulation;
