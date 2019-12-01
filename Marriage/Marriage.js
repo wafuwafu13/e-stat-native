@@ -5,6 +5,8 @@ import SumMariage from './SumMariage';
 import Unmarrid from './Unmarried';
 import Divorcerate from './Divorcerate';
 import top from '../assets/Marriage.png';
+import { Button } from 'react-native-elements';
+import Icon from 'react-native-vector-icons/AntDesign'
 
 class Marriage extends Component {
     render() {
@@ -21,8 +23,17 @@ class Marriage extends Component {
             )}>
               <ScrollView style={{backgroundColor: '#DDDDDD'}}>
                 <SumMariage />
+                <Button
+                  title="解説を見る"
+                  onPress= {()=> this.props.navigation.navigate('Test')}
+                  type="clear"
+                  titleStyle= {{color:'#000080'}}
+                />
                 <Unmarrid />
                 <Divorcerate />
+                <View style={{alignItems: 'center', marginTop: 20}}>
+                 <Icon name="heart" size={50} style={{color: 'white'}}/>
+               </View>
               </ScrollView>
             </ParallaxScrollView>
         )

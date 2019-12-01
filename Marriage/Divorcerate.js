@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Text, View, ScrollView, Dimensions } from 'react-native';
 import { VictoryLine, VictoryChart, VictoryTheme, VictoryAxis } from 'victory-native';
 import { Card } from 'react-native-elements';
-import Icon from 'react-native-vector-icons/AntDesign'
 
 class Divorcerate extends Component {
 
@@ -74,9 +73,6 @@ class Divorcerate extends Component {
                         />
                    </VictoryChart>
                </Card>
-               <View style={{alignItems: 'center', marginTop: 20}}>
-                 <Icon name="heart" size={50} style={{color: 'white'}}/>
-               </View>
             </ScrollView>
         )
     }
