@@ -28,6 +28,19 @@ class Fukuoka extends Component {
                   <Text></Text>
                   <Text>合計特殊出生率：1.51(25位)</Text>
               </Card>
+              <Card title="自然環境">
+                  <Text>総面積：498,652ha(29位)</Text>
+                  <Text></Text>
+                  <Text>年平均気温：17.6℃(3位)</Text>
+                  <Text></Text>
+                  <Text>年間快晴日数：25日(24位)</Text>
+                  <Text></Text>
+                  <Text>年間降水日数：108日(20位)</Text>
+                  <Text></Text>
+                  <Text>年間雪日数：12日(29位)</Text>
+                  <Text></Text>
+                  <Text>年平均相対湿度：69%(25位)</Text>
+              </Card>
             </ScrollView>
         )
     }

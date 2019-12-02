@@ -28,6 +28,19 @@ class Ibaragi extends Component {
                   <Text></Text>
                   <Text>合計特殊出生率：1.48(30位)</Text>
               </Card>
+              <Card title="自然環境">
+                  <Text>総面積：609,719ha(24位)</Text>
+                  <Text></Text>
+                  <Text>年平均気温：14.2℃(37位)</Text>
+                  <Text></Text>
+                  <Text>年間快晴日数：45日(4位)</Text>
+                  <Text></Text>
+                  <Text>年間降水日数：97日(30位)</Text>
+                  <Text></Text>
+                  <Text>年間雪日数：10日(32位)</Text>
+                  <Text></Text>
+                  <Text>年平均相対湿度：71%(17位)</Text>
+              </Card>
             </ScrollView>
         )
     }

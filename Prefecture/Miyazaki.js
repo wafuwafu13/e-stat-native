@@ -28,6 +28,19 @@ class Miyazaki extends Component {
                   <Text></Text>
                   <Text>合計特殊出生率：1.73(2位)</Text>
               </Card>
+              <Card title="自然環境">
+                  <Text>総面積：773,532ha(14位)</Text>
+                  <Text></Text>
+                  <Text>年平均気温：17.6℃(3位)</Text>
+                  <Text></Text>
+                  <Text>年間快晴日数：54日(3位)</Text>
+                  <Text></Text>
+                  <Text>年間降水日数：107日(22位)</Text>
+                  <Text></Text>
+                  <Text>年間雪日数：1日(45位)</Text>
+                  <Text></Text>
+                  <Text>年平均相対湿度：74%(9位)</Text>
+              </Card>
             </ScrollView>
         )
     }

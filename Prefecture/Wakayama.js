@@ -28,6 +28,19 @@ class Wakayama extends Component {
                   <Text></Text>
                   <Text>合計特殊出生率：1.52(23位)</Text>
               </Card>
+              <Card title="自然環境">
+                  <Text>総面積：472,464ha(30位)</Text>
+                  <Text></Text>
+                  <Text>年平均気温：16.8℃(9位)</Text>
+                  <Text></Text>
+                  <Text>年間快晴日数：26日(21位)</Text>
+                  <Text></Text>
+                  <Text>年間降水日数：85日(44位)</Text>
+                  <Text></Text>
+                  <Text>年間雪日数：8日(38位)</Text>
+                  <Text></Text>
+                  <Text>年平均相対湿度：67%(31位)</Text>
+              </Card>
             </ScrollView>
         )
     }

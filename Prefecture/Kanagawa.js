@@ -28,6 +28,19 @@ class Kanagawa extends Component {
                   <Text></Text>
                   <Text>合計特殊出生率：1.34(41位)</Text>
               </Card>
+              <Card title="自然環境">
+                  <Text>総面積：241,617ha(43位)</Text>
+                  <Text></Text>
+                  <Text>年平均気温：16.3℃(17位)</Text>
+                  <Text></Text>
+                  <Text>年間快晴日数：29日(18位)</Text>
+                  <Text></Text>
+                  <Text>年間降水日数：97日(30位)</Text>
+                  <Text></Text>
+                  <Text>年間雪日数：7日(41位)</Text>
+                  <Text></Text>
+                  <Text>年平均相対湿度：67%(31位)</Text>
+              </Card>
             </ScrollView>
         )
     }

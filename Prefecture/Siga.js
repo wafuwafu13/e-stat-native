@@ -28,6 +28,19 @@ class Siga extends Component {
                   <Text></Text>
                   <Text>合計特殊出生率：1.54(18位)</Text>
               </Card>
+              <Card title="自然環境">
+                  <Text>総面積：401,738ha(38位)</Text>
+                  <Text></Text>
+                  <Text>年平均気温：14.8℃(34位)</Text>
+                  <Text></Text>
+                  <Text>年間快晴日数：23日(28位)</Text>
+                  <Text></Text>
+                  <Text>年間降水日数：148日(9位)</Text>
+                  <Text></Text>
+                  <Text>年間雪日数：35日(15位)</Text>
+                  <Text></Text>
+                  <Text>年平均相対湿度：73%(13位)</Text>
+              </Card>
             </ScrollView>
         )
     }

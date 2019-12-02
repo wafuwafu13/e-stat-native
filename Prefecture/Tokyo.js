@@ -28,6 +28,19 @@ class Tokyo extends Component {
                   <Text></Text>
                   <Text>合計特殊出生率：1.21(47位)</Text>
               </Card>
+              <Card title="自然環境">
+                  <Text>総面積：219,396ha(45位)</Text>
+                  <Text></Text>
+                  <Text>年平均気温：15.8℃(24位)</Text>
+                  <Text></Text>
+                  <Text>年間快晴日数：39日(9位)</Text>
+                  <Text></Text>
+                  <Text>年間降水日数：95日(32位)</Text>
+                  <Text></Text>
+                  <Text>年間雪日数：7日(41位)</Text>
+                  <Text></Text>
+                  <Text>年平均相対湿度：68%(26位)</Text>
+              </Card>
             </ScrollView>
         )
     }

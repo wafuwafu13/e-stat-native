@@ -28,6 +28,19 @@ class Totigi extends Component {
                   <Text></Text>
                   <Text>合計特殊出生率：1.45(34位)</Text>
               </Card>
+              <Card title="自然環境">
+                  <Text>総面積：640,809ha(20位)</Text>
+                  <Text></Text>
+                  <Text>年平均気温：14.1℃(38位)</Text>
+                  <Text></Text>
+                  <Text>年間快晴日数：45日(4位)</Text>
+                  <Text></Text>
+                  <Text>年間降水日数：109日(19位)</Text>
+                  <Text></Text>
+                  <Text>年間雪日数：17日(23位)</Text>
+                  <Text></Text>
+                  <Text>年平均相対湿度：68%(26位)</Text>
+              </Card>
             </ScrollView>
         )
     }

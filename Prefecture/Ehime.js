@@ -28,6 +28,19 @@ class Ehime extends Component {
                   <Text></Text>
                   <Text>合計特殊出生率：1.54(18位)</Text>
               </Card>
+              <Card title="自然環境">
+                  <Text>総面積：567,623ha(26位)</Text>
+                  <Text></Text>
+                  <Text>年平均気温：16.7℃(14位)</Text>
+                  <Text></Text>
+                  <Text>年間快晴日数：33日(14位)</Text>
+                  <Text></Text>
+                  <Text>年間降水日数：95日(32位)</Text>
+                  <Text></Text>
+                  <Text>年間雪日数：10日(32位)</Text>
+                  <Text></Text>
+                  <Text>年平均相対湿度：67%(31位)</Text>
+              </Card>
             </ScrollView>
         )
     }

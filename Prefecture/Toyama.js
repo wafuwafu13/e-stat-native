@@ -28,6 +28,19 @@ class Toyama extends Component {
                   <Text></Text>
                   <Text>合計特殊出生率：1.55(17位)</Text>
               </Card>
+              <Card title="自然環境">
+                  <Text>総面積：424,761ha(33位)</Text>
+                  <Text></Text>
+                  <Text>年平均気温：14.3℃(36位)</Text>
+                  <Text></Text>
+                  <Text>年間快晴日数：12日(40位)</Text>
+                  <Text></Text>
+                  <Text>年間降水日数：183日(2位)</Text>
+                  <Text></Text>
+                  <Text>年間雪日数：53日(10位)</Text>
+                  <Text></Text>
+                  <Text>年平均相対湿度：78%(1位)</Text>
+              </Card>
             </ScrollView>
         )
     }

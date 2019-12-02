@@ -28,6 +28,19 @@ class Kumamoto extends Component {
                   <Text></Text>
                   <Text>合計特殊出生率：1.67(6位)</Text>
               </Card>
+              <Card title="自然環境">
+                  <Text>総面積：740,948ha(15位)</Text>
+                  <Text></Text>
+                  <Text>年平均気温：16.9℃(8位)</Text>
+                  <Text></Text>
+                  <Text>年間快晴日数：34日(12位)</Text>
+                  <Text></Text>
+                  <Text>年間降水日数：102日(26位)</Text>
+                  <Text></Text>
+                  <Text>年間雪日数：8日(38位)</Text>
+                  <Text></Text>
+                  <Text>年平均相対湿度：72%(16位)</Text>
+              </Card>
             </ScrollView>
         )
     }

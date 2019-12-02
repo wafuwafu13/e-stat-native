@@ -28,6 +28,19 @@ class Nara extends Component {
                   <Text></Text>
                   <Text>合計特殊出生率：1.33(43位)</Text>
               </Card>
+              <Card title="自然環境">
+                  <Text>総面積：369,094ha(40位)</Text>
+                  <Text></Text>
+                  <Text>年平均気温：15.4℃(27位)</Text>
+                  <Text></Text>
+                  <Text>年間快晴日数：23日(28位)</Text>
+                  <Text></Text>
+                  <Text>年間降水日数：94日(34位)</Text>
+                  <Text></Text>
+                  <Text>年間雪日数：24日(19位)</Text>
+                  <Text></Text>
+                  <Text>年平均相対湿度：70%(20位)</Text>
+              </Card>
             </ScrollView>
         )
     }

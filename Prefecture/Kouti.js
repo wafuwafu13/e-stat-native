@@ -28,6 +28,19 @@ class Kouti extends Component {
                   <Text></Text>
                   <Text>合計特殊出生率：1.56(14位)</Text>
               </Card>
+              <Card title="自然環境">
+                  <Text>総面積：710,386ha(18位)</Text>
+                  <Text></Text>
+                  <Text>年平均気温：17.1℃(6位)</Text>
+                  <Text></Text>
+                  <Text>年間快晴日数：31日(16位)</Text>
+                  <Text></Text>
+                  <Text>年間降水日数：103日(24位)</Text>
+                  <Text></Text>
+                  <Text>年間雪日数：3日(44位)</Text>
+                  <Text></Text>
+                  <Text>年平均相対湿度：68%(26位)</Text>
+              </Card>
             </ScrollView>
         )
     }

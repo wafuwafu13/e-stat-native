@@ -28,6 +28,19 @@ class Aomori extends Component {
                   <Text></Text>
                   <Text>合計特殊出生率：1.43(36位)</Text>
               </Card>
+              <Card title="自然環境">
+                  <Text>総面積：964,564ha(8位)</Text>
+                  <Text></Text>
+                  <Text>年平均気温：10.7℃(45位)</Text>
+                  <Text></Text>
+                  <Text>年間快晴日数：14日(37位)</Text>
+                  <Text></Text>
+                  <Text>年間降水日数：172日(5位)</Text>
+                  <Text></Text>
+                  <Text>年間雪日数：114日(2位)</Text>
+                  <Text></Text>
+                  <Text>年平均相対湿度：75%(6位)</Text>
+              </Card>
             </ScrollView>
         )
     }

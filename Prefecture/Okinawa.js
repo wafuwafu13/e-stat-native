@@ -28,6 +28,19 @@ class Okinawa extends Component {
                   <Text></Text>
                   <Text>合計特殊出生率：1.94(1位)</Text>
               </Card>
+              <Card title="自然環境">
+                  <Text>総面積：228,098ha(44位)</Text>
+                  <Text></Text>
+                  <Text>年平均気温：23.6℃(1位)</Text>
+                  <Text></Text>
+                  <Text>年間快晴日数：3日(47位)</Text>
+                  <Text></Text>
+                  <Text>年間降水日数：120日(14位)</Text>
+                  <Text></Text>
+                  <Text>年間雪日数：0日(47位)</Text>
+                  <Text></Text>
+                  <Text>年平均相対湿度：71%(17位)</Text>
+              </Card>
             </ScrollView>
         )
     }

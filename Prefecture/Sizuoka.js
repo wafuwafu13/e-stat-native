@@ -28,6 +28,19 @@ class Sizuoka extends Component {
                   <Text></Text>
                   <Text>合計特殊出生率：1.52(23位)</Text>
               </Card>
+              <Card title="自然環境">
+                  <Text>総面積：777,742ha(13位)</Text>
+                  <Text></Text>
+                  <Text>年平均気温：16.8℃(9位)</Text>
+                  <Text></Text>
+                  <Text>年間快晴日数：62日(1位)</Text>
+                  <Text></Text>
+                  <Text>年間降水日数：100日(28位)</Text>
+                  <Text></Text>
+                  <Text>年間雪日数：1日(45位)</Text>
+                  <Text></Text>
+                  <Text>年平均相対湿度：64%(39位)</Text>
+              </Card>
             </ScrollView>
         )
     }

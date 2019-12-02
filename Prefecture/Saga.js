@@ -28,6 +28,19 @@ class Saga extends Component {
                   <Text></Text>
                   <Text>合計特殊出生率：1.64(9位)</Text>
               </Card>
+              <Card title="自然環境">
+                  <Text>総面積：244,068ha(42位)</Text>
+                  <Text></Text>
+                  <Text>年平均気温：17.0℃(7位)</Text>
+                  <Text></Text>
+                  <Text>年間快晴日数：25日(24位)</Text>
+                  <Text></Text>
+                  <Text>年間降水日数：94日(34位)</Text>
+                  <Text></Text>
+                  <Text>年間雪日数：11日(30位)</Text>
+                  <Text></Text>
+                  <Text>年平均相対湿度：70%(20位)</Text>
+              </Card>
             </ScrollView>
         )
     }

@@ -28,6 +28,19 @@ class Fukui extends Component {
                   <Text></Text>
                   <Text>合計特殊出生率：1.62(10位)</Text>
               </Card>
+              <Card title="自然環境">
+                  <Text>総面積：419,051ha(34位)</Text>
+                  <Text></Text>
+                  <Text>年平均気温：14.6℃(35位)</Text>
+                  <Text></Text>
+                  <Text>年間快晴日数：15日(34位)</Text>
+                  <Text></Text>
+                  <Text>年間降水日数：180日(3位)</Text>
+                  <Text></Text>
+                  <Text>年間雪日数：45日(12位)</Text>
+                  <Text></Text>
+                  <Text>年平均相対湿度：74%(9位)</Text>
+              </Card>
             </ScrollView>
         )
     }
