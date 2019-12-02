@@ -28,6 +28,19 @@ class Miyagi extends Component {
                   <Text></Text>
                   <Text>合計特殊出生率：1.31(44位)</Text>
               </Card>
+              <Card title="自然環境">
+                  <Text>総面積：728,222ha(16位)</Text>
+                  <Text></Text>
+                  <Text>年平均気温：12.9℃(41位)</Text>
+                  <Text></Text>
+                  <Text>年間快晴日数：13日(39位)</Text>
+                  <Text></Text>
+                  <Text>年間降水日数：101日(27位)</Text>
+                  <Text></Text>
+                  <Text>年間雪日数：63日(8位)</Text>
+                  <Text></Text>
+                  <Text>年平均相対湿度：70%(20位)</Text>
+              </Card>
             </ScrollView>
         )
     }

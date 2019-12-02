@@ -28,6 +28,19 @@ class Kyoto extends Component {
                   <Text></Text>
                   <Text>合計特殊出生率：1.31(44位)</Text>
               </Card>
+              <Card title="自然環境">
+                  <Text>総面積：461,220ha(31位)</Text>
+                  <Text></Text>
+                  <Text>年平均気温：16.0℃(21位)</Text>
+                  <Text></Text>
+                  <Text>年間快晴日数：20日(32位)</Text>
+                  <Text></Text>
+                  <Text>年間降水日数：103日(24位)</Text>
+                  <Text></Text>
+                  <Text>年間雪日数：29日(17位)</Text>
+                  <Text></Text>
+                  <Text>年平均相対湿度：66%(35位)</Text>
+              </Card>
             </ScrollView>
         )
     }

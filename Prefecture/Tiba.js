@@ -28,6 +28,19 @@ class Tiba extends Component {
                   <Text></Text>
                   <Text>合計特殊出生率：1.34(41位)</Text>
               </Card>
+              <Card title="自然環境">
+                  <Text>総面積：515,761ha(28位)</Text>
+                  <Text></Text>
+                  <Text>年平均気温：16.3℃(17位)</Text>
+                  <Text></Text>
+                  <Text>年間快晴日数：34日(12位)</Text>
+                  <Text></Text>
+                  <Text>年間降水日数：90日(38位)</Text>
+                  <Text></Text>
+                  <Text>年間雪日数：14日(27位)</Text>
+                  <Text></Text>
+                  <Text>年平均相対湿度：64%(39位)</Text>
+              </Card>
             </ScrollView>
         )
     }

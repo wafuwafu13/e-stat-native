@@ -28,6 +28,19 @@ class Nagasaki extends Component {
                   <Text></Text>
                   <Text>合計特殊出生率：1.70(4位)</Text>
               </Card>
+              <Card title="自然環境">
+                  <Text>総面積：413,088ha(37位)</Text>
+                  <Text></Text>
+                  <Text>年平均気温：17.3℃(5位)</Text>
+                  <Text></Text>
+                  <Text>年間快晴日数：26日(21位)</Text>
+                  <Text></Text>
+                  <Text>年間降水日数：108日(20位)</Text>
+                  <Text></Text>
+                  <Text>年間雪日数：10日(32位)</Text>
+                  <Text></Text>
+                  <Text>年平均相対湿度：74%(9位)</Text>
+              </Card>
             </ScrollView>
         )
     }

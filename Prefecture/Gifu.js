@@ -28,6 +28,19 @@ class Gifu extends Component {
                   <Text></Text>
                   <Text>合計特殊出生率：1.51(25位)</Text>
               </Card>
+              <Card title="自然環境">
+                  <Text>総面積：1,062,129ha(7位)</Text>
+                  <Text></Text>
+                  <Text>年平均気温：15.9℃(22位)</Text>
+                  <Text></Text>
+                  <Text>年間快晴日数：40日(8位)</Text>
+                  <Text></Text>
+                  <Text>年間降水日数：118日(15位)</Text>
+                  <Text></Text>
+                  <Text>年間雪日数：26日(18位)</Text>
+                  <Text></Text>
+                  <Text>年平均相対湿度：65%(36位)</Text>
+              </Card>
             </ScrollView>
         )
     }

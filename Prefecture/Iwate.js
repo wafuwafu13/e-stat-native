@@ -28,6 +28,19 @@ class Iwate extends Component {
                   <Text></Text>
                   <Text>合計特殊出生率：1.47(31位)</Text>
               </Card>
+              <Card title="自然環境">
+                  <Text>総面積：1,527,501ha(2位)</Text>
+                  <Text></Text>
+                  <Text>年平均気温：10.6℃(46位)</Text>
+                  <Text></Text>
+                  <Text>年間快晴日数：9日(45位)</Text>
+                  <Text></Text>
+                  <Text>年間降水日数：131日(12位)</Text>
+                  <Text></Text>
+                  <Text>年間雪日数：103日(3位)</Text>
+                  <Text></Text>
+                  <Text>年平均相対湿度：77%(2位)</Text>
+              </Card>
             </ScrollView>
         )
     }

@@ -28,6 +28,19 @@ class Isikawa extends Component {
                   <Text></Text>
                   <Text>合計特殊出生率：1.54(18位)</Text>
               </Card>
+              <Card title="自然環境">
+                  <Text>総面積：418,605ha(35位)</Text>
+                  <Text></Text>
+                  <Text>年平均気温：15.0℃(31位)</Text>
+                  <Text></Text>
+                  <Text>年間快晴日数：11日(42位)</Text>
+                  <Text></Text>
+                  <Text>年間降水日数：179日(4位)</Text>
+                  <Text></Text>
+                  <Text>年間雪日数：51日(11位)</Text>
+                  <Text></Text>
+                  <Text>年平均相対湿度：68%(26位)</Text>
+              </Card>
             </ScrollView>
         )
     }

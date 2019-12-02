@@ -28,6 +28,19 @@ class Oita extends Component {
                   <Text></Text>
                   <Text>合計特殊出生率：1.62(10位)</Text>
               </Card>
+              <Card title="自然環境">
+                  <Text>総面積：634,073ha(22位)</Text>
+                  <Text></Text>
+                  <Text>年平均気温：16.8℃(9位)</Text>
+                  <Text></Text>
+                  <Text>年間快晴日数：29日(18位)</Text>
+                  <Text></Text>
+                  <Text>年間降水日数：90日(38位)</Text>
+                  <Text></Text>
+                  <Text>年間雪日数：8日(38位)</Text>
+                  <Text></Text>
+                  <Text>年平均相対湿度：70%(20位)</Text>
+              </Card>
             </ScrollView>
         )
     }

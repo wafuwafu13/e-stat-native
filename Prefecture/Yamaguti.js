@@ -28,6 +28,19 @@ class Yamaguti extends Component {
                   <Text></Text>
                   <Text>合計特殊出生率：1.57(12位)</Text>
               </Card>
+              <Card title="自然環境">
+                  <Text>総面積：611,253ha(23位)</Text>
+                  <Text></Text>
+                  <Text>年平均気温：15.6℃(26位)</Text>
+                  <Text></Text>
+                  <Text>年間快晴日数：20日(32位)</Text>
+                  <Text></Text>
+                  <Text>年間降水日数：114日(17位)</Text>
+                  <Text></Text>
+                  <Text>年間雪日数：36日(14位)</Text>
+                  <Text></Text>
+                  <Text>年平均相対湿度：76%(3位)</Text>
+              </Card>
             </ScrollView>
         )
     }

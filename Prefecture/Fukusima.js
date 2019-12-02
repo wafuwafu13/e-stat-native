@@ -28,6 +28,19 @@ class Fukusima extends Component {
                   <Text></Text>
                   <Text>合計特殊出生率：1.57(12位)</Text>
               </Card>
+              <Card title="自然環境">
+                  <Text>総面積：1,378,390ha(3位)</Text>
+                  <Text></Text>
+                  <Text>年平均気温：13.4℃(40位)</Text>
+                  <Text></Text>
+                  <Text>年間快晴日数：14日(37位)</Text>
+                  <Text></Text>
+                  <Text>年間降水日数：111日(18位)</Text>
+                  <Text></Text>
+                  <Text>年間雪日数：74日(7位)</Text>
+                  <Text></Text>
+                  <Text>年平均相対湿度：71%(17位)</Text>
+              </Card>
             </ScrollView>
         )
     }

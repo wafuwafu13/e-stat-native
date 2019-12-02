@@ -28,6 +28,19 @@ class Hyogo extends Component {
                   <Text></Text>
                   <Text>合計特殊出生率：1.47(31位)</Text>
               </Card>
+              <Card title="自然環境">
+                  <Text>総面積：840,094ha(1２位)</Text>
+                  <Text></Text>
+                  <Text>年平均気温：16.8℃(9位)</Text>
+                  <Text></Text>
+                  <Text>年間快晴日数：24日(26位)</Text>
+                  <Text></Text>
+                  <Text>年間降水日数：86日(42位)</Text>
+                  <Text></Text>
+                  <Text>年間雪日数：15日(24位)</Text>
+                  <Text></Text>
+                  <Text>年平均相対湿度：65%(36位)</Text>
+              </Card>
             </ScrollView>
         )
     }

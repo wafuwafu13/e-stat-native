@@ -28,6 +28,19 @@ class Kagosima extends Component {
                   <Text></Text>
                   <Text>合計特殊出生率：1.69(5位)</Text>
               </Card>
+              <Card title="自然環境">
+                  <Text>総面積：918,701ha(10位)</Text>
+                  <Text></Text>
+                  <Text>年平均気温：18.6℃(2位)</Text>
+                  <Text></Text>
+                  <Text>年間快晴日数：37日(10位)</Text>
+                  <Text></Text>
+                  <Text>年間降水日数：124日(13位)</Text>
+                  <Text></Text>
+                  <Text>年間雪日数：4日(43位)</Text>
+                  <Text></Text>
+                  <Text>年平均相対湿度：73%(13位)</Text>
+              </Card>
             </ScrollView>
         )
     }

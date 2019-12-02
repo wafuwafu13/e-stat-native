@@ -28,6 +28,19 @@ class Saitama extends Component {
                   <Text></Text>
                   <Text>合計特殊出生率：1.36(38位)</Text>
               </Card>
+              <Card title="自然環境">
+                  <Text>総面積：379,775ha(42位)</Text>
+                  <Text></Text>
+                  <Text>年平均気温：15.4℃(27位)</Text>
+                  <Text></Text>
+                  <Text>年間快晴日数：61日(2位)</Text>
+                  <Text></Text>
+                  <Text>年間降水日数：93日(36位)</Text>
+                  <Text></Text>
+                  <Text>年間雪日数：9日(36位)</Text>
+                  <Text></Text>
+                  <Text>年平均相対湿度：60%(46位)</Text>
+              </Card>
             </ScrollView>
         )
     }

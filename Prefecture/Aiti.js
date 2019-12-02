@@ -28,6 +28,19 @@ class Aiti extends Component {
                   <Text></Text>
                   <Text>合計特殊出生率：1.54(18位)</Text>
               </Card>
+              <Card title="自然環境">
+                  <Text>総面積：517,292ha(27位)</Text>
+                  <Text></Text>
+                  <Text>年平均気温：15.9℃(22位)</Text>
+                  <Text></Text>
+                  <Text>年間快晴日数：31日(16位)</Text>
+                  <Text></Text>
+                  <Text>年間降水日数：105日(23位)</Text>
+                  <Text></Text>
+                  <Text>年間雪日数：13日(28位)</Text>
+                  <Text></Text>
+                  <Text>年平均相対湿度：64%(39位)</Text>
+              </Card>
             </ScrollView>
         )
     }

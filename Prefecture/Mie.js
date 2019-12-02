@@ -28,6 +28,19 @@ class Mie extends Component {
                   <Text></Text>
                   <Text>合計特殊出生率：1.49(29位)</Text>
               </Card>
+              <Card title="自然環境">
+                  <Text>総面積：577,441ha(25位)</Text>
+                  <Text></Text>
+                  <Text>年平均気温：16.1℃(20位)</Text>
+                  <Text></Text>
+                  <Text>年間快晴日数：36日(11位)</Text>
+                  <Text></Text>
+                  <Text>年間降水日数：98日(29位)</Text>
+                  <Text></Text>
+                  <Text>年間雪日数：22日(20位)</Text>
+                  <Text></Text>
+                  <Text>年平均相対湿度：63%(43位)</Text>
+              </Card>
             </ScrollView>
         )
     }

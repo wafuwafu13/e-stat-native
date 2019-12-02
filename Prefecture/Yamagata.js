@@ -28,6 +28,19 @@ class Yamagata extends Component {
                   <Text></Text>
                   <Text>合計特殊出生率：1.45(34位)</Text>
               </Card>
+              <Card title="自然環境">
+                  <Text>総面積：932,315ha(9位)</Text>
+                  <Text></Text>
+                  <Text>年平均気温：11.9℃(42位)</Text>
+                  <Text></Text>
+                  <Text>年間快晴日数：10日(43位)</Text>
+                  <Text></Text>
+                  <Text>年間降水日数：149日(8位)</Text>
+                  <Text></Text>
+                  <Text>年間雪日数：90日(5位)</Text>
+                  <Text></Text>
+                  <Text>年平均相対湿度：74%(9位)</Text>
+              </Card>
             </ScrollView>
         )
     }

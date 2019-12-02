@@ -28,6 +28,19 @@ class Hokkaido extends Component {
                   <Text></Text>
                   <Text>合計特殊出生率：1.29(46位)</Text>
               </Card>
+              <Card title="自然環境">
+                  <Text>総面積：7,842,078ha(1位)</Text>
+                  <Text></Text>
+                  <Text>年平均気温：9.1℃(8位)</Text>
+                  <Text></Text>
+                  <Text>年間快晴日数：12日(40位)</Text>
+                  <Text></Text>
+                  <Text>年間降水日数：146日(11位)</Text>
+                  <Text></Text>
+                  <Text>年間雪日数：130日(1位)</Text>
+                  <Text></Text>
+                  <Text>年平均相対湿度：67%(31位)</Text>
+              </Card>
             </ScrollView>
         )
     }

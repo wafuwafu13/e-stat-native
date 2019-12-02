@@ -28,6 +28,19 @@ class Tokusima extends Component {
                   <Text></Text>
                   <Text>合計特殊出生率：1.51(25位)</Text>
               </Card>
+              <Card title="自然環境">
+                  <Text>総面積：414,680ha(36位)</Text>
+                  <Text></Text>
+                  <Text>年平均気温：16.7℃(14位)</Text>
+                  <Text></Text>
+                  <Text>年間快晴日数：26日(21位)</Text>
+                  <Text></Text>
+                  <Text>年間降水日数：82日(46位)</Text>
+                  <Text></Text>
+                  <Text>年間雪日数：10日(32位)</Text>
+                  <Text></Text>
+                  <Text>年平均相対湿度：68%(26位)</Text>
+              </Card>
             </ScrollView>
         )
     }

@@ -28,6 +28,19 @@ class Nagano extends Component {
                   <Text></Text>
                   <Text>合計特殊出生率：1.56(14位)</Text>
               </Card>
+              <Card title="自然環境">
+                  <Text>総面積：1,356,156ha(4位)</Text>
+                  <Text></Text>
+                  <Text>年平均気温：11.9℃(42位)</Text>
+                  <Text></Text>
+                  <Text>年間快晴日数：15日(34位)</Text>
+                  <Text></Text>
+                  <Text>年間降水日数：116日(16位)</Text>
+                  <Text></Text>
+                  <Text>年間雪日数：76日(6位)</Text>
+                  <Text></Text>
+                  <Text>年平均相対湿度：75%(6位)</Text>
+              </Card>
             </ScrollView>
         )
     }

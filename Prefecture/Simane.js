@@ -28,6 +28,19 @@ class Simane extends Component {
                   <Text></Text>
                   <Text>合計特殊出生率：1.72(3位)</Text>
               </Card>
+              <Card title="自然環境">
+                  <Text>総面積：670,806ha(19位)</Text>
+                  <Text></Text>
+                  <Text>年平均気温：15.3℃(29位)</Text>
+                  <Text></Text>
+                  <Text>年間快晴日数：21日(31位)</Text>
+                  <Text></Text>
+                  <Text>年間降水日数：148日(9位)</Text>
+                  <Text></Text>
+                  <Text>年間雪日数：35日(15位)</Text>
+                  <Text></Text>
+                  <Text>年平均相対湿度：76%(3位)</Text>
+              </Card>
             </ScrollView>
         )
     }

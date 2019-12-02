@@ -28,6 +28,19 @@ class Akita extends Component {
                   <Text></Text>
                   <Text>合計特殊出生率：1.35(39位)</Text>
               </Card>
+              <Card title="自然環境">
+                  <Text>総面積：1,163,752ha(6位)</Text>
+                  <Text></Text>
+                  <Text>年平均気温：11.9℃(42位)</Text>
+                  <Text></Text>
+                  <Text>年間快晴日数：6日(46位)</Text>
+                  <Text></Text>
+                  <Text>年間降水日数：192日(1位)</Text>
+                  <Text></Text>
+                  <Text>年間雪日数：102日(4位)</Text>
+                  <Text></Text>
+                  <Text>年平均相対湿度：76%(3位)</Text>
+              </Card>
             </ScrollView>
         )
     }
