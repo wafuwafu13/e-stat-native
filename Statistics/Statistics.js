@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {View, Dimensions, ScrollView, Image } from 'react-native';
+import { Text, View, Dimensions, ScrollView, Image } from 'react-native';
 import ParallaxScrollView from 'react-native-parallax-scroll-view';
 import { Button, Card } from 'react-native-elements';
 import top from '../assets/Statistics.png';
@@ -36,6 +36,7 @@ class Statistics extends Component {
             )}>
               <ScrollView style={{backgroundColor: '#DDDDDD'}}>
                 <Card>
+                  <Text>1.母集団・標本・確率変数</Text>
                 </Card>
                 <Button
                   title="変数・値・分布"
