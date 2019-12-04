@@ -16,6 +16,12 @@ class NavigateBody extends Component {
             },
             {
                 initialRouteName: 'Body',
+
+                defaultNavigationOptions: {
+                    headerStyle: {
+                      backgroundColor: '#DDDDDD',
+                    },
+                  },
             },
         );
 

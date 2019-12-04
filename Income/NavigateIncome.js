@@ -14,6 +14,12 @@ class NavigateIncome extends Component {
             },
             {
                 initialRouteName: 'Income',
+
+                defaultNavigationOptions: {
+                    headerStyle: {
+                      backgroundColor: '#DDDDDD',
+                    },
+                  },
             },
         );
 

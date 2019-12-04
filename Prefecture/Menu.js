@@ -20,7 +20,6 @@ class Menu extends Component {
     static navigationOptions = {
       headerTitle: () => <LogoTitle />,
       title: '戻る',
-      headerTintColor: 'red',
     };
 
     render(){

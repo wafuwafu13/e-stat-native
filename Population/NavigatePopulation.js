@@ -22,6 +22,12 @@ class NavigatePopulation extends Component {
             },
             {
                 initialRouteName: 'Population',
+
+                defaultNavigationOptions: {
+                    headerStyle: {
+                      backgroundColor: '#DDDDDD',
+                    },
+                  },
             },
         );
 
