@@ -5,6 +5,7 @@ import NavigatePopulation from './Population/NavigatePopulation';
 import NavigateBody from './Body/NavigateBody';
 import NavigateMarriage from './Marriage/NavigateMarriage';
 import NavigateIncome from './Income/NavigateIncome';
+import NavigateStatistics from './Statistics/NavigateStatistics';
 
 class App extends Component {
     render(){
@@ -15,6 +16,7 @@ class App extends Component {
           <NavigateBody tabLabel="身長・体重" />
           <NavigateMarriage tabLabel="結婚" />
           <NavigateIncome tabLabel="年収" />
+          <NavigateStatistics tabLabel="統計学" />
         </ScrollableTabView>
       )
     }
