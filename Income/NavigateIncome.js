@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 import Income from './Income';
-import Test from './Test';
+import AnnualIncomeWeb from './AnnualIncomeWeb';
 
 class NavigateIncome extends Component {
 
@@ -10,7 +10,7 @@ class NavigateIncome extends Component {
         const RootStack = createStackNavigator(
             {
                 Income: Income,
-                Test: Test,
+                AnnualIncomeWeb: AnnualIncomeWeb,
             },
             {
                 initialRouteName: 'Income',

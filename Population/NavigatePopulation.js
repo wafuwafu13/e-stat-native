@@ -2,7 +2,11 @@ import React, { Component } from 'react';
 import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 import Population from './Population';
-import Test from './Test';
+import SumWeb from './SumWeb';
+import SexWeb from './SexWeb';
+import EstimateWeb from './EstimateWeb';
+import BirthrateWeb from './BirthrateWeb';
+import TransitionWeb from './TransitionWeb';
 
 class NavigatePopulation extends Component {
 
@@ -10,7 +14,11 @@ class NavigatePopulation extends Component {
         const RootStack = createStackNavigator(
             {
                 Population: Population,
-                Test: Test,
+                SumWeb: SumWeb,
+                SexWeb: SexWeb,
+                EstimateWeb: EstimateWeb,
+                BirthrateWeb: BirthrateWeb,
+                TransitionWeb: TransitionWeb,
             },
             {
                 initialRouteName: 'Population',

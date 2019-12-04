@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import { ActivityIndicator, View} from 'react-native';
+import { ActivityIndicator} from 'react-native';
 import { WebView } from 'react-native-webview';
 import {Dimensions} from 'react-native';
 
-class Test extends Component {
+class SexWeb extends Component {
 
     state = {
       animating: true
@@ -24,10 +24,10 @@ class Test extends Component {
         )
       } else{
       return (
-          <WebView source={{ uri: 'https://www.amazarashi.com/' }} />
+          <WebView source={{ uri: 'https://toukei.fc2.net/blog-entry-2.html' }} />
       );
       }
     }
   }
 
-export default Test;
+export default SexWeb;

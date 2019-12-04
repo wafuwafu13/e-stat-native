@@ -25,12 +25,24 @@ class Marriage extends Component {
                 <SumMariage />
                 <Button
                   title="解説を見る"
-                  onPress= {()=> this.props.navigation.navigate('Test')}
+                  onPress= {()=> this.props.navigation.navigate('SumWeb')}
                   type="clear"
                   titleStyle= {{color:'#000080'}}
                 />
                 <Unmarrid />
+                <Button
+                  title="解説を見る"
+                  onPress= {()=> this.props.navigation.navigate('UnmarrideWeb')}
+                  type="clear"
+                  titleStyle= {{color:'#000080'}}
+                />
                 <Divorcerate />
+                <Button
+                  title="解説を見る"
+                  onPress= {()=> this.props.navigation.navigate('DivorcerateWeb')}
+                  type="clear"
+                  titleStyle= {{color:'#000080'}}
+                />
                 <View style={{alignItems: 'center', marginTop: 20}}>
                  <Icon name="heart" size={50} style={{color: 'white'}}/>
                </View>

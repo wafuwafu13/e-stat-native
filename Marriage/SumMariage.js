@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { ScrollView, Dimensions } from 'react-native';
-import { VictoryLine, VictoryChart, VictoryTheme, VictoryAxis } from 'victory-native';
+import { VictoryScatter, VictoryChart, VictoryTheme, VictoryAxis } from 'victory-native';
 import { Card } from 'react-native-elements';
 
 class SumMariage extends Component {
@@ -77,7 +77,6 @@ class SumMariage extends Component {
         sumMariageBox[30].y = 666575
         sumMariageBox[31].y = 556730
         sumMariageBox[32].y = 506674
-        
 
         const data = sumMariageBox;
         const height = Dimensions.get('window').height;
@@ -99,9 +98,9 @@ class SumMariage extends Component {
                       tickFormat={(y) => (`${y/10000}万`)}
                       tickValues={[500000,600000,700000,800000,900000,1000000,1100000]}
                     />
-                        <VictoryLine
+                        <VictoryScatter
                           data={data}
-                          style={{data: {stroke: "gold"}}}
+                          style={{data: {fill: "gold"}}}
                         />
                    </VictoryChart>
                </Card>
