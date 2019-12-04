@@ -10,7 +10,22 @@ import top from '../assets/Population.png';
 import { Button } from 'react-native-elements';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
 
+class LogoTitle extends React.Component {
+  render() {
+    return (
+      <Icon
+        name="human-handsdown" size={30} style={{color:'white'}}
+      />
+    );
+  }
+}
+
 class Population extends Component {
+
+  static navigationOptions = {
+    headerTitle: () => <LogoTitle />,
+    title: '戻る',
+  };
 
     render() {
         let width = Dimensions.get('window').width;

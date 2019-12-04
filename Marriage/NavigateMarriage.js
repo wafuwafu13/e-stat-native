@@ -19,6 +19,12 @@ class NavigateMarriage extends Component {
             },
             {
                 initialRouteName: 'Marriage',
+
+                defaultNavigationOptions: {
+                    headerStyle: {
+                      backgroundColor: '#DDDDDD',
+                    },
+                  },
             },
         );
 

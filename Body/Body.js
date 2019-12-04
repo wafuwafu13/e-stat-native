@@ -7,7 +7,23 @@ import top from '../assets/Body.png';
 import { Button } from 'react-native-elements';
 import Icon from 'react-native-vector-icons/FontAwesome5'
 
+class LogoTitle extends React.Component {
+  render() {
+    return (
+      <Icon
+        name="weight" size={30} style={{color:'white'}}
+      />
+    );
+  }
+}
+
 class Body extends Component {
+
+  static navigationOptions = {
+    headerTitle: () => <LogoTitle />,
+    title: '戻る',
+  };
+  
     render() {
         let width = Dimensions.get('window').width;
         let height = Dimensions.get('window').height;

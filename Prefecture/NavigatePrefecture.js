@@ -52,12 +52,6 @@ import Okinawa from './Okinawa';
 
 class NavigatePrefecture extends Component {
 
-    static navigationOptions = {
-        headerStyle: {
-          backgroundColor: 'red',
-        },
-      };
-
     render(){
         const RootStack = createStackNavigator(
             {

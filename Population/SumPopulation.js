@@ -5,6 +5,10 @@ import { VictoryBar, VictoryChart, VictoryTheme, VictoryAxis } from 'victory-nat
 import { Card } from 'react-native-elements';
 
 class SumPopulation extends Component {
+    static navigationOptions = {
+      title: '年齢別総人口 (平成27年国勢調査)',
+      headerTintColor: '#000080',
+    }
 
     constructor(props) {
         super(props);

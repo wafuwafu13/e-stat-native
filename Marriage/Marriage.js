@@ -8,7 +8,23 @@ import top from '../assets/Marriage.png';
 import { Button } from 'react-native-elements';
 import Icon from 'react-native-vector-icons/AntDesign'
 
+class LogoTitle extends React.Component {
+  render() {
+    return (
+      <Icon
+        name="heart" size={30} style={{color:'white'}}
+      />
+    );
+  }
+}
+
 class Marriage extends Component {
+
+  static navigationOptions = {
+    headerTitle: () => <LogoTitle />,
+    title: '戻る',
+  };
+
     render() {
         let width = Dimensions.get('window').width;
         let height = Dimensions.get('window').height;
