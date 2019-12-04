@@ -28,14 +28,38 @@ class Population extends Component {
                 <SumPopulation />
                 <Button
                   title="解説を見る"
-                  onPress= {()=> this.props.navigation.navigate('Test')}
+                  onPress= {()=> this.props.navigation.navigate('SumWeb')}
                   type="clear"
                   titleStyle= {{color:'#000080'}}
                 />
                 <SexPopulation />
+                <Button
+                  title="解説を見る"
+                  onPress= {()=> this.props.navigation.navigate('SexWeb')}
+                  type="clear"
+                  titleStyle= {{color:'#000080'}}
+                />
                 <EstimatePopulation />
+                <Button
+                  title="解説を見る"
+                  onPress= {()=> this.props.navigation.navigate('EstimateWeb')}
+                  type="clear"
+                  titleStyle= {{color:'#000080'}}
+                />
                 <Birthrate />
+                <Button
+                  title="解説を見る"
+                  onPress= {()=> this.props.navigation.navigate('BirthrateWeb')}
+                  type="clear"
+                  titleStyle= {{color:'#000080'}}
+                />
                 <TransitionPopulation />
+                <Button
+                  title="解説を見る"
+                  onPress= {()=> this.props.navigation.navigate('TransitionWeb')}
+                  type="clear"
+                  titleStyle= {{color:'#000080'}}
+                />
                 <View style={{alignItems: 'center', marginTop: 20}}>
                   <Icon name="human-handsdown" size={50} style={{color: 'white'}}/>
                 </View>

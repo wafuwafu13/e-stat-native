@@ -48,7 +48,7 @@ class TransitionPopulation extends Component {
       const height = Dimensions.get('window').height;
       return(
         <ScrollView>
-            <Card title="人口推移" height={height*0.95} containerStyle={{paddingTop: 20}}>
+            <Card title="人口推移 (国勢調査)" height={height*0.95} containerStyle={{paddingTop: 20}}>
                 <VictoryChart
                  theme={VictoryTheme.material}
                  height={height*0.8}

@@ -24,11 +24,17 @@ class Body extends Component {
                 <Height />
                 <Button
                   title="解説を見る"
-                  onPress= {()=> this.props.navigation.navigate('Test')}
+                  onPress= {()=> this.props.navigation.navigate('HeightWeb')}
                   type="clear"
                   titleStyle= {{color:'#000080'}}
                 />
                 <Weight />
+                <Button
+                  title="解説を見る"
+                  onPress= {()=> this.props.navigation.navigate('WeightWeb')}
+                  type="clear"
+                  titleStyle= {{color:'#000080'}}
+                />
                 <View style={{alignItems: 'center', marginTop: 20}}>
                  <Icon name="weight" size={50} style={{color: 'white'}}/>
                </View>

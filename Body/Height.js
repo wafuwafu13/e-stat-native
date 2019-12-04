@@ -133,7 +133,7 @@ class Height extends Component {
       const height = Dimensions.get('window').height;
       return(
         <ScrollView>
-            <Card title="男女別身長 (平成28年国民健康・栄養調査)" height={height*0.95} containerStyle={{paddingTop: 20}}>
+            <Card title="男女別平均身長 (平成28年国民健康・栄養調査)" height={height*0.95} containerStyle={{paddingTop: 20}}>
                 <VictoryChart
                  theme={VictoryTheme.material}
                  height={height*0.8}

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Text, ScrollView, Dimensions } from 'react-native';
 import axios from 'axios';
 import { VictoryBar, VictoryChart, VictoryTheme, VictoryAxis } from 'victory-native';
-import { Card, Button } from 'react-native-elements';
+import { Card } from 'react-native-elements';
 
 class SumPopulation extends Component {
 

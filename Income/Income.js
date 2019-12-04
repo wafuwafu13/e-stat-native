@@ -23,7 +23,7 @@ class Income extends Component {
                 <AnnualIncome />
                 <Button
                   title="解説を見る"
-                  onPress= {()=> this.props.navigation.navigate('Test')}
+                  onPress= {()=> this.props.navigation.navigate('AnnualIncomeWeb')}
                   type="clear"
                   titleStyle= {{color:'#000080'}}
                 />

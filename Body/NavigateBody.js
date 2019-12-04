@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 import Body from './Body';
-import Test from './Test';
+import HeightWeb from './HeightWeb';
+import WeightWeb from './WeightWeb';
 
 class NavigateBody extends Component {
 
@@ -10,7 +11,8 @@ class NavigateBody extends Component {
         const RootStack = createStackNavigator(
             {
                 Body: Body,
-                Test: Test,
+                HeightWeb: HeightWeb,
+                WeightWeb: WeightWeb,
             },
             {
                 initialRouteName: 'Body',

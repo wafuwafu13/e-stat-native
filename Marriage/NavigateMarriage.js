@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 import Marriage from './Marriage';
-import Test from './Test';
+import SumWeb from './SumWeb';
+import UnmarrideWeb from './UnmarrideWeb';
+import DivorcerateWeb from './DivorcerateWeb'
 
 class NavigateMarriage extends Component {
 
@@ -10,7 +12,10 @@ class NavigateMarriage extends Component {
         const RootStack = createStackNavigator(
             {
                 Marriage: Marriage,
-                Test: Test,
+                SumWeb: SumWeb,
+                UnmarrideWeb: UnmarrideWeb,
+                DivorcerateWeb: DivorcerateWeb,
+
             },
             {
                 initialRouteName: 'Marriage',

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, ScrollView, Dimensions } from 'react-native';
+import { ScrollView, Dimensions } from 'react-native';
 import { VictoryLine, VictoryChart, VictoryTheme, VictoryAxis, VictoryGroup } from 'victory-native';
 import { Card } from 'react-native-elements';
 
@@ -138,7 +138,7 @@ class Weight extends Component {
         const height = Dimensions.get('window').height;
         return(
           <ScrollView>
-              <Card title="男女別体重 (平成28年国民健康・栄養調査)" height={height*0.95} containerStyle={{paddingTop: 20}}>
+              <Card title="男女別平均体重 (平成28年国民健康・栄養調査)" height={height*0.95} containerStyle={{paddingTop: 20}}>
                   <VictoryChart
                    theme={VictoryTheme.material}
                    height={height*0.8}
