@@ -89,7 +89,7 @@ class Birthrate extends Component {
       } else
       return(
         <ScrollView>
-            <Card title="合計特殊出生率" height={height*0.95} containerStyle={{paddingTop: 20}}>
+            <Card title="合計特殊出生率" height={height*0.95} containerStyle={{paddingTop: 20,alignItems: 'center'}}>
                 <VictoryChart
                  theme={VictoryTheme.material}
                  height={height*0.8}

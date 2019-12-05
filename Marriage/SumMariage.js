@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { ScrollView, Dimensions } from 'react-native';
 import { VictoryScatter, VictoryChart, VictoryTheme, VictoryAxis } from 'victory-native';
 import { Card } from 'react-native-elements';
+import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
+
 
 class SumMariage extends Component {
 
@@ -86,7 +88,7 @@ class SumMariage extends Component {
         }
         return(
           <ScrollView>
-              <Card title="結婚件数 (人口動態調査)" height={height*0.95} containerStyle={{paddingTop: 20}}>
+              <Card title="結婚件数 (人口動態調査)" height={hp('95%')} containerStyle={{paddingTop: 20}}>
                   <VictoryChart
                    theme={VictoryTheme.material}
                    height={height*0.8}
@@ -101,6 +103,7 @@ class SumMariage extends Component {
                         <VictoryScatter
                           data={data}
                           style={{data: {fill: "gold"}}}
+                          size={5}
                         />
                    </VictoryChart>
                </Card>

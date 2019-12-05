@@ -7,6 +7,8 @@ import Divorcerate from './Divorcerate';
 import top from '../assets/Marriage.png';
 import { Button } from 'react-native-elements';
 import Icon from 'react-native-vector-icons/AntDesign'
+import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
+
 
 class LogoTitle extends React.Component {
   render() {
@@ -31,7 +33,7 @@ class Marriage extends Component {
         return(
             <ParallaxScrollView
             backgroundImage="url(${top})"
-            parallaxHeaderHeight={300}
+            parallaxHeaderHeight={hp('80%')}
             renderForeground={() => (
               <View>
                 <Image source={top} style={{width: width, height: height}}/>

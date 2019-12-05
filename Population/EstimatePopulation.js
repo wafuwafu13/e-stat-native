@@ -3,6 +3,7 @@ import { Text, ScrollView, Dimensions } from 'react-native';
 import axios from 'axios';
 import { VictoryBar, VictoryChart, VictoryGroup, VictoryTheme, VictoryAxis } from 'victory-native';
 import { Card } from 'react-native-elements';
+import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
 
 class EstimatePopulation extends Component {
 
@@ -89,7 +90,7 @@ class EstimatePopulation extends Component {
      } else {
        return(
         <ScrollView>
-           <Card title="人口推計 (平成30年10月1日)" height={height*0.95} containerStyle={{paddingTop: 20,}}>
+           <Card title="人口推計 (平成30年10月1日)" height={hp('95%')} containerStyle={{paddingTop: 20}}>
              <VictoryChart
                theme={VictoryTheme.material}
                height={height*0.8}

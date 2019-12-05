@@ -5,6 +5,8 @@ import AnnualIncome from './AnnualIncome';
 import top from '../assets/Income.png';
 import { Button } from 'react-native-elements';
 import Icon from 'react-native-vector-icons/FontAwesome5';
+import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
+
 
 class LogoTitle extends React.Component {
   render() {
@@ -29,7 +31,7 @@ class Income extends Component {
         return(
             <ParallaxScrollView
             backgroundImage="url(${top})"
-            parallaxHeaderHeight={300}
+            parallaxHeaderHeight={hp('95%')}
             renderForeground={() => (
               <View>
                 <Image source={top} style={{width: width, height: height}}/>

@@ -4,6 +4,8 @@ import ParallaxScrollView from 'react-native-parallax-scroll-view';
 import { Button, Card } from 'react-native-elements';
 import top from '../assets/Statistics.png';
 import Icon from 'react-native-vector-icons/SimpleLineIcons'
+import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
+
 
 class LogoTitle extends React.Component {
     render() {
@@ -28,7 +30,7 @@ class Statistics extends Component {
         return(
             <ParallaxScrollView
             backgroundImage="url(${logo})"
-            parallaxHeaderHeight={300}
+            parallaxHeaderHeight={hp('80%')}
             renderForeground={() => (
               <View>
                 <Image source={top} style={{width: width, height: height}}/>
