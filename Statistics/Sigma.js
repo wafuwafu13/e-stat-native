@@ -3,9 +3,9 @@ import { ActivityIndicator } from 'react-native';
 import { WebView } from 'react-native-webview';
 import {Dimensions} from 'react-native';
 
-class Variable extends Component {
+class Sigma extends Component {
     static navigationOptions = {
-        title: '変数・値・分布',
+        title: 'シグマの計算',
         headerTintColor: '#000080',
     }
 
@@ -28,10 +28,10 @@ class Variable extends Component {
           )
         } else{
         return (
-            <WebView source={{ uri: 'https://toukei.fc2.net/blog-entry-12.html' }} />
+            <WebView source={{ uri: 'https://toukei.fc2.net/blog-entry-15.html' }} />
         );
         }
     }
 }
 
-export default Variable;
+export default Sigma;

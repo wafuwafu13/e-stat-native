@@ -35,15 +35,39 @@ class Statistics extends Component {
               </View>
             )}>
               <ScrollView style={{backgroundColor: '#DDDDDD'}}>
-                <Card>
-                  <Text>1.母集団・標本・確率変数</Text>
+                <Card　containerStyle={{alignItems: 'center',}}>
+                  <Text>第1章  母集団・標本・確率変数</Text>
                 </Card>
                 <Button
-                  title="変数・値・分布"
+                  title="1-1  変数・分布"
                   onPress= {()=> this.props.navigation.navigate('Variable')}
                   type="clear"
                   titleStyle= {{color:'#000080'}}
                 />
+                <Button
+                  title="1-2  平均"
+                  onPress= {()=> this.props.navigation.navigate('Average')}
+                  type="clear"
+                  titleStyle= {{color:'#000080'}}
+                />
+                <Button
+                  title="1-3  分散"
+                  onPress= {()=> this.props.navigation.navigate('Dispersion')}
+                  type="clear"
+                  titleStyle= {{color:'#000080'}}
+                />
+                <Card　containerStyle={{alignItems: 'center',}}>
+                  <Text>第6章  数学的知識</Text>
+                </Card>
+                <Button
+                  title="6-1  シグマの計算"
+                  onPress= {()=> this.props.navigation.navigate('Sigma')}
+                  type="clear"
+                  titleStyle= {{color:'#000080'}}
+                />
+                <View style={{alignItems: 'center', marginTop: 20}}>
+                  <Icon name="graph" size={50} style={{color: 'white'}}/>
+                </View>
               </ScrollView>
             </ParallaxScrollView>
         )
