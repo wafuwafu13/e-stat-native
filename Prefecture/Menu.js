@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import {View, Dimensions, ScrollView, Image } from 'react-native';
+import { Text, View, Dimensions, ScrollView, Image } from 'react-native';
 import ParallaxScrollView from 'react-native-parallax-scroll-view';
-import { Button } from 'react-native-elements';
+import { Card, Button } from 'react-native-elements';
 import top from '../assets/Prefecture.png';
 import Icon from 'react-native-vector-icons/FontAwesome5'
 
@@ -35,6 +35,9 @@ class Menu extends Component {
               </View>
             )}>
               <ScrollView style={{backgroundColor: '#DDDDDD'}}>
+                <Card containerStyle={{alignItems: 'center',}}>
+                  <Text>北海道・東北</Text>
+                </Card>
                 <Button
                   title="北海道"
                   onPress= {()=> this.props.navigation.navigate('Hokkaido')}
@@ -77,6 +80,9 @@ class Menu extends Component {
                   type="clear"
                   titleStyle= {{color:'#000080'}}
                 />
+                <Card　containerStyle={{alignItems: 'center',}}>
+                  <Text>関東</Text>
+                </Card>
                 <Button
                   title="茨城"
                   onPress= {()=> this.props.navigation.navigate('Ibaragi')}
@@ -119,6 +125,9 @@ class Menu extends Component {
                   type="clear"
                   titleStyle= {{color:'#000080'}}
                 />
+                <Card　containerStyle={{alignItems: 'center',}}>
+                  <Text>北陸・甲信</Text>
+                </Card>
                 <Button
                   title="新潟"
                   onPress= {()=> this.props.navigation.navigate('Niigata')}
@@ -155,6 +164,9 @@ class Menu extends Component {
                   type="clear"
                   titleStyle= {{color:'#000080'}}
                 />
+                <Card　containerStyle={{alignItems: 'center',}}>
+                  <Text>東海</Text>
+                </Card>
                 <Button
                   title="岐阜"
                   onPress= {()=> this.props.navigation.navigate('Gifu')}
@@ -179,6 +191,9 @@ class Menu extends Component {
                   type="clear"
                   titleStyle= {{color:'#000080'}}
                 />
+                <Card　containerStyle={{alignItems: 'center',}}>
+                  <Text>近畿</Text>
+                </Card>
                  <Button
                   title="滋賀"
                   onPress= {()=> this.props.navigation.navigate('Siga')}
@@ -215,6 +230,9 @@ class Menu extends Component {
                   type="clear"
                   titleStyle= {{color:'#000080'}}
                 />
+                <Card　containerStyle={{alignItems: 'center',}}>
+                  <Text>中国</Text>
+                </Card>
                 <Button
                   title="鳥取"
                   onPress= {()=> this.props.navigation.navigate('Tottori')}
@@ -245,6 +263,9 @@ class Menu extends Component {
                   type="clear"
                   titleStyle= {{color:'#000080'}}
                 />
+                <Card　containerStyle={{alignItems: 'center',}}>
+                  <Text>四国</Text>
+                </Card>
                 <Button
                   title="徳島"
                   onPress= {()=> this.props.navigation.navigate('Tokusima')}
@@ -269,6 +290,9 @@ class Menu extends Component {
                   type="clear"
                   titleStyle= {{color:'#000080'}}
                 />
+                <Card　containerStyle={{alignItems: 'center',}}>
+                  <Text>九州・沖縄</Text>
+                </Card>
                 <Button
                   title="福岡"
                   onPress= {()=> this.props.navigation.navigate('Fukuoka')}

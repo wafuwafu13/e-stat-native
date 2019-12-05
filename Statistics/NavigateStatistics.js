@@ -3,6 +3,9 @@ import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 import Statistics from './Statistics';
 import Variable from './Variable';
+import Average from './Average';
+import Dispersion from './Dispersion';
+import Sigma from './Sigma';
 
 class NavigateStatistics extends Component {
 
@@ -11,6 +14,9 @@ class NavigateStatistics extends Component {
             {
                 Statistics: Statistics,
                 Variable: Variable,
+                Average: Average,
+                Dispersion: Dispersion,
+                Sigma: Sigma,
             },
             {
                 initialRouteName: 'Statistics',
