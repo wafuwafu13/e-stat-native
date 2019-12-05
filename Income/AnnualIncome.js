@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { View, ScrollView, Dimensions } from 'react-native';
 import { VictoryBar, VictoryChart, VictoryTheme, VictoryAxis, VictoryGroup } from 'victory-native';
 import { Card } from 'react-native-elements';
+import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
+
 
 class AnnualIncome extends Component {
 
@@ -73,7 +75,7 @@ class AnnualIncome extends Component {
 
       return(
         <ScrollView>
-            <Card title="男女・年代別平均年収 (平成28年民間給与実態統計調査)" height={height*0.95} containerStyle={{paddingTop: 20}}>
+            <Card title="男女・年代別平均年収 (平成28年民間給与実態統計調査)" height={hp('95%')} containerStyle={{paddingTop: 20,alignItems: 'center'}}>
                 <VictoryChart
                  theme={VictoryTheme.material}
                  height={height*0.8}

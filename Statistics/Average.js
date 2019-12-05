@@ -12,13 +12,13 @@ class Average extends Component {
     state = {
         animating: true
       }
-    
+
       componentDidMount() {
         setTimeout(() => {
           this.setState({ animating: false })
         }, 5000);
       }
-  
+
       render() {
         const animating = this.state.animating
         const height = Dimensions.get('window').height; 
