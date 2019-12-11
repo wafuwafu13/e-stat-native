@@ -15,7 +15,6 @@ class Statistics extends Component {
                     <Text></Text>
                     <Text>Created by 田川裕隆</Text>
                     <Text>https://twitter.com/wafuwafu13_</Text>
-                    <Text>https://www.facebook.com/profile.php?id=100034761720542</Text>
                 </Card>
               </ScrollView>
         )
