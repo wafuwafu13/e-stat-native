@@ -14,7 +14,10 @@ class Statistics extends Component {
                     <Text>このサービスは、政府統計総合窓口(e-Stat)のAPI機能を使用していますが、サービスの内容は国によって保証されたものではありません。</Text>
                     <Text></Text>
                     <Text>Created by 田川裕隆</Text>
-                    <Text>https://twitter.com/wafuwafu13_</Text>
+                    <Text>twitter:https://twitter.com/wafuwafu13_</Text>
+                    <Text>github:https://github.com/wafuwafu13</Text>
+                    <Text>ブログ:https://toukei.fc2.net/</Text>
+                    <Text>ブログ:https://kyoupurog.hatenablog.com/</Text>
                 </Card>
               </ScrollView>
         )
