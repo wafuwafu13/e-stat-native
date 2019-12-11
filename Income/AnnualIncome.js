@@ -75,7 +75,7 @@ class AnnualIncome extends Component {
 
       return(
         <ScrollView>
-            <Card title="男女・年代別平均年収 (平成28年民間給与実態統計調査)" height={hp('95%')} containerStyle={{paddingTop: 20,alignItems: 'center'}}>
+            <Card title="男女・年代別平均年収 (平成28年民間給与実態統計調査)" height={hp('95%')} containerStyle={{paddingTop: 20}}>
                 <VictoryChart
                  theme={VictoryTheme.material}
                  height={height*0.8}
