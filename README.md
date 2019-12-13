@@ -1,4 +1,4 @@
-# e-stat-native
+# 日本統計 | 文系学生と学ぶ社会統計学
 
 誰もが見やすい統計アプリです。  
 [e-Stat](https://www.e-stat.go.jp/)のAPIを用いて作ったReactNativeのios版です。  
