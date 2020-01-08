@@ -14,6 +14,7 @@
   - react-native-scrollable-tab-view
   - react-native-parallax-scroll-view
   - react-native-webview
+  - Victory Native
 - Axios([e-Stat-api](https://www.e-stat.go.jp/api/))
 - Expo
 - VSCode(Visual Studio Code)
