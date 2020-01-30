@@ -6,7 +6,7 @@ import {Dimensions} from 'react-native';
 class Variable extends Component {
     static navigationOptions = {
         title: '変数・値・分布',
-        headerTintColor: '#000080',
+        headerTintColor: '#FFFF00',
     }
 
     state = {

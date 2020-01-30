@@ -6,7 +6,7 @@ import {Dimensions} from 'react-native';
 class Sigma extends Component {
     static navigationOptions = {
         title: 'シグマの計算',
-        headerTintColor: '#000080',
+        headerTintColor: '#FFFF00',
     }
 
     state = {

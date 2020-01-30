@@ -6,7 +6,7 @@ import {Dimensions} from 'react-native';
 class Dispersion extends Component {
     static navigationOptions = {
         title: '分散',
-        headerTintColor: '#000080',
+        headerTintColor: '#FFFF00',
     }
 
     state = {

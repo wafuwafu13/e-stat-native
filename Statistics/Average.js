@@ -6,7 +6,7 @@ import {Dimensions} from 'react-native';
 class Average extends Component {
     static navigationOptions = {
         title: '平均',
-        headerTintColor: '#000080',
+        headerTintColor: '#FFFF00',
     }
 
     state = {
