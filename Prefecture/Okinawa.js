@@ -5,7 +5,7 @@ import { Card } from 'react-native-elements';
 class Okinawa extends Component {
     static navigationOptions = {
         title: '沖縄',
-        headerTintColor: '#000080',
+        headerTintColor: '#FFFF00',
     }
 
     render(){

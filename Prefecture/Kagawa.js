@@ -5,7 +5,7 @@ import { Card } from 'react-native-elements';
 class Kagawa extends Component {
     static navigationOptions = {
         title: '香川',
-        headerTintColor: '#000080',
+        headerTintColor: '#FFFF00',
     }
 
     render(){

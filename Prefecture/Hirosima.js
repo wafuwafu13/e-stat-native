@@ -5,7 +5,7 @@ import { Card } from 'react-native-elements';
 class Hirosima extends Component {
     static navigationOptions = {
         title: '広島',
-        headerTintColor: '#000080',
+        headerTintColor: '#FFFF00',
     }
 
     render(){

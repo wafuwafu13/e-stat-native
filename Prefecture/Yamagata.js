@@ -4,8 +4,8 @@ import { Card } from 'react-native-elements';
 
 class Yamagata extends Component {
     static navigationOptions = {
-        title: '秋田',
-        headerTintColor: '#000080',
+        title: '山形',
+        headerTintColor: '#FFFF00',
     }
 
     render(){

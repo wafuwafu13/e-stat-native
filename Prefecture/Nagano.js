@@ -5,7 +5,7 @@ import { Card } from 'react-native-elements';
 class Nagano extends Component {
     static navigationOptions = {
         title: '長野',
-        headerTintColor: '#000080',
+        headerTintColor: '#FFFF00',
     }
 
     render(){

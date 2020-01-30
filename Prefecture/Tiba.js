@@ -5,7 +5,7 @@ import { Card } from 'react-native-elements';
 class Tiba extends Component {
     static navigationOptions = {
         title: '千葉',
-        headerTintColor: '#000080',
+        headerTintColor: '#FFFF00',
     }
 
     render(){

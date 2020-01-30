@@ -5,7 +5,7 @@ import { Card } from 'react-native-elements';
 class Nagasaki extends Component {
     static navigationOptions = {
         title: '長崎',
-        headerTintColor: '#000080',
+        headerTintColor: '#FFFF00',
     }
 
     render(){

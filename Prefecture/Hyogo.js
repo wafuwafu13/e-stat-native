@@ -5,7 +5,7 @@ import { Card } from 'react-native-elements';
 class Hyogo extends Component {
     static navigationOptions = {
         title: '兵庫',
-        headerTintColor: '#000080',
+        headerTintColor: '#FFFF00',
     }
 
     render(){

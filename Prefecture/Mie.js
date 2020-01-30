@@ -5,7 +5,7 @@ import { Card } from 'react-native-elements';
 class Mie extends Component {
     static navigationOptions = {
         title: '三重',
-        headerTintColor: '#000080',
+        headerTintColor: '#FFFF00',
     }
 
     render(){

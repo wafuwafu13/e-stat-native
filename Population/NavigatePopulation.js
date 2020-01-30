@@ -25,7 +25,7 @@ class NavigatePopulation extends Component {
 
                 defaultNavigationOptions: {
                     headerStyle: {
-                      backgroundColor: '#DDDDDD',
+                      backgroundColor: '#000055',
                     },
                   },
             },

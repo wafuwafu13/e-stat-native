@@ -5,7 +5,7 @@ import { Card } from 'react-native-elements';
 class Fukuoka extends Component {
     static navigationOptions = {
         title: '福岡',
-        headerTintColor: '#000080',
+        headerTintColor: '#FFFF00',
     }
 
     render(){

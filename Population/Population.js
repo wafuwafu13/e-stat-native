@@ -15,7 +15,7 @@ class LogoTitle extends React.Component {
   render() {
     return (
       <Icon
-        name="human-handsdown" size={30} style={{color:'white'}}
+        name="human-handsdown" size={30} style={{color:'#FFFF00'}}
       />
     );
   }
@@ -77,7 +77,7 @@ class Population extends Component {
                   titleStyle= {{color:'#000080'}}
                 />
                 <View style={{alignItems: 'center', marginTop: 20}}>
-                  <Icon name="human-handsdown" size={50} style={{color: 'white'}}/>
+                  <Icon name="human-handsdown" size={50} style={{color: '#000055'}}/>
                 </View>
               </ScrollView>
             </ParallaxScrollView>

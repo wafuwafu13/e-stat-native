@@ -5,7 +5,7 @@ import { Card } from 'react-native-elements';
 class Ibaragi extends Component {
     static navigationOptions = {
         title: '茨城',
-        headerTintColor: '#000080',
+        headerTintColor: '#FFFF00',
     }
 
     render(){

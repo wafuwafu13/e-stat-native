@@ -12,7 +12,7 @@ class LogoTitle extends React.Component {
   render() {
     return (
       <Icon
-        name="money-bill" size={30} style={{color:'white'}}
+        name="money-bill" size={30} style={{color:'#FFFF00'}}
       />
     );
   }
@@ -46,7 +46,7 @@ class Income extends Component {
                   titleStyle= {{color:'#000080'}}
                 />
                 <View style={{alignItems: 'center', marginTop: 20}}>
-                 <Icon name="money-bill" size={50} style={{color: 'white'}}/>
+                 <Icon name="money-bill" size={50} style={{color: '#000055'}}/>
                 </View>
               </ScrollView>
             </ParallaxScrollView>

@@ -5,7 +5,7 @@ import { Card } from 'react-native-elements';
 class Osaka extends Component {
     static navigationOptions = {
         title: '大阪',
-        headerTintColor: '#000080',
+        headerTintColor: '#FFFF00',
     }
 
     render(){

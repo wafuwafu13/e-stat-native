@@ -5,7 +5,7 @@ import { Card } from 'react-native-elements';
 class Wakayama extends Component {
     static navigationOptions = {
         title: '和歌山',
-        headerTintColor: '#000080',
+        headerTintColor: '#FFFF00',
     }
 
     render(){

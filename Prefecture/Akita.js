@@ -5,7 +5,7 @@ import { Card } from 'react-native-elements';
 class Akita extends Component {
     static navigationOptions = {
         title: '秋田',
-        headerTintColor: '#000080',
+        headerTintColor: '#FFFF00',
     }
 
     render(){

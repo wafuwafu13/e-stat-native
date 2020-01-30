@@ -5,7 +5,7 @@ import { Card } from 'react-native-elements';
 class Okayama extends Component {
     static navigationOptions = {
         title: '岡山',
-        headerTintColor: '#000080',
+        headerTintColor: '#FFFF00',
     }
 
     render(){

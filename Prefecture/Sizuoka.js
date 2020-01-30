@@ -5,7 +5,7 @@ import { Card } from 'react-native-elements';
 class Sizuoka extends Component {
     static navigationOptions = {
         title: '静岡',
-        headerTintColor: '#000080',
+        headerTintColor: '#FFFF00',
     }
 
     render(){

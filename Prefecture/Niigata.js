@@ -5,7 +5,7 @@ import { Card } from 'react-native-elements';
 class Niigata extends Component {
     static navigationOptions = {
         title: '新潟',
-        headerTintColor: '#000080',
+        headerTintColor: '#FFFF00',
     }
 
     render(){

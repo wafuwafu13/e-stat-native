@@ -5,7 +5,7 @@ import { Card } from 'react-native-elements';
 class Aiti extends Component {
     static navigationOptions = {
         title: '愛知',
-        headerTintColor: '#000080',
+        headerTintColor: '#FFFF00',
     }
 
     render(){

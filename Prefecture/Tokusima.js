@@ -5,7 +5,7 @@ import { Card } from 'react-native-elements';
 class Tokusima extends Component {
     static navigationOptions = {
         title: '徳島',
-        headerTintColor: '#000080',
+        headerTintColor: '#FFFF00',
     }
 
     render(){

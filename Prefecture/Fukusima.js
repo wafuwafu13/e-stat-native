@@ -4,8 +4,8 @@ import { Card } from 'react-native-elements';
 
 class Fukusima extends Component {
     static navigationOptions = {
-        title: '秋田',
-        headerTintColor: '#000080',
+        title: '福島',
+        headerTintColor: '#FFFF00',
     }
 
     render(){

@@ -5,7 +5,7 @@ import { Card } from 'react-native-elements';
 class Gunma extends Component {
     static navigationOptions = {
         title: '群馬',
-        headerTintColor: '#000080',
+        headerTintColor: '#FFFF00',
     }
 
     render(){

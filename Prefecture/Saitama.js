@@ -5,7 +5,7 @@ import { Card } from 'react-native-elements';
 class Saitama extends Component {
     static navigationOptions = {
         title: '埼玉',
-        headerTintColor: '#000080',
+        headerTintColor: '#FFFF00',
     }
 
     render(){

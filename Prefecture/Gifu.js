@@ -5,7 +5,7 @@ import { Card } from 'react-native-elements';
 class Gifu extends Component {
     static navigationOptions = {
         title: '岐阜',
-        headerTintColor: '#000080',
+        headerTintColor: '#FFFF00',
     }
 
     render(){

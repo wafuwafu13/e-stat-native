@@ -5,7 +5,7 @@ import { Card } from 'react-native-elements';
 class Yamaguti extends Component {
     static navigationOptions = {
         title: '山口',
-        headerTintColor: '#000080',
+        headerTintColor: '#FFFF00',
     }
 
     render(){

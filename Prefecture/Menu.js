@@ -10,7 +10,7 @@ class LogoTitle extends React.Component {
   render() {
     return (
       <Icon
-        name="money-bill-wave-alt" size={30} style={{color:'white'}}
+        name="money-bill-wave-alt" size={30} style={{color:'#FFFF00'}}
       />
     );
   }
@@ -29,7 +29,7 @@ class Menu extends Component {
         return(
             <ParallaxScrollView
             backgroundImage="url(${logo})"
-            parallaxHeaderHeight={hp('80%')}
+            parallaxHeaderHeight={hp('95%')}
             renderForeground={() => (
               <View>
                 <Image source={top} style={{width: width, height: height}}/>

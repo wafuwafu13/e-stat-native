@@ -5,7 +5,7 @@ import { Card } from 'react-native-elements';
 class Totigi extends Component {
     static navigationOptions = {
         title: '栃木',
-        headerTintColor: '#000080',
+        headerTintColor: '#FFFF00',
     }
 
     render(){

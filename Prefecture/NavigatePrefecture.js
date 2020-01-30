@@ -109,7 +109,7 @@ class NavigatePrefecture extends Component {
 
                 defaultNavigationOptions: {
                     headerStyle: {
-                      backgroundColor: '#DDDDDD',
+                      backgroundColor: '#000055',
                     },
                   },
             },

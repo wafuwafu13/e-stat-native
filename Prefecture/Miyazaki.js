@@ -5,7 +5,7 @@ import { Card } from 'react-native-elements';
 class Miyazaki extends Component {
     static navigationOptions = {
         title: '宮崎',
-        headerTintColor: '#000080',
+        headerTintColor: '#FFFF00',
     }
 
     render(){

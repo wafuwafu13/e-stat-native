@@ -5,7 +5,7 @@ import { Card } from 'react-native-elements';
 class Siga extends Component {
     static navigationOptions = {
         title: '滋賀',
-        headerTintColor: '#000080',
+        headerTintColor: '#FFFF00',
     }
 
     render(){

@@ -5,7 +5,7 @@ import { Card } from 'react-native-elements';
 class Aomori extends Component {
     static navigationOptions = {
         title: '青森',
-        headerTintColor: '#000080',
+        headerTintColor: '#FFFF00',
     }
 
     render(){

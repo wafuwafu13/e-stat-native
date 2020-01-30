@@ -5,7 +5,7 @@ import { Card } from 'react-native-elements';
 class Toyama extends Component {
     static navigationOptions = {
         title: '富山',
-        headerTintColor: '#000080',
+        headerTintColor: '#FFFF00',
     }
 
     render(){

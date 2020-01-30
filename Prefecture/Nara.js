@@ -5,7 +5,7 @@ import { Card } from 'react-native-elements';
 class Nara extends Component {
     static navigationOptions = {
         title: '奈良',
-        headerTintColor: '#000080',
+        headerTintColor: '#FFFF00',
     }
 
     render(){

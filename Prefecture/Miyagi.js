@@ -5,7 +5,7 @@ import { Card } from 'react-native-elements';
 class Miyagi extends Component {
     static navigationOptions = {
         title: '宮城',
-        headerTintColor: '#000080',
+        headerTintColor: '#FFFF00',
     }
 
     render(){

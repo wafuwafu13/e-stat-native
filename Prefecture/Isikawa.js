@@ -5,7 +5,7 @@ import { Card } from 'react-native-elements';
 class Isikawa extends Component {
     static navigationOptions = {
         title: '石川',
-        headerTintColor: '#000080',
+        headerTintColor: '#FFFF00',
     }
 
     render(){

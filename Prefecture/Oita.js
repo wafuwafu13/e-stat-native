@@ -5,7 +5,7 @@ import { Card } from 'react-native-elements';
 class Oita extends Component {
     static navigationOptions = {
         title: '大分',
-        headerTintColor: '#000080',
+        headerTintColor: '#FFFF00',
     }
 
     render(){

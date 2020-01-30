@@ -5,7 +5,7 @@ import { Card } from 'react-native-elements';
 class Tottori extends Component {
     static navigationOptions = {
         title: '鳥取',
-        headerTintColor: '#000080',
+        headerTintColor: '#FFFF00',
     }
 
     render(){
