@@ -37,20 +37,16 @@ class SumPopulation extends Component {
       GET_URL += "&cdCat01=" + cdCat01;
       GET_URL += "&appId=" + escape(APP_ID);
       GET_URL += "&statsDataId=" + escape(statsDataId);
+      let sumPopulationBox = [];
+      for(let i = 0; i <= 98; i++){
+          sumPopulationBox.push({});
+          sumPopulationBox[i].x = i;
+      }
       axios.get(GET_URL)
       .then(
         (result) => {
-            let start = 1;
-            let end = 99;
-            let sumPopulationBox = [];
-            for(let i = start; i <= end; i++){
-                sumPopulationBox.push({});
-            }
-            for(let i = 0; i <= 98; i++){
-                sumPopulationBox[i].x = i;
-            }
-            for(let i = start; i <= end; i++){
-                sumPopulationBox[i-start].y = Number(result.data.GET_STATS_DATA.STATISTICAL_DATA.DATA_INF.VALUE[i].$)
+            for(let i = 1; i <= 99; i++){
+                sumPopulationBox[i-1].y = Number(result.data.GET_STATS_DATA.STATISTICAL_DATA.DATA_INF.VALUE[i].$)
             }
             this.setState({
                 isLoaded: true,

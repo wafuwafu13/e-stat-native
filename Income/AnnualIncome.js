@@ -9,66 +9,29 @@ class AnnualIncome extends Component {
 
     render(){
       let manAnnualIncomeBox = [];
-      for(let i = 0; i <= 11; i++){
-          manAnnualIncomeBox.push({});
-      }
-      manAnnualIncomeBox[0].x = 17
-      manAnnualIncomeBox[1].x = 22
-      manAnnualIncomeBox[2].x = 27
-      manAnnualIncomeBox[3].x = 32
-      manAnnualIncomeBox[4].x = 37
-      manAnnualIncomeBox[5].x = 42
-      manAnnualIncomeBox[6].x = 47
-      manAnnualIncomeBox[7].x = 52
-      manAnnualIncomeBox[8].x = 57
-      manAnnualIncomeBox[9].x = 62
-      manAnnualIncomeBox[10].x = 67
-      manAnnualIncomeBox[11].x = 72
-
-      manAnnualIncomeBox[0].y = 1572000
-      manAnnualIncomeBox[1].y = 2745000
-      manAnnualIncomeBox[2].y = 3827000
-      manAnnualIncomeBox[3].y = 4567000
-      manAnnualIncomeBox[4].y = 5117000
-      manAnnualIncomeBox[5].y = 5629000
-      manAnnualIncomeBox[6].y = 6327000
-      manAnnualIncomeBox[7].y = 6609000
-      manAnnualIncomeBox[8].y = 6493000
-      manAnnualIncomeBox[9].y = 4794000
-      manAnnualIncomeBox[10].y = 3871000
-      manAnnualIncomeBox[11].y = 3677000
-
       let womanAnnualIncomeBox = [];
-      for(let i = 0; i <= 11; i++){
-          womanAnnualIncomeBox.push({});
+      let AnnualIncomeAge = [];
+      for(let i = 17; i <= 72; i+=5){
+        AnnualIncomeAge.push(i);
       }
-
-      womanAnnualIncomeBox[0].x = 17
-      womanAnnualIncomeBox[1].x = 22
-      womanAnnualIncomeBox[2].x = 27
-      womanAnnualIncomeBox[3].x = 32
-      womanAnnualIncomeBox[4].x = 37
-      womanAnnualIncomeBox[5].x = 42
-      womanAnnualIncomeBox[6].x = 47
-      womanAnnualIncomeBox[7].x = 52
-      womanAnnualIncomeBox[8].x = 57
-      womanAnnualIncomeBox[9].x = 62
-      womanAnnualIncomeBox[10].x = 67
-      womanAnnualIncomeBox[11].x = 72
-
-      womanAnnualIncomeBox[0].y = 1062000
-      womanAnnualIncomeBox[1].y = 2407000
-      womanAnnualIncomeBox[2].y = 3089000
-      womanAnnualIncomeBox[3].y = 3147000
-      womanAnnualIncomeBox[4].y = 2999000
-      womanAnnualIncomeBox[5].y = 3017000
-      womanAnnualIncomeBox[6].y = 2994000
-      womanAnnualIncomeBox[7].y = 2958000
-      womanAnnualIncomeBox[8].y = 2877000
-      womanAnnualIncomeBox[9].y = 2283000
-      womanAnnualIncomeBox[10].y = 1949000
-      womanAnnualIncomeBox[11].y = 2066000
-
+      let manAnnualIncome = [1572000, 2745000, 3827000, 4567000, 5117000, 
+                             5629000, 6327000, 6609000, 6493000, 4794000,
+                             3871000, 3677000]
+      let womanAnnualIncome = [1062000, 2407000, 3089000, 3147000, 2999000,
+                               3017000, 2994000, 2958000, 2877000, 2283000,
+                               1949000, 2066000]
+      for(let i = 0; i <= 11; i++){
+        manAnnualIncomeBox.push({});
+        womanAnnualIncomeBox.push({});
+        manAnnualIncomeBox[i].x = AnnualIncomeAge[i];
+        womanAnnualIncomeBox[i].x = AnnualIncomeAge[i];
+        manAnnualIncomeBox[i].y = manAnnualIncome[i];
+        womanAnnualIncomeBox[i].y = womanAnnualIncome[i];
+      }
+      let tickValuesBox = [];
+      for(let i = 0; i <= 7000000; i+=1000000){
+        tickValuesBox.push(i);
+      }
       const manData = manAnnualIncomeBox;
       const womanData = womanAnnualIncomeBox
       const height = Dimensions.get('window').height;
@@ -84,7 +47,7 @@ class AnnualIncome extends Component {
                   />
                   <VictoryAxis dependentAxis
                     tickFormat={(y) => (`${y/10000}万`)}
-                    tickValues={[1000000,2000000,3000000,4000000,5000000,6000000,7000000]}
+                    tickValues={tickValuesBox}
                   />
                     <VictoryGroup
                       colorScale={["#3399FF", "#FF66CC"]}

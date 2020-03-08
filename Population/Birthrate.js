@@ -25,45 +25,29 @@ class Birthrate extends Component {
       GET_URL += "?cdArea=" + cdArea;
       GET_URL += "&appId=" + escape(APP_ID);
       GET_URL += "&statsDataId=" + escape(statsDataId);
+      let birthrateBox = [];
+      let birthrateYear = [];
+      for(let i = 2017; i >= 2007; i--){
+        birthrateYear.push(i);
+      }
+      for(let i = 2005; i >= 1950; i-=5){
+        birthrateYear.push(i);
+      }
+      birthrateYear[23] = 1947;
+      for(let i = 0; i <= 23; i++){
+        birthrateBox.push({});
+        birthrateBox[i].x = birthrateYear[i];
+      }
+      // jsonから得られないので追加
+      birthrateBox[21].y = 2.37;
+      birthrateBox[22].y = 3.65;
+      birthrateBox[23].y = 4.54;
       axios.get(GET_URL)
         .then(
           (result) => {
-              let start = 0;
-              let end = 23;
-              let birthrateBox = [];
-              for(let i = start; i <= end; i++){
-                birthrateBox.push({});
-              }
-              birthrateBox[0].x = 2017;
-              birthrateBox[1].x = 2016;
-              birthrateBox[2].x = 2015;
-              birthrateBox[3].x = 2014;
-              birthrateBox[4].x = 2013;
-              birthrateBox[5].x = 2012;
-              birthrateBox[6].x = 2011;
-              birthrateBox[7].x = 2010;
-              birthrateBox[8].x = 2009;
-              birthrateBox[9].x = 2008;
-              birthrateBox[10].x = 2007;
-              birthrateBox[11].x = 2005;
-              birthrateBox[12].x = 2000;
-              birthrateBox[13].x = 1995;
-              birthrateBox[14].x = 1990;
-              birthrateBox[15].x = 1985;
-              birthrateBox[16].x = 1980;
-              birthrateBox[17].x = 1975;
-              birthrateBox[18].x = 1970;
-              birthrateBox[19].x = 1965;
-              birthrateBox[20].x = 1960;
-              birthrateBox[21].x = 1955;
-              birthrateBox[22].x = 1950;
-              birthrateBox[23].x = 1947;
-              for(let i = start; i <= 20; i++){
+              for(let i = 0; i <= 20; i++){
                 birthrateBox[i].y = Number(result.data.GET_STATS_DATA.STATISTICAL_DATA.DATA_INF.VALUE[i].$);
               }
-              birthrateBox[21].y = 2.37;
-              birthrateBox[22].y = 3.65;
-              birthrateBox[23].y = 4.54;
               this.setState({
                 isLoaded: true,
                 birthrate: birthrateBox,
@@ -82,6 +66,14 @@ class Birthrate extends Component {
       const isLoaded = this.state.isLoaded;
       const data = this.state.birthrate;
       const height = Dimensions.get('window').height;
+      let tickXValuesBox = [];
+      for(let i = 1945; i <= 2015; i+=5){
+        tickXValuesBox.push(i);
+      }
+      let tickYValuesBox = [];
+      for(let i = 1; i <= 4.8; i += 0.2){
+        tickYValuesBox.push(Math.round(i*10)/10);
+      }
       if(error){
         return <Text>Error: {error.message}</Text>;
       } else if (!isLoaded) {
@@ -95,10 +87,10 @@ class Birthrate extends Component {
                  height={height*0.8}
                 >
                   <VictoryAxis
-               　   tickValues={[1945,1950,1955,1960,1965,1970,1975,1980,1985,1990,1995,2000,2005,2010,2015]}
+               　   tickValues={tickXValuesBox}
                   />
                   <VictoryAxis dependentAxis
-                    tickValues={[1.0,1.2,1.4,1.6,1.8,2.0,2.2,2.4,2.6,2.8,3.0,3.2,3.4,3.6,3.8,4.0,4.2,4.4,4.6,4.8]}
+                    tickValues={tickYValuesBox}
                   />
                     <VictoryLine
                        data={data}
