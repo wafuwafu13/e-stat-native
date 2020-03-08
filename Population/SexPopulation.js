@@ -48,19 +48,18 @@ class SexPopulation extends Component {
         GET_URL_W += "&cdCat01=" + cdCat01_W;
         GET_URL_W += "&appId=" + escape(APP_ID);
         GET_URL_W += "&statsDataId=" + escape(statsDataId_W);
+        let manPopulationBox = [];
+        let womanPopulationBox = [];
+        for(let i = 0; i <= 98; i++){
+          manPopulationBox.push({});
+          womanPopulationBox.push({});
+          manPopulationBox[i].x = i;
+          womanPopulationBox[i].x = i;
+        }
         axios.get(GET_URL_M)
           .then(
               (result) => {
-                  let start = 0;
-                  let end = 98;
-                  let manPopulationBox = [];
-                  for(let i = start; i <= end; i++){
-                    manPopulationBox.push({});
-                  }
-                  for(let i = start; i <= end; i++){
-                    manPopulationBox[i].x = i;
-                  }
-                  for(let i = start; i <= end; i++){
+                  for(let i = 0; i <= 98; i++){
                     manPopulationBox[i].y = Number(result.data.GET_STATS_DATA.STATISTICAL_DATA.DATA_INF.VALUE[i].$);
                   }
                   this.setState({
@@ -78,16 +77,7 @@ class SexPopulation extends Component {
           axios.get(GET_URL_W)
           .then(
               (result) => {
-                  let start = 0;
-                  let end = 98;
-                  let womanPopulationBox = [];
-                  for(let i = start; i <= end; i++){
-                    womanPopulationBox.push({});
-                  }
-                  for(let i = start; i <= end; i++){
-                    womanPopulationBox[i].x = i;
-                  }
-                  for(let i = start; i <= end; i++){
+                  for(let i = 0; i <= 98; i++){
                     womanPopulationBox[i].y = Number(result.data.GET_STATS_DATA.STATISTICAL_DATA.DATA_INF.VALUE[i].$);
                   }
                   this.setState({

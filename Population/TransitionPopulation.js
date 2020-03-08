@@ -8,42 +8,23 @@ class TransitionPopulation extends Component {
 
     render(){
       let transitionPopulationBox = [];
-      for(let i = 0; i <= 15; i++){
-          transitionPopulationBox.push({});
+      let transitionPopulationYear = [];
+      for(let i = 1945; i <= 2015; i+=5){
+        transitionPopulationYear.push(i);
       }
-      transitionPopulationBox[0].x = 1945
-      transitionPopulationBox[1].x = 1950
-      transitionPopulationBox[2].x = 1955
-      transitionPopulationBox[3].x = 1960
-      transitionPopulationBox[4].x = 1965
-      transitionPopulationBox[5].x = 1970
-      transitionPopulationBox[6].x = 1975
-      transitionPopulationBox[7].x = 1980
-      transitionPopulationBox[8].x = 1985
-      transitionPopulationBox[9].x = 1990
-      transitionPopulationBox[10].x = 1995
-      transitionPopulationBox[11].x = 2000
-      transitionPopulationBox[12].x = 2005
-      transitionPopulationBox[13].x = 2010
-      transitionPopulationBox[14].x = 2015
-      transitionPopulationBox[15].x = 2019
-
-      transitionPopulationBox[0].y = 71998104
-      transitionPopulationBox[1].y = 84114574
-      transitionPopulationBox[2].y = 90076594
-      transitionPopulationBox[3].y = 94301623
-      transitionPopulationBox[4].y = 99209137
-      transitionPopulationBox[5].y = 104665171
-      transitionPopulationBox[6].y = 111939643
-      transitionPopulationBox[7].y = 117060396
-      transitionPopulationBox[8].y = 121048923
-      transitionPopulationBox[9].y = 123611167
-      transitionPopulationBox[10].y = 125570246
-      transitionPopulationBox[11].y = 126925843
-      transitionPopulationBox[12].y = 127767994
-      transitionPopulationBox[13].y = 128057352
-      transitionPopulationBox[14].y = 127094745
-      transitionPopulationBox[15].y = 126443000
+      transitionPopulationYear[15] = 2019;
+      for(let i = 0; i <= 15; i++){
+        
+      }
+      let transitionPopulation = [71998104, 84114574, 90076594, 94301623, 99209137, 
+                                  104665171, 111939643, 117060396, 121048923, 123611167,
+                                  125570246, 126925843, 127767994, 128057352, 127094745,
+                                  126443000]
+      for(let i = 0; i <= 15; i++){
+        transitionPopulationBox.push({});
+        transitionPopulationBox[i].x = transitionPopulationYear[i];
+        transitionPopulationBox[i].y = transitionPopulation[i];
+      }
 
       const data = transitionPopulationBox;
       const height = Dimensions.get('window').height;
