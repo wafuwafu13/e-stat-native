@@ -3,8 +3,38 @@ import { Text, View, ScrollView, Dimensions } from 'react-native';
 import { VictoryLine, VictoryChart, VictoryTheme, VictoryAxis } from 'victory-native';
 import { Card } from 'react-native-elements';
 import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
+import Swiper from 'react-native-swiper';
 
 class TransitionPopulation extends Component {
+
+    // constructor(props){
+    //   super(props);
+    //   this.state = {
+    //     colorData: this.getColorData()
+    //   }
+    // }
+
+    // componentDidMount(){
+    //   this.setStateInterval = window.setInterval(() => {
+    //     this.setState({
+    //       colorData: this.getColorData()
+    //     });
+    //   }, 3000);
+    // }
+
+    // componentWillUnmount(){
+    //   window.clearInterval(this.setStateInterval);
+    // }
+
+    // getColorData(){
+    //   const colors = [
+    //     "violet", "cornflowerblue", "gold", "orange",
+    //     "turquoise", "tomato", "greenyellow"
+    //   ];
+    //   return{
+    //     stroke: colors[Math.random(0, 6)]
+    //   }
+    // }
 
     render(){
       let transitionPopulationBox = [];
@@ -29,9 +59,9 @@ class TransitionPopulation extends Component {
       const data = transitionPopulationBox;
       const height = Dimensions.get('window').height;
       return(
-        <ScrollView>
-            <Card title="人口推移 (国勢調査)" height={hp('95%')} containerStyle={{paddingTop: 20}}>
+             <Swiper>
                 <VictoryChart
+                 animate={{ duration: 5000, easing: "bounce" }}
                  theme={VictoryTheme.material}
                  height={height*0.8}
                 >
@@ -49,8 +79,13 @@ class TransitionPopulation extends Component {
                        }}
                      />
                  </VictoryChart>
-             </Card>
-          </ScrollView>
+                 <View>
+                   <Text>2マイメ</Text>
+                </View>
+                <View>
+                  <Text>2マイメ</Text>
+                </View>
+              </Swiper>
       )
     }
 }

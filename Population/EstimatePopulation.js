@@ -90,8 +90,8 @@ class EstimatePopulation extends Component {
      } else {
        return(
         <ScrollView>
-           <Card title="人口推計 (平成30年10月1日)" height={hp('95%')} containerStyle={{paddingTop: 20}}>
              <VictoryChart
+               animate={{ duration: 10000, easing: "bounce" }}
                theme={VictoryTheme.material}
                height={height*0.8}
                margin={2}
@@ -119,7 +119,6 @@ class EstimatePopulation extends Component {
                  />
                </VictoryGroup>
              </VictoryChart>
-           </Card>
          </ScrollView>
        )
      }

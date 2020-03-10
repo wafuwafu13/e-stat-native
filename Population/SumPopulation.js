@@ -73,8 +73,8 @@ class SumPopulation extends Component {
           } else
           return(
             <ScrollView>
-              <Card title="年齢別総人口 (平成27年国勢調査)" height={hp('95%')} containerStyle={{paddingTop: 20}}>
                 <VictoryChart
+                 animate={{ duration: 10000, easing: "bounce" }}
                  theme={VictoryTheme.material}
                  height={height*0.8}
                 >
@@ -90,7 +90,6 @@ class SumPopulation extends Component {
                        style={{data: {fill: "#66CC66"}}}
                      />
                  </VictoryChart>
-              </Card>
             </ScrollView>
           )
      }

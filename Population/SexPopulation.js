@@ -106,11 +106,11 @@ class SexPopulation extends Component {
           } else
           return(
             <ScrollView>
-              <Card title="男女別総人口 (平成27年国勢調査)" height={hp('95%')} containerStyle={{paddingTop: 20}}>
                 <VictoryChart
                  theme={VictoryTheme.material}
                  height={height*0.8}
                  margin={2}
+                 animate={{ duration: 10000, easing: "bounce" }}
                 >
                   <VictoryAxis
                　   tickValues={[5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95]}
@@ -132,7 +132,6 @@ class SexPopulation extends Component {
                        />
                    </VictoryGroup>
                 </VictoryChart>
-              </Card>
             </ScrollView>
           )
      }

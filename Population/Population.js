@@ -12,11 +12,12 @@ class Population extends Component {
     render() {
         return(
               <ScrollView style={{backgroundColor: '#DDDDDD'}}>
+                <TransitionPopulation />
                 <SumPopulation />
                 <SexPopulation />
                 <EstimatePopulation />
                 <Birthrate />
-                <TransitionPopulation />
+                
               </ScrollView>
         )
     }
