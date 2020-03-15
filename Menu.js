@@ -59,7 +59,7 @@ class Menu extends Component{
       　　　　　　alignItems: 'center',
                 borderWidth: 1,
                 borderRadius: 100,
-                borderColor:"#EEF5F6",
+                borderColor: '#EEF5F6',
                 backgroundColor: '#99D260',
             },
             populationIcon:{
@@ -68,7 +68,7 @@ class Menu extends Component{
       　　　　　　alignItems: 'center',
                 borderWidth: 5,
                 borderRadius: 10,
-                borderColor:"#EEF5F6",
+                borderColor: '#EEF5F6',
                 backgroundColor: '#99D260',
             },
             bodyTitle:{
@@ -77,7 +77,7 @@ class Menu extends Component{
       　　　　　　alignItems: 'center',
                 borderWidth: 1,
                 borderRadius: 100,
-                borderColor:"#EEF5F6",
+                borderColor: '#EEF5F6',
                 backgroundColor: '#56A7E2',
             },
             bodyIcon:{
@@ -86,7 +86,7 @@ class Menu extends Component{
       　　　　　　alignItems: 'center',
                 borderWidth: 5,
                 borderRadius: 10,
-                borderColor:"#EEF5F6",
+                borderColor: '#EEF5F6',
                 backgroundColor: '#56A7E2',
             },
             marriageTitle:{
@@ -95,7 +95,7 @@ class Menu extends Component{
       　　　　　　alignItems: 'center',
                 borderWidth: 1,
                 borderRadius: 100,
-                borderColor:"#EEF5F6",
+                borderColor: '#EEF5F6',
                 backgroundColor: '#FF5F5F',
             },
             marriageIcon:{
@@ -104,7 +104,7 @@ class Menu extends Component{
       　　　　　　alignItems: 'center',
                 borderWidth: 5,
                 borderRadius: 10,
-                borderColor:"#EEF5F6",
+                borderColor: '#EEF5F6',
                 backgroundColor: '#FF5F5F',
             },
             incomeTitle:{
@@ -113,7 +113,7 @@ class Menu extends Component{
       　　　　　　alignItems: 'center',
                 borderWidth: 1,
                 borderRadius: 100,
-                borderColor:"#EEF5F6",
+                borderColor: '#EEF5F6',
                 backgroundColor: '#FAFD71',
             },
             incomeIcon:{
@@ -122,93 +122,93 @@ class Menu extends Component{
       　　　　　　alignItems: 'center',
                 borderWidth: 5,
                 borderRadius: 10,
-                borderColor:"#EEF5F6",
+                borderColor: '#EEF5F6',
                 backgroundColor: '#FAFD71',
             },
         })
 
         return(
             <ScrollView>
-            <View style={styles.container}>
-                <View style={styles.main}>
-                    <View style={styles.textWrapper}>
-                      <Text style={styles.title}>
-                          選べるグラフ 
-                      </Text>
+                <View style={styles.container}>
+                    <View style={styles.main}>
+                        <View style={styles.textWrapper}>
+                          <Text style={styles.title}>
+                              選べるグラフ 
+                          </Text>
+                        </View>
+                        <View style={styles.menuContainer}>
+                            <View style={styles.menu}>
+                                <View style={styles.populationTitle}>
+                                    <Text style={styles.menuTitle}>
+                                        人 口
+                                    </Text>
+                                </View>
+                                <TouchableOpacity 
+                                  style={styles.populationIcon}
+                                  onPress={()=>navigate('PopulationMenu')}
+                                >
+                                    <Icon name="child" size={70} color="#4C8469"/>
+                                    <Text style={styles.explanation}>
+                                        3つのグラフ
+                                    </Text>
+                                </TouchableOpacity>
+                            </View>
+                            <View style={styles.menu}>
+                                <View style={styles.bodyTitle}>
+                                    <Text style={styles.menuTitle}>
+                                        身長・体重
+                                    </Text>
+                                </View>
+                                <TouchableOpacity
+                                  style={styles.bodyIcon}
+                                  onPress={()=>navigate('PopulationMenu')}
+                                >
+                                    <Icon name="ruler" size={70} color="#324CA8"/>
+                                    <Text style={styles.explanation}>
+                                        3つのグラフ
+                                    </Text>
+                                </TouchableOpacity>
+                            </View>
+                            <View style={styles.menu}>
+                                <View style={styles.marriageTitle}>
+                                    <Text style={styles.menuTitle}>
+                                        結 婚
+                                    </Text>
+                                </View>
+                                <TouchableOpacity
+                                  style={styles.marriageIcon}
+                                  onPress={()=>navigate('PopulationMenu')}
+                                >
+                                    <Icon name="heartbeat" size={70} color="#9E1212"/>
+                                    <Text style={styles.explanation}>
+                                        3つのグラフ
+                                    </Text>
+                                </TouchableOpacity>
+                            </View>
+                        </View>
+                        <View style={styles.menuContainer}>
+                            <View style={styles.menu2}>
+                                <View style={styles.incomeTitle}>
+                                    <Text style={styles.menuTitle}>
+                                        年 収
+                                    </Text>
+                                </View>
+                                <TouchableOpacity
+                                  style={styles.incomeIcon}
+                                  onPress={()=>navigate('PopulationMenu')}
+                                >
+                                    <Icon name="money-bill-wave" size={70} color="#E0BB5B"/>
+                                    <Text style={styles.explanation}>
+                                        3つのグラフ
+                                    </Text>
+                                </TouchableOpacity>
+                            </View>
+                        </View>
                     </View>
-                    <View style={styles.menuContainer}>
-                        <View style={styles.menu}>
-                            <View style={styles.populationTitle}>
-                                <Text style={styles.menuTitle}>
-                                    人 口
-                                </Text>
-                            </View>
-                            <TouchableOpacity 
-                              style={styles.populationIcon}
-                              onPress={()=>navigate('PopulationMenu')}
-                            >
-                                <Icon name="child" size={70} color="#4C8469"/>
-                                <Text style={styles.explanation}>
-                                    3つのグラフ
-                                </Text>
-                            </TouchableOpacity>
-                        </View>
-                        <View style={styles.menu}>
-                            <View style={styles.bodyTitle}>
-                                <Text style={styles.menuTitle}>
-                                    身長・体重
-                                </Text>
-                            </View>
-                            <TouchableOpacity
-                              style={styles.bodyIcon}
-                              onPress={()=>navigate('PopulationMenu')}
-                            >
-                                <Icon name="ruler" size={70} color="#324CA8"/>
-                                <Text style={styles.explanation}>
-                                    3つのグラフ
-                                </Text>
-                            </TouchableOpacity>
-                        </View>
-                        <View style={styles.menu}>
-                            <View style={styles.marriageTitle}>
-                                <Text style={styles.menuTitle}>
-                                    結 婚
-                                </Text>
-                            </View>
-                            <TouchableOpacity
-                              style={styles.marriageIcon}
-                              onPress={()=>navigate('PopulationMenu')}
-                            >
-                                <Icon name="heartbeat" size={70} color="#9E1212"/>
-                                <Text style={styles.explanation}>
-                                    3つのグラフ
-                                </Text>
-                            </TouchableOpacity>
-                        </View>
-                    </View>
-                    <View style={styles.menuContainer}>
-                        <View style={styles.menu2}>
-                            <View style={styles.incomeTitle}>
-                                <Text style={styles.menuTitle}>
-                                    年 収
-                                </Text>
-                            </View>
-                            <TouchableOpacity
-                              style={styles.incomeIcon}
-                              onPress={()=>navigate('PopulationMenu')}
-                            >
-                                <Icon name="money-bill-wave" size={70} color="#E0BB5B"/>
-                                <Text style={styles.explanation}>
-                                    3つのグラフ
-                                </Text>
-                            </TouchableOpacity>
-                        </View>
+                    <View style={styles.side}>
+                        <Text>side</Text>
                     </View>
                 </View>
-                <View style={styles.side}>
-                    <Text>side</Text>
-                </View>
-            </View>
             </ScrollView>
         )
     }
