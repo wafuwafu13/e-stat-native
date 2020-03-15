@@ -8,14 +8,6 @@ import MenuModal from './MenuModal';
 
 class Menu extends Component{
     
-    state = {
-        modalVisible: false,
-    };
-
-    toggleModal = () => {
-        this.setState({ modalVisible: !this.state.modalVisible });
-    }
-
     render(){
         const {navigate} = this.props.navigation
         const styles = StyleSheet.create({
@@ -141,15 +133,11 @@ class Menu extends Component{
 
         return(
             <ScrollView>
-                <Modal isVisible={ this.state.modalVisible }>
-                    <MenuModal nav={this} />
-                </Modal>
-                
                 <View style={styles.container}>
                     <View style={styles.main}>
                         <View style={styles.top}>
                             <TouchableOpacity
-                              onPress={this.toggleModal}
+                              onPress={() => this.props.navigation.toggleDrawer()}
                               style={styles.modalIcon}
                             >
                                 <Icon name="list-alt" size={40} color="#807E7C"/>

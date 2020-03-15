@@ -7,13 +7,13 @@ import MenuModal from '../MenuModal';
 
 class PopulationMenu extends Component{
 
-    state = {
-        modalVisible: false,
-    };
+    // state = {
+    //     modalVisible: false,
+    // };
 
-    toggleModal = () => {
-        this.setState({ modalVisible: !this.state.modalVisible });
-    }
+    // toggleModal = () => {
+    //     this.setState({ modalVisible: !this.state.modalVisible });
+    // }
 
     render(){
         const {navigate} = this.props.navigation
@@ -91,12 +91,12 @@ class PopulationMenu extends Component{
 
         return(
             <View style={styles.container}>
-                 <Modal isVisible={ this.state.modalVisible }>
+                 {/* <Modal isVisible={ this.state.modalVisible }>
                     <MenuModal nav={this} />
-                </Modal>
+                </Modal> */}
                 <View style={styles.side}>
                     <TouchableOpacity
-                        onPress={this.toggleModal}
+                        onPress={() => this.props.navigation.toggleDrawer()}
                         style={styles.modalIcon}
                     >
                         <Icon name="list-alt" size={40} color="#807E7C"/>
