@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
-import { StyleSheet, View, Text, TouchableOpacity, ScrollView, Button } from 'react-native';
-import Modal from 'react-native-modal';
+import { StyleSheet, View, Text, TouchableOpacity, ScrollView } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
-import MenuModal from './MenuModal';
 
 
 class Menu extends Component{
@@ -30,7 +28,7 @@ class Menu extends Component{
                 left: wp('2%'),
             },
             title:{
-                fontSize: 25,
+                fontSize: wp('3.8%'),
                 color: '#636D70',
             },
             menuContainer:{
@@ -50,18 +48,19 @@ class Menu extends Component{
                 marginRight: wp('2%'),
             },
             menuTitle:{
-                fontSize: 20,
+                fontSize: wp('2.5%'),
                 color: '#4B4B4B',
             },
             explanation:{
                 marginTop: hp('2%'),
+                fontSize: wp('2%'),
                 color: '#4B4B4B',
             },
             populationTitle:{
                 flex: 1,
                 justifyContent: 'center',
       　　　　　　alignItems: 'center',
-                borderWidth: 1,
+                borderWidth: wp('0.3%'),
                 borderRadius: 100,
                 borderColor: '#EEF5F6',
                 backgroundColor: '#99D260',
@@ -70,7 +69,7 @@ class Menu extends Component{
                 flex: 6,
                 justifyContent: 'center',
       　　　　　　alignItems: 'center',
-                borderWidth: 5,
+                borderWidth: wp('0.7%'),
                 borderRadius: 10,
                 borderColor: '#EEF5F6',
                 backgroundColor: '#99D260',
@@ -79,7 +78,7 @@ class Menu extends Component{
                 flex: 1,
                 justifyContent: 'center',
       　　　　　　alignItems: 'center',
-                borderWidth: 1,
+                borderWidth: wp('0.3%'),
                 borderRadius: 100,
                 borderColor: '#EEF5F6',
                 backgroundColor: '#56A7E2',
@@ -88,7 +87,7 @@ class Menu extends Component{
                 flex: 6,
                 justifyContent: 'center',
       　　　　　　alignItems: 'center',
-                borderWidth: 5,
+                borderWidth: wp('0.7%'),
                 borderRadius: 10,
                 borderColor: '#EEF5F6',
                 backgroundColor: '#56A7E2',
@@ -97,7 +96,7 @@ class Menu extends Component{
                 flex: 1,
                 justifyContent: 'center',
       　　　　　　alignItems: 'center',
-                borderWidth: 1,
+                borderWidth: wp('0.3%'),
                 borderRadius: 100,
                 borderColor: '#EEF5F6',
                 backgroundColor: '#FF5F5F',
@@ -106,7 +105,7 @@ class Menu extends Component{
                 flex: 6,
                 justifyContent: 'center',
       　　　　　　alignItems: 'center',
-                borderWidth: 5,
+                borderWidth: wp('0.7%'),
                 borderRadius: 10,
                 borderColor: '#EEF5F6',
                 backgroundColor: '#FF5F5F',
@@ -115,7 +114,7 @@ class Menu extends Component{
                 flex: 1,
                 justifyContent: 'center',
       　　　　　　alignItems: 'center',
-                borderWidth: 1,
+                borderWidth: wp('0.3%'),
                 borderRadius: 100,
                 borderColor: '#EEF5F6',
                 backgroundColor: '#FAFD71',
@@ -124,7 +123,7 @@ class Menu extends Component{
                 flex: 6,
                 justifyContent: 'center',
       　　　　　　alignItems: 'center',
-                borderWidth: 5,
+                borderWidth: wp('0.7%'),
                 borderRadius: 10,
                 borderColor: '#EEF5F6',
                 backgroundColor: '#FAFD71',
@@ -140,7 +139,7 @@ class Menu extends Component{
                               onPress={() => this.props.navigation.toggleDrawer()}
                               style={styles.modalIcon}
                             >
-                                <Icon name="list-alt" size={40} color="#807E7C"/>
+                                <Icon name="list-alt" size={wp('5%')} color="#807E7C"/>
                             </TouchableOpacity>
                             <Text style={styles.title}>
                               選べるグラフ 
@@ -158,7 +157,7 @@ class Menu extends Component{
                                   style={styles.populationIcon}
                                   onPress={()=>navigate('PopulationMenu')}
                                 >
-                                    <Icon name="child" size={70} color="#4C8469"/>
+                                    <Icon name="child" size={wp('10%')} color="#4C8469"/>
                                     <Text style={styles.explanation}>
                                         3つのグラフ
                                     </Text>
@@ -174,7 +173,7 @@ class Menu extends Component{
                                   style={styles.bodyIcon}
                                   onPress={()=>navigate('PopulationMenu')}
                                 >
-                                    <Icon name="ruler" size={70} color="#324CA8"/>
+                                    <Icon name="ruler" size={wp('10%')} color="#324CA8"/>
                                     <Text style={styles.explanation}>
                                         3つのグラフ
                                     </Text>
@@ -190,7 +189,7 @@ class Menu extends Component{
                                   style={styles.marriageIcon}
                                   onPress={()=>navigate('PopulationMenu')}
                                 >
-                                    <Icon name="heartbeat" size={70} color="#9E1212"/>
+                                    <Icon name="heartbeat" size={wp('10%')} color="#9E1212"/>
                                     <Text style={styles.explanation}>
                                         3つのグラフ
                                     </Text>
@@ -208,7 +207,7 @@ class Menu extends Component{
                                   style={styles.incomeIcon}
                                   onPress={()=>navigate('PopulationMenu')}
                                 >
-                                    <Icon name="money-bill-wave" size={70} color="#E0BB5B"/>
+                                    <Icon name="money-bill-wave" size={wp('10%')} color="#E0BB5B"/>
                                     <Text style={styles.explanation}>
                                         3つのグラフ
                                     </Text>
