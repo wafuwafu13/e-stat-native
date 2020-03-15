@@ -1,9 +1,19 @@
 import React, { Component } from 'react';
 import { StyleSheet, View, Button, Text, ScrollView, TouchableOpacity } from 'react-native';
+import Modal from 'react-native-modal';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
+import MenuModal from '../MenuModal';
 
 class PopulationMenu extends Component{
+
+    state = {
+        modalVisible: false,
+    };
+
+    toggleModal = () => {
+        this.setState({ modalVisible: !this.state.modalVisible });
+    }
 
     render(){
         const {navigate} = this.props.navigation
@@ -13,11 +23,18 @@ class PopulationMenu extends Component{
                 flexDirection: 'row',
                 backgroundColor: '#F0FCFF',
             },
-            leftSide:{
-                flex: 6,
+            side:{
+                position: 'relative',
+                flex: 10,
                 justifyContent: 'center',
       　　　　　　alignItems: 'center',
                 backgroundColor: '#99D260',
+            },
+            modalIcon:{
+                position: 'absolute',
+                marginLeft: wp('2%'),
+                left: 0,
+                top: hp('5%'),
             },
             menuContainer:{
                 marginTop: hp('10%'),
@@ -26,7 +43,7 @@ class PopulationMenu extends Component{
                 width: wp('60%'),
                 height: hp('30%'),
                 marginRight: wp('7%'),
-                marginLeft: wp('5%'),
+                marginLeft: wp('8%'),
                 marginBottom: hp('10%'),
                 borderBottomWidth: 5,
                 borderBottomColor: '#E4E0E0',
@@ -70,15 +87,20 @@ class PopulationMenu extends Component{
                 fontSize: 18,
                 color: '#FFFFFF',
             },
-            rightSide:{
-                flex: 1,
-                backgroundColor: '#E4E0E0',
-            },
         })
 
         return(
             <View style={styles.container}>
-                <View style={styles.leftSide}>
+                 <Modal isVisible={ this.state.modalVisible }>
+                    <MenuModal nav={this} />
+                </Modal>
+                <View style={styles.side}>
+                    <TouchableOpacity
+                        onPress={this.toggleModal}
+                        style={styles.modalIcon}
+                    >
+                        <Icon name="list-alt" size={40} color="#807E7C"/>
+                    </TouchableOpacity>
                     <Text style={styles.iconTitle}>
                         人 口
                     </Text>

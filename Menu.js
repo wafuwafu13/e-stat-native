@@ -1,37 +1,49 @@
 import React, { Component } from 'react';
-import { StyleSheet, View, Text, TouchableOpacity, ScrollView } from 'react-native';
+import { StyleSheet, View, Text, TouchableOpacity, ScrollView, Button } from 'react-native';
+import Modal from 'react-native-modal';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
+import MenuModal from './MenuModal';
 
 
 class Menu extends Component{
+    
+    state = {
+        modalVisible: false,
+    };
+
+    toggleModal = () => {
+        this.setState({ modalVisible: !this.state.modalVisible });
+    }
 
     render(){
         const {navigate} = this.props.navigation
         const styles = StyleSheet.create({
             container:{
                 flex: 1,
-                flexDirection: 'row',
                 backgroundColor: '#F0FCFF',
             },
             main:{
-                flex: 12,
-            },
-            side:{
                 flex: 1,
-                backgroundColor: '#E4E0E0',
             },
-            textWrapper:{
+            top:{
+                position: 'relative',
+                marginTop: hp('7%'),
+                flexDirection: 'row',
+                justifyContent: 'center',
                 alignItems: 'center',
+            },
+            modalIcon:{
+                position: 'absolute',
+                left: wp('2%'),
             },
             title:{
                 fontSize: 25,
-                marginTop: hp('10%'),
                 color: '#636D70',
             },
             menuContainer:{
                 flexDirection: 'row',
-                marginTop: hp('5%'),
+                marginTop: hp('7%'),
             },
             menu:{
                 flex: 1,
@@ -129,15 +141,26 @@ class Menu extends Component{
 
         return(
             <ScrollView>
+                <Modal isVisible={ this.state.modalVisible }>
+                    <MenuModal nav={this} />
+                </Modal>
+                
                 <View style={styles.container}>
                     <View style={styles.main}>
-                        <View style={styles.textWrapper}>
-                          <Text style={styles.title}>
+                        <View style={styles.top}>
+                            <TouchableOpacity
+                              onPress={this.toggleModal}
+                              style={styles.modalIcon}
+                            >
+                                <Icon name="list-alt" size={40} color="#807E7C"/>
+                            </TouchableOpacity>
+                            <Text style={styles.title}>
                               選べるグラフ 
-                          </Text>
+                            </Text>
                         </View>
                         <View style={styles.menuContainer}>
                             <View style={styles.menu}>
+                            
                                 <View style={styles.populationTitle}>
                                     <Text style={styles.menuTitle}>
                                         人 口
@@ -204,9 +227,6 @@ class Menu extends Component{
                                 </TouchableOpacity>
                             </View>
                         </View>
-                    </View>
-                    <View style={styles.side}>
-                        <Text>side</Text>
                     </View>
                 </View>
             </ScrollView>
