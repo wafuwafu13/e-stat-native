@@ -45,17 +45,18 @@ class PopulationMenu extends Component{
                 marginRight: wp('7%'),
                 marginLeft: wp('8%'),
                 marginBottom: hp('10%'),
-                borderBottomWidth: 5,
+                borderBottomWidth: wp('1%'),
                 borderBottomColor: '#E4E0E0',
                 backgroundColor: 'white',
             },
             iconTitle:{
                 marginBottom: hp('5%'),
-                fontSize: 20,
+                fontSize: wp('3%'),
                 color: '#4B4B4B',
             },
             iconText:{
                 marginTop: hp('2%'),
+                fontSize: wp('2%'),
                 color: '#4B4B4B',
             },
             menuContents:{
@@ -67,11 +68,11 @@ class PopulationMenu extends Component{
                 paddingTop: hp('7%'),
             },
             graphTitle:{
-                fontSize: 20,
+                fontSize: wp('3%'),
                 color: '#4B4B4B',
             },
             explanation:{
-                fontSize: 15,
+                fontSize: wp('2%'),
                 color: '#4B4B4B',
             },
             button:{
@@ -84,7 +85,7 @@ class PopulationMenu extends Component{
                 backgroundColor: "#6E8DDE",
             },
             buttonText:{
-                fontSize: 18,
+                fontSize: wp('2.5%'),
                 color: '#FFFFFF',
             },
         })
@@ -99,13 +100,13 @@ class PopulationMenu extends Component{
                         onPress={() => this.props.navigation.toggleDrawer()}
                         style={styles.modalIcon}
                     >
-                        <Icon name="list-alt" size={40} color="#807E7C"/>
+                        <Icon name="list-alt" size={wp('5%')} color="#807E7C"/>
                     </TouchableOpacity>
                     <Text style={styles.iconTitle}>
                         人 口
                     </Text>
                     <View>
-                        <Icon name="child" size={70} color="#4C8469"/>
+                        <Icon name="child" size={wp('10%')} color="#4C8469"/>
                     </View>
                     <Text style={styles.iconText}>
                         3つのグラフ
