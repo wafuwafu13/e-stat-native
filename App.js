@@ -15,6 +15,10 @@ import TransitionPopulationSwiper from './Population/TransitionPopulation/Transi
 import BodyMenu from './Body/BodyMenu';
 import HeightSwiper from './Body/Height/HeightSwiper';
 import WeightSwiper from './Body/Weight/WeightSwiper';
+import MarriageMenu from './Marriage/MarriageMenu';
+import SumMarriageSwiper from './Marriage/SumMarriage/SumMarriageSwiper';
+import UnmarrideSwiper from './Marriage/Unmarride/UnmarrideSwiper';
+import DivorcerateSwiper from './Marriage/Divorcerate/DivorcerateSwiper';
 
 
 class App extends Component {
@@ -32,6 +36,10 @@ class App extends Component {
           BodyMenu: BodyMenu,
           HeightSwiper: HeightSwiper,
           WeightSwiper: WeightSwiper,
+          MarriageMenu: MarriageMenu,
+          SumMarriageSwiper: SumMarriageSwiper,
+          UnmarrideSwiper: UnmarrideSwiper,
+          DivorcerateSwiper: DivorcerateSwiper,
         },
         {
           initialRouteName: 'Home',
@@ -63,6 +71,12 @@ class App extends Component {
             screen: BodyMenu,
             navigationOptions:{
               drawerIcon:  <Icon name="ruler" size={20} color="#636D70"/>
+            }
+          },
+          結婚: {
+            screen: MarriageMenu,
+            navigationOptions:{
+              drawerIcon:  <Icon name="heartbeat" size={20} color="#636D70"/>
             }
           },
         },

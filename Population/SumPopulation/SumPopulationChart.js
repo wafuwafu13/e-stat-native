@@ -107,9 +107,9 @@ class SumPopulationChart extends Component{
                 </Text>
                 <View style={styles.chart}>
                     <VictoryChart
-                     animate={{ duration: 4000, easing: "bounce" }}
-                     theme={ VictoryTheme.material }
-                     height={ height*0.8 }
+                      theme={ VictoryTheme.material }
+                      height={ height*0.8 }
+                      animate={{ duration: 5000, easing: "bounce" }}
                     >
                       <VictoryAxis
                　       tickValues={ [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95] }

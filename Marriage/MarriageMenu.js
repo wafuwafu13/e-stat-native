@@ -5,7 +5,7 @@ import Icon from 'react-native-vector-icons/FontAwesome5';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 import MenuModal from '../MenuModal';
 
-class PopulationMenu extends Component{
+class MarriageMenu extends Component{
 
     // state = {
     //     modalVisible: false,
@@ -28,7 +28,7 @@ class PopulationMenu extends Component{
                 flex: 10,
                 justifyContent: 'center',
       　　　　　　alignItems: 'center',
-                backgroundColor: '#56A7E2',
+                backgroundColor: '#FF5F5F',
             },
             modalIcon:{
                 position: 'absolute',
@@ -68,7 +68,7 @@ class PopulationMenu extends Component{
                 paddingTop: hp('7%'),
             },
             graphTitle:{
-                fontSize: wp('2.5%'),
+                fontSize: wp('3%'),
                 color: '#4B4B4B',
             },
             explanation:{
@@ -103,13 +103,13 @@ class PopulationMenu extends Component{
                         <Icon name="list-alt" size={wp('5%')} color="#807E7C"/>
                     </TouchableOpacity>
                     <Text style={styles.iconTitle}>
-                        身長・体重
+                        結 婚
                     </Text>
                     <View>
-                        <Icon name="ruler" size={wp('10%')} color="#324CA8"/>
+                        <Icon name="heartbeat" size={wp('10%')} color="#9E1212"/>
                     </View>
                     <Text style={styles.iconText}>
-                        2つのグラフ
+                        3つのグラフ
                     </Text>
                 </View>
                 <ScrollView>
@@ -121,7 +121,7 @@ class PopulationMenu extends Component{
                                 <View style={styles.menuContents}>
                                     <View>
                                         <Text style={styles.graphTitle}>
-                                            男女別平均身長(平成28年国民健康・栄養調査)
+                                            結婚件数(人口動態調査)
                                         </Text>
                                     </View>
                                     <View style={styles.menuContentsBottom}>
@@ -132,7 +132,7 @@ class PopulationMenu extends Component{
                                         </View>
                                         <TouchableOpacity  
                                           style={styles.button}
-                                          onPress={()=>navigate('HeightSwiper')}>
+                                          onPress={()=>navigate('SumMarriageSwiper')}>
                                             <Text style={styles.buttonText}>
                                                 グラフを見る
                                             </Text>
@@ -146,7 +146,7 @@ class PopulationMenu extends Component{
                                 <View style={styles.menuContents}>
                                     <View>
                                         <Text style={styles.graphTitle}>
-                                            男女別平均体重(平成28年国民健康・栄養調査)
+                                            40~45歳男女の未婚率(国勢調査)
                                         </Text>
                                     </View>
                                     <View style={styles.menuContentsBottom}>
@@ -157,7 +157,32 @@ class PopulationMenu extends Component{
                                         </View>
                                         <TouchableOpacity  
                                           style={styles.button}
-                                          onPress={()=>navigate('WeightSwiper')}>
+                                          onPress={()=>navigate('UnmarrideSwiper')}>
+                                            <Text style={styles.buttonText}>
+                                                グラフを見る
+                                            </Text>
+                                        </TouchableOpacity>
+                                    </View>
+                                </View>
+                            </TouchableOpacity>
+                            <TouchableOpacity 
+                              style={styles.menu}
+                              onPress={()=>navigate('EstimatePopulation')}>
+                                <View style={styles.menuContents}>
+                                    <View>
+                                        <Text style={styles.graphTitle}>
+                                            離婚率(人口動態調査)
+                                        </Text>
+                                    </View>
+                                    <View style={styles.menuContentsBottom}>
+                                        <View>
+                                            <Text style={styles.explanation}>
+                                                調査の詳細へ >
+                                            </Text>
+                                        </View>
+                                        <TouchableOpacity  
+                                          style={styles.button}
+                                          onPress={()=>navigate('DivorcerateSwiper')}>
                                             <Text style={styles.buttonText}>
                                                 グラフを見る
                                             </Text>
@@ -173,4 +198,4 @@ class PopulationMenu extends Component{
     } 
 }
 
-export default PopulationMenu;
+export default MarriageMenu;
