@@ -1,11 +1,26 @@
 import React, { Component } from 'react';
-import { ScrollView, Dimensions } from 'react-native';
+import { StyleSheet, View, Text, Dimensions } from 'react-native';
 import { VictoryLine, VictoryChart, VictoryTheme, VictoryAxis, VictoryGroup } from 'victory-native';
-import { Card } from 'react-native-elements';
+import Spinner from 'react-native-loading-spinner-overlay';
 import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
 
 
-class Height extends Component {
+class HeightChart extends Component {
+
+    constructor(props){
+        super(props);
+        this.state= {
+          spinner: true,
+        }
+    }
+
+    componentDidMount(){
+        setTimeout(()=>{
+          this.setState({
+            spinner: false
+          })
+        }, 6000)
+    }
 
     render(){
       let manHeightBox = [];
@@ -35,12 +50,38 @@ class Height extends Component {
       const manData = manHeightBox;
       const womanData = womanHeightBox
       const height = Dimensions.get('window').height;
+      const styles = StyleSheet.create({
+        container:{
+          flex: 1,
+          backgroundColor: '#CCCCCC',
+          justifyContent: 'center',
+          alignItems: 'center',
+        },
+        title:{
+          fontSize: wp('3%'),
+          color: '#3E3D3D',
+        },
+        chart:{
+          marginBottom: hp('15%')
+        }
+      })
+
       return(
-        <ScrollView>
-            <Card title="男女別平均身長 (平成28年国民健康・栄養調査)" height={hp('95%')} containerStyle={{paddingTop: 20}}>
+        <View style={styles.container}>
+            <Spinner
+              visible={this.state.spinner}
+              textContent="読込中..."
+              textStyle={{ color: "#fff" }}
+              overlayColor="rgba(0,0,0,0.5)"
+            />
+            <Text style={styles.title}>
+                男女別平均身長(平成28年国民健康・栄養調査)
+            </Text>
+            <View style={styles.chart}>
                 <VictoryChart
-                 theme={VictoryTheme.material}
-                 height={height*0.8}
+                  animate={{ duration: 5000, easing: "bounce" }}
+                  theme={VictoryTheme.material}
+                  height={height*0.8}
                 >
                   <VictoryAxis
                　   tickValues={tickBox}
@@ -60,11 +101,11 @@ class Height extends Component {
                         data={womanData}
                       />
                     </VictoryGroup>
-                 </VictoryChart>
-             </Card>
-          </ScrollView>
+                </VictoryChart>
+            </View>
+        </View>
       )
     }
 }
 
-export default Height;
+export default HeightChart;

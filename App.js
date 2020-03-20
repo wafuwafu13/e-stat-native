@@ -12,6 +12,9 @@ import SexPopulationSwiper from './Population/SexPopulation/SexPopulationSwiper'
 import EstimatePopulationSwiper from './Population/EstimatePopulation/EstimatePopulationSwiper';
 import BirthrateSwiper from './Population/Birthrate/BirthrateSwiper';
 import TransitionPopulationSwiper from './Population/TransitionPopulation/TransitionPopulationSwiper';
+import BodyMenu from './Body/BodyMenu';
+import HeightSwiper from './Body/Height/HeightSwiper';
+import WeightSwiper from './Body/Weight/WeightSwiper';
 
 
 class App extends Component {
@@ -26,6 +29,9 @@ class App extends Component {
           EstimatePopulationSwiper: EstimatePopulationSwiper,
           BirthrateSwiper: BirthrateSwiper,
           TransitionPopulationSwiper: TransitionPopulationSwiper,
+          BodyMenu: BodyMenu,
+          HeightSwiper: HeightSwiper,
+          WeightSwiper: WeightSwiper,
         },
         {
           initialRouteName: 'Home',
@@ -50,7 +56,13 @@ class App extends Component {
           人口: {
             screen: PopulationMenu,
             navigationOptions:{
-              drawerIcon:  <Icon name="chart-bar" size={24} color="#636D70"/>
+              drawerIcon:  <Icon name="child" size={24} color="#636D70"/>
+            }
+          },
+          身長_体重: {
+            screen: BodyMenu,
+            navigationOptions:{
+              drawerIcon:  <Icon name="ruler" size={20} color="#636D70"/>
             }
           },
         },

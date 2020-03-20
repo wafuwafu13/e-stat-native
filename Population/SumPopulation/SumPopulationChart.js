@@ -16,7 +16,7 @@ class SumPopulationChart extends Component{
           sumPopulation: [],
           spinner: true,
         }
-      }
+    }
 
     componentWillMount(){
       let APP_ID = "857f6df73c559e37a4dabc4d2b7eb090d8b9893d"
