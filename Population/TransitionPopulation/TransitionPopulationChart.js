@@ -1,10 +1,23 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View, Dimensions } from 'react-native';
 import { VictoryLine, VictoryChart, VictoryTheme, VictoryAxis } from 'victory-native';
+import Spinner from 'react-native-loading-spinner-overlay';
 import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
 
 
 class TransitionPopulationChart extends Component {
+
+    state = {
+      spinner: true
+    }
+
+    componentDidMount(){
+      setTimeout(()=>{
+        this.setState({
+          spinner: false
+        })
+      }, 6000)
+    }
 
     render(){
       let transitionPopulationBox = [];
@@ -13,9 +26,6 @@ class TransitionPopulationChart extends Component {
         transitionPopulationYear.push(i);
       }
       transitionPopulationYear[15] = 2019;
-      for(let i = 0; i <= 15; i++){
-        
-      }
       let transitionPopulation = [71998104, 84114574, 90076594, 94301623, 99209137, 
                                   104665171, 111939643, 117060396, 121048923, 123611167,
                                   125570246, 126925843, 127767994, 128057352, 127094745,
@@ -45,6 +55,12 @@ class TransitionPopulationChart extends Component {
 
       return(
           <View style={styles.container}>
+             <Spinner
+                visible={this.state.spinner}
+                textContent="読込中..."
+                textStyle={{ color: "#fff" }}
+                overlayColor="rgba(0,0,0,0.5)"
+              />
               <Text style={styles.title}>
                 人口推移(国勢調査)
               </Text>
