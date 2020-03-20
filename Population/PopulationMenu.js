@@ -132,7 +132,7 @@ class PopulationMenu extends Component{
                                         </View>
                                         <TouchableOpacity  
                                           style={styles.button}
-                                          onPress={()=>navigate('Population')}>
+                                          onPress={()=>navigate('TransitionPopulationSwiper')}>
                                             <Text style={styles.buttonText}>
                                                 グラフを見る
                                             </Text>

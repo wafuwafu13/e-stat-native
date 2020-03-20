@@ -5,11 +5,11 @@ import { createStackNavigator } from 'react-navigation-stack';
 import { createDrawerNavigator } from 'react-navigation-drawer';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
-import Population from './Population/Population';
+import Menu from './Menu';
 import PopulationMenu from './Population/PopulationMenu';
 import EstimatePopulation from './Population/EstimatePopulation';
-import TransitionPopulation from './Population/TransitionPopulation';
-import Menu from './Menu';
+import TransitionPopulation from './Population/TransitionPopulation/TransitionPopulationChart';
+import TransitionPopulationSwiper from './Population/TransitionPopulation/TransitionPopulationSwiper';
 
 
 class App extends Component {
@@ -18,10 +18,10 @@ class App extends Component {
       const Stack = createStackNavigator(
         {
           Home: Menu,
-          Population: Population,
           PopulationMenu: PopulationMenu,
           TransitionPopulation: TransitionPopulation,
           EstimatePopulation: EstimatePopulation,
+          TransitionPopulationSwiper: TransitionPopulationSwiper,
         },
         {
           initialRouteName: 'Home',
