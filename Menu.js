@@ -159,7 +159,7 @@ class Menu extends Component{
                                 >
                                     <Icon name="child" size={wp('10%')} color="#4C8469"/>
                                     <Text style={styles.explanation}>
-                                        3つのグラフ
+                                        5つのグラフ
                                     </Text>
                                 </TouchableOpacity>
                             </View>
@@ -171,11 +171,11 @@ class Menu extends Component{
                                 </View>
                                 <TouchableOpacity
                                   style={styles.bodyIcon}
-                                  onPress={()=>navigate('PopulationMenu')}
+                                  onPress={()=>navigate('BodyMenu')}
                                 >
                                     <Icon name="ruler" size={wp('10%')} color="#324CA8"/>
                                     <Text style={styles.explanation}>
-                                        3つのグラフ
+                                        2つのグラフ
                                     </Text>
                                 </TouchableOpacity>
                             </View>
