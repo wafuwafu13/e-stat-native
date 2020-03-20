@@ -205,11 +205,11 @@ class Menu extends Component{
                                 </View>
                                 <TouchableOpacity
                                   style={styles.incomeIcon}
-                                  onPress={()=>navigate('PopulationMenu')}
+                                  onPress={()=>navigate('IncomeMenu')}
                                 >
                                     <Icon name="money-bill-wave" size={wp('10%')} color="#E0BB5B"/>
                                     <Text style={styles.explanation}>
-                                        3つのグラフ
+                                        1つのグラフ
                                     </Text>
                                 </TouchableOpacity>
                             </View>

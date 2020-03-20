@@ -19,6 +19,8 @@ import MarriageMenu from './Marriage/MarriageMenu';
 import SumMarriageSwiper from './Marriage/SumMarriage/SumMarriageSwiper';
 import UnmarrideSwiper from './Marriage/Unmarride/UnmarrideSwiper';
 import DivorcerateSwiper from './Marriage/Divorcerate/DivorcerateSwiper';
+import IncomeMenu from './Income/IncomeMenu';
+import AnnualIncomeSwiper from './Income/AnnualIncome/AnnauIncomeSwiper';
 
 
 class App extends Component {
@@ -40,6 +42,8 @@ class App extends Component {
           SumMarriageSwiper: SumMarriageSwiper,
           UnmarrideSwiper: UnmarrideSwiper,
           DivorcerateSwiper: DivorcerateSwiper,
+          IncomeMenu: IncomeMenu,
+          AnnualIncomeSwiper: AnnualIncomeSwiper,
         },
         {
           initialRouteName: 'Home',
@@ -49,34 +53,40 @@ class App extends Component {
 
       const Drawer = createDrawerNavigator(
         {
-          閉じる: {
+          閉じる:{
             screen: Stack,
             navigationOptions:{
               drawerIcon:  <Icon name="chevron-left" size={24} color="#636D70"/>
             }
           },
-          グラフ選択: {
+          グラフ選択:{
             screen: Menu,
             navigationOptions:{
               drawerIcon:  <Icon name="chart-bar" size={24} color="#636D70"/>
             }
           },
-          人口: {
+          人口:{
             screen: PopulationMenu,
             navigationOptions:{
               drawerIcon:  <Icon name="child" size={24} color="#636D70"/>
             }
           },
-          身長_体重: {
+          身長_体重:{
             screen: BodyMenu,
             navigationOptions:{
               drawerIcon:  <Icon name="ruler" size={20} color="#636D70"/>
             }
           },
-          結婚: {
+          結婚:{
             screen: MarriageMenu,
             navigationOptions:{
-              drawerIcon:  <Icon name="heartbeat" size={20} color="#636D70"/>
+              drawerIcon:  <Icon name="heartbeat" size={24} color="#636D70"/>
+            }
+          },
+          年収:{
+            screen: IncomeMenu,
+            navigationOptions:{
+              drawerIcon:  <Icon name="money-bill-wave" size={20} color="#636D70"/>
             }
           },
         },
@@ -84,9 +94,7 @@ class App extends Component {
           initialRouteName: '閉じる',
           unmountInactiveRoutes: true,
           drawerWidth: wp('25%'),
-          tintColor: 'red',
           drawerBackgroundColor: '#F0FCFF'
-          
         }
       )
 
