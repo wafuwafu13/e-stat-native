@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
-import { Text, View, ScrollView, Dimensions } from 'react-native';
+import { StyleSheet, Text, View, Dimensions } from 'react-native';
 import axios from 'axios';
 import { VictoryLine, VictoryChart, VictoryTheme, VictoryAxis } from 'victory-native';
-import { Card } from 'react-native-elements';
-import Icon from 'react-native-vector-icons/SimpleLineIcons';
+import Spinner from 'react-native-loading-spinner-overlay';
+import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 
-class Birthrate extends Component {
+
+class BirthrateChart extends Component {
 
     constructor(props) {
         super(props);
@@ -13,6 +14,7 @@ class Birthrate extends Component {
           isLoaded: true,
           error: null,
           bitrhrate: [],
+          spinner: true,
         }
       }
 
@@ -61,6 +63,15 @@ class Birthrate extends Component {
         },
         )
     }
+
+    componentDidMount(){
+        setTimeout(()=>{
+          this.setState({
+            spinner: false
+          })
+        }, 6000)
+      }
+
     render(){
       const error = this.state.error;
       const isLoaded = this.state.isLoaded;
@@ -74,34 +85,59 @@ class Birthrate extends Component {
       for(let i = 1; i <= 4.8; i += 0.2){
         tickYValuesBox.push(Math.round(i*10)/10);
       }
+      const styles = StyleSheet.create({
+        container:{
+          flex: 1,
+          backgroundColor: '#CCCCCC',
+          justifyContent: 'center',
+          alignItems: 'center',
+        },
+        title:{
+          fontSize: wp('3%'),
+          color: '#3E3D3D',
+        },
+        chart:{
+          marginBottom: hp('15%')
+        }
+      })
+
       if(error){
         return <Text>Error: {error.message}</Text>;
-      } else if (!isLoaded) {
+      }else if(!isLoaded) {
         return <Text>Loading...</Text>;
-      } else
+      }else
       return(
-        <ScrollView>
-                <VictoryChart
-                 theme={VictoryTheme.material}
-                 height={height*0.8}
-                 animate={{ duration: 10000, easing: "bounce" }}
-                >
-                  <VictoryAxis
-               　   tickValues={tickXValuesBox}
-                  />
-                  <VictoryAxis dependentAxis
-                    tickValues={tickYValuesBox}
-                  />
-                    <VictoryLine
-                       data={data}
-                       style={{
-                        data: { stroke: "#c43a31" }
-                       }}
-                     />
-                 </VictoryChart>
-          </ScrollView>
+        <View style={styles.container}>
+            <Spinner
+                visible={this.state.spinner}
+                textContent="読込中..."
+                textStyle={{ color: "#fff" }}
+                overlayColor="rgba(0,0,0,0.5)"
+              />
+              <Text style={styles.title}>
+                  合計特殊出生率
+              </Text>
+              <View style={styles.chart}>
+                    <VictoryChart
+                     theme={VictoryTheme.material}
+                     height={height*0.8}
+                     animate={{ duration: 2000, easing: "bounce" }}
+                    >
+                      <VictoryAxis
+               　       tickValues={tickXValuesBox}
+                      />
+                      <VictoryAxis dependentAxis
+                        tickValues={tickYValuesBox}
+                      />
+                        <VictoryLine
+                           data={data}
+                           style={{ data: { stroke: "#c43a31" } }}
+                         />
+                    </VictoryChart>
+                </View>
+        </View>
       )
     }
 }
 
-export default Birthrate;
+export default BirthrateChart;

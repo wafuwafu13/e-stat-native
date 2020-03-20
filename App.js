@@ -7,8 +7,10 @@ import Icon from 'react-native-vector-icons/FontAwesome5';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 import Menu from './Menu';
 import PopulationMenu from './Population/PopulationMenu';
-import EstimatePopulation from './Population/EstimatePopulation';
-import TransitionPopulation from './Population/TransitionPopulation/TransitionPopulationChart';
+import SumPopulationSwiper from './Population/SumPopulation/SumPopulationSwiper';
+import SexPopulationSwiper from './Population/SexPopulation/SexPopulationSwiper';
+import EstimatePopulationSwiper from './Population/EstimatePopulation/EstimatePopulationSwiper';
+import BirthrateSwiper from './Population/Birthrate/BirthrateSwiper';
 import TransitionPopulationSwiper from './Population/TransitionPopulation/TransitionPopulationSwiper';
 
 
@@ -19,8 +21,10 @@ class App extends Component {
         {
           Home: Menu,
           PopulationMenu: PopulationMenu,
-          TransitionPopulation: TransitionPopulation,
-          EstimatePopulation: EstimatePopulation,
+          SumPopulationSwiper: SumPopulationSwiper,
+          SexPopulationSwiper: SexPopulationSwiper,
+          EstimatePopulationSwiper: EstimatePopulationSwiper,
+          BirthrateSwiper: BirthrateSwiper,
           TransitionPopulationSwiper: TransitionPopulationSwiper,
         },
         {
@@ -39,6 +43,12 @@ class App extends Component {
           },
           グラフ選択: {
             screen: Menu,
+            navigationOptions:{
+              drawerIcon:  <Icon name="chart-bar" size={24} color="#636D70"/>
+            }
+          },
+          人口: {
+            screen: PopulationMenu,
             navigationOptions:{
               drawerIcon:  <Icon name="chart-bar" size={24} color="#636D70"/>
             }

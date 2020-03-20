@@ -7,8 +7,11 @@ import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-nativ
 
 class TransitionPopulationChart extends Component {
 
-    state = {
-      spinner: true
+    constructor(props){
+      super(props);
+      this.state = {
+        spinner: true
+      }
     }
 
     componentDidMount(){
@@ -62,7 +65,7 @@ class TransitionPopulationChart extends Component {
                 overlayColor="rgba(0,0,0,0.5)"
               />
               <Text style={styles.title}>
-                人口推移(国勢調査)
+                  人口推移(国勢調査)
               </Text>
               <View style={styles.chart}>
               <VictoryChart style={styles.chart}
