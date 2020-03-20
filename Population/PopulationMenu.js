@@ -121,7 +121,107 @@ class PopulationMenu extends Component{
                                 <View style={styles.menuContents}>
                                     <View>
                                         <Text style={styles.graphTitle}>
-                                            年齢別総人口(平成２７年国勢調査)
+                                            年齢別総人口(平成27年国勢調査)
+                                        </Text>
+                                    </View>
+                                    <View style={styles.menuContentsBottom}>
+                                        <View>
+                                            <Text style={styles.explanation}>
+                                                調査の詳細へ >
+                                            </Text>
+                                        </View>
+                                        <TouchableOpacity  
+                                          style={styles.button}
+                                          onPress={()=>navigate('SumPopulationSwiper')}>
+                                            <Text style={styles.buttonText}>
+                                                グラフを見る
+                                            </Text>
+                                        </TouchableOpacity>
+                                    </View>
+                                </View>
+                            </TouchableOpacity>
+                            <TouchableOpacity 
+                              style={styles.menu}
+                              onPress={()=>navigate('EstimatePopulation')}>
+                                <View style={styles.menuContents}>
+                                    <View>
+                                        <Text style={styles.graphTitle}>
+                                            男女別総人口(平成27年国勢調査)
+                                        </Text>
+                                    </View>
+                                    <View style={styles.menuContentsBottom}>
+                                        <View>
+                                            <Text style={styles.explanation}>
+                                                調査の詳細へ >
+                                            </Text>
+                                        </View>
+                                        <TouchableOpacity  
+                                          style={styles.button}
+                                          onPress={()=>navigate('SexPopulationSwiper')}>
+                                            <Text style={styles.buttonText}>
+                                                グラフを見る
+                                            </Text>
+                                        </TouchableOpacity>
+                                    </View>
+                                </View>
+                            </TouchableOpacity>
+                            <TouchableOpacity 
+                              style={styles.menu}
+                              onPress={()=>navigate('EstimatePopulation')}>
+                                <View style={styles.menuContents}>
+                                    <View>
+                                        <Text style={styles.graphTitle}>
+                                            人口推計(平成30年10月1日)
+                                        </Text>
+                                    </View>
+                                    <View style={styles.menuContentsBottom}>
+                                        <View>
+                                            <Text style={styles.explanation}>
+                                                調査の詳細へ >
+                                            </Text>
+                                        </View>
+                                        <TouchableOpacity  
+                                          style={styles.button}
+                                          onPress={()=>navigate('EstimatePopulationSwiper')}>
+                                            <Text style={styles.buttonText}>
+                                                グラフを見る
+                                            </Text>
+                                        </TouchableOpacity>
+                                    </View>
+                                </View>
+                            </TouchableOpacity>
+                            <TouchableOpacity 
+                              style={styles.menu}
+                              onPress={()=>navigate('EstimatePopulation')}>
+                                <View style={styles.menuContents}>
+                                    <View>
+                                        <Text style={styles.graphTitle}>
+                                            合計特殊出生率
+                                        </Text>
+                                    </View>
+                                    <View style={styles.menuContentsBottom}>
+                                        <View>
+                                            <Text style={styles.explanation}>
+                                                調査の詳細へ >
+                                            </Text>
+                                        </View>
+                                        <TouchableOpacity  
+                                          style={styles.button}
+                                          onPress={()=>navigate('BirthrateSwiper')}>
+                                            <Text style={styles.buttonText}>
+                                                グラフを見る
+                                            </Text>
+                                        </TouchableOpacity>
+                                    </View>
+                                </View>
+                            </TouchableOpacity>
+                            <TouchableOpacity 
+                              style={styles.menu}
+                              onPress={()=>navigate('EstimatePopulation')}>
+                                <View style={styles.menuContents}>
+                                    <View>
+                                        <Text style={styles.graphTitle}>
+                                            人口推移(国勢調査)
                                         </Text>
                                     </View>
                                     <View style={styles.menuContentsBottom}>
@@ -139,10 +239,6 @@ class PopulationMenu extends Component{
                                         </TouchableOpacity>
                                     </View>
                                 </View>
-                            </TouchableOpacity>
-                            <TouchableOpacity style={styles.menu}>
-                            </TouchableOpacity>
-                            <TouchableOpacity style={styles.menu}>
                             </TouchableOpacity>
                         </View>
                     </View>

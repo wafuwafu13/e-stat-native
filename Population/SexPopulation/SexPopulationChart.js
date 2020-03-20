@@ -1,23 +1,24 @@
 import React, { Component } from 'react';
-import { Text, ScrollView, Dimensions } from 'react-native';
+import { StyleSheet, View, Text, Dimensions } from 'react-native';
 import axios from 'axios';
 import { VictoryBar, VictoryChart, VictoryGroup, VictoryTheme, VictoryAxis } from 'victory-native';
-import { Card } from 'react-native-elements';
+import Spinner from 'react-native-loading-spinner-overlay';
 import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
 
 class SexPopulation extends Component {
 
-    constructor(props) {
+    constructor(props){
         super(props);
-        this.state= {
+        this.state = {
           isLoaded: true,
           error: null,
           manPopulation: [],
           womanPopulation: [],
+          spinner: true,
         }
       }
 
-    componentWillMount() {
+    componentWillMount(){
         let APP_ID = "857f6df73c559e37a4dabc4d2b7eb090d8b9893d"
         let API_URL = "http://api.e-stat.go.jp/rest/2.1/app/json/getStatsData"
         let cdCat03_M = "0010"
@@ -56,6 +57,7 @@ class SexPopulation extends Component {
           manPopulationBox[i].x = i;
           womanPopulationBox[i].x = i;
         }
+
         axios.get(GET_URL_M)
           .then(
               (result) => {
@@ -93,46 +95,82 @@ class SexPopulation extends Component {
               },
           )
     }
+
+    componentDidMount(){
+      setTimeout(()=>{
+        this.setState({
+          spinner: false
+        })
+      }, 8000)
+    }
+
     render(){
         const error = this.state.error;
         const isLoaded = this.state.isLoaded;
         const mandata = this.state.manPopulation;
         const womandata = this.state.womanPopulation;
         const height = Dimensions.get('window').height;
+        const styles = StyleSheet.create({
+          container:{
+            flex: 1,
+            backgroundColor: '#CCCCCC',
+            justifyContent: 'center',
+            alignItems: 'center',
+          },
+          title:{
+            fontSize: wp('3%'),
+            color: '#3E3D3D',
+          },
+          chart:{
+            marginBottom: hp('15%')
+          }
+        })
+
         if(error){
             return <Text>Error: {error.message}</Text>;
-          } else if (!isLoaded) {
+          }else if(!isLoaded) {
             return <Text>Loading...</Text>;
-          } else
+          }else
           return(
-            <ScrollView>
-                <VictoryChart
-                 theme={VictoryTheme.material}
-                 height={height*0.8}
-                 margin={2}
-                 animate={{ duration: 10000, easing: "bounce" }}
-                >
-                  <VictoryAxis
-               　   tickValues={[5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95]}
-                  />
-                  <VictoryAxis dependentAxis
-                    tickFormat={(y) => (`${y/10000}万`)}
-                    tickValues={[250000, 500000, 750000, 1000000, 1250000]}
-                  />
-                     <VictoryGroup
-                      colorScale={["#3399FF", "#FF66CC"]}
-                      offset={2}
-                      style={{data:{width:1.5}}}
-                     >
-                       <VictoryBar
-                        data={mandata}
-                       />
-                       <VictoryBar
-                        data={womandata}
-                       />
-                   </VictoryGroup>
-                </VictoryChart>
-            </ScrollView>
+            <View style={styles.container}>
+                <Spinner
+                  visible={this.state.spinner}
+                  textContent="読込中..."
+                  textStyle={{ color: "#fff" }}
+                  overlayColor="rgba(0,0,0,0.5)"
+                />
+                <Text style={styles.title}>
+                    男女別総人口(平成27年国勢調査)
+                </Text>
+                <View style={styles.chart}>
+                    <VictoryChart
+                     theme={VictoryTheme.material}
+                     height={height*0.8}
+                     margin={2}
+                     animate={{ duration: 5000, easing: "bounce" }}
+                    >
+                      <VictoryAxis
+               　       tickValues={[5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95]}
+                      />
+                      <VictoryAxis dependentAxis
+                        tickFormat={(y) => (`${y/10000}万`)}
+                        tickValues={[250000, 500000, 750000, 1000000, 1250000]}
+                      />
+                         <VictoryGroup
+                          colorScale={["#3399FF", "#FF66CC"]}
+                          offset={2}
+                          style={{ data: {width:1.5} }}
+                         >
+                           <VictoryBar
+                            data={mandata}
+                           />
+                           <VictoryBar
+                            data={womandata}
+                           />
+                       </VictoryGroup>
+                    </VictoryChart>
+                </View>
+            </View>
           )
      }
 }
