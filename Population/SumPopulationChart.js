@@ -1,17 +1,13 @@
 import React, { Component } from 'react';
-import { Text, ScrollView, Dimensions } from 'react-native';
+import { Text, View, Dimensions } from 'react-native';
 import axios from 'axios';
 import { VictoryBar, VictoryChart, VictoryTheme, VictoryAxis } from 'victory-native';
-import { Card } from 'react-native-elements';
 import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
 
-class SumPopulation extends Component {
-    static navigationOptions = {
-      title: '年齢別総人口 (平成27年国勢調査)',
-      headerTintColor: '#000080',
-    }
 
-    constructor(props) {
+class SumPopulationChart extends Component{
+
+    constructor(props){
         super(props);
         this.state= {
           isLoaded: true,
@@ -20,7 +16,7 @@ class SumPopulation extends Component {
         }
       }
 
-    componentWillMount() {
+    componentWillMount(){
       let APP_ID = "857f6df73c559e37a4dabc4d2b7eb090d8b9893d"
       let API_URL = "http://api.e-stat.go.jp/rest/2.1/app/json/getStatsData"
       let cdCat03 = "0000"
@@ -61,39 +57,40 @@ class SumPopulation extends Component {
         },
       )
     }
+
     render(){
         const error = this.state.error;
         const isLoaded = this.state.isLoaded;
         const data = this.state.sumPopulation;
         const height = Dimensions.get('window').height;
+
         if(error){
-            return <Text>Error: {error.message}</Text>;
-          } else if (!isLoaded) {
+            return <Text>Error: { error.message }</Text>;
+          }else if(isLoaded){
             return <Text>Loading...</Text>;
-          } else
+          }else
           return(
-            <ScrollView>
+            <View>
                 <VictoryChart
                  animate={{ duration: 10000, easing: "bounce" }}
-                 theme={VictoryTheme.material}
-                 height={height*0.8}
+                 theme={ VictoryTheme.material }
+                 height={ height*0.8 }
                 >
                   <VictoryAxis
-               　   tickValues={[5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95]}
+               　   tickValues={ [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95] }
                   />
                   <VictoryAxis dependentAxis
-                    tickFormat={(y) => (`${y/10000}万`)}
-                    tickValues={[250000, 500000, 750000, 1000000, 1250000, 1500000, 1750000, 2000000]}
+                    tickFormat={ (y) => (`${y/10000}万`) }
+                    tickValues={ [250000, 500000, 750000, 1000000, 1250000, 1500000, 1750000, 2000000] }
                   />
                     <VictoryBar
-                       data={data}
-                       style={{data: {fill: "#66CC66"}}}
+                       data={ data }
+                       style={{ data: { fill: "#66CC66" } }}
                      />
-                 </VictoryChart>
-            </ScrollView>
+                </VictoryChart>
+            </View>
           )
      }
 }
 
-
-export default SumPopulation;
+export default SumPopulationChart;
