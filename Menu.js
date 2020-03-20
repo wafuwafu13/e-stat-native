@@ -187,7 +187,7 @@ class Menu extends Component{
                                 </View>
                                 <TouchableOpacity
                                   style={styles.marriageIcon}
-                                  onPress={()=>navigate('PopulationMenu')}
+                                  onPress={()=>navigate('MarriageMenu')}
                                 >
                                     <Icon name="heartbeat" size={wp('10%')} color="#9E1212"/>
                                     <Text style={styles.explanation}>
