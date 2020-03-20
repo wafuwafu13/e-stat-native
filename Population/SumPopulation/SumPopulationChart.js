@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import { Text, View, Dimensions } from 'react-native';
+import { StyleSheet, Text, View, Dimensions } from 'react-native';
 import axios from 'axios';
 import { VictoryBar, VictoryChart, VictoryTheme, VictoryAxis } from 'victory-native';
+import Spinner from 'react-native-loading-spinner-overlay';
 import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
 
 
@@ -13,6 +14,7 @@ class SumPopulationChart extends Component{
           isLoaded: true,
           error: null,
           sumPopulation: [],
+          spinner: true,
         }
       }
 
@@ -58,36 +60,70 @@ class SumPopulationChart extends Component{
       )
     }
 
+    componentDidMount(){
+      setTimeout(()=>{
+        this.setState({
+          spinner: false
+        })
+      }, 8000)
+    }
+
     render(){
         const error = this.state.error;
         const isLoaded = this.state.isLoaded;
         const data = this.state.sumPopulation;
         const height = Dimensions.get('window').height;
+        const styles = StyleSheet.create({
+          container:{
+            flex: 1,
+            backgroundColor: '#CCCCCC',
+            justifyContent: 'center',
+            alignItems: 'center',
+          },
+          title:{
+            fontSize: wp('3%'),
+            color: '#3E3D3D',
+          },
+          chart:{
+            marginBottom: hp('15%')
+          }
+        })
 
         if(error){
             return <Text>Error: { error.message }</Text>;
-          }else if(isLoaded){
+          }else if(!isLoaded){
             return <Text>Loading...</Text>;
           }else
           return(
-            <View>
-                <VictoryChart
-                 animate={{ duration: 10000, easing: "bounce" }}
-                 theme={ VictoryTheme.material }
-                 height={ height*0.8 }
-                >
-                  <VictoryAxis
-               　   tickValues={ [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95] }
-                  />
-                  <VictoryAxis dependentAxis
-                    tickFormat={ (y) => (`${y/10000}万`) }
-                    tickValues={ [250000, 500000, 750000, 1000000, 1250000, 1500000, 1750000, 2000000] }
-                  />
-                    <VictoryBar
-                       data={ data }
-                       style={{ data: { fill: "#66CC66" } }}
-                     />
-                </VictoryChart>
+            <View style={styles.container}>
+                <Spinner
+                  visible={this.state.spinner}
+                  textContent="読込中..."
+                  textStyle={{ color: "#fff" }}
+                  overlayColor="rgba(0,0,0,0.5)"
+                />
+                <Text style={styles.title}>
+                    年齢別総人口(平成27年国勢調査)
+                </Text>
+                <View style={styles.chart}>
+                    <VictoryChart
+                     animate={{ duration: 4000, easing: "bounce" }}
+                     theme={ VictoryTheme.material }
+                     height={ height*0.8 }
+                    >
+                      <VictoryAxis
+               　       tickValues={ [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95] }
+                      />
+                      <VictoryAxis dependentAxis
+                        tickFormat={ (y) => (`${y/10000}万`) }
+                        tickValues={ [250000, 500000, 750000, 1000000, 1250000, 1500000, 1750000, 2000000] }
+                      />
+                        <VictoryBar
+                           data={ data }
+                           style={{ data: { fill: "#66CC66" } }}
+                         />
+                    </VictoryChart>
+                </View>
             </View>
           )
      }
