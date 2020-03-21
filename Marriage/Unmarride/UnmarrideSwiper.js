@@ -32,7 +32,7 @@ class UnmarrideSwiper extends Component{
                     </TouchableOpacity>
                     <UnmarrideChart />
                 </View>
-                <View>
+                <View　style={styles.container}>
                     <Explanation />      
                 </View>
             </Swiper>

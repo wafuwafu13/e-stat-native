@@ -32,7 +32,7 @@ class TransitionPopulationSwiper extends Component{
                     </TouchableOpacity>
                     <TransitionPopulationChart />
                 </View>
-                <View>
+                <View style={styles.container}>
                     <Explanation />      
                 </View>
             </Swiper>

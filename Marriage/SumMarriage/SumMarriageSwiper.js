@@ -32,7 +32,7 @@ class SumMarriageSwiper extends Component{
                     </TouchableOpacity>
                     <SumMarriageChart />
                 </View>
-                <View>
+                <View style={styles.container}>
                     <Explanation />      
                 </View>
             </Swiper>
