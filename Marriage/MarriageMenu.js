@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { StyleSheet, View, Text, ScrollView, TouchableOpacity } from 'react-native';
 import Modal from 'react-native-modal';
 import Icon from 'react-native-vector-icons/FontAwesome5';
+import * as Animatable from 'react-native-animatable';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 import SumMarriageModal from './SumMarriage/SumMarriageModal';
 import UnmarrideModal from './Unmarride/UnmarrideModal';
@@ -123,9 +124,9 @@ class MarriageMenu extends Component{
                     >
                         <Icon name="list-alt" size={wp('5%')} color="#807E7C"/>
                     </TouchableOpacity>
-                    <Text style={styles.iconTitle}>
+                    <Animatable.Text animation="bounceInUp" style={styles.iconTitle}>
                         結 婚
-                    </Text>
+                    </Animatable.Text>
                     <View>
                         <Icon name="heartbeat" size={wp('10%')} color="#9E1212"/>
                     </View>
