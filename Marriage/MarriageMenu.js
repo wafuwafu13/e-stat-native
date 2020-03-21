@@ -1,19 +1,42 @@
 import React, { Component } from 'react';
-import { StyleSheet, View, Button, Text, ScrollView, TouchableOpacity } from 'react-native';
+import { StyleSheet, View, Text, ScrollView, TouchableOpacity } from 'react-native';
 import Modal from 'react-native-modal';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
-import MenuModal from '../MenuModal';
+import SumMarriageModal from './SumMarriage/SumMarriageModal';
+import UnmarrideModal from './Unmarride/UnmarrideModal';
+import DivorcerateModal from './Divorcerate/DivorcerateModal';
+
 
 class MarriageMenu extends Component{
 
-    // state = {
-    //     modalVisible: false,
-    // };
+    constructor(props){
+        super(props);
+        this.state = {
+            sumMarriageModalVisible: false,
+            unmarrideModalVisible: false,
+            divorcerateModalVisible: false,
+        }
+    }
 
-    // toggleModal = () => {
-    //     this.setState({ modalVisible: !this.state.modalVisible });
-    // }
+    sumMarriageToggleModal = () => {
+        this.setState({ 
+            sumMarriageModalVisible: !this.state.sumMarriageModalVisible 
+        });
+    }
+
+    unmarrideToggleModal = () => {
+        this.setState({ 
+            unmarrideModalVisible: !this.state.unmarrideModalVisible 
+        });
+    }
+
+    divorcerateToggleModal = () => {
+        this.setState({ 
+            divorcerateModalVisible: !this.state.divorcerateModalVisible 
+        });
+    }
+
 
     render(){
         const {navigate} = this.props.navigation
@@ -92,9 +115,7 @@ class MarriageMenu extends Component{
 
         return(
             <View style={styles.container}>
-                 {/* <Modal isVisible={ this.state.modalVisible }>
-                    <MenuModal nav={this} />
-                </Modal> */}
+                
                 <View style={styles.side}>
                     <TouchableOpacity
                         onPress={() => this.props.navigation.toggleDrawer()}
@@ -117,11 +138,14 @@ class MarriageMenu extends Component{
                         <View style={styles.menuContainer}>
                             <TouchableOpacity 
                               style={styles.menu}
-                              onPress={()=>navigate('EstimatePopulation')}>
+                              onPress={this.sumMarriageToggleModal}>
+                                <Modal isVisible={ this.state.sumMarriageModalVisible }>
+                                    <SumMarriageModal toggle={this} />
+                                </Modal>
                                 <View style={styles.menuContents}>
                                     <View>
                                         <Text style={styles.graphTitle}>
-                                            結婚件数(人口動態調査)
+                                            結婚件数
                                         </Text>
                                     </View>
                                     <View style={styles.menuContentsBottom}>
@@ -142,11 +166,14 @@ class MarriageMenu extends Component{
                             </TouchableOpacity>
                             <TouchableOpacity 
                               style={styles.menu}
-                              onPress={()=>navigate('EstimatePopulation')}>
+                              onPress={this.unmarrideToggleModal}>
+                                <Modal isVisible={ this.state.unmarrideModalVisible }>
+                                    <UnmarrideModal toggle={this} />
+                                </Modal>
                                 <View style={styles.menuContents}>
                                     <View>
                                         <Text style={styles.graphTitle}>
-                                            40~45歳男女の未婚率(国勢調査)
+                                            40~45歳男女の未婚率
                                         </Text>
                                     </View>
                                     <View style={styles.menuContentsBottom}>
@@ -167,11 +194,14 @@ class MarriageMenu extends Component{
                             </TouchableOpacity>
                             <TouchableOpacity 
                               style={styles.menu}
-                              onPress={()=>navigate('EstimatePopulation')}>
+                              onPress={this.divorcerateToggleModal}>
+                                <Modal isVisible={ this.state.divorcerateModalVisible }>
+                                    <DivorcerateModal toggle={this} />
+                                </Modal>
                                 <View style={styles.menuContents}>
                                     <View>
                                         <Text style={styles.graphTitle}>
-                                            離婚率(人口動態調査)
+                                            離婚率
                                         </Text>
                                     </View>
                                     <View style={styles.menuContentsBottom}>

@@ -1,19 +1,33 @@
 import React, { Component } from 'react';
-import { StyleSheet, View, Button, Text, ScrollView, TouchableOpacity } from 'react-native';
+import { StyleSheet, View, Text, ScrollView, TouchableOpacity } from 'react-native';
 import Modal from 'react-native-modal';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
-import MenuModal from '../MenuModal';
+import HeightModal from './Height/HeightModal';
+import WeightModal from './Weight/WeightModal';
+
 
 class PopulationMenu extends Component{
 
-    // state = {
-    //     modalVisible: false,
-    // };
+    constructor(props){
+        super(props);
+        this.state = {
+            heightModalVisible: false,
+            weightModalVisible: false,
+        }
+    }
 
-    // toggleModal = () => {
-    //     this.setState({ modalVisible: !this.state.modalVisible });
-    // }
+    heightToggleModal = () => {
+        this.setState({ 
+            heightModalVisible: !this.state.heightModalVisible 
+        });
+    }
+
+    weightToggleModal = () => {
+        this.setState({ 
+            weightModalVisible: !this.state.weightModalVisible 
+        });
+    }
 
     render(){
         const {navigate} = this.props.navigation
@@ -92,9 +106,6 @@ class PopulationMenu extends Component{
 
         return(
             <View style={styles.container}>
-                 {/* <Modal isVisible={ this.state.modalVisible }>
-                    <MenuModal nav={this} />
-                </Modal> */}
                 <View style={styles.side}>
                     <TouchableOpacity
                         onPress={() => this.props.navigation.toggleDrawer()}
@@ -117,11 +128,14 @@ class PopulationMenu extends Component{
                         <View style={styles.menuContainer}>
                             <TouchableOpacity 
                               style={styles.menu}
-                              onPress={()=>navigate('EstimatePopulation')}>
+                              onPress={this.heightToggleModal}>
+                                <Modal isVisible={ this.state.heightModalVisible }>
+                                    <HeightModal toggle={this} />
+                                </Modal>
                                 <View style={styles.menuContents}>
                                     <View>
                                         <Text style={styles.graphTitle}>
-                                            男女別平均身長(平成28年国民健康・栄養調査)
+                                            男女別平均身長
                                         </Text>
                                     </View>
                                     <View style={styles.menuContentsBottom}>
@@ -142,11 +156,14 @@ class PopulationMenu extends Component{
                             </TouchableOpacity>
                             <TouchableOpacity 
                               style={styles.menu}
-                              onPress={()=>navigate('EstimatePopulation')}>
+                              onPress={this.weightToggleModal}>
+                                 <Modal isVisible={ this.state.weightModalVisible }>
+                                    <WeightModal toggle={this} />
+                                </Modal>
                                 <View style={styles.menuContents}>
                                     <View>
                                         <Text style={styles.graphTitle}>
-                                            男女別平均体重(平成28年国民健康・栄養調査)
+                                            男女別平均体重
                                         </Text>
                                     </View>
                                     <View style={styles.menuContentsBottom}>

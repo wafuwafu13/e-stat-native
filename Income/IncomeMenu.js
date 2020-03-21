@@ -1,19 +1,24 @@
 import React, { Component } from 'react';
-import { StyleSheet, View, Button, Text, ScrollView, TouchableOpacity } from 'react-native';
+import { StyleSheet, View, Text, ScrollView, TouchableOpacity } from 'react-native';
 import Modal from 'react-native-modal';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
-import MenuModal from '../MenuModal';
+import AnnualIncomeModal from './AnnualIncome/AnnualIncomeModal';
 
-class PopulationMenu extends Component{
+class IncomeMenu extends Component{
 
-    // state = {
-    //     modalVisible: false,
-    // };
+    constructor(props){
+        super(props);
+        this.state = {
+            annualIncomeModalVisible: false,
+        }
+    }
 
-    // toggleModal = () => {
-    //     this.setState({ modalVisible: !this.state.modalVisible });
-    // }
+    annualIncomeToggleModal = () => {
+        this.setState({ 
+            annualIncomeModalVisible: !this.state.annualIncomeModalVisible 
+        });
+    }
 
     render(){
         const {navigate} = this.props.navigation
@@ -68,7 +73,7 @@ class PopulationMenu extends Component{
                 paddingTop: hp('7%'),
             },
             graphTitle:{
-                fontSize: wp('2.3%'),
+                fontSize: wp('3%'),
                 color: '#4B4B4B',
             },
             explanation:{
@@ -92,9 +97,6 @@ class PopulationMenu extends Component{
 
         return(
             <View style={styles.container}>
-                 {/* <Modal isVisible={ this.state.modalVisible }>
-                    <MenuModal nav={this} />
-                </Modal> */}
                 <View style={styles.side}>
                     <TouchableOpacity
                         onPress={() => this.props.navigation.toggleDrawer()}
@@ -117,11 +119,14 @@ class PopulationMenu extends Component{
                         <View style={styles.menuContainer}>
                             <TouchableOpacity 
                               style={styles.menu}
-                              onPress={()=>navigate('EstimatePopulation')}>
+                              onPress={this.annualIncomeToggleModal}>
+                                <Modal isVisible={ this.state.annualIncomeModalVisible }>
+                                    <AnnualIncomeModal toggle={this} />
+                                </Modal>
                                 <View style={styles.menuContents}>
                                     <View>
                                         <Text style={styles.graphTitle}>
-                                            男女・年代別平均年収(平成28年民間給与実態統計調査)
+                                            男女・年代別平均年収
                                         </Text>
                                     </View>
                                     <View style={styles.menuContentsBottom}>
@@ -148,4 +153,4 @@ class PopulationMenu extends Component{
     } 
 }
 
-export default PopulationMenu;
+export default IncomeMenu;
