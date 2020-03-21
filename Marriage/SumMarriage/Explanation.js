@@ -20,8 +20,8 @@ class Explanation extends Component{
         return(
             <View style={styles.container}>
                 <Text style={styles.text}>
-                    戦争後の1947年は結婚件数は
-                    <Text style={{color: 'red'}}>93万4千170人</Text>
+                    戦後の1947年の結婚件数は
+                    <Text style={{color: 'red'}}>93万4千170件</Text>
                     と多くなっています。
                 </Text>
                 <Text style={styles.text}>
@@ -29,7 +29,7 @@ class Explanation extends Component{
                 </Text>
                 <Text style={styles.text}>
                     しかし、近年では減少する一方で、2017年の結婚件数は
-                    <Text style={{color: 'red'}}>60万6千866人</Text>
+                    <Text style={{color: 'red'}}>60万6千866件</Text>
                     となっています。
                 </Text>
             </View>
