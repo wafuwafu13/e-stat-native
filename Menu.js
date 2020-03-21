@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { StyleSheet, View, Text, TouchableOpacity, ScrollView } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome5';
+import * as Animatable from 'react-native-animatable';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 
 
@@ -146,8 +147,7 @@ class Menu extends Component{
                             </Text>
                         </View>
                         <View style={styles.menuContainer}>
-                            <View style={styles.menu}>
-                            
+                            <Animatable.View animation="bounce" style={styles.menu}>
                                 <View style={styles.populationTitle}>
                                     <Text style={styles.menuTitle}>
                                         人 口
@@ -162,8 +162,8 @@ class Menu extends Component{
                                         5つのグラフ
                                     </Text>
                                 </TouchableOpacity>
-                            </View>
-                            <View style={styles.menu}>
+                            </Animatable.View>
+                            <Animatable.View animation="bounce" style={styles.menu}>
                                 <View style={styles.bodyTitle}>
                                     <Text style={styles.menuTitle}>
                                         身長・体重
@@ -178,8 +178,8 @@ class Menu extends Component{
                                         2つのグラフ
                                     </Text>
                                 </TouchableOpacity>
-                            </View>
-                            <View style={styles.menu}>
+                            </Animatable.View>
+                            <Animatable.View animation="bounce" style={styles.menu}>
                                 <View style={styles.marriageTitle}>
                                     <Text style={styles.menuTitle}>
                                         結 婚
@@ -194,10 +194,10 @@ class Menu extends Component{
                                         3つのグラフ
                                     </Text>
                                 </TouchableOpacity>
-                            </View>
+                            </Animatable.View>
                         </View>
                         <View style={styles.menuContainer}>
-                            <View style={styles.menu2}>
+                            <Animatable.View animation="bounce" style={styles.menu2}>
                                 <View style={styles.incomeTitle}>
                                     <Text style={styles.menuTitle}>
                                         年 収
@@ -212,7 +212,7 @@ class Menu extends Component{
                                         1つのグラフ
                                     </Text>
                                 </TouchableOpacity>
-                            </View>
+                            </Animatable.View>
                         </View>
                     </View>
                 </View>
