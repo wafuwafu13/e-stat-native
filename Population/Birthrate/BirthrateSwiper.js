@@ -32,7 +32,7 @@ class BirthrateSwiper extends Component{
                     </TouchableOpacity>
                     <BirthrateChart />
                 </View>
-                <View>
+                <View　style={styles.container}>
                     <Explanation />      
                 </View>
             </Swiper>

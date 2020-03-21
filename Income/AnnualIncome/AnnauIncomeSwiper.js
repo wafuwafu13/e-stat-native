@@ -32,7 +32,7 @@ class AnnualIncomeSwiper extends Component{
                     </TouchableOpacity>
                     <AnnualIncomeChart />
                 </View>
-                <View>
+                <View　style={styles.container}>
                     <Explanation />      
                 </View>
             </Swiper>

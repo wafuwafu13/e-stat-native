@@ -32,7 +32,7 @@ class DivorcerateSwiper extends Component{
                     </TouchableOpacity>
                     <DivorcerateChart />
                 </View>
-                <View>
+                <View　style={styles.container}>
                     <Explanation />      
                 </View>
             </Swiper>

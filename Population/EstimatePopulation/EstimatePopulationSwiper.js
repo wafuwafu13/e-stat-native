@@ -32,7 +32,7 @@ class EstimatePopulationSwiper extends Component{
                     </TouchableOpacity>
                     <EstimatePopulationChart />
                 </View>
-                <View>
+                <View style={styles.container}>
                     <Explanation />      
                 </View>
             </Swiper>

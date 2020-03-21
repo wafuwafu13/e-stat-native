@@ -32,7 +32,7 @@ class SexPopulationSwiper extends Component{
                     </TouchableOpacity>
                     <SexPopulationChart />
                 </View>
-                <View>
+                <View style={styles.container}>
                     <Explanation />      
                 </View>
             </Swiper>

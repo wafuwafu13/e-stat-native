@@ -32,7 +32,7 @@ class HeightSwiper extends Component{
                     </TouchableOpacity>
                     <HeightChart />
                 </View>
-                <View>
+                <View style={styles.container}>
                     <Explanation />      
                 </View>
             </Swiper>

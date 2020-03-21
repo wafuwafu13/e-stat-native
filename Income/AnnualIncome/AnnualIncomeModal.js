@@ -24,6 +24,9 @@ class AnnualIncomeModal extends Component{
                 <Text>
                     給与階級別、事業所規模別、企業規模別等に明らかにする調査です。
                 </Text>
+                <Text>
+                    20~24歳、25歳~29歳という年代別で調査をしています。
+                </Text>
                 <Button title="閉じる" onPress={this.props.toggle.annualIncomeToggleModal}/>
             </View>
         )

@@ -32,7 +32,7 @@ class SumPopulationSwiper extends Component{
                     </TouchableOpacity>
                     <SumPopulationChart />
                 </View>
-                <View>
+                <View style={styles.container}>
                     <Explanation />      
                 </View>
             </Swiper>

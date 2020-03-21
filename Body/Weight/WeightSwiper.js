@@ -32,7 +32,7 @@ class WeightSwiper extends Component{
                     </TouchableOpacity>
                     <Weighthart />
                 </View>
-                <View>
+                <View　style={styles.container}>
                     <Explanation />      
                 </View>
             </Swiper>
