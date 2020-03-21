@@ -1,19 +1,57 @@
 import React, { Component } from 'react';
-import { StyleSheet, View, Button, Text, ScrollView, TouchableOpacity } from 'react-native';
+import { StyleSheet, View, Text, ScrollView, TouchableOpacity } from 'react-native';
 import Modal from 'react-native-modal';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
-import MenuModal from '../MenuModal';
+import SumPopulationModal from './SumPopulation/SumPopulationModal';
+import SexPopulationModal from './SexPopulation/SexPopulationModal';
+import EstimatePopulationModal from './EstimatePopulation/EstimatePopulationModal';
+import BirthrateModal from './Birthrate/BirthrateModal';
+import TransitionPopulationModal from './TransitionPopulation/TransitionPopulationModal';
+
 
 class PopulationMenu extends Component{
 
-    // state = {
-    //     modalVisible: false,
-    // };
+    constructor(props){
+        super(props);
+        this.state = {
+            sumPopulationModalVisible: false,
+            sexPopulationModalVisible: false,
+            estimatePopulationModalVisible: false,
+            birthrateModalVisible: false,
+            sumPopulationModalVisible: false,
+        }
+    }
 
-    // toggleModal = () => {
-    //     this.setState({ modalVisible: !this.state.modalVisible });
-    // }
+    sumPopulationToggleModal = () => {
+        this.setState({ 
+            sumPopulationModalVisible: !this.state.sumPopulationModalVisible 
+        });
+    }
+
+    sexPopulationToggleModal = () => {
+        this.setState({ 
+            sexPopulationModalVisible: !this.state.sexPopulationModalVisible 
+        });
+    }
+
+    estimatePopulationToggleModal = () => {
+        this.setState({ 
+            estimatePopulationModalVisible: !this.state.estimatePopulationModalVisible
+        });
+    }
+
+    birthrateToggleModal = () => {
+        this.setState({ 
+            birthrateModalVisible: !this.state.birthrateModalVisible 
+        });
+    }
+
+    transitionPopulationToggleModal = () => {
+        this.setState({ 
+            transitionPopulationModalVisible: !this.state.transitionPopulationModalVisible 
+        });
+    }
 
     render(){
         const {navigate} = this.props.navigation
@@ -92,9 +130,6 @@ class PopulationMenu extends Component{
 
         return(
             <View style={styles.container}>
-                 {/* <Modal isVisible={ this.state.modalVisible }>
-                    <MenuModal nav={this} />
-                </Modal> */}
                 <View style={styles.side}>
                     <TouchableOpacity
                         onPress={() => this.props.navigation.toggleDrawer()}
@@ -117,11 +152,14 @@ class PopulationMenu extends Component{
                         <View style={styles.menuContainer}>
                             <TouchableOpacity 
                               style={styles.menu}
-                              onPress={()=>navigate('EstimatePopulation')}>
+                              onPress={this.sumPopulationToggleModal}>
+                                <Modal isVisible={ this.state.sumPopulationModalVisible }>
+                                    <SumPopulationModal toggle={this} />
+                                </Modal>
                                 <View style={styles.menuContents}>
                                     <View>
                                         <Text style={styles.graphTitle}>
-                                            年齢別総人口(平成27年国勢調査)
+                                            年齢別総人口
                                         </Text>
                                     </View>
                                     <View style={styles.menuContentsBottom}>
@@ -142,11 +180,14 @@ class PopulationMenu extends Component{
                             </TouchableOpacity>
                             <TouchableOpacity 
                               style={styles.menu}
-                              onPress={()=>navigate('EstimatePopulation')}>
+                              onPress={this.sexPopulationToggleModal}>
+                                <Modal isVisible={ this.state.sexPopulationModalVisible }>
+                                    <SexPopulationModal toggle={this} />
+                                </Modal>
                                 <View style={styles.menuContents}>
                                     <View>
                                         <Text style={styles.graphTitle}>
-                                            男女別総人口(平成27年国勢調査)
+                                            男女別総人口
                                         </Text>
                                     </View>
                                     <View style={styles.menuContentsBottom}>
@@ -167,11 +208,14 @@ class PopulationMenu extends Component{
                             </TouchableOpacity>
                             <TouchableOpacity 
                               style={styles.menu}
-                              onPress={()=>navigate('EstimatePopulation')}>
+                              onPress={this.estimatePopulationToggleModal}>
+                                <Modal isVisible={ this.state.estimatePopulationModalVisible }>
+                                    <EstimatePopulationModal toggle={this} />
+                                </Modal>
                                 <View style={styles.menuContents}>
                                     <View>
                                         <Text style={styles.graphTitle}>
-                                            人口推計(平成30年10月1日)
+                                            人口推計
                                         </Text>
                                     </View>
                                     <View style={styles.menuContentsBottom}>
@@ -192,7 +236,10 @@ class PopulationMenu extends Component{
                             </TouchableOpacity>
                             <TouchableOpacity 
                               style={styles.menu}
-                              onPress={()=>navigate('EstimatePopulation')}>
+                              onPress={this.birthrateToggleModal}>
+                                <Modal isVisible={ this.state.birthrateModalVisible }>
+                                    <BirthrateModal toggle={this} />
+                                </Modal>
                                 <View style={styles.menuContents}>
                                     <View>
                                         <Text style={styles.graphTitle}>
@@ -217,11 +264,14 @@ class PopulationMenu extends Component{
                             </TouchableOpacity>
                             <TouchableOpacity 
                               style={styles.menu}
-                              onPress={()=>navigate('EstimatePopulation')}>
+                              onPress={this.transitionPopulationToggleModal}>
+                                <Modal isVisible={ this.state.transitionPopulationModalVisible }>
+                                    <TransitionPopulationModal toggle={this} />
+                                </Modal>
                                 <View style={styles.menuContents}>
                                     <View>
                                         <Text style={styles.graphTitle}>
-                                            人口推移(国勢調査)
+                                            人口推移
                                         </Text>
                                     </View>
                                     <View style={styles.menuContentsBottom}>

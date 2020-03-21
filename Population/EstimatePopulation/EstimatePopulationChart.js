@@ -121,7 +121,7 @@ class EstimatePopulationChart extends Component {
                 overlayColor="rgba(0,0,0,0.5)"
               />
               <Text style={styles.title}>
-                人口推計(平成30年10月1日)
+                人口推計(平成30年10月1日現在)
               </Text>
               <View style={styles.chart}>
                   <VictoryChart
