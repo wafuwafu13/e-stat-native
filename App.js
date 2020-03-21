@@ -21,6 +21,7 @@ import UnmarrideSwiper from './Marriage/Unmarride/UnmarrideSwiper';
 import DivorcerateSwiper from './Marriage/Divorcerate/DivorcerateSwiper';
 import IncomeMenu from './Income/IncomeMenu';
 import AnnualIncomeSwiper from './Income/AnnualIncome/AnnauIncomeSwiper';
+import Overview from './Overview/Overview';
 
 
 class App extends Component {
@@ -44,6 +45,7 @@ class App extends Component {
           DivorcerateSwiper: DivorcerateSwiper,
           IncomeMenu: IncomeMenu,
           AnnualIncomeSwiper: AnnualIncomeSwiper,
+          Overview: Overview,
         },
         {
           initialRouteName: 'Home',
@@ -89,6 +91,13 @@ class App extends Component {
               drawerIcon:  <Icon name="money-bill-wave" size={20} color="#636D70"/>
             }
           },
+          アプリについて:{
+            screen: Overview,
+            navigationOptions:{
+              drawerIcon:  <Icon name="address-card" size={20} color="#636D70"/>
+            }
+          },
+          
         },
         {
           initialRouteName: '閉じる',

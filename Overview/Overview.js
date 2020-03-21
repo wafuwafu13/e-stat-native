@@ -1,27 +1,54 @@
 import React, { Component } from 'react';
-import { Text, ScrollView } from 'react-native';
-import { Card } from 'react-native-elements';
+import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
+import Icon from 'react-native-vector-icons/FontAwesome5';
+import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
 
-class Statistics extends Component {
 
+class Overview extends Component {
 
     render(){
-      // let width = Dimensions.get('window').width;
-        //let height = Dimensions.get('window').height;
+        const styles = StyleSheet.create({
+          container:{
+            flex: 1,
+            padding: wp('3%'),
+            backgroundColor: '#CCCCCC',
+          },
+          text:{
+            position: 'relative',
+            //justifyContent: 'center',
+            //alignItems: 'center',
+          },
+          explanation:{
+            fontSize: wp('2.5%'),
+            marginTop: wp('10%')
+          },
+          profile:{
+            position: 'absolute',
+            fontSize: wp('2%'),
+            marginTop: hp('30%'),
+            right: wp('2%')
+          }
+        })
+
         return(
-              <ScrollView style={{backgroundColor: '#DDDDDD'}}>
-                <Card>
-                    <Text>このサービスは、政府統計総合窓口(e-Stat)のAPI機能を使用していますが、サービスの内容は国によって保証されたものではありません。</Text>
-                    <Text></Text>
-                    <Text>Created by 田川裕隆</Text>
-                    <Text>twitter:https://twitter.com/wafuwafu13_</Text>
-                    <Text>github:https://github.com/wafuwafu13</Text>
-                    <Text>ブログ:https://toukei.fc2.net/</Text>
-                    <Text>ブログ:https://kyoupurog.hatenablog.com/</Text>
-                </Card>
-              </ScrollView>
+              <View style={styles.container}>
+                    <TouchableOpacity
+                        onPress={() => this.props.navigation.toggleDrawer()}
+                        style={styles.modalIcon}
+                    >
+                        <Icon name="list-alt" size={wp('5%')} color="#807E7C"/>
+                    </TouchableOpacity>
+                    <View style={styles.text}>
+                    <Text style={styles.explanation}>
+                      このサービスは、政府統計総合窓口(e-Stat)のAPI機能を使用していますが、サービスの内容は国によって保証されたものではありません。
+                    </Text>
+                    <Text style={styles.profile}>
+                      Created by 田川裕隆 (twitter: @wafuwafu13_)
+                    </Text>
+                    </View>
+              </View>
         )
     }
 }
 
-export default Statistics;
+export default Overview;
