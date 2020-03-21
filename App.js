@@ -100,7 +100,7 @@ class App extends Component {
           
         },
         {
-          initialRouteName: '閉じる',
+          initialRouteName: 'グラフ選択',
           unmountInactiveRoutes: true,
           drawerWidth: wp('25%'),
           drawerBackgroundColor: '#F0FCFF'
