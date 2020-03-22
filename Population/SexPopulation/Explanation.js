@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, ScrollView } from 'react-native';
 import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
 
 
@@ -18,7 +18,7 @@ class Explanation extends Component{
         })
         
         return(
-            <View style={styles.container}>
+            <ScrollView style={styles.container}>
                 <Text style={styles.text}>
                     平成27年の総人口は男性が
                     <Text style={{color: 'red'}}>6千184万人</Text>
@@ -42,7 +42,7 @@ class Explanation extends Component{
                 <Text style={styles.text}>
                     社会文化的要因の1つとして、女性の社会進出の遅れが挙げられ、男性より社会的なストレスを受けにくく、寿命が長くなると考えられています。
                 </Text>
-            </View>
+            </ScrollView>
         )
     }
 }

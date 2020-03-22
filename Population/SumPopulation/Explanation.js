@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, ScrollView } from 'react-native';
 import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
 
 
@@ -18,7 +18,7 @@ class Explanation extends Component{
         })
 
         return(
-            <View style={styles.container}>
+            <ScrollView style={styles.container}>
                 <Text style={styles.text}>
                     平成27年の総人口は
                     <Text style={{color: 'red'}}>1億2千700万人</Text>
@@ -47,7 +47,7 @@ class Explanation extends Component{
                 <Text style={styles.text}>
                     丙午年生まれの女性は、気性が激しく夫の命を縮めるという迷信があり、その迷信を信じる人が多かったようです。
                 </Text>
-            </View>
+            </ScrollView>
         )
     }
 }
