@@ -3,6 +3,7 @@ import { StyleSheet, Text, View, Dimensions } from 'react-native';
 import axios from 'axios';
 import { VictoryBar, VictoryChart, VictoryGroup, VictoryTheme, VictoryAxis } from 'victory-native';
 import Spinner from 'react-native-loading-spinner-overlay';
+import config from '../../config';
 import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
 
 class EstimatePopulationChart extends Component {
@@ -20,7 +21,7 @@ class EstimatePopulationChart extends Component {
     }
 
     componentWillMount(){
-      let APP_ID = "857f6df73c559e37a4dabc4d2b7eb090d8b9893d"
+      let APP_ID = config.APP_ID
       let API_URL = "http://api.e-stat.go.jp/rest/2.1/app/json/getStatsData"
       let statsDataId ="0003312312"
       let GET_URL = API_URL;

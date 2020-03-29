@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import { StyleSheet, View, Text, TouchableOpacity, ScrollView, Button } from 'react-native';
 import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 import { createDrawerNavigator } from 'react-navigation-drawer';
 import Icon from 'react-native-vector-icons/FontAwesome5';
+import { YellowBox } from 'react-native';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 import Menu from './Menu';
 import PopulationMenu from './Population/PopulationMenu';
@@ -22,6 +22,7 @@ import DivorcerateSwiper from './Marriage/Divorcerate/DivorcerateSwiper';
 import IncomeMenu from './Income/IncomeMenu';
 import AnnualIncomeSwiper from './Income/AnnualIncome/AnnauIncomeSwiper';
 import Overview from './Overview/Overview';
+
 
 
 class App extends Component {
@@ -108,6 +109,8 @@ class App extends Component {
       )
 
       const AppContainer = createAppContainer(Drawer)
+
+      YellowBox.ignoreWarnings(['Remote debugger']);
 
       return(
           <AppContainer />
