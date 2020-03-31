@@ -27,39 +27,40 @@ class EstimatePopulationChart extends Component {
       let GET_URL = API_URL;
       GET_URL += "?appId=" + escape(APP_ID);
       GET_URL += "&statsDataId=" + escape(statsDataId);
+      let ageStart = 0;
+      let ageEnd = 98;
+      let sumPopulationBox = [];
+      let sumStart = 1;
+      let sumEnd = 99;
+      let manPopulationBox = [];
+      let manStart = 205;
+      let manEnd = 303;
+      let womanPopulationBox = [];
+      let womanStart = 409;
+      let womanEnd = 507;
+      for(let i = ageStart; i <= ageEnd; i++){
+        sumPopulationBox.push({});
+        manPopulationBox.push({});
+        womanPopulationBox.push({});
+      };
+      for(let i = 0; i <= 98; i++){
+        sumPopulationBox[i].x = i;
+        manPopulationBox[i].x = i;
+        womanPopulationBox[i].x = i;
+      }
   
       axios.get(GET_URL)
       .then(
-        (result) =>{
-          let ageStart = 0;
-          let ageEnd = 98;
-          let sumPopulationBox = [];
-          let sumStart = 1;
-          let sumEnd = 99;
-          let manPopulationBox = [];
-          let manStart = 205;
-          let manEnd = 303;
-          let womanPopulationBox = [];
-          let womanStart = 409;
-          let womanEnd = 507;
-          for(let i = ageStart; i <= ageEnd; i++){
-            sumPopulationBox.push({});
-            manPopulationBox.push({});
-            womanPopulationBox.push({});
-          };
-          for(let i = 0; i <= 98; i++){
-            sumPopulationBox[i].x = i;
-            manPopulationBox[i].x = i;
-            womanPopulationBox[i].x = i;
-          }
+        res =>{
+          const jsonData = res.data.GET_STATS_DATA.STATISTICAL_DATA.DATA_INF;
           for(let i = sumStart; i <= sumEnd; i++){
-            sumPopulationBox[i-sumStart].y = Number(result.data.GET_STATS_DATA.STATISTICAL_DATA.DATA_INF.VALUE[i].$)
+            sumPopulationBox[i-sumStart].y = Number(jsonData.VALUE[i].$)
           };
           for(let i = manStart; i <= manEnd; i++){
-            manPopulationBox[i-manStart].y = Number(result.data.GET_STATS_DATA.STATISTICAL_DATA.DATA_INF.VALUE[i].$)
+            manPopulationBox[i-manStart].y = Number(jsonData.VALUE[i].$)
           };
           for(let i = womanStart; i <= womanEnd; i++){
-            womanPopulationBox[i-womanStart].y = Number(result.data.GET_STATS_DATA.STATISTICAL_DATA.DATA_INF.VALUE[i].$)
+            womanPopulationBox[i-womanStart].y = Number(jsonData.VALUE[i].$)
           }
           this.setState({
             isLoaded: true,
@@ -67,14 +68,15 @@ class EstimatePopulationChart extends Component {
             manPopulation: manPopulationBox,
             womanPopulation: womanPopulationBox,
           });
-        },
-        (error) => {
+        }
+      ).catch(
+        error => {
           this.setState({
-            isLoaded: true,
-            error: error,
+            isLoaded: false,
+            error: error
           })
-        },
-       )
+        }
+      )
     }
 
     componentDidMount(){
