@@ -60,41 +60,45 @@ class SexPopulation extends Component {
         }
 
         axios.get(GET_URL_M)
-          .then(
-              (result) => {
-                  for(let i = 0; i <= 98; i++){
-                    manPopulationBox[i].y = Number(result.data.GET_STATS_DATA.STATISTICAL_DATA.DATA_INF.VALUE[i].$);
-                  }
-                  this.setState({
-                    isLoaded: true,
-                    manPopulation: manPopulationBox,
-                  });
-              },
-              (error) => {
-                  this.setState({
-                      isLoaded: true,
-                      error: error,
-                    });
-              },
-          )
-          axios.get(GET_URL_W)
-          .then(
-              (result) => {
-                  for(let i = 0; i <= 98; i++){
-                    womanPopulationBox[i].y = Number(result.data.GET_STATS_DATA.STATISTICAL_DATA.DATA_INF.VALUE[i].$);
-                  }
-                  this.setState({
-                    isLoaded: true,
-                    womanPopulation: womanPopulationBox,
-                  });
-              },
-              (error) => {
-                  this.setState({
-                      isLoaded: true,
-                      error: error,
-                    });
-              },
-          )
+        .then(
+          res => {
+            const manJsonData = res.data.GET_STATS_DATA.STATISTICAL_DATA.DATA_INF;
+            for(let i = 0; i <= 98; i++){
+              manPopulationBox[i].y = Number(manJsonData.VALUE[i].$);
+            }
+            this.setState({
+              isLoaded: true,
+              manPopulation: manPopulationBox,
+            });
+          }
+        ).catch(
+          error => {
+            this.setState({
+              isLoaded: false,
+              error: error
+            })
+          }
+        )
+        axios.get(GET_URL_W)
+        .then(
+          res => {
+            const womanJsonData = res.data.GET_STATS_DATA.STATISTICAL_DATA.DATA_INF;
+            for(let i = 0; i <= 98; i++){
+              womanPopulationBox[i].y = Number(womanJsonData.VALUE[i].$);
+            }
+            this.setState({
+              isLoaded: true,
+              womanPopulation: womanPopulationBox,
+            });
+          }
+        ).catch(
+          error => {
+            this.setState({
+              isLoaded: false,
+              error: error
+            })
+          }
+        )
     }
 
     componentDidMount(){

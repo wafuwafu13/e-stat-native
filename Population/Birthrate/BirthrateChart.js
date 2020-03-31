@@ -46,9 +46,10 @@ class BirthrateChart extends Component {
       birthrateBox[23].y = 4.54;
       axios.get(GET_URL)
         .then(
-          (result) => {
+          res => {
+            const jsonData = res.data.GET_STATS_DATA.STATISTICAL_DATA.DATA_INF;
               for(let i = 0; i <= 20; i++){
-                birthrateBox[i].y = Number(result.data.GET_STATS_DATA.STATISTICAL_DATA.DATA_INF.VALUE[i].$);
+                birthrateBox[i].y = Number(jsonData.VALUE[i].$);
               }
               this.setState({
                 isLoaded: true,

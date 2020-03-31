@@ -43,21 +43,23 @@ class SumPopulationChart extends Component{
       }
       axios.get(GET_URL)
       .then(
-        (result) => {
-            for(let i = 1; i <= 99; i++){
-                sumPopulationBox[i-1].y = Number(result.data.GET_STATS_DATA.STATISTICAL_DATA.DATA_INF.VALUE[i].$)
-            }
-            this.setState({
-                isLoaded: true,
-                sumPopulation: sumPopulationBox,
-            });
-        },
-        (error) => {
-            this.setState({
-                isLoaded: true,
-                error: error,
-              });
-        },
+        res => {
+          const jsonData = res.data.GET_STATS_DATA.STATISTICAL_DATA.DATA_INF;
+          for(let i = 1; i <= 99; i++){
+              sumPopulationBox[i-1].y = Number(jsonData.VALUE[i].$)
+          }
+          this.setState({
+              isLoaded: true,
+              sumPopulation: sumPopulationBox,
+          });
+        }
+      ).catch(
+        error => {
+          this.setState({
+            isLoaded: false,
+            error: error
+          })
+        }
       )
     }
 
