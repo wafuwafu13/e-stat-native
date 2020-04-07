@@ -45,13 +45,15 @@ class SexPopulation extends Component {
         const manUrl = createUrl("0010");
         const womanUrl = createUrl("0020");
         
-        let manPopulationBox = [];
-        let womanPopulationBox = [];
+        let manPopulationList = [];
+        let womanPopulationList = [];
         for(let i = 0; i <= 98; i++){
-          manPopulationBox.push({});
-          womanPopulationBox.push({});
-          manPopulationBox[i].x = i;
-          womanPopulationBox[i].x = i;
+          manPopulationList.push({
+            x: i
+          });
+          womanPopulationList.push({
+            x: i
+          });
         }
 
         axios.get(manUrl)
@@ -59,11 +61,11 @@ class SexPopulation extends Component {
           res => {
             const manJsonData = res.data.GET_STATS_DATA.STATISTICAL_DATA.DATA_INF;
             for(let i = 0; i <= 98; i++){
-              manPopulationBox[i].y = Number(manJsonData.VALUE[i].$);
+              manPopulationList[i].y = Number(manJsonData.VALUE[i].$);
             }
             this.setState({
               isLoaded: true,
-              manPopulation: manPopulationBox,
+              manPopulation: manPopulationList,
             });
           }
         ).catch(
@@ -74,16 +76,17 @@ class SexPopulation extends Component {
             })
           }
         )
+
         axios.get(womanUrl)
         .then(
           res => {
             const womanJsonData = res.data.GET_STATS_DATA.STATISTICAL_DATA.DATA_INF;
             for(let i = 0; i <= 98; i++){
-              womanPopulationBox[i].y = Number(womanJsonData.VALUE[i].$);
+              womanPopulationList[i].y = Number(womanJsonData.VALUE[i].$);
             }
             this.setState({
               isLoaded: true,
-              womanPopulation: womanPopulationBox,
+              womanPopulation: womanPopulationList,
             });
           }
         ).catch(
@@ -110,6 +113,14 @@ class SexPopulation extends Component {
         const mandata = this.state.manPopulation;
         const womandata = this.state.womanPopulation;
         const height = Dimensions.get('window').height;
+        let tickXvalueList = [];
+        for(let i = 5; i <= 95; i+=5){
+          tickXvalueList.push(i);
+        }
+        let tickYValueList = [];
+        for(let i = 250000; i <= 1250000; i+=250000){
+          tickYValueList.push(i);
+        }
         const styles = StyleSheet.create({
           container:{
             flex: 1,
@@ -150,11 +161,11 @@ class SexPopulation extends Component {
                      animate={{ duration: 5000, easing: "bounce" }}
                     >
                       <VictoryAxis
-               　       tickValues={[5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95]}
+               　       tickValues={tickXvalueList}
                       />
                       <VictoryAxis dependentAxis
                         tickFormat={(y) => (`${y/10000}万`)}
-                        tickValues={[250000, 500000, 750000, 1000000, 1250000]}
+                        tickValues={tickYValueList}
                       />
                          <VictoryGroup
                           colorScale={["#3399FF", "#FF66CC"]}

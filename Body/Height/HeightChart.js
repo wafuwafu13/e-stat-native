@@ -23,8 +23,8 @@ class HeightChart extends Component {
     }
 
     render(){
-      let manHeightBox = [];
-      let womanHeightBox = [];
+      let manHeightList = [];
+      let womanHeightList= [];
       let manHeight = [79.0, 87.9, 95.1, 101.3, 108.2, 114.8, 123.2, 128.2, 133.7, 138.3, 
                        144.7, 150.8, 160.3, 164.3, 168.6, 170.4, 170.3, 170.3, 171.3, 172.3,
                        172.0, 170.2, 171.4, 173.0, 170.5, 171.4]
@@ -32,23 +32,25 @@ class HeightChart extends Component {
                          146.0, 151.1, 154.1, 156.8, 156.8, 157.4, 157.3, 157.5, 155.9, 159.5,
                          157.9, 158.5, 157.4, 157.3, 155.2, 158.8]
       for(let i = 0; i <= 25; i++){
-        manHeightBox.push({});
-        womanHeightBox.push({});
-        manHeightBox[i].x = i+1;
-        womanHeightBox[i].x = i+1;
-        manHeightBox[i].y = manHeight[i];
-        womanHeightBox[i].y = womanHeight[i];
+        manHeightList.push({
+          x: i+1,
+          y: manHeight[i]
+        });
+        womanHeightList.push({
+          x: i+1,
+          y: womanHeight[i]
+        });
       }
-      let tickBox = [];
+      let tickList = [];
       for(let i = 1; i <= 26; i++){
-        tickBox.push(i);
+        tickList.push(i);
       }
-      let tickValuesBox = [];
+      let tickValueList = [];
       for(let i = 80; i <= 175; i+=5){
-        tickValuesBox.push(i);
+        tickValueList.push(i);
       }
-      const manData = manHeightBox;
-      const womanData = womanHeightBox
+      const manData = manHeightList;
+      const womanData = womanHeightList
       const height = Dimensions.get('window').height;
       const styles = StyleSheet.create({
         container:{
@@ -84,10 +86,10 @@ class HeightChart extends Component {
                   height={height*0.8}
                 >
                   <VictoryAxis
-               　   tickValues={tickBox}
+               　   tickValues={tickList}
                   />
                   <VictoryAxis dependentAxis
-                    tickValues={tickValuesBox}
+                    tickValues={tickValueList}
                   />
                     <VictoryGroup
                       colorScale={["#3399FF", "#FF66CC"]}

@@ -36,21 +36,24 @@ class SumPopulationChart extends Component{
       GET_URL += "&cdCat01=" + cdCat01;
       GET_URL += "&appId=" + escape(APP_ID);
       GET_URL += "&statsDataId=" + escape(statsDataId);
-      let sumPopulationBox = [];
+
+      let sumPopulationList = [];
       for(let i = 0; i <= 98; i++){
-          sumPopulationBox.push({});
-          sumPopulationBox[i].x = i;
+          sumPopulationList.push({
+            x: i
+          });
       }
+
       axios.get(GET_URL)
       .then(
         res => {
           const jsonData = res.data.GET_STATS_DATA.STATISTICAL_DATA.DATA_INF;
           for(let i = 1; i <= 99; i++){
-              sumPopulationBox[i-1].y = Number(jsonData.VALUE[i].$)
+              sumPopulationList[i-1].y = Number(jsonData.VALUE[i].$)
           }
           this.setState({
               isLoaded: true,
-              sumPopulation: sumPopulationBox,
+              sumPopulation: sumPopulationList,
           });
         }
       ).catch(

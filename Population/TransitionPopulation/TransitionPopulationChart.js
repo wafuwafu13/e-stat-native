@@ -23,7 +23,7 @@ class TransitionPopulationChart extends Component {
     }
 
     render(){
-      let transitionPopulationBox = [];
+      let transitionPopulationList = [];
       let transitionPopulationYear = [];
       for(let i = 1945; i <= 2015; i+=5){
         transitionPopulationYear.push(i);
@@ -34,11 +34,20 @@ class TransitionPopulationChart extends Component {
                                   125570246, 126925843, 127767994, 128057352, 127094745,
                                   126443000]
       for(let i = 0; i <= 15; i++){
-        transitionPopulationBox.push({});
-        transitionPopulationBox[i].x = transitionPopulationYear[i];
-        transitionPopulationBox[i].y = transitionPopulation[i];
+        transitionPopulationList.push({
+          x: transitionPopulationYear[i],
+          y: transitionPopulation[i]
+        });
       }
-      const data = transitionPopulationBox;
+      let tickXValueList = [];
+      for(let i = 1945; i <= 2015; i+=5){
+        tickXValueList.push(i);
+      }
+      let tickYValueList = [];
+      for(let i = 70000000; i <= 120000000; i+=10000000){
+        tickYValueList.push(i);
+      }
+      const data = transitionPopulationList;
       const height = Dimensions.get('window').height;
       const styles = StyleSheet.create({
           container:{
@@ -74,11 +83,11 @@ class TransitionPopulationChart extends Component {
                 height={height*0.8}
                >
                   <VictoryAxis
-              　    tickValues={[1945,1950,1955,1960,1965,1970,1975,1980,1985,1990,1995,2000,2005,2010,2015]}
+              　    tickValues={tickXValueList}
                   />
                   <VictoryAxis dependentAxis
                     tickFormat={(y) => (`${y/100000000}億`)}
-                    tickValues={[70000000,80000000,90000000,100000000,110000000,120000000]}
+                    tickValues={tickYValueList}
                   />
                   <VictoryLine
                     data={data}

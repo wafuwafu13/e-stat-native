@@ -23,8 +23,8 @@ class WeightChart extends Component {
     }
 
     render(){
-        let manWeightBox = [];
-        let womanWeightBox = [];
+        let manWeightList = [];
+        let womanWeightList = [];
         let manWeight = [10.5, 12.1, 14.2, 15.7, 18.2, 20.4, 24.0, 26.8, 31.2, 33.3,
                      37.7, 42.1, 48.9, 51.8, 56.5, 60.1, 63.1, 60.8, 62.6, 65.7,
                      66.1, 66.5, 69.2, 69.9, 64.5, 68.3]
@@ -32,23 +32,25 @@ class WeightChart extends Component {
                            38.5, 41.2, 45.5, 47.7, 47.7, 51.2, 50.0, 50.7, 50.8, 53.5,
                            50.9, 53.6, 51.8, 52.1, 50.2, 52.8]
         for(let i = 0; i <= 25; i++){
-          manWeightBox.push({});
-          womanWeightBox.push({});
-          manWeightBox[i].x = i+1;
-          womanWeightBox[i].x = i+1;
-          manWeightBox[i].y = manWeight[i];
-          womanWeightBox[i].y = womanWeight[i];
+          manWeightList.push({
+            x: i+1,
+            y: manWeight[i]
+          });
+          womanWeightList.push({
+            x: i+1,
+            y: womanWeight[i]
+          });
         }
-        let tickXBox = [];
+        let tickXList = [];
         for(let i = 1; i <= 26; i++){
-          tickXBox.push(i);
+          tickXList.push(i);
         }
-        let tickYBox = [];
+        let tickYList = [];
         for(let i = 10; i <= 70; i+=5){
-            tickYBox.push(i);
+            tickYList.push(i);
         }
-        const manData = manWeightBox;
-        const womanData = womanWeightBox
+        const manData = manWeightList;
+        const womanData = womanWeightList
         const height = Dimensions.get('window').height;
         const styles = StyleSheet.create({
             container:{
@@ -84,10 +86,10 @@ class WeightChart extends Component {
                       height={height*0.8}
                     >
                       <VictoryAxis
-                 　     tickValues={tickXBox}
+                 　     tickValues={tickXList}
                       />
                       <VictoryAxis dependentAxis
-                        tickValues={tickYBox}
+                        tickValues={tickYList}
                       />
                         <VictoryGroup
                           colorScale={["#3399FF", "#FF66CC"]}
