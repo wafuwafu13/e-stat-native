@@ -23,8 +23,8 @@ class UnmarridChart extends Component {
     }
 
     render(){
-      let manUnmarridBox = [];
-      let womanUnmarridBox = [];
+      let manUnmarridList = [];
+      let womanUnmarridList = [];
       let UnmarridYear = [];
       for(let i = 1920; i <= 2015; i+=5){
         if(i == 1945) continue;
@@ -35,23 +35,25 @@ class UnmarridChart extends Component {
       let womanUnmarrid = [2.15, 1.89, 1.79, 1.792, 2, 1.99, 2.34, 3.14, 4.67, 5.29,
                            4.99, 4.45, 4.89, 5.78, 6.76, 8.64, 12.24, 17.37, 19.3]
       for(let i = 0; i <= 18; i++){
-        manUnmarridBox.push({});
-        womanUnmarridBox.push({});
-        manUnmarridBox[i].x = UnmarridYear[i];
-        womanUnmarridBox[i].x = UnmarridYear[i];
-        manUnmarridBox[i].y = manUnmarrid[i];
-        womanUnmarridBox[i].y = womanUnmarrid[i];
+        manUnmarridList.push({
+          x:  UnmarridYear[i],
+          y:  manUnmarrid[i]
+        });
+        womanUnmarridList.push({
+          x: UnmarridYear[i],
+          y: womanUnmarrid[i]
+        });
       }
-      const manData = manUnmarridBox;
-      const womanData = womanUnmarridBox
+      const manData = manUnmarridList;
+      const womanData = womanUnmarridList
       const height = Dimensions.get('window').height;
-      let tickXBox = [];
+      let tickXList = [];
       for(let i = 1920; i <= 2015; i+=5){
-          tickXBox.push(i);
+          tickXList.push(i);
       }
-      let tickYBox = [];
+      let tickYList = [];
       for(let i = 5; i <= 30; i+=5){
-          tickYBox.push(i);
+          tickYList.push(i);
       }
       const styles = StyleSheet.create({
         container:{
@@ -87,10 +89,10 @@ class UnmarridChart extends Component {
                   animate={{ duration: 5000, easing: "bounce" }}
                 >
                   <VictoryAxis
-               　   tickValues={tickXBox}
+               　   tickValues={tickXList}
                   />
                   <VictoryAxis dependentAxis
-                    tickValues={tickYBox}
+                    tickValues={tickYList}
                   />
                     <VictoryGroup
                       colorScale={["#3399FF", "#FF66CC"]}

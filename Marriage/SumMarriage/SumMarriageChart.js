@@ -23,7 +23,7 @@ class SumMariageChart extends Component {
     }
 
     render(){
-        let sumMariageBox = [];
+        let sumMariageList = [];
         let sumMariageYear = [];
         for(let i = 2017; i >= 2000; i--){
             sumMariageYear.push(i);
@@ -41,19 +41,20 @@ class SumMariageChart extends Component {
                           735850, 774702, 941628, 1029405, 954852, 866115, 714861, 715081, 934170, 743842,
                           666575, 556730, 506674]
         for(let i = 0; i <= 32; i++){
-            sumMariageBox.push({});
-            sumMariageBox[i].x = sumMariageYear[i];
-            sumMariageBox[i].y = sumMariage[i];
+            sumMariageList.push({
+              x: sumMariageYear[i],
+              y: sumMariage[i]
+            });
         }
-        const data = sumMariageBox;
+        const data = sumMariageList;
         const height = Dimensions.get('window').height;
-        let tickXBox = [];
+        let tickXList = [];
         for(let i = 1930; i <= 2015; i+=5){
-            tickXBox.push(i);
+            tickXList.push(i);
         }
-        let tickYBox = [];
+        let tickYList = [];
         for(let i = 500000; i <= 1100000; i+=100000){
-            tickYBox.push(i);
+            tickYList.push(i);
         }
         const styles = StyleSheet.create({
             container:{
@@ -89,11 +90,11 @@ class SumMariageChart extends Component {
                       height={height*0.8}
                     >
                       <VictoryAxis
-                 　     tickValues={tickXBox}
+                 　     tickValues={tickXList}
                       />
                       <VictoryAxis dependentAxis
                         tickFormat={(y) => (`${y/10000}万`)}
-                        tickValues={tickYBox}
+                        tickValues={tickYList}
                       />
                         <VictoryScatter
                           data={data}

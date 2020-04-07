@@ -27,7 +27,8 @@ class BirthrateChart extends Component {
       GET_URL += "?cdArea=" + cdArea;
       GET_URL += "&appId=" + escape(APP_ID);
       GET_URL += "&statsDataId=" + escape(statsDataId);
-      let birthrateBox = [];
+
+      let birthrateList = [];
       let birthrateYear = [];
       for(let i = 2017; i >= 2007; i--){
         birthrateYear.push(i);
@@ -37,23 +38,24 @@ class BirthrateChart extends Component {
       }
       birthrateYear[23] = 1947;
       for(let i = 0; i <= 23; i++){
-        birthrateBox.push({});
-        birthrateBox[i].x = birthrateYear[i];
+        birthrateList.push({
+          x: birthrateYear[i]
+        });
       }
-      // jsonから得られないので追加
-      birthrateBox[21].y = 2.37;
-      birthrateBox[22].y = 3.65;
-      birthrateBox[23].y = 4.54;
       axios.get(GET_URL)
         .then(
           res => {
             const jsonData = res.data.GET_STATS_DATA.STATISTICAL_DATA.DATA_INF;
               for(let i = 0; i <= 20; i++){
-                birthrateBox[i].y = Number(jsonData.VALUE[i].$);
+                birthrateList[i].y = Number(jsonData.VALUE[i].$);
               }
+              // apiで得られないので追加
+              birthrateList[21].y = 2.37;
+              birthrateList[22].y = 3.65;
+              birthrateList[23].y = 4.54;
               this.setState({
                 isLoaded: true,
-                birthrate: birthrateBox,
+                birthrate: birthrateList,
             });
           (error) => {
             this.setState({
@@ -78,13 +80,13 @@ class BirthrateChart extends Component {
       const isLoaded = this.state.isLoaded;
       const data = this.state.birthrate;
       const height = Dimensions.get('window').height;
-      let tickXValuesBox = [];
+      let tickXValueList = [];
       for(let i = 1945; i <= 2015; i+=5){
-        tickXValuesBox.push(i);
+        tickXValueList.push(i);
       }
-      let tickYValuesBox = [];
+      let tickYValueList = [];
       for(let i = 1; i <= 4.8; i += 0.2){
-        tickYValuesBox.push(Math.round(i*10)/10);
+        tickYValueList.push(Math.round(i*10)/10);
       }
       const styles = StyleSheet.create({
         container:{
@@ -125,10 +127,10 @@ class BirthrateChart extends Component {
                      animate={{ duration: 2000, easing: "bounce" }}
                     >
                       <VictoryAxis
-               　       tickValues={tickXValuesBox}
+               　       tickValues={tickXValueList}
                       />
                       <VictoryAxis dependentAxis
-                        tickValues={tickYValuesBox}
+                        tickValues={tickYValueList}
                       />
                         <VictoryLine
                            data={data}

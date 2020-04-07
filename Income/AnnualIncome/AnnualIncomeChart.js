@@ -23,8 +23,8 @@ class AnnualIncome extends Component {
     }
 
     render(){
-      let manAnnualIncomeBox = [];
-      let womanAnnualIncomeBox = [];
+      let manAnnualIncomeList = [];
+      let womanAnnualIncomeList = [];
       let AnnualIncomeAge = [];
       for(let i = 17; i <= 72; i+=5){
         AnnualIncomeAge.push(i);
@@ -36,19 +36,21 @@ class AnnualIncome extends Component {
                                3017000, 2994000, 2958000, 2877000, 2283000,
                                1949000, 2066000]
       for(let i = 0; i <= 11; i++){
-        manAnnualIncomeBox.push({});
-        womanAnnualIncomeBox.push({});
-        manAnnualIncomeBox[i].x = AnnualIncomeAge[i];
-        womanAnnualIncomeBox[i].x = AnnualIncomeAge[i];
-        manAnnualIncomeBox[i].y = manAnnualIncome[i];
-        womanAnnualIncomeBox[i].y = womanAnnualIncome[i];
+        manAnnualIncomeList.push({
+          x: AnnualIncomeAge[i],
+          y: manAnnualIncome[i]
+        });
+        womanAnnualIncomeList.push({
+          x: AnnualIncomeAge[i],
+          y: womanAnnualIncome[i]
+        });
       }
-      let tickValuesBox = [];
+      let tickValueList = [];
       for(let i = 0; i <= 7000000; i+=1000000){
-        tickValuesBox.push(i);
+        tickValueList.push(i);
       }
-      const manData = manAnnualIncomeBox;
-      const womanData = womanAnnualIncomeBox
+      const manData = manAnnualIncomeList;
+      const womanData = womanAnnualIncomeList
       const height = Dimensions.get('window').height;
       const styles = StyleSheet.create({
         container:{
@@ -87,7 +89,7 @@ class AnnualIncome extends Component {
                   />
                   <VictoryAxis dependentAxis
                     tickFormat={(y) => (`${y/10000}万`)}
-                    tickValues={tickValuesBox}
+                    tickValues={tickValueList}
                   />
                     <VictoryGroup
                       colorScale={["#3399FF", "#FF66CC"]}
