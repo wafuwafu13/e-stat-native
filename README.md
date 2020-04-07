@@ -3,7 +3,7 @@
 ``App.js``: ルーティングを管理  
 ``Menu.js``: 選べるグラフ画面  
 ``Bodyフォルダ``: 身長・体重に関するデータ  
-``Height``: 身長に関するデータ  
+``Heightフォルダ``: 身長に関するデータ  
 ``Explanation.js``: グラフの説明  
 ``HeightChart.js``: グラフの描画  
 ``HeightModal.js``: グラフの概要を表すモーダル  
