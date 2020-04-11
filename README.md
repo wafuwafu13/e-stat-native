@@ -1,3 +1,16 @@
+## :file_folder: Description of the file
+
+``App.js``: ルーティングを管理  
+``Menu.js``: 選べるグラフ画面  
+``Bodyフォルダ``: 身長・体重に関するデータ  
+``Heightフォルダ``: 身長に関するデータ  
+``Explanation.js``: グラフの説明  
+``HeightChart.js``: グラフの描画  
+``HeightModal.js``: グラフの概要を表すモーダル  
+``HeightSwiper.js``: react-native-swiperの定義  
+
+*``Prefectureフォルダ``未使用*
+
 ## :globe_with_meridians:  App URL
 
 ### [日本統計 | 文系学生と学ぶ社会統計学](https://apps.apple.com/jp/app/%E6%97%A5%E6%9C%AC%E7%B5%B1%E8%A8%88-%E6%96%87%E7%B3%BB%E5%AD%A6%E7%94%9F%E3%81%A8%E5%AD%A6%E3%81%B6%E7%A4%BE%E4%BC%9A%E7%B5%B1%E8%A8%88%E5%AD%A6/id1491159876)
