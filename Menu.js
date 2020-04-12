@@ -3,6 +3,7 @@ import { StyleSheet, View, Text, TouchableOpacity, ScrollView } from 'react-nati
 import Icon from 'react-native-vector-icons/FontAwesome5';
 import * as Animatable from 'react-native-animatable';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
+import { Audio } from 'expo-av';
 
 
 class Menu extends Component{
@@ -131,6 +132,18 @@ class Menu extends Component{
             },
         })
 
+        const soundObject = new Audio.Sound();
+        async function goto(destination){
+            navigate(destination)
+            try {
+              await soundObject.loadAsync(require('./assets/sounds/decision.mp3'));
+              await soundObject.playAsync();
+            } 
+              catch (error) {
+              console.log('error...')
+            }
+        }
+
         return(
             <ScrollView>
                 <View style={styles.container}>
@@ -143,7 +156,7 @@ class Menu extends Component{
                                 <Icon name="list-alt" size={wp('5%')} color="#807E7C"/>
                             </TouchableOpacity>
                             <Text style={styles.title}>
-                              選べるグラフ 
+                              選べるグラフ
                             </Text>
                         </View>
                         <View style={styles.menuContainer}>
@@ -155,7 +168,7 @@ class Menu extends Component{
                                 </View>
                                 <TouchableOpacity 
                                   style={styles.populationIcon}
-                                  onPress={()=>navigate('PopulationMenu')}
+                                  onPress={ () => goto('PopulationMenu')}
                                 >
                                     <Icon name="child" size={wp('10%')} color="#4C8469"/>
                                     <Text style={styles.explanation}>
@@ -171,7 +184,7 @@ class Menu extends Component{
                                 </View>
                                 <TouchableOpacity
                                   style={styles.bodyIcon}
-                                  onPress={()=>navigate('BodyMenu')}
+                                  onPress={ () => goto('BodyMenu')}
                                 >
                                     <Icon name="ruler" size={wp('10%')} color="#324CA8"/>
                                     <Text style={styles.explanation}>
@@ -187,7 +200,7 @@ class Menu extends Component{
                                 </View>
                                 <TouchableOpacity
                                   style={styles.marriageIcon}
-                                  onPress={()=>navigate('MarriageMenu')}
+                                  onPress={ () => goto('MarriageMenu')}
                                 >
                                     <Icon name="heartbeat" size={wp('10%')} color="#9E1212"/>
                                     <Text style={styles.explanation}>
@@ -205,7 +218,7 @@ class Menu extends Component{
                                 </View>
                                 <TouchableOpacity
                                   style={styles.incomeIcon}
-                                  onPress={()=>navigate('IncomeMenu')}
+                                  onPress={ () => goto('IncomeMenu')}
                                 >
                                     <Icon name="money-bill-wave" size={wp('10%')} color="#E0BB5B"/>
                                     <Text style={styles.explanation}>

@@ -25,7 +25,12 @@
     ],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "jp.wafuwafu.toukei"
+      "bundleIdentifier": "jp.wafuwafu.toukei",
+      "infoPlist":{
+        "UIBackgroundModes": [
+          "audio"
+        ]
+      }
     }
   }
 }
