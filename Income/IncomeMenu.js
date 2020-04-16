@@ -5,6 +5,7 @@ import Icon from 'react-native-vector-icons/FontAwesome5';
 import * as Animatable from 'react-native-animatable';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 import AnnualIncomeModal from './AnnualIncome/AnnualIncomeModal';
+import DrawerIcon from '../src/elements/DrawerIcon';
 
 class IncomeMenu extends Component{
 
@@ -35,12 +36,6 @@ class IncomeMenu extends Component{
                 justifyContent: 'center',
       　　　　　　alignItems: 'center',
                 backgroundColor: '#FAFD71',
-            },
-            modalIcon:{
-                position: 'absolute',
-                marginLeft: wp('2%'),
-                left: 0,
-                top: hp('5%'),
             },
             menuContainer:{
                 marginTop: hp('10%'),
@@ -99,12 +94,7 @@ class IncomeMenu extends Component{
         return(
             <View style={styles.container}>
                 <View style={styles.side}>
-                    <TouchableOpacity
-                        onPress={() => this.props.navigation.toggleDrawer()}
-                        style={styles.modalIcon}
-                    >
-                        <Icon name="list-alt" size={wp('5%')} color="#807E7C"/>
-                    </TouchableOpacity>
+                    <DrawerIcon onPress={() => this.props.navigation.toggleDrawer()} itemMenu/>
                     <Animatable.Text animation="bounceInUp" style={styles.iconTitle}>
                         年 収
                     </Animatable.Text>

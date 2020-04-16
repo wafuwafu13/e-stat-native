@@ -9,6 +9,7 @@ import SexPopulationModal from './SexPopulation/SexPopulationModal';
 import EstimatePopulationModal from './EstimatePopulation/EstimatePopulationModal';
 import BirthrateModal from './Birthrate/BirthrateModal';
 import TransitionPopulationModal from './TransitionPopulation/TransitionPopulationModal';
+import DrawerIcon from '../src/elements/DrawerIcon';
 
 
 class PopulationMenu extends Component{
@@ -69,12 +70,6 @@ class PopulationMenu extends Component{
       　　　　　　alignItems: 'center',
                 backgroundColor: '#99D260',
             },
-            modalIcon:{
-                position: 'absolute',
-                marginLeft: wp('2%'),
-                left: 0,
-                top: hp('5%'),
-            },
             menuContainer:{
                 marginTop: hp('10%'),
             },
@@ -132,12 +127,7 @@ class PopulationMenu extends Component{
         return(
             <View style={styles.container}>
                 <View style={styles.side}>
-                    <TouchableOpacity
-                        onPress={() => this.props.navigation.toggleDrawer()}
-                        style={styles.modalIcon}
-                    >
-                        <Icon name="list-alt" size={wp('5%')} color="#807E7C"/>
-                    </TouchableOpacity>
+                    <DrawerIcon onPress={() => this.props.navigation.toggleDrawer()} itemMenu/>
                     <Animatable.Text animation="bounceInUp" style={styles.iconTitle}>
                         人 口
                     </Animatable.Text>
