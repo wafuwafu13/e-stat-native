@@ -1,136 +1,18 @@
 import React, { Component } from 'react';
-import { StyleSheet, View, Text, TouchableOpacity, ScrollView } from 'react-native';
-import Icon from 'react-native-vector-icons/FontAwesome5';
+import { StyleSheet, View, Text, ScrollView } from 'react-native';
 import * as Animatable from 'react-native-animatable';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 import { Audio } from 'expo-av';
+import MenuItemTitle from './src/elements/MenuItemTitle';
+import MenuItem from './src/elements/MenuItem';
+import DrawerIcon from './src/elements/DrawerIcon';
 
 
 class Menu extends Component{
     
     render(){
-        const {navigate} = this.props.navigation
-        const styles = StyleSheet.create({
-            container:{
-                flex: 1,
-                backgroundColor: '#F0FCFF',
-            },
-            main:{
-                flex: 1,
-            },
-            top:{
-                position: 'relative',
-                marginTop: hp('7%'),
-                flexDirection: 'row',
-                justifyContent: 'center',
-                alignItems: 'center',
-            },
-            modalIcon:{
-                position: 'absolute',
-                left: wp('2%'),
-            },
-            title:{
-                fontSize: wp('3.8%'),
-                color: '#636D70',
-            },
-            menuContainer:{
-                flexDirection: 'row',
-                marginTop: hp('7%'),
-            },
-            menu:{
-                flex: 1,
-                height: hp('50%'),
-                marginLeft: wp('2%'),
-                marginRight: wp('2%'),
-            },
-            menu2:{
-                flex: 0.3,
-                height: hp('50%'),
-                marginLeft: wp('2%'),
-                marginRight: wp('2%'),
-            },
-            menuTitle:{
-                fontSize: wp('2.5%'),
-                color: '#4B4B4B',
-            },
-            explanation:{
-                marginTop: hp('2%'),
-                fontSize: wp('2%'),
-                color: '#4B4B4B',
-            },
-            populationTitle:{
-                flex: 1,
-                justifyContent: 'center',
-      　　　　　　alignItems: 'center',
-                borderWidth: wp('0.3%'),
-                borderRadius: 100,
-                borderColor: '#EEF5F6',
-                backgroundColor: '#99D260',
-            },
-            populationIcon:{
-                flex: 6,
-                justifyContent: 'center',
-      　　　　　　alignItems: 'center',
-                borderWidth: wp('0.7%'),
-                borderRadius: 10,
-                borderColor: '#EEF5F6',
-                backgroundColor: '#99D260',
-            },
-            bodyTitle:{
-                flex: 1,
-                justifyContent: 'center',
-      　　　　　　alignItems: 'center',
-                borderWidth: wp('0.3%'),
-                borderRadius: 100,
-                borderColor: '#EEF5F6',
-                backgroundColor: '#56A7E2',
-            },
-            bodyIcon:{
-                flex: 6,
-                justifyContent: 'center',
-      　　　　　　alignItems: 'center',
-                borderWidth: wp('0.7%'),
-                borderRadius: 10,
-                borderColor: '#EEF5F6',
-                backgroundColor: '#56A7E2',
-            },
-            marriageTitle:{
-                flex: 1,
-                justifyContent: 'center',
-      　　　　　　alignItems: 'center',
-                borderWidth: wp('0.3%'),
-                borderRadius: 100,
-                borderColor: '#EEF5F6',
-                backgroundColor: '#FF5F5F',
-            },
-            marriageIcon:{
-                flex: 6,
-                justifyContent: 'center',
-      　　　　　　alignItems: 'center',
-                borderWidth: wp('0.7%'),
-                borderRadius: 10,
-                borderColor: '#EEF5F6',
-                backgroundColor: '#FF5F5F',
-            },
-            incomeTitle:{
-                flex: 1,
-                justifyContent: 'center',
-      　　　　　　alignItems: 'center',
-                borderWidth: wp('0.3%'),
-                borderRadius: 100,
-                borderColor: '#EEF5F6',
-                backgroundColor: '#FAFD71',
-            },
-            incomeIcon:{
-                flex: 6,
-                justifyContent: 'center',
-      　　　　　　alignItems: 'center',
-                borderWidth: wp('0.7%'),
-                borderRadius: 10,
-                borderColor: '#EEF5F6',
-                backgroundColor: '#FAFD71',
-            },
-        })
+
+        const {navigate} = this.props.navigation;
 
         const soundObject = new Audio.Sound();
         async function goto(destination){
@@ -149,82 +31,45 @@ class Menu extends Component{
                 <View style={styles.container}>
                     <View style={styles.main}>
                         <View style={styles.top}>
-                            <TouchableOpacity
-                              onPress={() => this.props.navigation.toggleDrawer()}
-                              style={styles.modalIcon}
-                            >
-                                <Icon name="list-alt" size={wp('5%')} color="#807E7C"/>
-                            </TouchableOpacity>
+                            <DrawerIcon onPress={() => this.props.navigation.toggleDrawer()} />
                             <Text style={styles.title}>
                               選べるグラフ
                             </Text>
                         </View>
                         <View style={styles.menuContainer}>
                             <Animatable.View animation="bounce" style={styles.menu}>
-                                <View style={styles.populationTitle}>
-                                    <Text style={styles.menuTitle}>
-                                        人 口
-                                    </Text>
-                                </View>
-                                <TouchableOpacity 
-                                  style={styles.populationIcon}
-                                  onPress={ () => goto('PopulationMenu')}
-                                >
-                                    <Icon name="child" size={wp('10%')} color="#4C8469"/>
-                                    <Text style={styles.explanation}>
-                                        5つのグラフ
-                                    </Text>
-                                </TouchableOpacity>
+                                <MenuItemTitle item="population">
+                                    人 口
+                                </MenuItemTitle>
+                                <MenuItem item="population" onPress={ () => goto('PopulationMenu') }>
+                                    5つのグラフ
+                                </MenuItem>
                             </Animatable.View>
                             <Animatable.View animation="bounce" style={styles.menu}>
-                                <View style={styles.bodyTitle}>
-                                    <Text style={styles.menuTitle}>
-                                        身長・体重
-                                    </Text>
-                                </View>
-                                <TouchableOpacity
-                                  style={styles.bodyIcon}
-                                  onPress={ () => goto('BodyMenu')}
-                                >
-                                    <Icon name="ruler" size={wp('10%')} color="#324CA8"/>
-                                    <Text style={styles.explanation}>
-                                        2つのグラフ
-                                    </Text>
-                                </TouchableOpacity>
+                                <MenuItemTitle item="body">
+                                    身長・体重
+                                </MenuItemTitle>
+                                <MenuItem item="body" onPress={ () => goto('BodyMenu') }>
+                                    2つのグラフ
+                                </MenuItem>
                             </Animatable.View>
                             <Animatable.View animation="bounce" style={styles.menu}>
-                                <View style={styles.marriageTitle}>
-                                    <Text style={styles.menuTitle}>
-                                        結 婚
-                                    </Text>
-                                </View>
-                                <TouchableOpacity
-                                  style={styles.marriageIcon}
-                                  onPress={ () => goto('MarriageMenu')}
-                                >
-                                    <Icon name="heartbeat" size={wp('10%')} color="#9E1212"/>
-                                    <Text style={styles.explanation}>
-                                        3つのグラフ
-                                    </Text>
-                                </TouchableOpacity>
+                                <MenuItemTitle item="marriage">
+                                    結 婚
+                                </MenuItemTitle>
+                                <MenuItem item="marriage" onPress={ () => goto('MarriageMenu') }>
+                                    3つのグラフ
+                                </MenuItem>
                             </Animatable.View>
                         </View>
                         <View style={styles.menuContainer}>
                             <Animatable.View animation="bounce" style={styles.menu2}>
-                                <View style={styles.incomeTitle}>
-                                    <Text style={styles.menuTitle}>
-                                        年 収
-                                    </Text>
-                                </View>
-                                <TouchableOpacity
-                                  style={styles.incomeIcon}
-                                  onPress={ () => goto('IncomeMenu')}
-                                >
-                                    <Icon name="money-bill-wave" size={wp('10%')} color="#E0BB5B"/>
-                                    <Text style={styles.explanation}>
-                                        1つのグラフ
-                                    </Text>
-                                </TouchableOpacity>
+                                <MenuItemTitle item="income">
+                                    年 収
+                                </MenuItemTitle>
+                                <MenuItem item="income" onPress={ () => goto('IncomeMenu') }>
+                                    1つのグラフ
+                                </MenuItem>
                             </Animatable.View>
                         </View>
                     </View>
@@ -235,3 +80,41 @@ class Menu extends Component{
 }
 
 export default Menu;
+
+
+const styles = StyleSheet.create({
+    container:{
+        flex: 1,
+        backgroundColor: '#F0FCFF',
+    },
+    main:{
+        flex: 1,
+    },
+    top:{
+        position: 'relative',
+        marginTop: hp('7%'),
+        flexDirection: 'row',
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+    title:{
+        fontSize: wp('3.8%'),
+        color: '#636D70',
+    },
+    menuContainer:{
+        flexDirection: 'row',
+        marginTop: hp('7%'),
+    },
+    menu:{
+        flex: 1,
+        height: hp('50%'),
+        marginLeft: wp('2%'),
+        marginRight: wp('2%'),
+    },
+    menu2:{
+        flex: 0.3,
+        height: hp('50%'),
+        marginLeft: wp('2%'),
+        marginRight: wp('2%'),
+    },
+})

@@ -6,6 +6,7 @@ import * as Animatable from 'react-native-animatable';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 import HeightModal from './Height/HeightModal';
 import WeightModal from './Weight/WeightModal';
+import DrawerIcon from '../src/elements/DrawerIcon';
 
 
 class PopulationMenu extends Component{
@@ -44,12 +45,6 @@ class PopulationMenu extends Component{
                 justifyContent: 'center',
       　　　　　　alignItems: 'center',
                 backgroundColor: '#56A7E2',
-            },
-            modalIcon:{
-                position: 'absolute',
-                marginLeft: wp('2%'),
-                left: 0,
-                top: hp('5%'),
             },
             menuContainer:{
                 marginTop: hp('10%'),
@@ -108,12 +103,7 @@ class PopulationMenu extends Component{
         return(
             <View style={styles.container}>
                 <View style={styles.side}>
-                    <TouchableOpacity
-                        onPress={() => this.props.navigation.toggleDrawer()}
-                        style={styles.modalIcon}
-                    >
-                        <Icon name="list-alt" size={wp('5%')} color="#807E7C"/>
-                    </TouchableOpacity>
+                    <DrawerIcon onPress={() => this.props.navigation.toggleDrawer()} itemMenu/>
                     <Animatable.Text animation="bounceInUp" style={styles.iconTitle}>
                         身長・体重
                     </Animatable.Text>

@@ -7,6 +7,7 @@ import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-nat
 import SumMarriageModal from './SumMarriage/SumMarriageModal';
 import UnmarrideModal from './Unmarride/UnmarrideModal';
 import DivorcerateModal from './Divorcerate/DivorcerateModal';
+import DrawerIcon from '../src/elements/DrawerIcon';
 
 
 class MarriageMenu extends Component{
@@ -53,12 +54,6 @@ class MarriageMenu extends Component{
                 justifyContent: 'center',
       　　　　　　alignItems: 'center',
                 backgroundColor: '#FF5F5F',
-            },
-            modalIcon:{
-                position: 'absolute',
-                marginLeft: wp('2%'),
-                left: 0,
-                top: hp('5%'),
             },
             menuContainer:{
                 marginTop: hp('10%'),
@@ -118,12 +113,7 @@ class MarriageMenu extends Component{
             <View style={styles.container}>
                 
                 <View style={styles.side}>
-                    <TouchableOpacity
-                        onPress={() => this.props.navigation.toggleDrawer()}
-                        style={styles.modalIcon}
-                    >
-                        <Icon name="list-alt" size={wp('5%')} color="#807E7C"/>
-                    </TouchableOpacity>
+                    <DrawerIcon onPress={() => this.props.navigation.toggleDrawer()} itemMenu/>
                     <Animatable.Text animation="bounceInUp" style={styles.iconTitle}>
                         結 婚
                     </Animatable.Text>
