@@ -74,7 +74,7 @@ class MarriageMenu extends Component{
                                 <Modal isVisible={ this.state.unmarrideModalVisible }>
                                     <UnmarrideModal toggle={this} />
                                 </Modal>
-                                <GraphMenu onPress={()=>navigate('SumMarriageSwiper')}>
+                                <GraphMenu onPress={()=>navigate('UnmarrideSwiper')}>
                                     40~45歳男女の未婚率
                                 </GraphMenu>
                             </TouchableOpacity>

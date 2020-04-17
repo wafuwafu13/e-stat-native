@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { StyleSheet, Text, View, Dimensions } from 'react-native';
 import axios from 'axios';
 import { VictoryLine, VictoryChart, VictoryTheme, VictoryAxis } from 'victory-native';
-import Spinner from 'react-native-loading-spinner-overlay';
+import Loading from '../../src/elements/Loading';
 import config from '../../config';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 
@@ -111,33 +111,28 @@ class BirthrateChart extends Component {
       }else
       return(
         <View style={styles.container}>
-            <Spinner
-                visible={this.state.spinner}
-                textContent="読込中..."
-                textStyle={{ color: "#fff" }}
-                overlayColor="rgba(0,0,0,0.5)"
-              />
-              <Text style={styles.title}>
-                  合計特殊出生率
-              </Text>
-              <View style={styles.chart}>
-                    <VictoryChart
-                     theme={VictoryTheme.material}
-                     height={height*0.8}
-                     animate={{ duration: 2000, easing: "bounce" }}
-                    >
-                      <VictoryAxis
-               　       tickValues={tickXValueList}
-                      />
-                      <VictoryAxis dependentAxis
-                        tickValues={tickYValueList}
-                      />
-                        <VictoryLine
-                           data={data}
-                           style={{ data: { stroke: "#c43a31" } }}
-                         />
-                    </VictoryChart>
-                </View>
+            <Loading visible={this.state.spinner}/>
+            <Text style={styles.title}>
+                合計特殊出生率
+            </Text>
+            <View style={styles.chart}>
+                <VictoryChart
+                 theme={VictoryTheme.material}
+                 height={height*0.8}
+                 animate={{ duration: 2000, easing: "bounce" }}
+                >
+                  <VictoryAxis
+             　       tickValues={tickXValueList}
+                  />
+                  <VictoryAxis dependentAxis
+                    tickValues={tickYValueList}
+                  />
+                    <VictoryLine
+                       data={data}
+                       style={{ data: { stroke: "#c43a31" } }}
+                     />
+                </VictoryChart>
+            </View>
         </View>
       )
     }

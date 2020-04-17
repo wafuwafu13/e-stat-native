@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View, Dimensions } from 'react-native';
 import { VictoryLine, VictoryChart, VictoryTheme, VictoryAxis } from 'victory-native';
-import Spinner from 'react-native-loading-spinner-overlay';
+import Loading from '../../src/elements/Loading';
 import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
 
 
@@ -67,12 +67,7 @@ class TransitionPopulationChart extends Component {
 
       return(
           <View style={styles.container}>
-             <Spinner
-                visible={this.state.spinner}
-                textContent="読込中..."
-                textStyle={{ color: "#fff" }}
-                overlayColor="rgba(0,0,0,0.5)"
-              />
+              <Loading visible={this.state.spinner}/>
               <Text style={styles.title}>
                   人口推移(国勢調査)
               </Text>

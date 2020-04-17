@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { StyleSheet, Text, View, Dimensions } from 'react-native';
 import axios from 'axios';
 import { VictoryBar, VictoryChart, VictoryTheme, VictoryAxis } from 'victory-native';
-import Spinner from 'react-native-loading-spinner-overlay';
+import Loading from '../../src/elements/Loading';
 import config from '../../config';
 import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
 
@@ -102,12 +102,7 @@ class SumPopulationChart extends Component{
           }else
           return(
             <View style={styles.container}>
-                <Spinner
-                  visible={this.state.spinner}
-                  textContent="読込中..."
-                  textStyle={{ color: "#fff" }}
-                  overlayColor="rgba(0,0,0,0.5)"
-                />
+                <Loading visible={this.state.spinner}/>
                 <Text style={styles.title}>
                     年齢別総人口(平成27年国勢調査)
                 </Text>
