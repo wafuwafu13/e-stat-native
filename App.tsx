@@ -110,12 +110,12 @@ const App = () => {
     return( 
       <NavigationContainer>
         <Drawer.Navigator>
-            {/* <Drawer.Screen name="閉じる" children={createStack} /> */}
-            <Drawer.Screen name="グラフ選択" children={createStack} />
+            <Drawer.Screen name="ホーム" children={createStack} />
             <Drawer.Screen name="人口" component={PopulationMenu} />
             <Drawer.Screen name="身長・体重" component={BodyMenu} />
             <Drawer.Screen name="結婚" component={MarriageMenu} />
             <Drawer.Screen name="年収" component={IncomeMenu} />
+            <Drawer.Screen name="アプリについて" component={Overview} />
         </Drawer.Navigator>
       </NavigationContainer>
     )

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { StyleSheet, View, ScrollView, TouchableOpacity } from 'react-native';
 import Modal from 'react-native-modal';
+import Icon from 'react-native-vector-icons/FontAwesome5';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 
 import HeightModal from './Height/HeightModal';
@@ -28,7 +29,12 @@ const PopulationMenu: React.FC = ({navigation}: any) => {
     return(
         <View style={styles.container}>
             <View style={styles.side}>
-                <DrawerIcon onPress={() => navigation.toggleDrawer()} itemMenu={true}/>
+                <TouchableOpacity
+                  onPress={() => navigation.navigate("Menu")}
+                  style={styles.homeIcon}
+                >
+                    <Icon name="home" size={wp('5%')} color="#807E7C"/>
+                </TouchableOpacity>
                 <SubMenuTitle>
                     身長・体重
                 </SubMenuTitle>
@@ -80,6 +86,11 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
 　　　　　　alignItems: 'center',
         backgroundColor: '#56A7E2',
+    },
+    homeIcon: {
+        position: 'absolute',
+        left: wp('2%'),
+        top: hp('5%')
     },
     menuContainer:{
         marginTop: hp('10%'),
