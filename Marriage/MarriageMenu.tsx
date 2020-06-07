@@ -8,7 +8,6 @@ import SumMarriageModal from './SumMarriage/SumMarriageModal';
 import UnmarrideModal from './Unmarride/UnmarrideModal';
 import DivorcerateModal from './Divorcerate/DivorcerateModal';
 
-import DrawerIcon from '../src/elements/DrawerIcon';
 import SubMenuTitle from '../src/elements/SubMenuTitle';
 import SubMenuIcon from '../src/elements/SubMenuIcon';
 import GraphMenu from '../src/elements/GraphMenu';
@@ -55,7 +54,7 @@ const MarriageMenu = ({navigation}: any) => {
                           style={styles.menu}
                           onPress={sumMarriageToggleModal}>
                             <Modal isVisible={ sumMarriageModalVisible }>
-                                {/* <SumMarriageModal toggle={this} /> */}
+                                <SumMarriageModal toggle={sumMarriageToggleModal} />
                             </Modal>
                             <GraphMenu onPress={() => navigation.navigate('SumMarriageSwiper')}>
                                 結婚件数
@@ -65,7 +64,7 @@ const MarriageMenu = ({navigation}: any) => {
                           style={styles.menu}
                           onPress={unmarrideToggleModal}>
                             <Modal isVisible={ unmarrideModalVisible }>
-                                {/* <UnmarrideModal toggle={this} /> */}
+                                <UnmarrideModal toggle={unmarrideToggleModal} />
                             </Modal>
                             <GraphMenu onPress={() => navigation.navigate('UnmarrideSwiper')}>
                                 40~45歳男女の未婚率
@@ -75,7 +74,7 @@ const MarriageMenu = ({navigation}: any) => {
                           style={styles.menu}
                           onPress={divorcerateToggleModal}>
                             <Modal isVisible={ divorcerateModalVisible }>
-                                {/* <DivorcerateModal toggle={this} /> */}
+                                <DivorcerateModal toggle={divorcerateToggleModal} />
                             </Modal>
                             <GraphMenu onPress={() => navigation.navigate('DivorcerateSwiper')}>
                                 離婚率

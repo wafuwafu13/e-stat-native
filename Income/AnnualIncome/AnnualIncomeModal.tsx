@@ -1,7 +1,14 @@
 import React from 'react';
 import { StyleSheet, Text, View, Button } from 'react-native';
 
-const AnnualIncomeModal = () => {
+type Props = {
+    toggle: () => void
+}
+
+const AnnualIncomeModal: React.FC<Props> = props => {
+
+    const { toggle } = props
+
     return(
         <View style={styles.container}>
             <Text>
@@ -16,7 +23,7 @@ const AnnualIncomeModal = () => {
             <Text>
                 20~24歳、25歳~29歳という年代別で調査をしています。
             </Text>
-            {/* <Button title="閉じる" onPress={this.props.toggle.annualIncomeToggleModal}/> */}
+            <Button title="閉じる" onPress={toggle}/>
         </View>
     )
 }
@@ -27,7 +34,7 @@ const styles = StyleSheet.create({
     container:{
         flex: 1,
         justifyContent: 'center',
-　　　　　　alignItems: 'center',
+        alignItems: 'center',
         backgroundColor: '#ffc',
     }
 })

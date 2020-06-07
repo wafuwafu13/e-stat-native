@@ -1,7 +1,14 @@
 import React from 'react';
 import { StyleSheet, Text, View, Button } from 'react-native';
 
-const EstimatePopulationModal = () => {
+type Props = {
+    toggle: () => void
+}
+
+const EstimatePopulationModal: React.FC<Props> = props => {
+
+    const { toggle } = props
+
     return(
         <View style={styles.container}>
             <Text>
@@ -13,7 +20,7 @@ const EstimatePopulationModal = () => {
             <Text>
                 推計値を基とした人口数です。
             </Text>
-            {/* <Button title="閉じる" onPress={this.props.toggle.estimatePopulationToggleModal}/> */}
+            <Button title="閉じる" onPress={toggle} />
         </View>
     )
 }
@@ -24,7 +31,7 @@ const styles = StyleSheet.create({
     container:{
         flex: 1,
         justifyContent: 'center',
-　　　　　　alignItems: 'center',
+        alignItems: 'center',
         backgroundColor: '#ffc',
     }
 })

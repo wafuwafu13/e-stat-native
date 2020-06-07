@@ -1,7 +1,14 @@
 import React from 'react';
 import { StyleSheet, Text, View, Button } from 'react-native';
 
-const DivorcerateModal = () => {
+type Props = {
+    toggle: () => void
+}
+
+const DivorcerateModal: React.FC<Props> = props => {
+
+    const { toggle } = props
+
     return(
         <View style={styles.container}>
             <Text>
@@ -13,7 +20,7 @@ const DivorcerateModal = () => {
             <Text>
                 出生、死亡、婚姻、離婚、死産の全数を対象として、毎月実施されます。
             </Text>
-            {/* <Button title="閉じる" onPress={this.props.toggle.divorcerateToggleModal}/> */}
+            <Button title="閉じる" onPress={toggle}/>
         </View>
     )
 }
@@ -24,7 +31,7 @@ const styles = StyleSheet.create({
     container:{
         flex: 1,
         justifyContent: 'center',
-　　　　　　alignItems: 'center',
+        alignItems: 'center',
         backgroundColor: '#ffc',
     }
 })
