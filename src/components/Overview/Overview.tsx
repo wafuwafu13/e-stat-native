@@ -31,9 +31,7 @@ const Overview: React.FC<Props> = ({ navigation }) => {
                 <Text style={styles.explanation}>
                     このサービスは、政府統計総合窓口(e-Stat)のAPI機能を使用していますが、サービスの内容は国によって保証されたものではありません。
                 </Text>
-                <Text style={styles.profile}>
-                    Created by 田川裕隆 (twitter: @wafuwafu13_)
-                </Text>
+                <Text style={styles.profile}>Created by 田川裕隆 (twitter: @wafuwafu13_)</Text>
             </View>
         </View>
     );

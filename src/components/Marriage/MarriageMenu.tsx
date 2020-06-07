@@ -18,25 +18,16 @@ import GraphMenu from '../../elements/GraphMenu';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { RootStackParamList } from '../../../App';
 
-type MarriageMenuNavigationProp = StackNavigationProp<
-    RootStackParamList,
-    'MarriageMenu'
->;
+type MarriageMenuNavigationProp = StackNavigationProp<RootStackParamList, 'MarriageMenu'>;
 
 type Props = {
     navigation: MarriageMenuNavigationProp;
 };
 
 const MarriageMenu: React.FC<Props> = ({ navigation }) => {
-    const [sumMarriageModalVisible, setSumMarriageModalVisible] = useState<
-        boolean
-    >(false);
-    const [unmarrideModalVisible, setUnmarrideModalVisible] = useState<boolean>(
-        false
-    );
-    const [divorcerateModalVisible, setDivorcerateModalVisible] = useState<
-        boolean
-    >(false);
+    const [sumMarriageModalVisible, setSumMarriageModalVisible] = useState<boolean>(false);
+    const [unmarrideModalVisible, setUnmarrideModalVisible] = useState<boolean>(false);
+    const [divorcerateModalVisible, setDivorcerateModalVisible] = useState<boolean>(false);
 
     const sumMarriageToggleModal = (): void => {
         setSumMarriageModalVisible(!sumMarriageModalVisible);
@@ -65,52 +56,27 @@ const MarriageMenu: React.FC<Props> = ({ navigation }) => {
             <ScrollView>
                 <View>
                     <View style={styles.menuContainer}>
-                        <TouchableOpacity
-                            style={styles.menu}
-                            onPress={sumMarriageToggleModal}
-                        >
+                        <TouchableOpacity style={styles.menu} onPress={sumMarriageToggleModal}>
                             <Modal isVisible={sumMarriageModalVisible}>
-                                <SumMarriageModal
-                                    toggle={sumMarriageToggleModal}
-                                />
+                                <SumMarriageModal toggle={sumMarriageToggleModal} />
                             </Modal>
-                            <GraphMenu
-                                onPress={() =>
-                                    navigation.navigate('SumMarriageSwiper')
-                                }
-                            >
+                            <GraphMenu onPress={() => navigation.navigate('SumMarriageSwiper')}>
                                 結婚件数
                             </GraphMenu>
                         </TouchableOpacity>
-                        <TouchableOpacity
-                            style={styles.menu}
-                            onPress={unmarrideToggleModal}
-                        >
+                        <TouchableOpacity style={styles.menu} onPress={unmarrideToggleModal}>
                             <Modal isVisible={unmarrideModalVisible}>
                                 <UnmarrideModal toggle={unmarrideToggleModal} />
                             </Modal>
-                            <GraphMenu
-                                onPress={() =>
-                                    navigation.navigate('UnmarrideSwiper')
-                                }
-                            >
+                            <GraphMenu onPress={() => navigation.navigate('UnmarrideSwiper')}>
                                 40~45歳男女の未婚率
                             </GraphMenu>
                         </TouchableOpacity>
-                        <TouchableOpacity
-                            style={styles.menu}
-                            onPress={divorcerateToggleModal}
-                        >
+                        <TouchableOpacity style={styles.menu} onPress={divorcerateToggleModal}>
                             <Modal isVisible={divorcerateModalVisible}>
-                                <DivorcerateModal
-                                    toggle={divorcerateToggleModal}
-                                />
+                                <DivorcerateModal toggle={divorcerateToggleModal} />
                             </Modal>
-                            <GraphMenu
-                                onPress={() =>
-                                    navigation.navigate('DivorcerateSwiper')
-                                }
-                            >
+                            <GraphMenu onPress={() => navigation.navigate('DivorcerateSwiper')}>
                                 離婚率
                             </GraphMenu>
                         </TouchableOpacity>

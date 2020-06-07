@@ -111,11 +111,7 @@ const SumMariageChart: React.FC = () => {
                         tickFormat={(y: any) => `${y / 10000}万`}
                         tickValues={tickYList}
                     />
-                    <VictoryScatter
-                        data={data}
-                        style={{ data: { fill: 'gold' } }}
-                        size={5}
-                    />
+                    <VictoryScatter data={data} style={{ data: { fill: 'gold' } }} size={5} />
                 </VictoryChart>
             </View>
         </View>

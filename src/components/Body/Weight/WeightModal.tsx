@@ -14,9 +14,7 @@ const WeightPopulationModal: React.FC<Props> = (props) => {
             <Text>
                 国民健康・栄養調査は、毎年、食生活状況、各種身体・血液検査や飲酒、喫煙、運動習慣などを調べており、
             </Text>
-            <Text>
-                国における健康増進対策や生活習慣病対策に不可欠な調査です。
-            </Text>
+            <Text>国における健康増進対策や生活習慣病対策に不可欠な調査です。</Text>
             <Button title="閉じる" onPress={toggle} />
         </View>
     );

@@ -60,8 +60,7 @@ const SumPopulationChart: React.FC = () => {
         axios
             .get(GET_URL)
             .then((res) => {
-                const jsonData =
-                    res.data.GET_STATS_DATA.STATISTICAL_DATA.DATA_INF;
+                const jsonData = res.data.GET_STATS_DATA.STATISTICAL_DATA.DATA_INF;
                 for (let i = 1; i <= 99; i++) {
                     sumPopulationList[i - 1].y = Number(jsonData.VALUE[i].$);
                 }
@@ -126,10 +125,7 @@ const SumPopulationChart: React.FC = () => {
                                 2000000
                             ]}
                         />
-                        <VictoryBar
-                            data={sumPopulation}
-                            style={{ data: { fill: '#66CC66' } }}
-                        />
+                        <VictoryBar data={sumPopulation} style={{ data: { fill: '#66CC66' } }} />
                     </VictoryChart>
                 </View>
             </View>

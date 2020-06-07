@@ -20,33 +20,22 @@ import GraphMenu from '../../elements/GraphMenu';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { RootStackParamList } from '../../../App';
 
-type PopulationMenuNavigationProp = StackNavigationProp<
-    RootStackParamList,
-    'PopulationMenu'
->;
+type PopulationMenuNavigationProp = StackNavigationProp<RootStackParamList, 'PopulationMenu'>;
 
 type Props = {
     navigation: PopulationMenuNavigationProp;
 };
 
 const PopulationMenu: React.FC<Props> = ({ navigation }) => {
-    const [sumPopulationModalVisible, setSumPopulationModalVisible] = useState<
-        boolean
-    >(false);
-    const [sexPopulationModalVisible, setSexPopulationModalVisible] = useState<
-        boolean
-    >(false);
-    const [
-        estimatePopulationModalVisible,
-        setEstimatePopulationModalVisible
-    ] = useState<boolean>(false);
-    const [birthrateModalVisible, setBirthrateModalVisible] = useState<boolean>(
+    const [sumPopulationModalVisible, setSumPopulationModalVisible] = useState<boolean>(false);
+    const [sexPopulationModalVisible, setSexPopulationModalVisible] = useState<boolean>(false);
+    const [estimatePopulationModalVisible, setEstimatePopulationModalVisible] = useState<boolean>(
         false
     );
-    const [
-        transitionPopulationModalVisible,
-        setTransitionPopulationModalVisible
-    ] = useState<boolean>(false);
+    const [birthrateModalVisible, setBirthrateModalVisible] = useState<boolean>(false);
+    const [transitionPopulationModalVisible, setTransitionPopulationModalVisible] = useState<
+        boolean
+    >(false);
 
     const sumPopulationToggleModal = (): void => {
         setSumPopulationModalVisible(!sumPopulationModalVisible);
@@ -83,37 +72,19 @@ const PopulationMenu: React.FC<Props> = ({ navigation }) => {
             <ScrollView>
                 <View>
                     <View style={styles.menuContainer}>
-                        <TouchableOpacity
-                            style={styles.menu}
-                            onPress={sumPopulationToggleModal}
-                        >
+                        <TouchableOpacity style={styles.menu} onPress={sumPopulationToggleModal}>
                             <Modal isVisible={sumPopulationModalVisible}>
-                                <SumPopulationModal
-                                    toggle={sumPopulationToggleModal}
-                                />
+                                <SumPopulationModal toggle={sumPopulationToggleModal} />
                             </Modal>
-                            <GraphMenu
-                                onPress={() =>
-                                    navigation.navigate('SumPopulationSwiper')
-                                }
-                            >
+                            <GraphMenu onPress={() => navigation.navigate('SumPopulationSwiper')}>
                                 年齢別総人口
                             </GraphMenu>
                         </TouchableOpacity>
-                        <TouchableOpacity
-                            style={styles.menu}
-                            onPress={sexPopulationToggleModal}
-                        >
+                        <TouchableOpacity style={styles.menu} onPress={sexPopulationToggleModal}>
                             <Modal isVisible={sexPopulationModalVisible}>
-                                <SexPopulationModal
-                                    toggle={sexPopulationToggleModal}
-                                />
+                                <SexPopulationModal toggle={sexPopulationToggleModal} />
                             </Modal>
-                            <GraphMenu
-                                onPress={() =>
-                                    navigation.navigate('SexPopulationSwiper')
-                                }
-                            >
+                            <GraphMenu onPress={() => navigation.navigate('SexPopulationSwiper')}>
                                 男女別総人口
                             </GraphMenu>
                         </TouchableOpacity>
@@ -122,32 +93,19 @@ const PopulationMenu: React.FC<Props> = ({ navigation }) => {
                             onPress={estimatePopulationToggleModal}
                         >
                             <Modal isVisible={estimatePopulationModalVisible}>
-                                <EstimatePopulationModal
-                                    toggle={estimatePopulationToggleModal}
-                                />
+                                <EstimatePopulationModal toggle={estimatePopulationToggleModal} />
                             </Modal>
                             <GraphMenu
-                                onPress={() =>
-                                    navigation.navigate(
-                                        'EstimatePopulationSwiper'
-                                    )
-                                }
+                                onPress={() => navigation.navigate('EstimatePopulationSwiper')}
                             >
                                 人口推計
                             </GraphMenu>
                         </TouchableOpacity>
-                        <TouchableOpacity
-                            style={styles.menu}
-                            onPress={birthrateToggleModal}
-                        >
+                        <TouchableOpacity style={styles.menu} onPress={birthrateToggleModal}>
                             <Modal isVisible={birthrateModalVisible}>
                                 <BirthrateModal toggle={birthrateToggleModal} />
                             </Modal>
-                            <GraphMenu
-                                onPress={() =>
-                                    navigation.navigate('BirthrateSwiper')
-                                }
-                            >
+                            <GraphMenu onPress={() => navigation.navigate('BirthrateSwiper')}>
                                 合計特殊出生率
                             </GraphMenu>
                         </TouchableOpacity>
@@ -161,11 +119,7 @@ const PopulationMenu: React.FC<Props> = ({ navigation }) => {
                                 />
                             </Modal>
                             <GraphMenu
-                                onPress={() =>
-                                    navigation.navigate(
-                                        'TransitionPopulationSwiper'
-                                    )
-                                }
+                                onPress={() => navigation.navigate('TransitionPopulationSwiper')}
                             >
                                 人口推移
                             </GraphMenu>

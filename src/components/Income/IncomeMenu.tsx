@@ -16,19 +16,14 @@ import GraphMenu from '../../elements/GraphMenu';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { RootStackParamList } from '../../../App';
 
-type IncomeMenuNavigationProp = StackNavigationProp<
-    RootStackParamList,
-    'IncomeMenu'
->;
+type IncomeMenuNavigationProp = StackNavigationProp<RootStackParamList, 'IncomeMenu'>;
 
 type Props = {
     navigation: IncomeMenuNavigationProp;
 };
 
 const IncomeMenu: React.FC<Props> = ({ navigation }) => {
-    const [annualIncomeModalVisible, setAnnualIncomeModalVisible] = useState<
-        boolean
-    >(false);
+    const [annualIncomeModalVisible, setAnnualIncomeModalVisible] = useState<boolean>(false);
 
     const annualIncomeToggleModal = (): void => {
         setAnnualIncomeModalVisible(!annualIncomeModalVisible);
@@ -49,20 +44,11 @@ const IncomeMenu: React.FC<Props> = ({ navigation }) => {
             <ScrollView>
                 <View>
                     <View style={styles.menuContainer}>
-                        <TouchableOpacity
-                            style={styles.menu}
-                            onPress={annualIncomeToggleModal}
-                        >
+                        <TouchableOpacity style={styles.menu} onPress={annualIncomeToggleModal}>
                             <Modal isVisible={annualIncomeModalVisible}>
-                                <AnnualIncomeModal
-                                    toggle={annualIncomeToggleModal}
-                                />
+                                <AnnualIncomeModal toggle={annualIncomeToggleModal} />
                             </Modal>
-                            <GraphMenu
-                                onPress={() =>
-                                    navigation.navigate('AnnualIncomeSwiper')
-                                }
-                            >
+                            <GraphMenu onPress={() => navigation.navigate('AnnualIncomeSwiper')}>
                                 男女・年代別平均年収
                             </GraphMenu>
                         </TouchableOpacity>

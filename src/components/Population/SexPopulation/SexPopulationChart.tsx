@@ -30,8 +30,7 @@ const SexPopulation: React.FC = () => {
 
     const createUrl = (id: string): string => {
         const APP_ID = config.APP_ID;
-        const API_URL =
-            'http://api.e-stat.go.jp/rest/2.1/app/json/getStatsData';
+        const API_URL = 'http://api.e-stat.go.jp/rest/2.1/app/json/getStatsData';
         const cdCat03 = id;
         const cdCat04 = '0000';
         const cdArea = '00000';
@@ -74,8 +73,7 @@ const SexPopulation: React.FC = () => {
         axios
             .get(manUrl)
             .then((res) => {
-                const manJsonData =
-                    res.data.GET_STATS_DATA.STATISTICAL_DATA.DATA_INF;
+                const manJsonData = res.data.GET_STATS_DATA.STATISTICAL_DATA.DATA_INF;
                 for (let i = 0; i <= 98; i++) {
                     manPopulationList[i].y = Number(manJsonData.VALUE[i].$);
                 }
@@ -90,8 +88,7 @@ const SexPopulation: React.FC = () => {
         axios
             .get(womanUrl)
             .then((res) => {
-                const womanJsonData =
-                    res.data.GET_STATS_DATA.STATISTICAL_DATA.DATA_INF;
+                const womanJsonData = res.data.GET_STATS_DATA.STATISTICAL_DATA.DATA_INF;
                 for (let i = 0; i <= 98; i++) {
                     womanPopulationList[i].y = Number(womanJsonData.VALUE[i].$);
                 }

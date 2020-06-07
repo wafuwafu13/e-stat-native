@@ -13,10 +13,7 @@ import Explanation from './Explanation';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { RootStackParamList } from '../../../../App';
 
-type WeightSwiperNavigationProp = StackNavigationProp<
-    RootStackParamList,
-    'WeightSwiper'
->;
+type WeightSwiperNavigationProp = StackNavigationProp<RootStackParamList, 'WeightSwiper'>;
 
 type Props = {
     navigation: WeightSwiperNavigationProp;
@@ -26,10 +23,7 @@ const WeightSwiper: React.FC<Props> = ({ navigation }) => {
     return (
         <Swiper>
             <View style={styles.container}>
-                <TouchableOpacity
-                    onPress={() => navigation.goBack()}
-                    style={styles.modalIcon}
-                >
+                <TouchableOpacity onPress={() => navigation.goBack()} style={styles.modalIcon}>
                     <Icon name="arrow-left" size={wp('5%')} color="#807E7C" />
                 </TouchableOpacity>
                 <Weighthart />

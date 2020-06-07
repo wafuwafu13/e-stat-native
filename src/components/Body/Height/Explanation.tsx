@@ -15,9 +15,7 @@ const Explanation: React.FC = () => {
                 <Text style={{ color: 'red' }}>151.1cm</Text>
                 で、12歳までは男性と女性の身長差がほとんどないことが分かります。
             </Text>
-            <Text style={styles.text}>
-                成長期に入ると一気に身長差が開き始めます。
-            </Text>
+            <Text style={styles.text}>成長期に入ると一気に身長差が開き始めます。</Text>
             <Text style={styles.text}>
                 25歳男性の平均身長は
                 <Text style={{ color: 'red' }}>170.5cm</Text>

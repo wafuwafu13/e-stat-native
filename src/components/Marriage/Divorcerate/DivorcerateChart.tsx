@@ -85,10 +85,7 @@ const DivorcerateChart: React.FC = () => {
                 >
                     <VictoryAxis tickValues={tickList} />
                     <VictoryAxis dependentAxis tickValues={tickValueList} />
-                    <VictoryLine
-                        data={data}
-                        style={{ data: { stroke: 'purple' } }}
-                    />
+                    <VictoryLine data={data} style={{ data: { stroke: 'purple' } }} />
                 </VictoryChart>
             </View>
         </View>

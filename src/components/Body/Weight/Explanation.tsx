@@ -15,9 +15,7 @@ const Explanation: React.FC = () => {
                 <Text style={{ color: 'red' }}>41.2kg</Text>
                 で、12歳までは男性と女性の体重差がほとんどないことが分かります。
             </Text>
-            <Text style={styles.text}>
-                成長期に入ると一気に身長差が開き始めます。
-            </Text>
+            <Text style={styles.text}>成長期に入ると一気に身長差が開き始めます。</Text>
             <Text style={styles.text}>
                 26歳男性の平均体重は
                 <Text style={{ color: 'red' }}>68.5kg</Text>

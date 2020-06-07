@@ -59,8 +59,7 @@ const BirthrateChart: React.FC = () => {
         axios
             .get(GET_URL)
             .then((res) => {
-                const jsonData =
-                    res.data.GET_STATS_DATA.STATISTICAL_DATA.DATA_INF;
+                const jsonData = res.data.GET_STATS_DATA.STATISTICAL_DATA.DATA_INF;
                 for (let i = 0; i <= 20; i++) {
                     birthrateList[i].y = Number(jsonData.VALUE[i].$);
                 }
@@ -103,14 +102,8 @@ const BirthrateChart: React.FC = () => {
                         animate={{ duration: 2000, easing: 'bounce' }}
                     >
                         <VictoryAxis tickValues={tickXValueList} />
-                        <VictoryAxis
-                            dependentAxis
-                            tickValues={tickYValueList}
-                        />
-                        <VictoryLine
-                            data={birthrate}
-                            style={{ data: { stroke: '#c43a31' } }}
-                        />
+                        <VictoryAxis dependentAxis tickValues={tickYValueList} />
+                        <VictoryLine data={birthrate} style={{ data: { stroke: '#c43a31' } }} />
                     </VictoryChart>
                 </View>
             </View>

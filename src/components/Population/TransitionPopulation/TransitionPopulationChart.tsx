@@ -89,10 +89,7 @@ const TransitionPopulationChart: React.FC = () => {
                         tickFormat={(y: any) => `${y / 100000000}億`}
                         tickValues={tickYValueList}
                     />
-                    <VictoryLine
-                        data={data}
-                        style={{ data: { stroke: '#c43a31' } }}
-                    />
+                    <VictoryLine data={data} style={{ data: { stroke: '#c43a31' } }} />
                 </VictoryChart>
             </View>
         </View>

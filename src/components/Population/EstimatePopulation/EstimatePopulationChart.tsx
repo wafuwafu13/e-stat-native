@@ -60,8 +60,7 @@ const EstimatePopulationChart: React.FC = () => {
         axios
             .get(GET_URL)
             .then((res) => {
-                const jsonData =
-                    res.data.GET_STATS_DATA.STATISTICAL_DATA.DATA_INF;
+                const jsonData = res.data.GET_STATS_DATA.STATISTICAL_DATA.DATA_INF;
                 // 数字はjsonの始まりと終わり
                 for (let i = 1; i <= 99; i++) {
                     sumPopulationList[i - 1].y = Number(jsonData.VALUE[i].$);
@@ -70,9 +69,7 @@ const EstimatePopulationChart: React.FC = () => {
                     manPopulationList[i - 205].y = Number(jsonData.VALUE[i].$);
                 }
                 for (let i = 409; i <= 507; i++) {
-                    womanPopulationList[i - 409].y = Number(
-                        jsonData.VALUE[i].$
-                    );
+                    womanPopulationList[i - 409].y = Number(jsonData.VALUE[i].$);
                 }
 
                 setIsLoaded(true);

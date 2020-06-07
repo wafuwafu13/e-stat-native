@@ -32,9 +32,7 @@ const HomeMenu: React.FC<Props> = ({ navigation }) => {
     async function goto(destination: any): Promise<void> {
         navigation.navigate(destination);
         try {
-            await soundObject.loadAsync(
-                require('../../assets/sounds/decision.mp3')
-            );
+            await soundObject.loadAsync(require('../../assets/sounds/decision.mp3'));
             await soundObject.playAsync();
         } catch (error) {
             console.log('error...');
@@ -51,47 +49,28 @@ const HomeMenu: React.FC<Props> = ({ navigation }) => {
                     </View>
                     <View style={styles.menuContainer}>
                         <Animatable.View animation="bounce" style={styles.menu}>
-                            <MenuItemTitle item="population">
-                                人 口
-                            </MenuItemTitle>
-                            <MenuItem
-                                item="population"
-                                onPress={() => goto('PopulationMenu')}
-                            >
+                            <MenuItemTitle item="population">人 口</MenuItemTitle>
+                            <MenuItem item="population" onPress={() => goto('PopulationMenu')}>
                                 5つのグラフ
                             </MenuItem>
                         </Animatable.View>
                         <Animatable.View animation="bounce" style={styles.menu}>
-                            <MenuItemTitle item="body">
-                                身長・体重
-                            </MenuItemTitle>
-                            <MenuItem
-                                item="body"
-                                onPress={() => goto('BodyMenu')}
-                            >
+                            <MenuItemTitle item="body">身長・体重</MenuItemTitle>
+                            <MenuItem item="body" onPress={() => goto('BodyMenu')}>
                                 2つのグラフ
                             </MenuItem>
                         </Animatable.View>
                         <Animatable.View animation="bounce" style={styles.menu}>
                             <MenuItemTitle item="marriage">結 婚</MenuItemTitle>
-                            <MenuItem
-                                item="marriage"
-                                onPress={() => goto('MarriageMenu')}
-                            >
+                            <MenuItem item="marriage" onPress={() => goto('MarriageMenu')}>
                                 3つのグラフ
                             </MenuItem>
                         </Animatable.View>
                     </View>
                     <View style={styles.menuContainer}>
-                        <Animatable.View
-                            animation="bounce"
-                            style={styles.menu2}
-                        >
+                        <Animatable.View animation="bounce" style={styles.menu2}>
                             <MenuItemTitle item="income">年 収</MenuItemTitle>
-                            <MenuItem
-                                item="income"
-                                onPress={() => goto('IncomeMenu')}
-                            >
+                            <MenuItem item="income" onPress={() => goto('IncomeMenu')}>
                                 1つのグラフ
                             </MenuItem>
                         </Animatable.View>

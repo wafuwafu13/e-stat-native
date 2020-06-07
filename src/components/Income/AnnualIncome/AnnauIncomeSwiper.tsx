@@ -26,10 +26,7 @@ const AnnualIncomeSwiper: React.FC<Props> = ({ navigation }) => {
     return (
         <Swiper>
             <View style={styles.container}>
-                <TouchableOpacity
-                    onPress={() => navigation.goBack()}
-                    style={styles.modalIcon}
-                >
+                <TouchableOpacity onPress={() => navigation.goBack()} style={styles.modalIcon}>
                     <Icon name="arrow-left" size={wp('5%')} color="#807E7C" />
                 </TouchableOpacity>
                 <AnnualIncomeChart />
