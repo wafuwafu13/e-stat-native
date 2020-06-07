@@ -1,13 +1,16 @@
 import React from 'react';
 import { StyleSheet, Text, ScrollView } from 'react-native';
-import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
+import {
+    widthPercentageToDP as wp,
+    heightPercentageToDP as hp
+} from 'react-native-responsive-screen';
 
-const Explanation: React.FC = () =>{
-    return(
+const Explanation: React.FC = () => {
+    return (
         <ScrollView style={styles.container}>
             <Text style={styles.text}>
                 平成27年の総人口は
-                <Text style={{color: 'red'}}>1億2千700万人</Text>
+                <Text style={{ color: 'red' }}>1億2千700万人</Text>
                 でした。
             </Text>
             <Text style={styles.text}>
@@ -15,7 +18,7 @@ const Explanation: React.FC = () =>{
             </Text>
             <Text style={styles.text}>
                 出生数は
-                <Text style={{color: 'red'}}>270万人程度</Text>
+                <Text style={{ color: 'red' }}>270万人程度</Text>
                 であり、第一次ベビーブームと呼ばれました。
             </Text>
             <Text style={styles.text}>
@@ -34,18 +37,18 @@ const Explanation: React.FC = () =>{
                 丙午年生まれの女性は、気性が激しく夫の命を縮めるという迷信があり、その迷信を信じる人が多かったようです。
             </Text>
         </ScrollView>
-    )
-}
+    );
+};
 
 export default Explanation;
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1, 
+        flex: 1,
         margin: wp('7%')
     },
-    text:{
+    text: {
         fontSize: wp('2%'),
         marginBottom: wp('2%')
     }
-})
+});

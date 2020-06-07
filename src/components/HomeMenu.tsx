@@ -1,7 +1,10 @@
 import React from 'react';
 import { StyleSheet, View, Text, ScrollView } from 'react-native';
 import * as Animatable from 'react-native-animatable';
-import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
+import {
+    widthPercentageToDP as wp,
+    heightPercentageToDP as hp
+} from 'react-native-responsive-screen';
 import { Audio } from 'expo-av';
 
 import MenuItemTitle from '../elements/MenuItemTitle';
@@ -17,43 +20,44 @@ import { DrawerNavigatorParamList } from '../../App';
 type HomeMenuNavigationProp = CompositeNavigationProp<
     StackNavigationProp<RootStackParamList, 'HomeMenu'>,
     DrawerNavigationProp<DrawerNavigatorParamList>
->
+>;
 
 type Props = {
-    navigation: HomeMenuNavigationProp
-}
+    navigation: HomeMenuNavigationProp;
+};
 
 const HomeMenu: React.FC<Props> = ({ navigation }) => {
-
     const soundObject = new Audio.Sound();
 
-    async function goto(destination: any): Promise<void>{
-        navigation.navigate(destination)
+    async function goto(destination: any): Promise<void> {
+        navigation.navigate(destination);
         try {
-          await soundObject.loadAsync(require('../../assets/sounds/decision.mp3'));
-          await soundObject.playAsync();
-        } 
-        catch (error) {
-          console.log('error...')
+            await soundObject.loadAsync(
+                require('../../assets/sounds/decision.mp3')
+            );
+            await soundObject.playAsync();
+        } catch (error) {
+            console.log('error...');
         }
     }
 
-    return(
+    return (
         <ScrollView>
             <View style={styles.container}>
                 <View style={styles.main}>
                     <View style={styles.top}>
                         <DrawerIcon onPress={() => navigation.toggleDrawer()} />
-                        <Text style={styles.title}>
-                          選べるグラフ
-                        </Text>
+                        <Text style={styles.title}>選べるグラフ</Text>
                     </View>
                     <View style={styles.menuContainer}>
                         <Animatable.View animation="bounce" style={styles.menu}>
                             <MenuItemTitle item="population">
                                 人 口
                             </MenuItemTitle>
-                            <MenuItem item="population" onPress={ () => goto('PopulationMenu') }>
+                            <MenuItem
+                                item="population"
+                                onPress={() => goto('PopulationMenu')}
+                            >
                                 5つのグラフ
                             </MenuItem>
                         </Animatable.View>
@@ -61,25 +65,33 @@ const HomeMenu: React.FC<Props> = ({ navigation }) => {
                             <MenuItemTitle item="body">
                                 身長・体重
                             </MenuItemTitle>
-                            <MenuItem item="body" onPress={ () => goto('BodyMenu') }>
+                            <MenuItem
+                                item="body"
+                                onPress={() => goto('BodyMenu')}
+                            >
                                 2つのグラフ
                             </MenuItem>
                         </Animatable.View>
                         <Animatable.View animation="bounce" style={styles.menu}>
-                            <MenuItemTitle item="marriage">
-                                結 婚
-                            </MenuItemTitle>
-                            <MenuItem item="marriage" onPress={ () => goto('MarriageMenu') }>
+                            <MenuItemTitle item="marriage">結 婚</MenuItemTitle>
+                            <MenuItem
+                                item="marriage"
+                                onPress={() => goto('MarriageMenu')}
+                            >
                                 3つのグラフ
                             </MenuItem>
                         </Animatable.View>
                     </View>
                     <View style={styles.menuContainer}>
-                        <Animatable.View animation="bounce" style={styles.menu2}>
-                            <MenuItemTitle item="income">
-                                年 収
-                            </MenuItemTitle>
-                            <MenuItem item="income" onPress={ () => goto('IncomeMenu') }>
+                        <Animatable.View
+                            animation="bounce"
+                            style={styles.menu2}
+                        >
+                            <MenuItemTitle item="income">年 収</MenuItemTitle>
+                            <MenuItem
+                                item="income"
+                                onPress={() => goto('IncomeMenu')}
+                            >
                                 1つのグラフ
                             </MenuItem>
                         </Animatable.View>
@@ -87,44 +99,44 @@ const HomeMenu: React.FC<Props> = ({ navigation }) => {
                 </View>
             </View>
         </ScrollView>
-    )
-}
+    );
+};
 
 export default HomeMenu;
 
 const styles = StyleSheet.create({
-    container:{
+    container: {
         flex: 1,
-        backgroundColor: '#F0FCFF',
+        backgroundColor: '#F0FCFF'
     },
-    main:{
-        flex: 1,
+    main: {
+        flex: 1
     },
-    top:{
+    top: {
         position: 'relative',
         marginTop: hp('7%'),
         flexDirection: 'row',
         justifyContent: 'center',
-        alignItems: 'center',
+        alignItems: 'center'
     },
-    title:{
+    title: {
         fontSize: wp('3.8%'),
-        color: '#636D70',
+        color: '#636D70'
     },
-    menuContainer:{
+    menuContainer: {
         flexDirection: 'row',
-        marginTop: hp('7%'),
+        marginTop: hp('7%')
     },
-    menu:{
+    menu: {
         flex: 1,
         height: hp('50%'),
         marginLeft: wp('2%'),
-        marginRight: wp('2%'),
+        marginRight: wp('2%')
     },
-    menu2:{
+    menu2: {
         flex: 0.3,
         height: hp('50%'),
         marginLeft: wp('2%'),
-        marginRight: wp('2%'),
-    },
-})
+        marginRight: wp('2%')
+    }
+});

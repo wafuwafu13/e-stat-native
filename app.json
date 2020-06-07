@@ -1,36 +1,28 @@
 {
-  "expo": {
-    "name": "日本統計 | 文系学生と学ぶ社会統計学",
-    "description": "toukei app",
-    "slug": "e-stat-native",
-    "privacy": "unlisted",
-    "sdkVersion": "35.0.0",
-    "platforms": [
-      "ios",
-      "android",
-      "web"
-    ],
-    "version": "2.0",
-    "orientation": "landscape",
-    "icon": "./assets/icon.png",
-    "splash": {
-      "image": "./assets/splash.png",
-      "backgroundColor": "#000055"
-    },
-    "updates": {
-      "fallbackToCacheTimeout": 0
-    },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
-    "ios": {
-      "supportsTablet": true,
-      "bundleIdentifier": "jp.wafuwafu.toukei",
-      "infoPlist":{
-        "UIBackgroundModes": [
-          "audio"
-        ]
-      }
+    "expo": {
+        "name": "日本統計 | 文系学生と学ぶ社会統計学",
+        "description": "toukei app",
+        "slug": "e-stat-native",
+        "privacy": "unlisted",
+        "sdkVersion": "35.0.0",
+        "platforms": ["ios", "android", "web"],
+        "version": "2.0",
+        "orientation": "landscape",
+        "icon": "./assets/icon.png",
+        "splash": {
+            "image": "./assets/splash.png",
+            "backgroundColor": "#000055"
+        },
+        "updates": {
+            "fallbackToCacheTimeout": 0
+        },
+        "assetBundlePatterns": ["**/*"],
+        "ios": {
+            "supportsTablet": true,
+            "bundleIdentifier": "jp.wafuwafu.toukei",
+            "infoPlist": {
+                "UIBackgroundModes": ["audio"]
+            }
+        }
     }
-  }
 }

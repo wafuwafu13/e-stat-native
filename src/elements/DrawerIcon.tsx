@@ -1,32 +1,30 @@
 import React from 'react';
 import { StyleSheet, TouchableOpacity } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome5';
-import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
+import {
+    widthPercentageToDP as wp,
+    heightPercentageToDP as hp
+} from 'react-native-responsive-screen';
 
 type Props = {
-  onPress: () => void
-}
+    onPress: () => void;
+};
 
-const DrawerIcon: React.FC<Props> = props => {
+const DrawerIcon: React.FC<Props> = (props) => {
+    const { onPress } = props;
 
-    const { onPress } = props
-    
-    return(
-        <TouchableOpacity
-          onPress={onPress}
-          style={styles.modalIcon}
-        >
-            <Icon name="list-alt" size={wp('5%')} color="#807E7C"/>
+    return (
+        <TouchableOpacity onPress={onPress} style={styles.modalIcon}>
+            <Icon name="list-alt" size={wp('5%')} color="#807E7C" />
         </TouchableOpacity>
-    )
+    );
+};
 
-}
-
-export default DrawerIcon
+export default DrawerIcon;
 
 const styles = StyleSheet.create({
-    modalIcon:{
+    modalIcon: {
         position: 'absolute',
-        left: wp('2%'),
+        left: wp('2%')
     }
-})
+});

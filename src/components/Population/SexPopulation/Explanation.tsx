@@ -1,22 +1,25 @@
 import React from 'react';
 import { StyleSheet, Text, ScrollView } from 'react-native';
-import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
+import {
+    widthPercentageToDP as wp,
+    heightPercentageToDP as hp
+} from 'react-native-responsive-screen';
 
 const Explanation: React.FC = () => {
-    return(
+    return (
         <ScrollView style={styles.container}>
             <Text style={styles.text}>
                 平成27年の総人口は男性が
-                <Text style={{color: 'red'}}>6千184万人</Text>
+                <Text style={{ color: 'red' }}>6千184万人</Text>
                 、女性が
-                <Text style={{color: 'red'}}>6千523万人</Text>
+                <Text style={{ color: 'red' }}>6千523万人</Text>
                 でした。
             </Text>
             <Text style={styles.text}>
                 平成29年の簡易生命表によると、平均寿命は男性が
-                <Text style={{color: 'red'}}>81.09歳</Text>
+                <Text style={{ color: 'red' }}>81.09歳</Text>
                 、女性が
-                <Text style={{color: 'red'}}>87.26歳</Text>
+                <Text style={{ color: 'red' }}>87.26歳</Text>
                 です。
             </Text>
             <Text style={styles.text}>
@@ -29,18 +32,18 @@ const Explanation: React.FC = () => {
                 社会文化的要因の1つとして、女性の社会進出の遅れが挙げられ、男性より社会的なストレスを受けにくく、寿命が長くなると考えられています。
             </Text>
         </ScrollView>
-    )
-}
+    );
+};
 
 export default Explanation;
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1, 
+        flex: 1,
         margin: wp('7%')
     },
-    text:{
+    text: {
         fontSize: wp('2.5%'),
-        marginBottom: wp('3%'),
+        marginBottom: wp('3%')
     }
-})
+});

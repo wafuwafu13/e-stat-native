@@ -2,18 +2,15 @@ import React from 'react';
 import { StyleSheet, Text, View, Button } from 'react-native';
 
 type Props = {
-    toggle: () => void
-}
+    toggle: () => void;
+};
 
-const HeightPopulationModal: React.FC<Props> = props => {
+const HeightPopulationModal: React.FC<Props> = (props) => {
+    const { toggle } = props;
 
-    const { toggle } = props
-
-    return(
+    return (
         <View style={styles.container}>
-            <Text>
-                平成28年国民健康・栄養調査の結果を表示します。
-            </Text>
+            <Text>平成28年国民健康・栄養調査の結果を表示します。</Text>
             <Text>
                 国民健康・栄養調査は、毎年、食生活状況、喫煙、運動習慣などを調べており、
             </Text>
@@ -22,16 +19,16 @@ const HeightPopulationModal: React.FC<Props> = props => {
             </Text>
             <Button title="閉じる" onPress={toggle} />
         </View>
-    )
-}
+    );
+};
 
 export default HeightPopulationModal;
 
 const styles = StyleSheet.create({
-    container:{
+    container: {
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: '#ffc',
+        backgroundColor: '#ffc'
     }
-})
+});

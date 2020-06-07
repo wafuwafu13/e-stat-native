@@ -2,18 +2,15 @@ import React from 'react';
 import { StyleSheet, Text, View, Button } from 'react-native';
 
 type Props = {
-    toggle: () => void
-}
+    toggle: () => void;
+};
 
-const SumMarriageModal: React.FC<Props> = props => {
+const SumMarriageModal: React.FC<Props> = (props) => {
+    const { toggle } = props;
 
-    const { toggle } = props
-
-    return(
+    return (
         <View style={styles.container}>
-            <Text>
-                人口動態調査の結果を表示します。
-            </Text>
+            <Text>人口動態調査の結果を表示します。</Text>
             <Text>
                 人口動態調査は、戸籍法および死産の届出に関する規程により届け出られた
             </Text>
@@ -22,16 +19,16 @@ const SumMarriageModal: React.FC<Props> = props => {
             </Text>
             <Button title="閉じる" onPress={toggle} />
         </View>
-    )
-}
+    );
+};
 
 export default SumMarriageModal;
 
 const styles = StyleSheet.create({
-    container:{
+    container: {
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: '#ffc',
+        backgroundColor: '#ffc'
     }
-})
+});

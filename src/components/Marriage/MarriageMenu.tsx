@@ -2,7 +2,10 @@ import React, { useState } from 'react';
 import { StyleSheet, View, ScrollView, TouchableOpacity } from 'react-native';
 import Modal from 'react-native-modal';
 import Icon from 'react-native-vector-icons/FontAwesome5';
-import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
+import {
+    widthPercentageToDP as wp,
+    heightPercentageToDP as hp
+} from 'react-native-responsive-screen';
 
 import SumMarriageModal from './SumMarriage/SumMarriageModal';
 import UnmarrideModal from './Unmarride/UnmarrideModal';
@@ -18,76 +21,96 @@ import { RootStackParamList } from '../../../App';
 type MarriageMenuNavigationProp = StackNavigationProp<
     RootStackParamList,
     'MarriageMenu'
->
+>;
 
 type Props = {
-    navigation: MarriageMenuNavigationProp
-}
+    navigation: MarriageMenuNavigationProp;
+};
 
-const MarriageMenu: React.FC<Props> = ({navigation}) => {
-
-    const [sumMarriageModalVisible, setSumMarriageModalVisible] = useState<boolean>(false)
-    const [unmarrideModalVisible, setUnmarrideModalVisible] = useState<boolean>(false)
-    const [divorcerateModalVisible, setDivorcerateModalVisible] = useState<boolean>(false)
+const MarriageMenu: React.FC<Props> = ({ navigation }) => {
+    const [sumMarriageModalVisible, setSumMarriageModalVisible] = useState<
+        boolean
+    >(false);
+    const [unmarrideModalVisible, setUnmarrideModalVisible] = useState<boolean>(
+        false
+    );
+    const [divorcerateModalVisible, setDivorcerateModalVisible] = useState<
+        boolean
+    >(false);
 
     const sumMarriageToggleModal = (): void => {
-        setSumMarriageModalVisible(!sumMarriageModalVisible)
-    }
+        setSumMarriageModalVisible(!sumMarriageModalVisible);
+    };
 
     const unmarrideToggleModal = (): void => {
-        setUnmarrideModalVisible(!unmarrideModalVisible)
-    }
+        setUnmarrideModalVisible(!unmarrideModalVisible);
+    };
 
     const divorcerateToggleModal = (): void => {
-        setDivorcerateModalVisible(!divorcerateModalVisible)
-    }
+        setDivorcerateModalVisible(!divorcerateModalVisible);
+    };
 
-    return(
+    return (
         <View style={styles.container}>
             <View style={styles.side}>
                 <TouchableOpacity
-                  onPress={() => navigation.navigate("HomeMenu")}
-                  style={styles.homeIcon}
+                    onPress={() => navigation.navigate('HomeMenu')}
+                    style={styles.homeIcon}
                 >
-                    <Icon name="home" size={wp('5%')} color="#807E7C"/>
+                    <Icon name="home" size={wp('5%')} color="#807E7C" />
                 </TouchableOpacity>
-                <SubMenuTitle>
-                    結 婚
-                </SubMenuTitle>
-                <SubMenuIcon item="marriage">
-                    3つのグラフ
-                </SubMenuIcon>
+                <SubMenuTitle>結 婚</SubMenuTitle>
+                <SubMenuIcon item="marriage">3つのグラフ</SubMenuIcon>
             </View>
             <ScrollView>
                 <View>
                     <View style={styles.menuContainer}>
-                        <TouchableOpacity 
-                          style={styles.menu}
-                          onPress={sumMarriageToggleModal}>
-                            <Modal isVisible={ sumMarriageModalVisible }>
-                                <SumMarriageModal toggle={sumMarriageToggleModal} />
+                        <TouchableOpacity
+                            style={styles.menu}
+                            onPress={sumMarriageToggleModal}
+                        >
+                            <Modal isVisible={sumMarriageModalVisible}>
+                                <SumMarriageModal
+                                    toggle={sumMarriageToggleModal}
+                                />
                             </Modal>
-                            <GraphMenu onPress={() => navigation.navigate('SumMarriageSwiper')}>
+                            <GraphMenu
+                                onPress={() =>
+                                    navigation.navigate('SumMarriageSwiper')
+                                }
+                            >
                                 結婚件数
                             </GraphMenu>
                         </TouchableOpacity>
-                        <TouchableOpacity 
-                          style={styles.menu}
-                          onPress={unmarrideToggleModal}>
-                            <Modal isVisible={ unmarrideModalVisible }>
+                        <TouchableOpacity
+                            style={styles.menu}
+                            onPress={unmarrideToggleModal}
+                        >
+                            <Modal isVisible={unmarrideModalVisible}>
                                 <UnmarrideModal toggle={unmarrideToggleModal} />
                             </Modal>
-                            <GraphMenu onPress={() => navigation.navigate('UnmarrideSwiper')}>
+                            <GraphMenu
+                                onPress={() =>
+                                    navigation.navigate('UnmarrideSwiper')
+                                }
+                            >
                                 40~45歳男女の未婚率
                             </GraphMenu>
                         </TouchableOpacity>
-                        <TouchableOpacity 
-                          style={styles.menu}
-                          onPress={divorcerateToggleModal}>
-                            <Modal isVisible={ divorcerateModalVisible }>
-                                <DivorcerateModal toggle={divorcerateToggleModal} />
+                        <TouchableOpacity
+                            style={styles.menu}
+                            onPress={divorcerateToggleModal}
+                        >
+                            <Modal isVisible={divorcerateModalVisible}>
+                                <DivorcerateModal
+                                    toggle={divorcerateToggleModal}
+                                />
                             </Modal>
-                            <GraphMenu onPress={() => navigation.navigate('DivorcerateSwiper')}>
+                            <GraphMenu
+                                onPress={() =>
+                                    navigation.navigate('DivorcerateSwiper')
+                                }
+                            >
                                 離婚率
                             </GraphMenu>
                         </TouchableOpacity>
@@ -95,34 +118,33 @@ const MarriageMenu: React.FC<Props> = ({navigation}) => {
                 </View>
             </ScrollView>
         </View>
-    )
-}
+    );
+};
 
 export default MarriageMenu;
 
-
 const styles = StyleSheet.create({
-    container:{
+    container: {
         flex: 1,
         flexDirection: 'row',
-        backgroundColor: '#F0FCFF',
+        backgroundColor: '#F0FCFF'
     },
-    side:{
+    side: {
         position: 'relative',
         flex: 10,
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: '#FF5F5F',
+        backgroundColor: '#FF5F5F'
     },
     homeIcon: {
         position: 'absolute',
         left: wp('2%'),
         top: hp('5%')
     },
-    menuContainer:{
-        marginTop: hp('10%'),
+    menuContainer: {
+        marginTop: hp('10%')
     },
-    menu:{
+    menu: {
         width: wp('60%'),
         height: hp('30%'),
         marginRight: wp('7%'),
@@ -130,6 +152,6 @@ const styles = StyleSheet.create({
         marginBottom: hp('10%'),
         borderBottomWidth: wp('1%'),
         borderBottomColor: '#E4E0E0',
-        backgroundColor: 'white',
+        backgroundColor: 'white'
     }
-})
+});
