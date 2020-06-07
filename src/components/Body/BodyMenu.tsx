@@ -25,14 +25,14 @@ type Props = {
 
 const PopulationMenu: React.FC<Props> = ({navigation}) => {
 
-    const [heightModalVisible, setHeightModalVisible] = useState(false)
-    const [weightModalVisible, setWeightModalVisible] = useState(false)
+    const [heightModalVisible, setHeightModalVisible] = useState<boolean>(false)
+    const [weightModalVisible, setWeightModalVisible] = useState<boolean>(false)
 
-    const heightToggleModal = () => {
+    const heightToggleModal = (): void => {
         setHeightModalVisible(!heightModalVisible)
     }
 
-    const weightToggleModal = () => {
+    const weightToggleModal = (): void => {
         setWeightModalVisible(!weightModalVisible)
     }
 

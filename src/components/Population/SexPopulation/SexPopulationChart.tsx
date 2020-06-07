@@ -9,15 +9,17 @@ import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-nativ
 
 import Loading from '../../../elements/Loading';
 
-const SexPopulation = () => {
+import { chartData } from '../../../types/chartData';
 
-    const [isLoaded, setIsLoaded] = useState(true)
+const SexPopulation: React.FC = () => {
+
+    const [isLoaded, setIsLoaded] = useState<boolean>(true)
     const [error, setError] = useState<any>(null)
-    const [manPopulation, setManPopulation] = useState([])
-    const [womanPopulation, setWomanPopulation] = useState([])
-    const [spinner, setSpinner] = useState(true)
+    const [manPopulation, setManPopulation] = useState<chartData[]>([])
+    const [womanPopulation, setWomanPopulation] = useState<chartData[]>([])
+    const [spinner, setSpinner] = useState<boolean>(true)
 
-    const createUrl = (id: string) => {
+    const createUrl = (id: string): string => {
         const APP_ID = config.APP_ID;
         const API_URL = "http://api.e-stat.go.jp/rest/2.1/app/json/getStatsData"
         const cdCat03 = id;
@@ -38,11 +40,12 @@ const SexPopulation = () => {
         return URL
     }
 
-    const manUrl = createUrl("0010");
-    const womanUrl = createUrl("0020");
+    const manUrl: string = createUrl("0010");
+    const womanUrl: string = createUrl("0020");
     
     let manPopulationList: any = [];
     let womanPopulationList: any = [];
+
     for(let i = 0; i <= 98; i++){
       manPopulationList.push({
         x: i
@@ -87,16 +90,15 @@ const SexPopulation = () => {
       })
     }, [spinner])
 
-    let tickXvalueList = [];
+    let tickXvalueList: number[] = [];
     for(let i = 5; i <= 95; i+=5){
       tickXvalueList.push(i);
     }
-    let tickYValueList = [];
+
+    let tickYValueList: number[] = [];
     for(let i = 250000; i <= 1250000; i+=250000){
       tickYValueList.push(i);
     }
-
-    const height = Dimensions.get('window').height;
 
     if(error){
         return <Text>Error: {error.message}</Text>;
@@ -159,3 +161,5 @@ const styles = StyleSheet.create({
     marginBottom: hp('15%')
   }
 })
+
+const height: number = Dimensions.get('window').height;

@@ -9,14 +9,16 @@ import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-nativ
 
 import Loading from '../../../elements/Loading';
 
-const EstimatePopulationChart = () => {
+import { chartData } from '../../../types/chartData';
 
-    const [isLoaded, setIsLoaded] = useState(true)
+const EstimatePopulationChart: React.FC = () => {
+
+    const [isLoaded, setIsLoaded] = useState<boolean>(true)
     const [error, setError] = useState<any>(null)
-    const [sumPopulation, setSumpopulation] = useState([])
-    const [manPopulation, setManpopulation] = useState([])
-    const [womanPopulation, setWomanpopulation] = useState([])
-    const [spinner, setSpinner] = useState(true)
+    const [sumPopulation, setSumpopulation] = useState<chartData[]>([])
+    const [manPopulation, setManpopulation] = useState<chartData[]>([])
+    const [womanPopulation, setWomanpopulation] = useState<chartData[]>([])
+    const [spinner, setSpinner] = useState<boolean>(true)
 
     let APP_ID = config.APP_ID
     let API_URL = "http://api.e-stat.go.jp/rest/2.1/app/json/getStatsData"
@@ -42,6 +44,7 @@ const EstimatePopulationChart = () => {
     };
 
     useEffect(() => {
+
         setTimeout(()=>{
           setSpinner(false)
         }, 8000)
@@ -71,16 +74,14 @@ const EstimatePopulationChart = () => {
         })
     }, [])
 
-    let tickXvalueList = [];
+    let tickXvalueList: number[] = [];
     for(let i = 5; i <= 95; i+=5){
       tickXvalueList.push(i)
     }
-    let tickYValueList = [];
+    let tickYValueList: number[] = [];
     for(let i = 250; i <= 2000; i+=250){
       tickYValueList.push(i)
     }
-
-    const height = Dimensions.get('window').height;
   
     if(error){
       return <Text>Error: {error.message}</Text>;
@@ -146,3 +147,5 @@ const styles = StyleSheet.create({
     marginBottom: hp('15%')
   }
 })
+
+const height: number = Dimensions.get('window').height;

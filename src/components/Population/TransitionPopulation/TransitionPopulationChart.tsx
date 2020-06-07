@@ -6,22 +6,24 @@ import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-nativ
 
 import Loading from '../../../elements/Loading';
 
-const TransitionPopulationChart = () => {
+import { chartData } from '../../../types/chartData';
 
-    const [spinner, setSpinner] = useState(true)
+const TransitionPopulationChart: React.FC = () => {
 
-    let transitionPopulationList = [];
-    let transitionPopulationYear = [];
+    const [spinner, setSpinner] = useState<boolean>(true)
+
+    let transitionPopulationList: chartData[] = [];
+    let transitionPopulationYear: number[] = [];
 
     for(let i = 1945; i <= 2015; i+=5){
       transitionPopulationYear.push(i);
     }
     transitionPopulationYear[15] = 2019;
 
-    let transitionPopulation = [71998104, 84114574, 90076594, 94301623, 99209137, 
-                                104665171, 111939643, 117060396, 121048923, 123611167,
-                                125570246, 126925843, 127767994, 128057352, 127094745,
-                                126443000]
+    let transitionPopulation: number[] = [71998104, 84114574, 90076594, 94301623, 99209137, 
+                                          104665171, 111939643, 117060396, 121048923, 123611167,
+                                          125570246, 126925843, 127767994, 128057352, 127094745,
+                                          126443000]
 
     for(let i = 0; i <= 15; i++){
       transitionPopulationList.push({
@@ -30,17 +32,17 @@ const TransitionPopulationChart = () => {
       });
     }
 
-    let tickXValueList = [];
+    let tickXValueList: number[] = [];
     for(let i = 1945; i <= 2015; i+=5){
       tickXValueList.push(i);
     }
-    let tickYValueList = [];
+
+    let tickYValueList: number[] = [];
     for(let i = 70000000; i <= 120000000; i+=10000000){
       tickYValueList.push(i);
     }
     
-    const data = transitionPopulationList;
-    const height = Dimensions.get('window').height;
+    const data: chartData[] = transitionPopulationList;
 
     useEffect(() => {
       setTimeout(()=>{
@@ -94,3 +96,5 @@ const styles = StyleSheet.create({
     marginBottom: hp('15%')
   }
 })
+
+const height = Dimensions.get('window').height;

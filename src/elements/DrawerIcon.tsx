@@ -5,43 +5,28 @@ import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-nat
 
 type Props = {
   onPress: () => void
-  itemMenu?: boolean
 }
 
 const DrawerIcon: React.FC<Props> = props => {
 
-    const { onPress, itemMenu } = props
+    const { onPress } = props
     
     return(
-        <>
-          {itemMenu ? (
-              <TouchableOpacity
-                onPress={onPress}
-                style={[styles.commonModalIcon, styles.itemMenuModalIcon]}
-              >
-                <Icon name="list-alt" size={wp('5%')} color="#807E7C"/>
-              </TouchableOpacity>
-          ) : (
-
-              <TouchableOpacity
-                onPress={onPress}
-                style={styles.commonModalIcon}
-              >
-                <Icon name="list-alt" size={wp('5%')} color="#807E7C"/>
-              </TouchableOpacity>
-          )}
-        </>
+        <TouchableOpacity
+          onPress={onPress}
+          style={styles.modalIcon}
+        >
+            <Icon name="list-alt" size={wp('5%')} color="#807E7C"/>
+        </TouchableOpacity>
     )
+
 }
 
 export default DrawerIcon
 
 const styles = StyleSheet.create({
-    commonModalIcon:{
+    modalIcon:{
         position: 'absolute',
         left: wp('2%'),
-    },
-    itemMenuModalIcon:{
-        top: hp('5%'),
     }
 })

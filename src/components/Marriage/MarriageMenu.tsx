@@ -26,19 +26,19 @@ type Props = {
 
 const MarriageMenu: React.FC<Props> = ({navigation}) => {
 
-    const [sumMarriageModalVisible, setSumMarriageModalVisible] = useState(false)
-    const [unmarrideModalVisible, setUnmarrideModalVisible] = useState(false)
-    const [divorcerateModalVisible, setDivorcerateModalVisible] = useState(false)
+    const [sumMarriageModalVisible, setSumMarriageModalVisible] = useState<boolean>(false)
+    const [unmarrideModalVisible, setUnmarrideModalVisible] = useState<boolean>(false)
+    const [divorcerateModalVisible, setDivorcerateModalVisible] = useState<boolean>(false)
 
-    const sumMarriageToggleModal = () => {
+    const sumMarriageToggleModal = (): void => {
         setSumMarriageModalVisible(!sumMarriageModalVisible)
     }
 
-    const unmarrideToggleModal = () => {
+    const unmarrideToggleModal = (): void => {
         setUnmarrideModalVisible(!unmarrideModalVisible)
     }
 
-    const divorcerateToggleModal = () => {
+    const divorcerateToggleModal = (): void => {
         setDivorcerateModalVisible(!divorcerateModalVisible)
     }
 

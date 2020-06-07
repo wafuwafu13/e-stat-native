@@ -6,12 +6,15 @@ import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-nativ
 
 import Loading from '../../../elements/Loading';
 
-const SumMariageChart = () => {
+import { chartData } from '../../../types/chartData';
 
-    const [spinner, setSpinner] = useState(true)
+const SumMariageChart: React.FC = () => {
 
-    let sumMariageList = [];
-    let sumMariageYear = [];
+    const [spinner, setSpinner] = useState<boolean>(true)
+
+    let sumMariageList: chartData[] = [];
+    let sumMariageYear: number[] = [];
+
     for(let i = 2017; i >= 2000; i--){
         sumMariageYear.push(i);
     }
@@ -24,7 +27,7 @@ const SumMariageChart = () => {
         sumMariageYear.push(i);
     }
 
-    let sumMariage = [606866, 620531, 635156, 643749, 660613, 668869, 661895, 700214, 707734, 726106,
+    let sumMariage: number[] = [606866, 620531, 635156, 643749, 660613, 668869, 661895, 700214, 707734, 726106,
                       719822, 730971, 714265, 720417, 740191, 757331, 799999, 798138, 791888, 722138,
                       735850, 774702, 941628, 1029405, 954852, 866115, 714861, 715081, 934170, 743842,
                       666575, 556730, 506674]
@@ -36,7 +39,7 @@ const SumMariageChart = () => {
         });
     }
 
-    let tickXList = [];
+    let tickXList: number[] = [];
     for(let i = 1930; i <= 2015; i+=5){
         tickXList.push(i);
     }
@@ -45,8 +48,7 @@ const SumMariageChart = () => {
         tickYList.push(i);
     }
 
-    const data = sumMariageList;
-    const height = Dimensions.get('window').height;
+    const data: chartData[] = sumMariageList;
 
     useEffect(() => {
       setTimeout(() => {
@@ -101,3 +103,5 @@ const styles = StyleSheet.create({
     marginBottom: hp('15%')
   }
 })
+
+const height: number = Dimensions.get('window').height;
