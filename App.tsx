@@ -9,23 +9,23 @@ import Icon from 'react-native-vector-icons/FontAwesome5';
 import { YellowBox } from 'react-native';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 
-import Menu from './Menu';
-import PopulationMenu from './Population/PopulationMenu';
-import SumPopulationSwiper from './Population/SumPopulation/SumPopulationSwiper';
-import SexPopulationSwiper from './Population/SexPopulation/SexPopulationSwiper';
-import EstimatePopulationSwiper from './Population/EstimatePopulation/EstimatePopulationSwiper';
-import BirthrateSwiper from './Population/Birthrate/BirthrateSwiper';
-import TransitionPopulationSwiper from './Population/TransitionPopulation/TransitionPopulationSwiper';
-import BodyMenu from './Body/BodyMenu';
-import HeightSwiper from './Body/Height/HeightSwiper';
-import WeightSwiper from './Body/Weight/WeightSwiper';
-import MarriageMenu from './Marriage/MarriageMenu';
-import SumMarriageSwiper from './Marriage/SumMarriage/SumMarriageSwiper';
-import UnmarrideSwiper from './Marriage/Unmarride/UnmarrideSwiper';
-import DivorcerateSwiper from './Marriage/Divorcerate/DivorcerateSwiper';
-import IncomeMenu from './Income/IncomeMenu';
-import AnnualIncomeSwiper from './Income/AnnualIncome/AnnauIncomeSwiper';
-import Overview from './Overview/Overview';
+import HomeMenu from './src/components/HomeMenu';
+import PopulationMenu from './src/components/Population/PopulationMenu';
+import SumPopulationSwiper from './src/components/Population/SumPopulation/SumPopulationSwiper';
+import SexPopulationSwiper from './src/components/Population/SexPopulation/SexPopulationSwiper';
+import EstimatePopulationSwiper from './src/components/Population/EstimatePopulation/EstimatePopulationSwiper';
+import BirthrateSwiper from './src/components/Population/Birthrate/BirthrateSwiper';
+import TransitionPopulationSwiper from './src/components/Population/TransitionPopulation/TransitionPopulationSwiper';
+import BodyMenu from './src/components/Body/BodyMenu';
+import HeightSwiper from './src/components/Body/Height/HeightSwiper';
+import WeightSwiper from './src/components/Body/Weight/WeightSwiper';
+import MarriageMenu from './src/components/Marriage/MarriageMenu';
+import SumMarriageSwiper from './src/components/Marriage/SumMarriage/SumMarriageSwiper';
+import UnmarrideSwiper from './src/components/Marriage/Unmarride/UnmarrideSwiper';
+import DivorcerateSwiper from './src/components/Marriage/Divorcerate/DivorcerateSwiper';
+import IncomeMenu from './src/components/Income/IncomeMenu';
+import AnnualIncomeSwiper from './src/components/Income/AnnualIncome/AnnauIncomeSwiper';
+import Overview from './src/components/Overview/Overview';
 
 const Stack = createStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -34,9 +34,9 @@ const App = () => {
 
     const createStack = () => {
       return(
-        <Stack.Navigator initialRouteName="Menu">
-            <Stack.Screen name="Menu"
-              component={Menu}
+        <Stack.Navigator initialRouteName="HomeMenu">
+            <Stack.Screen name="HomeMenu"
+              component={HomeMenu}
               options={{ headerShown: false }}
             />
             <Stack.Screen name="PopulationMenu"
