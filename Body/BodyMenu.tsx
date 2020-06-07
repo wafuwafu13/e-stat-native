@@ -7,7 +7,6 @@ import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-nat
 import HeightModal from './Height/HeightModal';
 import WeightModal from './Weight/WeightModal';
 
-import DrawerIcon from '../src/elements/DrawerIcon';
 import SubMenuTitle from '../src/elements/SubMenuTitle';
 import SubMenuIcon from '../src/elements/SubMenuIcon';
 import GraphMenu from '../src/elements/GraphMenu';
@@ -49,7 +48,7 @@ const PopulationMenu: React.FC = ({navigation}: any) => {
                           style={styles.menu}
                           onPress={heightToggleModal}>
                             <Modal isVisible={ heightModalVisible }>
-                                {/* <HeightModal toggle={this} /> */}
+                                <HeightModal toggle={heightToggleModal} />
                             </Modal>
                             <GraphMenu onPress={() => navigation.navigate('HeightSwiper')}>
                                 男女別平均身長
@@ -59,7 +58,7 @@ const PopulationMenu: React.FC = ({navigation}: any) => {
                           style={styles.menu}
                           onPress={weightToggleModal}>
                              <Modal isVisible={ weightModalVisible }>
-                                {/* <WeightModal toggle={this} /> */}
+                                <WeightModal toggle={weightToggleModal} />
                             </Modal>
                             <GraphMenu onPress={() => navigation.navigate('WeightSwiper')}>
                                 男女・年代別平均体重

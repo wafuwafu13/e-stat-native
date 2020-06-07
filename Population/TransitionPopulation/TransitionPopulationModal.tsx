@@ -1,7 +1,14 @@
 import React from 'react';
 import { StyleSheet, Text, View, Button } from 'react-native';
 
-const TransitionPopulationModal = () => {
+type Props = {
+    toggle: () => void
+}
+
+const TransitionPopulationModal: React.FC<Props> = props => {
+
+    const { toggle } = props
+
     return(
         <View style={styles.container}>
             <Text>
@@ -13,7 +20,7 @@ const TransitionPopulationModal = () => {
             <Text>
                 国の最も重要かつ基本的な統計調査です。
             </Text>
-            {/* <Button title="閉じる" onPress={this.props.toggle.transitionPopulationToggleModal}/> */}
+            <Button title="閉じる" onPress={toggle} />
         </View>
     )
 }

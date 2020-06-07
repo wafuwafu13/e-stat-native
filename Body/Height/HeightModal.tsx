@@ -1,7 +1,14 @@
 import React from 'react';
 import { StyleSheet, Text, View, Button } from 'react-native';
 
-const HeightPopulationModal = () => {
+type Props = {
+    toggle: () => void
+}
+
+const HeightPopulationModal: React.FC<Props> = props => {
+
+    const { toggle } = props
+
     return(
         <View style={styles.container}>
             <Text>
@@ -13,7 +20,7 @@ const HeightPopulationModal = () => {
             <Text>
                 国における健康増進対策や生活習慣病対策に不可欠な調査です。
             </Text>
-            {/* <Button title="閉じる" onPress={this.props.toggle.heightToggleModal}/> */}
+            <Button title="閉じる" onPress={toggle} />
         </View>
     )
 }
@@ -24,7 +31,7 @@ const styles = StyleSheet.create({
     container:{
         flex: 1,
         justifyContent: 'center',
-　　　　　　alignItems: 'center',
+        alignItems: 'center',
         backgroundColor: '#ffc',
     }
 })

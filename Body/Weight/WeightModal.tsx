@@ -1,7 +1,14 @@
 import React from 'react';
 import { StyleSheet, Text, View, Button } from 'react-native';
 
-const WeightPopulationModal = () => {
+type Props = {
+    toggle: () => void
+}
+
+const WeightPopulationModal: React.FC<Props> = props => {
+
+    const { toggle } = props
+    
     return(
         <View style={styles.container}>
             <Text>
@@ -13,7 +20,7 @@ const WeightPopulationModal = () => {
             <Text>
                 国における健康増進対策や生活習慣病対策に不可欠な調査です。
             </Text>
-            {/* <Button title="閉じる" onPress={this.props.toggle.weightToggleModal}/> */}
+            <Button title="閉じる" onPress={toggle}/>
         </View>
     )
 }

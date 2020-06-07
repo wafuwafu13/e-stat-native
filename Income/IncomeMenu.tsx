@@ -6,7 +6,6 @@ import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-nat
 
 import AnnualIncomeModal from './AnnualIncome/AnnualIncomeModal';
 
-import DrawerIcon from '../src/elements/DrawerIcon';
 import SubMenuTitle from '../src/elements/SubMenuTitle';
 import SubMenuIcon from '../src/elements/SubMenuIcon';
 import GraphMenu from '../src/elements/GraphMenu';
@@ -43,7 +42,7 @@ const IncomeMenu = ({navigation}: any) => {
                           style={styles.menu}
                           onPress={annualIncomeToggleModal}>
                             <Modal isVisible={ annualIncomeModalVisible }>
-                                {/* <AnnualIncomeModal toggle={this} /> */}
+                                <AnnualIncomeModal toggle={annualIncomeToggleModal} />
                             </Modal>
                             <GraphMenu onPress={() => navigation.navigate('AnnualIncomeSwiper')}>
                                 男女・年代別平均年収
