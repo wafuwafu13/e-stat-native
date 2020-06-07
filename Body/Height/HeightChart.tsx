@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { StyleSheet, View, Text, Dimensions } from 'react-native';
+// @ts-ignore
 import { VictoryLine, VictoryChart, VictoryTheme, VictoryAxis, VictoryGroup } from 'victory-native';
-import Loading from '../../src/elements/Loading';
 import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
+
+import Loading from '../../src/elements/Loading';
 
 const HeightChart = () => {
 

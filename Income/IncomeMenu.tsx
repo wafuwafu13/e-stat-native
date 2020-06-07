@@ -2,7 +2,9 @@ import React, { useState } from 'react';
 import { StyleSheet, View, ScrollView, TouchableOpacity } from 'react-native';
 import Modal from 'react-native-modal';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
+
 import AnnualIncomeModal from './AnnualIncome/AnnualIncomeModal';
+
 import DrawerIcon from '../src/elements/DrawerIcon';
 import SubMenuTitle from '../src/elements/SubMenuTitle';
 import SubMenuIcon from '../src/elements/SubMenuIcon';
@@ -20,7 +22,7 @@ const IncomeMenu = ({navigation}: any) => {
     return(
         <View style={styles.container}>
             <View style={styles.side}>
-                <DrawerIcon onPress={() => navigation.toggleDrawer()} itemMenu/>
+                <DrawerIcon onPress={() => navigation.toggleDrawer()} itemMenu={true} />
                 <SubMenuTitle>
                     年 収
                 </SubMenuTitle>

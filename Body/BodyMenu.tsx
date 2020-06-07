@@ -2,8 +2,10 @@ import React, { useState } from 'react';
 import { StyleSheet, View, ScrollView, TouchableOpacity } from 'react-native';
 import Modal from 'react-native-modal';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
+
 import HeightModal from './Height/HeightModal';
 import WeightModal from './Weight/WeightModal';
+
 import DrawerIcon from '../src/elements/DrawerIcon';
 import SubMenuTitle from '../src/elements/SubMenuTitle';
 import SubMenuIcon from '../src/elements/SubMenuIcon';
@@ -26,7 +28,7 @@ const PopulationMenu: React.FC = ({navigation}: any) => {
     return(
         <View style={styles.container}>
             <View style={styles.side}>
-                {/* <DrawerIcon onPress={() => navigation.toggleDrawer()} itemMenu/> */}
+                <DrawerIcon onPress={() => navigation.toggleDrawer()} itemMenu={true}/>
                 <SubMenuTitle>
                     身長・体重
                 </SubMenuTitle>

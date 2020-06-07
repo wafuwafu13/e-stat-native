@@ -3,10 +3,11 @@ import { StyleSheet, View, Text, Dimensions } from 'react-native';
 import axios from 'axios';
 // @ts-ignore
 import { VictoryBar, VictoryChart, VictoryGroup, VictoryTheme, VictoryAxis } from 'victory-native';
-import Loading from '../../src/elements/Loading';
 // @ts-ignore
 import config from '../../config';
 import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
+
+import Loading from '../../src/elements/Loading';
 
 const SexPopulation = () => {
 
