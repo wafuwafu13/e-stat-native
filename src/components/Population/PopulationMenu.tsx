@@ -28,29 +28,29 @@ type Props = {
 
 const PopulationMenu: React.FC<Props> = ({navigation}) => {
 
-    const [sumPopulationModalVisible, setSumPopulationModalVisible] = useState(false)
-    const [sexPopulationModalVisible, setSexPopulationModalVisible] = useState(false)
-    const [estimatePopulationModalVisible, setEstimatePopulationModalVisible] = useState(false)
-    const [birthrateModalVisible, setBirthrateModalVisible] = useState(false)
-    const [transitionPopulationModalVisible, setTransitionPopulationModalVisible] = useState(false)
+    const [sumPopulationModalVisible, setSumPopulationModalVisible] = useState<boolean>(false)
+    const [sexPopulationModalVisible, setSexPopulationModalVisible] = useState<boolean>(false)
+    const [estimatePopulationModalVisible, setEstimatePopulationModalVisible] = useState<boolean>(false)
+    const [birthrateModalVisible, setBirthrateModalVisible] = useState<boolean>(false)
+    const [transitionPopulationModalVisible, setTransitionPopulationModalVisible] = useState<boolean>(false)
 
-    const sumPopulationToggleModal = () => {
+    const sumPopulationToggleModal = (): void => {
         setSumPopulationModalVisible(!sumPopulationModalVisible)
     }
 
-    const sexPopulationToggleModal = () => {
+    const sexPopulationToggleModal = (): void => {
         setSexPopulationModalVisible(!sexPopulationModalVisible)
     }
 
-    const estimatePopulationToggleModal = () => {
+    const estimatePopulationToggleModal = (): void => {
         setEstimatePopulationModalVisible(!estimatePopulationModalVisible)
     }
 
-    const birthrateToggleModal = () => {
+    const birthrateToggleModal = (): void => {
         setBirthrateModalVisible(!birthrateModalVisible)
     }
 
-    const transitionPopulationToggleModal = () => {
+    const transitionPopulationToggleModal = (): void => {
         setTransitionPopulationModalVisible(!transitionPopulationModalVisible)
     }
 
@@ -131,7 +131,6 @@ const PopulationMenu: React.FC<Props> = ({navigation}) => {
 }
 
 export default PopulationMenu;
-
 
 const styles = StyleSheet.create({
     container:{

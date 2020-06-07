@@ -2,26 +2,29 @@ import React, { useState, useEffect } from 'react';
 import { StyleSheet, View, Text, Dimensions } from 'react-native';
 // @ts-ignore
 import { VictoryBar, VictoryChart, VictoryTheme, VictoryAxis, VictoryGroup } from 'victory-native';
-import Loading from '../../../elements/Loading';
 import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
 
-const AnnualIncome = () => {
+import Loading from '../../../elements/Loading';
 
-    const [spinner, setSpinner] = useState(true)
+import { chartData } from '../../../types/chartData';
 
-    let manAnnualIncomeList = [];
-    let womanAnnualIncomeList = [];
-    let AnnualIncomeAge = [];
+const AnnualIncome: React.FC = () => {
+
+    const [spinner, setSpinner] = useState<boolean>(true)
+
+    let manAnnualIncomeList: chartData[] = [];
+    let womanAnnualIncomeList: chartData[] = [];
+    let AnnualIncomeAge: number[] = [];
 
     for(let i = 17; i <= 72; i+=5){
       AnnualIncomeAge.push(i);
     }
 
-    let manAnnualIncome = [1572000, 2745000, 3827000, 4567000, 5117000, 
+    let manAnnualIncome: number[] = [1572000, 2745000, 3827000, 4567000, 5117000, 
                            5629000, 6327000, 6609000, 6493000, 4794000,
                            3871000, 3677000]
 
-    let womanAnnualIncome = [1062000, 2407000, 3089000, 3147000, 2999000,
+    let womanAnnualIncome: number[] = [1062000, 2407000, 3089000, 3147000, 2999000,
                              3017000, 2994000, 2958000, 2877000, 2283000,
                              1949000, 2066000]
                              
@@ -36,14 +39,13 @@ const AnnualIncome = () => {
        });
     }
 
-    let tickValueList = [];
+    let tickValueList: number[] = [];
     for(let i = 0; i <= 7000000; i+=1000000){
         tickValueList.push(i);
     }
 
-    const manData = manAnnualIncomeList;
-    const womanData = womanAnnualIncomeList
-    const height = Dimensions.get('window').height;
+    const manData: chartData[] = manAnnualIncomeList;
+    const womanData: chartData[] = womanAnnualIncomeList
 
     useEffect(() => {
       setTimeout(() => {
@@ -104,3 +106,5 @@ const styles = StyleSheet.create({
     marginBottom: hp('15%')
   }
 })
+
+const height: number = Dimensions.get('window').height;

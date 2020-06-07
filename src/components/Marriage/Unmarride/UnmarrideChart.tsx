@@ -6,23 +6,27 @@ import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-nativ
 
 import Loading from '../../../elements/Loading';
 
-const UnmarridChart = () => {
+import { chartData } from '../../../types/chartData';
 
-    const [spinner, setSpinner] = useState(true)
+const UnmarridChart: React.FC = () => {
 
-    let manUnmarridList = [];
-    let womanUnmarridList = [];
-    let UnmarridYear = [];
+    const [spinner, setSpinner] = useState<boolean>(true)
+
+    let manUnmarridList: chartData[] = [];
+    let womanUnmarridList: chartData[] = [];
+    let UnmarridYear: number[] = [];
 
     for(let i = 1920; i <= 2015; i+=5){
         if(i == 1945) continue;
         UnmarridYear.push(i);
     }
 
-    let manUnmarrid = [2.82, 2.26, 2.433, 2.425, 2.73, 1.88, 1.73, 2.03, 2.44, 2.82,
+    let manUnmarrid: number[] = [2.82, 2.26, 2.433, 2.425, 2.73, 1.88, 1.73, 2.03, 2.44, 2.82,
                        3.66, 4.75, 7.44, 11.78, 16.51, 18.69, 22.70, 28.6, 29.96]
-    let womanUnmarrid = [2.15, 1.89, 1.79, 1.792, 2, 1.99, 2.34, 3.14, 4.67, 5.29,
+
+    let womanUnmarrid: number[] = [2.15, 1.89, 1.79, 1.792, 2, 1.99, 2.34, 3.14, 4.67, 5.29,
                          4.99, 4.45, 4.89, 5.78, 6.76, 8.64, 12.24, 17.37, 19.3]
+
     for(let i = 0; i <= 18; i++){
       manUnmarridList.push({
         x:  UnmarridYear[i],
@@ -34,18 +38,18 @@ const UnmarridChart = () => {
       });
     }
 
-    let tickXList = [];
+    let tickXList: number[] = [];
     for(let i = 1920; i <= 2015; i+=5){
         tickXList.push(i);
     }
-    let tickYList = [];
+
+    let tickYList: number[] = [];
     for(let i = 5; i <= 30; i+=5){
         tickYList.push(i);
     }
 
-    const manData = manUnmarridList;
-    const womanData = womanUnmarridList
-    const height = Dimensions.get('window').height;
+    const manData: chartData[] = manUnmarridList;
+    const womanData: chartData[] = womanUnmarridList
 
     useEffect(() => {
       setTimeout(() => {
@@ -106,3 +110,5 @@ const styles = StyleSheet.create({
     marginBottom: hp('15%')
   }
 })
+
+const height: number = Dimensions.get('window').height;

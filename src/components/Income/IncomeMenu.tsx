@@ -24,9 +24,9 @@ type Props = {
 
 const IncomeMenu: React.FC<Props> = ({navigation}) => {
 
-    const [annualIncomeModalVisible, setAnnualIncomeModalVisible] = useState(false)
+    const [annualIncomeModalVisible, setAnnualIncomeModalVisible] = useState<boolean>(false)
 
-    const annualIncomeToggleModal = () => {
+    const annualIncomeToggleModal = (): void => {
         setAnnualIncomeModalVisible(!annualIncomeModalVisible)
     }
 
@@ -67,7 +67,6 @@ const IncomeMenu: React.FC<Props> = ({navigation}) => {
 }
 
 export default IncomeMenu;
-
 
 const styles = StyleSheet.create({
     container:{

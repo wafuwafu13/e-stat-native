@@ -6,18 +6,20 @@ import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-nativ
 
 import Loading from '../../../elements/Loading';
 
-const WeightChart = () => {
+import { chartData } from '../../../types/chartData';
 
-    const [spinner, setSpinner] = useState(true)
+const WeightChart: React.FC = () => {
 
-    let manWeightList = [];
-    let womanWeightList = [];
+    const [spinner, setSpinner] = useState<boolean>(true)
 
-    let manWeight = [10.5, 12.1, 14.2, 15.7, 18.2, 20.4, 24.0, 26.8, 31.2, 33.3,
+    let manWeightList: chartData[] = [];
+    let womanWeightList: chartData[] = [];
+
+    let manWeight: number[] = [10.5, 12.1, 14.2, 15.7, 18.2, 20.4, 24.0, 26.8, 31.2, 33.3,
                  37.7, 42.1, 48.9, 51.8, 56.5, 60.1, 63.1, 60.8, 62.6, 65.7,
                  66.1, 66.5, 69.2, 69.9, 64.5, 68.3]
 
-    let womanWeight = [9.9, 11.9, 14.1, 15.7, 18.1, 21.4, 23.3, 26.1, 30.4, 33.4,
+    let womanWeight: number[] = [9.9, 11.9, 14.1, 15.7, 18.1, 21.4, 23.3, 26.1, 30.4, 33.4,
                        38.5, 41.2, 45.5, 47.7, 47.7, 51.2, 50.0, 50.7, 50.8, 53.5,
                        50.9, 53.6, 51.8, 52.1, 50.2, 52.8]
 
@@ -32,7 +34,7 @@ const WeightChart = () => {
         });
     }
 
-    let tickXList = [];
+    let tickXList: number[] = [];
     for(let i = 1; i <= 26; i++){
         tickXList.push(i);
     }
@@ -41,9 +43,8 @@ const WeightChart = () => {
         tickYList.push(i);
     }
 
-    const manData = manWeightList;
-    const womanData = womanWeightList
-    const height = Dimensions.get('window').height;
+    const manData: chartData[] = manWeightList;
+    const womanData: chartData[] = womanWeightList
 
     useEffect(() => {
       setTimeout(() => {
@@ -104,3 +105,5 @@ const styles = StyleSheet.create({
     marginBottom: hp('15%')
   }
 })
+
+const height: number = Dimensions.get('window').height;

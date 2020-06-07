@@ -9,12 +9,14 @@ import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-nat
 
 import Loading from '../../../elements/Loading';
 
-const BirthrateChart = () => {
+import { chartData } from '../../../types/chartData';
 
-    const [isLoaded, setIsLoaded] = useState(true)
+const BirthrateChart: React.FC = () => {
+
+    const [isLoaded, setIsLoaded] = useState<boolean>(true)
     const [error, setError] = useState<any>(null)
-    const [birthrate, setBirthrate] = useState([])
-    const [spinner, setSpinner] = useState(true)
+    const [birthrate, setBirthrate] = useState<chartData[]>([])
+    const [spinner, setSpinner] = useState<boolean>(true)
 
     let APP_ID = config.APP_ID
     let API_URL = "http://api.e-stat.go.jp/rest/2.1/app/json/getStatsData"
@@ -26,7 +28,8 @@ const BirthrateChart = () => {
     GET_URL += "&statsDataId=" + escape(statsDataId);
 
     let birthrateList: any = [];
-    let birthrateYear = [];
+    let birthrateYear: number[] = [];
+
     for(let i = 2017; i >= 2007; i--){
       birthrateYear.push(i);
     }
@@ -65,16 +68,15 @@ const BirthrateChart = () => {
         })
     },[])
 
-    let tickXValueList = [];
+    let tickXValueList: number[] = [];
     for(let i = 1945; i <= 2015; i+=5){
       tickXValueList.push(i);
     }
-    let tickYValueList = [];
+
+    let tickYValueList: number[] = [];
     for(let i = 1; i <= 4.8; i += 0.2){
       tickYValueList.push(Math.round(i*10)/10);
     }
-
-    const height = Dimensions.get('window').height;
 
     if(error){
       return <Text>Error: {error.message}</Text>;
@@ -126,3 +128,5 @@ const styles = StyleSheet.create({
     marginBottom: hp('15%')
   }
 })
+
+const height: number = Dimensions.get('window').height;

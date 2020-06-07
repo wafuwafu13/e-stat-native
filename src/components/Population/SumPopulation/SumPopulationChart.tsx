@@ -9,12 +9,14 @@ import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-nativ
 
 import Loading from '../../../elements/Loading';
 
-const SumPopulationChart = () => {
+import { chartData } from '../../../types/chartData';
 
-    const [isLoaded, setIsLoaded] = useState(true)
+const SumPopulationChart: React.FC = () => {
+
+    const [isLoaded, setIsLoaded] = useState<boolean>(true)
     const [error, setError] = useState<any>(null)
-    const [sumPopulation, setSumPopulation] = useState([])
-    const [spinner, setSpinner] = useState(true)
+    const [sumPopulation, setSumPopulation] = useState<chartData[]>([])
+    const [spinner, setSpinner] = useState<boolean>(true)
 
     let APP_ID = config.APP_ID
     let API_URL = "http://api.e-stat.go.jp/rest/2.1/app/json/getStatsData"
@@ -34,6 +36,7 @@ const SumPopulationChart = () => {
     GET_URL += "&statsDataId=" + escape(statsDataId);
 
     let sumPopulationList: any = [];
+
     for(let i = 0; i <= 98; i++){
         sumPopulationList.push({
           x: i
@@ -41,6 +44,7 @@ const SumPopulationChart = () => {
     }
 
     useEffect(() => {
+
       setTimeout(()=>{
         setSpinner(false)
       }, 8000)
@@ -59,8 +63,6 @@ const SumPopulationChart = () => {
           setError(error)
       })
     }, [spinner])
-    
-    const height = Dimensions.get('window').height;
 
     if(error){
       return <Text>Error: { error.message }</Text>;
@@ -114,3 +116,5 @@ const styles = StyleSheet.create({
     marginBottom: hp('15%')
   }
 })
+
+const height: number = Dimensions.get('window').height;

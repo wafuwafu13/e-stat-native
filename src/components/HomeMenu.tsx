@@ -27,7 +27,7 @@ const HomeMenu: React.FC<Props> = ({ navigation }) => {
 
     const soundObject = new Audio.Sound();
 
-    async function goto(destination: any){
+    async function goto(destination: any): Promise<void>{
         navigation.navigate(destination)
         try {
           await soundObject.loadAsync(require('../../assets/sounds/decision.mp3'));
