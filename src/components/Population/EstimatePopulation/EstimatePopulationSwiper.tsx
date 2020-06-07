@@ -7,7 +7,19 @@ import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-nativ
 import EstimatePopulationChart from './EstimatePopulationChart'
 import Explanation from './Explanation';
 
-const EstimatePopulationSwiper = ({navigation}: any) => {
+import { StackNavigationProp } from '@react-navigation/stack';
+import { RootStackParamList } from '../../../../App';
+
+type EstimatePopulationSwiperNavigationProp = StackNavigationProp<
+    RootStackParamList,
+    'EstimatePopulationSwiper'
+>
+
+type Props = {
+    navigation: EstimatePopulationSwiperNavigationProp
+}
+
+const EstimatePopulationSwiper: React.FC<Props> = ({navigation}) => {
     return(
         <Swiper>
             <View style={styles.container}>

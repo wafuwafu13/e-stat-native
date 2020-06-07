@@ -27,12 +27,41 @@ import IncomeMenu from './src/components/Income/IncomeMenu';
 import AnnualIncomeSwiper from './src/components/Income/AnnualIncome/AnnauIncomeSwiper';
 import Overview from './src/components/Overview/Overview';
 
-const Stack = createStackNavigator();
-const Drawer = createDrawerNavigator();
+export type RootStackParamList = {
+  HomeMenu: undefined
+  PopulationMenu: undefined
+  SumPopulationSwiper: undefined
+  SexPopulationSwiper: undefined
+  EstimatePopulationSwiper: undefined
+  BirthrateSwiper: undefined
+  TransitionPopulationSwiper: undefined
+  BodyMenu: undefined
+  HeightSwiper: undefined
+  WeightSwiper: undefined
+  MarriageMenu: undefined
+  SumMarriageSwiper: undefined
+  UnmarrideSwiper: undefined
+  DivorcerateSwiper: undefined
+  IncomeMenu: undefined
+  AnnualIncomeSwiper: undefined
+  Overview: undefined
+}
 
-const App = () => {
+export type DrawerNavigatorParamList = {
+  ホーム: undefined
+  人口: undefined
+  身長_体重: undefined
+  結婚: undefined
+  年収: undefined
+  アプリについて: undefined
+}
 
-    const createStack = () => {
+const Stack = createStackNavigator<RootStackParamList>();
+const Drawer = createDrawerNavigator<DrawerNavigatorParamList>();
+
+const App: React.FC = () => {
+
+    const createStack = (): JSX.Element => {
       return(
         <Stack.Navigator initialRouteName="HomeMenu">
             <Stack.Screen name="HomeMenu"
@@ -112,7 +141,7 @@ const App = () => {
         <Drawer.Navigator>
             <Drawer.Screen name="ホーム" children={createStack} />
             <Drawer.Screen name="人口" component={PopulationMenu} />
-            <Drawer.Screen name="身長・体重" component={BodyMenu} />
+            <Drawer.Screen name="身長_体重" component={BodyMenu} />
             <Drawer.Screen name="結婚" component={MarriageMenu} />
             <Drawer.Screen name="年収" component={IncomeMenu} />
             <Drawer.Screen name="アプリについて" component={Overview} />

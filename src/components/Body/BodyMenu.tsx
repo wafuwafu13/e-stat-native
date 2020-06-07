@@ -11,8 +11,19 @@ import SubMenuTitle from '../../elements/SubMenuTitle';
 import SubMenuIcon from '../../elements/SubMenuIcon';
 import GraphMenu from '../../elements/GraphMenu';
 
+import { StackNavigationProp } from '@react-navigation/stack';
+import { RootStackParamList } from '../../../App';
 
-const PopulationMenu: React.FC = ({navigation}: any) => {
+type BodyMenuNavigationProp = StackNavigationProp<
+    RootStackParamList,
+    'BodyMenu'
+>
+
+type Props = {
+    navigation: BodyMenuNavigationProp
+}
+
+const PopulationMenu: React.FC<Props> = ({navigation}) => {
 
     const [heightModalVisible, setHeightModalVisible] = useState(false)
     const [weightModalVisible, setWeightModalVisible] = useState(false)

@@ -7,7 +7,19 @@ import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-nativ
 import BirthrateChart from './BirthrateChart';
 import Explanation from './Explanation';
 
-const BirthrateSwiper = ({navigation}: any) => {
+import { StackNavigationProp } from '@react-navigation/stack';
+import { RootStackParamList } from '../../../../App';
+
+type BirthrateSwiperNavigationProp = StackNavigationProp<
+    RootStackParamList,
+    'BirthrateSwiper'
+>
+
+type Props = {
+    navigation: BirthrateSwiperNavigationProp
+}
+
+const BirthrateSwiper: React.FC<Props> = ({navigation}) => {
     return(
         <Swiper>
             <View style={styles.container}>

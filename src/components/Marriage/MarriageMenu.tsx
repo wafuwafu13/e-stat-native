@@ -12,8 +12,19 @@ import SubMenuTitle from '../../elements/SubMenuTitle';
 import SubMenuIcon from '../../elements/SubMenuIcon';
 import GraphMenu from '../../elements/GraphMenu';
 
+import { StackNavigationProp } from '@react-navigation/stack';
+import { RootStackParamList } from '../../../App';
 
-const MarriageMenu = ({navigation}: any) => {
+type MarriageMenuNavigationProp = StackNavigationProp<
+    RootStackParamList,
+    'MarriageMenu'
+>
+
+type Props = {
+    navigation: MarriageMenuNavigationProp
+}
+
+const MarriageMenu: React.FC<Props> = ({navigation}) => {
 
     const [sumMarriageModalVisible, setSumMarriageModalVisible] = useState(false)
     const [unmarrideModalVisible, setUnmarrideModalVisible] = useState(false)

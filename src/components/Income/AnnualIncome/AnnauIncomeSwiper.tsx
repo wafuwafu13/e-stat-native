@@ -7,7 +7,19 @@ import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-nativ
 import AnnualIncomeChart from './AnnualIncomeChart';
 import Explanation from './Explanation';
 
-const AnnualIncomeSwiper = ({navigation}: any) => {        
+import { StackNavigationProp } from '@react-navigation/stack';
+import { RootStackParamList } from '../../../../App';
+
+type AnnualIncomeSwiperNavigationProp = StackNavigationProp<
+    RootStackParamList,
+    'AnnualIncomeSwiper'
+>
+
+type Props = {
+    navigation: AnnualIncomeSwiperNavigationProp
+}
+
+const AnnualIncomeSwiper: React.FC<Props> = ({navigation}) => {        
     return(
         <Swiper>
             <View style={styles.container}>

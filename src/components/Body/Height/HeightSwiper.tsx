@@ -7,8 +7,19 @@ import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-nativ
 import HeightChart from './HeightChart';
 import Explanation from './Explanation';
 
+import { StackNavigationProp } from '@react-navigation/stack';
+import { RootStackParamList } from '../../../../App';
 
-const HeightSwiper = ({navigation}: any) => {
+type HeightSwiperNavigationProp = StackNavigationProp<
+    RootStackParamList,
+    'HeightSwiper'
+>
+
+type Props = {
+    navigation: HeightSwiperNavigationProp
+}
+
+const HeightSwiper: React.FC<Props> = ({navigation}) => {
     return(
         <Swiper>
             <View style={styles.container}>

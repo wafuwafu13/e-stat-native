@@ -7,7 +7,19 @@ import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-nativ
 import SumMarriageChart from './SumMarriageChart';
 import Explanation from './Explanation';
 
-const SumMarriageSwiper = ({navigation}: any) => {
+import { StackNavigationProp } from '@react-navigation/stack';
+import { RootStackParamList } from '../../../../App';
+
+type SumMarriageSwiperNavigationProp = StackNavigationProp<
+    RootStackParamList,
+    'SumMarriageSwiper'
+>
+
+type Props = {
+    navigation: SumMarriageSwiperNavigationProp
+}
+
+const SumMarriageSwiper: React.FC<Props> = ({navigation}) => {
     return(
         <Swiper>
             <View style={styles.container}>

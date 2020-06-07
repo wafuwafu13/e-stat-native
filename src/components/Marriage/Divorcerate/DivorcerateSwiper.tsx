@@ -7,7 +7,19 @@ import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-nativ
 import DivorcerateChart from './DivorcerateChart';
 import Explanation from './Explanation';
 
-const DivorcerateSwiper = ({navigation}: any) => {
+import { StackNavigationProp } from '@react-navigation/stack';
+import { RootStackParamList } from '../../../../App';
+
+type DivorcerateSwiperNavigationProp = StackNavigationProp<
+    RootStackParamList,
+    'DivorcerateSwiper'
+>
+
+type Props = {
+    navigation: DivorcerateSwiperNavigationProp
+}
+
+const DivorcerateSwiper: React.FC<Props> = ({navigation}) => {
     return(
         <Swiper>
             <View style={styles.container}>

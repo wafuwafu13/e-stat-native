@@ -5,7 +5,22 @@ import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-nativ
 
 import DrawerIcon from '../../elements/DrawerIcon';
 
-const Overview = ({navigation}: any) => {
+import { CompositeNavigationProp } from '@react-navigation/native';
+import { StackNavigationProp } from '@react-navigation/stack';
+import { DrawerNavigationProp } from '@react-navigation/drawer';
+import { RootStackParamList } from '../../../App';
+import { DrawerNavigatorParamList } from '../../../App';
+
+type OverviewNavigationProp = CompositeNavigationProp<
+    StackNavigationProp<RootStackParamList, 'Overview'>,
+    DrawerNavigationProp<DrawerNavigatorParamList>
+>
+
+type Props = {
+    navigation: OverviewNavigationProp
+}
+
+const Overview: React.FC<Props> = ({navigation}) => {
     return(
         <View style={styles.container}>
             <DrawerIcon onPress={() => navigation.toggleDrawer()} />
