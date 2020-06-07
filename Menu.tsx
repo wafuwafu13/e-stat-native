@@ -28,7 +28,7 @@ const Menu: React.FC = ({ navigation }: any) => {
             <View style={styles.container}>
                 <View style={styles.main}>
                     <View style={styles.top}>
-                        {/* <DrawerIcon onPress={() => navigation.toggleDrawer()} /> */}
+                        <DrawerIcon onPress={() => navigation.toggleDrawer()} />
                         <Text style={styles.title}>
                           選べるグラフ
                         </Text>

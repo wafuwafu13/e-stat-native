@@ -5,7 +5,7 @@ import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-nat
 
 type Props = {
   onPress: () => void
-  itemMenu: any
+  itemMenu?: boolean
 }
 
 const DrawerIcon: React.FC<Props> = props => {

@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { StyleSheet, Text, View, Dimensions } from 'react-native';
+// @ts-ignore
 import { VictoryLine, VictoryChart, VictoryTheme, VictoryAxis } from 'victory-native';
-import Loading from '../../src/elements/Loading';
 import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
+
+import Loading from '../../src/elements/Loading';
 
 const TransitionPopulationChart = () => {
 
@@ -62,7 +64,7 @@ const TransitionPopulationChart = () => {
             　    tickValues={tickXValueList}
                 />
                 <VictoryAxis dependentAxis
-                  tickFormat={(y) => (`${y/100000000}億`)}
+                  tickFormat={(y: any) => (`${y/100000000}億`)}
                   tickValues={tickYValueList}
                 />
                 <VictoryLine

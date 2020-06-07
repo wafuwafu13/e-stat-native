@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { StyleSheet, View,  Text, Dimensions } from 'react-native';
+// @ts-ignore
 import { VictoryScatter, VictoryChart, VictoryTheme, VictoryAxis } from 'victory-native';
-import Loading from '../../src/elements/Loading';
 import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
 
+import Loading from '../../src/elements/Loading';
 
 const SumMariageChart = () => {
 
@@ -69,7 +70,7 @@ const SumMariageChart = () => {
              　     tickValues={tickXList}
                   />
                   <VictoryAxis dependentAxis
-                    tickFormat={(y) => (`${y/10000}万`)}
+                    tickFormat={(y: any) => (`${y/10000}万`)}
                     tickValues={tickYList}
                   />
                     <VictoryScatter
