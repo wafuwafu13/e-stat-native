@@ -7,8 +7,19 @@ import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-nativ
 import Weighthart from './WeightChart';
 import Explanation from './Explanation';
 
+import { StackNavigationProp } from '@react-navigation/stack';
+import { RootStackParamList } from '../../../../App';
 
-const WeightSwiper = ({navigation}: any) => {
+type WeightSwiperNavigationProp = StackNavigationProp<
+    RootStackParamList,
+    'WeightSwiper'
+>
+
+type Props = {
+    navigation: WeightSwiperNavigationProp
+}
+
+const WeightSwiper: React.FC<Props> = ({navigation}) => {
     return(
         <Swiper>
             <View style={styles.container}>

@@ -7,15 +7,27 @@ import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-nativ
 import TransitionPopulationChart from './TransitionPopulationChart';
 import Explanation from './Explanation';
 
-const TransitionPopulationSwiper = ({navigation}: any) => {
+import { StackNavigationProp } from '@react-navigation/stack';
+import { RootStackParamList } from '../../../../App';
+
+type TransitionPopulationSwiperNavigationProp = StackNavigationProp<
+    RootStackParamList,
+    'TransitionPopulationSwiper'
+>
+
+type Props = {
+    navigation: TransitionPopulationSwiperNavigationProp
+}
+
+const TransitionPopulationSwiper: React.FC<Props> = ({navigation}) => {
     return(
         <Swiper>
             <View style={styles.container}>
                 <TouchableOpacity
-                  onPress={() => navigation.toggleDrawer()}
+                  onPress={() => navigation.goBack()}
                   style={styles.modalIcon}
                 >
-                  <Icon name="list-alt" size={wp('5%')} color="#807E7C"/>
+                    <Icon name="arrow-left" size={wp('5%')} color="#807E7C"/>
                 </TouchableOpacity>
                 <TransitionPopulationChart />
             </View>

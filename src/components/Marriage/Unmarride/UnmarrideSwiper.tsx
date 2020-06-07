@@ -7,7 +7,19 @@ import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-nativ
 import UnmarrideChart from './UnmarrideChart';
 import Explanation from './Explanation';
 
-const UnmarrideSwiper = ({navigation}: any) => {
+import { StackNavigationProp } from '@react-navigation/stack';
+import { RootStackParamList } from '../../../../App';
+
+type UnmarrideSwiperNavigationProp = StackNavigationProp<
+    RootStackParamList,
+    'UnmarrideSwiper'
+>
+
+type Props = {
+    navigation: UnmarrideSwiperNavigationProp
+}
+
+const UnmarrideSwiper: React.FC<Props> = ({navigation}) => {
     return(
         <Swiper>
             <View style={styles.container}>

@@ -14,11 +14,19 @@ import SubMenuTitle from '../../elements/SubMenuTitle';
 import SubMenuIcon from '../../elements/SubMenuIcon';
 import GraphMenu from '../../elements/GraphMenu';
 
+import { StackNavigationProp } from '@react-navigation/stack';
+import { RootStackParamList } from '../../../App';
+
+type PopulationMenuNavigationProp = StackNavigationProp<
+    RootStackParamList,
+    'PopulationMenu'
+>
+
 type Props = {
-    navigation: any
+    navigation: PopulationMenuNavigationProp
 }
 
-const PopulationMenu: React.FC<Props> = ({navigation}: any) => {
+const PopulationMenu: React.FC<Props> = ({navigation}) => {
 
     const [sumPopulationModalVisible, setSumPopulationModalVisible] = useState(false)
     const [sexPopulationModalVisible, setSexPopulationModalVisible] = useState(false)

@@ -10,8 +10,19 @@ import SubMenuTitle from '../../elements/SubMenuTitle';
 import SubMenuIcon from '../../elements/SubMenuIcon';
 import GraphMenu from '../../elements/GraphMenu';
 
+import { StackNavigationProp } from '@react-navigation/stack';
+import { RootStackParamList } from '../../../App';
 
-const IncomeMenu = ({navigation}: any) => {
+type IncomeMenuNavigationProp = StackNavigationProp<
+    RootStackParamList,
+    'IncomeMenu'
+>
+
+type Props = {
+    navigation: IncomeMenuNavigationProp
+}
+
+const IncomeMenu: React.FC<Props> = ({navigation}) => {
 
     const [annualIncomeModalVisible, setAnnualIncomeModalVisible] = useState(false)
 

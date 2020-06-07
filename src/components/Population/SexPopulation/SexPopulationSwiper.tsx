@@ -7,15 +7,27 @@ import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-nativ
 import SexPopulationChart from './SexPopulationChart';
 import Explanation from './Explanation';
 
-const SexPopulationSwiper = ({navigation}: any) => {
+import { StackNavigationProp } from '@react-navigation/stack';
+import { RootStackParamList } from '../../../../App';
+
+type SexPopulationSwiperNavigationProp = StackNavigationProp<
+    RootStackParamList,
+    'SexPopulationSwiper'
+>
+
+type Props = {
+    navigation: SexPopulationSwiperNavigationProp
+}
+
+const SexPopulationSwiper: React.FC<Props> = ({navigation}) => {
     return(
         <Swiper>
             <View style={styles.container}>
                 <TouchableOpacity
-                  onPress={() => navigation.toggleDrawer()}
+                  onPress={() => navigation.goBack()}
                   style={styles.modalIcon}
                 >
-                  <Icon name="list-alt" size={wp('5%')} color="#807E7C"/>
+                    <Icon name="arrow-left" size={wp('5%')} color="#807E7C"/>
                 </TouchableOpacity>
                 <SexPopulationChart />
             </View>

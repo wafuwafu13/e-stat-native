@@ -8,7 +8,22 @@ import MenuItemTitle from '../elements/MenuItemTitle';
 import MenuItem from '../elements/MenuItem';
 import DrawerIcon from '../elements/DrawerIcon';
 
-const HomeMenu: React.FC = ({ navigation }: any) => {
+import { CompositeNavigationProp } from '@react-navigation/native';
+import { StackNavigationProp } from '@react-navigation/stack';
+import { DrawerNavigationProp } from '@react-navigation/drawer';
+import { RootStackParamList } from '../../App';
+import { DrawerNavigatorParamList } from '../../App';
+
+type HomeMenuNavigationProp = CompositeNavigationProp<
+    StackNavigationProp<RootStackParamList, 'HomeMenu'>,
+    DrawerNavigationProp<DrawerNavigatorParamList>
+>
+
+type Props = {
+    navigation: HomeMenuNavigationProp
+}
+
+const HomeMenu: React.FC<Props> = ({ navigation }) => {
 
     const soundObject = new Audio.Sound();
 
