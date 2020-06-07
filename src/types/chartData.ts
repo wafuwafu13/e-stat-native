@@ -1,4 +1,4 @@
 export type chartData = {
-    x: number
-    y: number
-}
+    x: number;
+    y: number;
+};
