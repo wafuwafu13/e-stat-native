@@ -20,26 +20,23 @@ import { chartData } from '../../../types/chartData';
 
 import { birthrateData } from '../../../data/Population/birthrateData';
 
+import { tickValue } from '../../../data/tickValue';
+
 const BirthrateChart: React.FC = () => {
     const [spinner, setSpinner] = useState<boolean>(true);
 
     let birthrateList: chartData[] = birthrateData();
+
+    let tickXList: number[] = tickValue(1945, 2015, 5);
+    let tickPreYList: number[] = tickValue(1, 4.8, 0.2);
+
+    let tickYList = tickPreYList.map((i) => Math.round(i * 10) / 10);
 
     useEffect(() => {
         setTimeout(() => {
             setSpinner(false);
         }, 3000);
     }, [spinner]);
-
-    let tickXValueList: number[] = [];
-    for (let i = 1945; i <= 2015; i += 5) {
-        tickXValueList.push(i);
-    }
-
-    let tickYValueList: number[] = [];
-    for (let i = 1; i <= 4.8; i += 0.2) {
-        tickYValueList.push(Math.round(i * 10) / 10);
-    }
 
     return (
         <View style={styles.container}>
@@ -51,8 +48,8 @@ const BirthrateChart: React.FC = () => {
                     height={height * 0.8}
                     animate={{ duration: 2000, easing: 'bounce' }}
                 >
-                    <VictoryAxis tickValues={tickXValueList} />
-                    <VictoryAxis dependentAxis tickValues={tickYValueList} />
+                    <VictoryAxis tickValues={tickXList} />
+                    <VictoryAxis dependentAxis tickValues={tickYList} />
                     <VictoryLine data={birthrateList} style={{ data: { stroke: '#c43a31' } }} />
                 </VictoryChart>
             </View>

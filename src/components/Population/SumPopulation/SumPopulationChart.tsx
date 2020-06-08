@@ -20,10 +20,15 @@ import { chartData } from '../../../types/chartData';
 
 import { sumPopulationData } from '../../../data/Population/sumPopulationData';
 
+import { tickValue } from '../../../data/tickValue';
+
 const SumPopulationChart: React.FC = () => {
     const [spinner, setSpinner] = useState<boolean>(true);
 
     let data: chartData[] = sumPopulationData();
+
+    let tickXList: number[] = tickValue(5, 95, 5);
+    let tickYList: number[] = tickValue(250000, 2000000, 250000);
 
     useEffect(() => {
         setTimeout(() => {
@@ -41,42 +46,11 @@ const SumPopulationChart: React.FC = () => {
                     height={height * 0.8}
                     animate={{ duration: 2000, easing: 'bounce' }}
                 >
-                    <VictoryAxis
-                        tickValues={[
-                            5,
-                            10,
-                            15,
-                            20,
-                            25,
-                            30,
-                            35,
-                            40,
-                            45,
-                            50,
-                            55,
-                            60,
-                            65,
-                            70,
-                            75,
-                            80,
-                            85,
-                            90,
-                            95
-                        ]}
-                    />
+                    <VictoryAxis tickValues={tickXList} />
                     <VictoryAxis
                         dependentAxis
                         tickFormat={(y: any) => `${y / 10000}万`}
-                        tickValues={[
-                            250000,
-                            500000,
-                            750000,
-                            1000000,
-                            1250000,
-                            1500000,
-                            1750000,
-                            2000000
-                        ]}
+                        tickValues={tickYList}
                     />
                     <VictoryBar data={data} style={{ data: { fill: '#66CC66' } }} />
                 </VictoryChart>

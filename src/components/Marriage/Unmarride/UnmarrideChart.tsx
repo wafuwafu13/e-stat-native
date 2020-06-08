@@ -21,21 +21,16 @@ import { chartData } from '../../../types/chartData';
 import { manUnmarrideData } from '../../../data/Marriage/manUnmarrideData';
 import { womanUnmarrideData } from '../../../data/Marriage/womanUnmarrideData';
 
+import { tickValue } from '../../../data/tickValue';
+
 const UnmarridChart: React.FC = () => {
     const [spinner, setSpinner] = useState<boolean>(true);
 
     let manUnmarridList: chartData[] = manUnmarrideData();
     let womanUnmarridList: chartData[] = womanUnmarrideData();
 
-    let tickXList: number[] = [];
-    for (let i = 1920; i <= 2015; i += 5) {
-        tickXList.push(i);
-    }
-
-    let tickYList: number[] = [];
-    for (let i = 5; i <= 30; i += 5) {
-        tickYList.push(i);
-    }
+    let tickXList: number[] = tickValue(1920, 2015, 5);
+    let tickYList: number[] = tickValue(5, 30, 5);
 
     useEffect(() => {
         setTimeout(() => {

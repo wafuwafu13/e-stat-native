@@ -19,19 +19,15 @@ import { chartData } from '../../../types/chartData';
 
 import { sumMarriageData } from '../../../data/Marriage/sumMarriageData';
 
+import { tickValue } from '../../../data/tickValue';
+
 const SumMariageChart: React.FC = () => {
     const [spinner, setSpinner] = useState<boolean>(true);
 
     let sumMariageList: chartData[] = sumMarriageData();
 
-    let tickXList: number[] = [];
-    for (let i = 1930; i <= 2015; i += 5) {
-        tickXList.push(i);
-    }
-    let tickYList = [];
-    for (let i = 500000; i <= 1100000; i += 100000) {
-        tickYList.push(i);
-    }
+    let tickXList: number[] = tickValue(1930, 2015, 5);
+    let tickYList: number[] = tickValue(500000, 1100000, 100000);
 
     useEffect(() => {
         setTimeout(() => {
