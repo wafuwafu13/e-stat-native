@@ -7,7 +7,7 @@
         "web": "expo start --web",
         "eject": "expo eject",
         "test": "jest",
-        "prettier": "npx prettier --write **/*.{js,tsx,json} && npx prettier --write *.{js,tsx,json}"
+        "prettier": "npx prettier --write **/*.{js,ts,tsx,json} && npx prettier --write *.{js,tsx,json}"
     },
     "dependencies": {
         "@babel/core": "^7.10.2",

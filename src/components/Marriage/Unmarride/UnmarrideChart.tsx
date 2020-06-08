@@ -18,72 +18,14 @@ import Loading from '../../../elements/Loading';
 
 import { chartData } from '../../../types/chartData';
 
+import { manUnmarrideData } from '../../../data/Marriage/manUnmarrideData';
+import { womanUnmarrideData } from '../../../data/Marriage/womanUnmarrideData';
+
 const UnmarridChart: React.FC = () => {
     const [spinner, setSpinner] = useState<boolean>(true);
 
-    let manUnmarridList: chartData[] = [];
-    let womanUnmarridList: chartData[] = [];
-    let UnmarridYear: number[] = [];
-
-    for (let i = 1920; i <= 2015; i += 5) {
-        if (i == 1945) continue;
-        UnmarridYear.push(i);
-    }
-
-    let manUnmarrid: number[] = [
-        2.82,
-        2.26,
-        2.433,
-        2.425,
-        2.73,
-        1.88,
-        1.73,
-        2.03,
-        2.44,
-        2.82,
-        3.66,
-        4.75,
-        7.44,
-        11.78,
-        16.51,
-        18.69,
-        22.7,
-        28.6,
-        29.96
-    ];
-
-    let womanUnmarrid: number[] = [
-        2.15,
-        1.89,
-        1.79,
-        1.792,
-        2,
-        1.99,
-        2.34,
-        3.14,
-        4.67,
-        5.29,
-        4.99,
-        4.45,
-        4.89,
-        5.78,
-        6.76,
-        8.64,
-        12.24,
-        17.37,
-        19.3
-    ];
-
-    for (let i = 0; i <= 18; i++) {
-        manUnmarridList.push({
-            x: UnmarridYear[i],
-            y: manUnmarrid[i]
-        });
-        womanUnmarridList.push({
-            x: UnmarridYear[i],
-            y: womanUnmarrid[i]
-        });
-    }
+    let manUnmarridList: chartData[] = manUnmarrideData();
+    let womanUnmarridList: chartData[] = womanUnmarrideData();
 
     let tickXList: number[] = [];
     for (let i = 1920; i <= 2015; i += 5) {
@@ -95,13 +37,10 @@ const UnmarridChart: React.FC = () => {
         tickYList.push(i);
     }
 
-    const manData: chartData[] = manUnmarridList;
-    const womanData: chartData[] = womanUnmarridList;
-
     useEffect(() => {
         setTimeout(() => {
             setSpinner(false);
-        }, 5000);
+        }, 3000);
     }, [spinner]);
 
     return (
@@ -112,7 +51,7 @@ const UnmarridChart: React.FC = () => {
                 <VictoryChart
                     theme={VictoryTheme.material}
                     height={height * 0.8}
-                    animate={{ duration: 5000, easing: 'bounce' }}
+                    animate={{ duration: 2000, easing: 'bounce' }}
                 >
                     <VictoryAxis tickValues={tickXList} />
                     <VictoryAxis dependentAxis tickValues={tickYList} />
@@ -121,8 +60,8 @@ const UnmarridChart: React.FC = () => {
                         offset={2}
                         style={{ data: { width: 1.5 } }}
                     >
-                        <VictoryLine data={manData} />
-                        <VictoryLine data={womanData} />
+                        <VictoryLine data={manUnmarridList} />
+                        <VictoryLine data={womanUnmarridList} />
                     </VictoryGroup>
                 </VictoryChart>
             </View>

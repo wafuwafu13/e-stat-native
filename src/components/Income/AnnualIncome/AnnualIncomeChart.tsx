@@ -17,71 +17,24 @@ import {
 import Loading from '../../../elements/Loading';
 
 import { chartData } from '../../../types/chartData';
+import { manAnnualIncomeData } from '../../../data/Income/manAnnualIncomeData';
+import { womanAnnualIncomeData } from '../../../data/Income/womanAnnualIncomeData';
 
 const AnnualIncome: React.FC = () => {
     const [spinner, setSpinner] = useState<boolean>(true);
 
-    let manAnnualIncomeList: chartData[] = [];
-    let womanAnnualIncomeList: chartData[] = [];
-    let AnnualIncomeAge: number[] = [];
-
-    for (let i = 17; i <= 72; i += 5) {
-        AnnualIncomeAge.push(i);
-    }
-
-    let manAnnualIncome: number[] = [
-        1572000,
-        2745000,
-        3827000,
-        4567000,
-        5117000,
-        5629000,
-        6327000,
-        6609000,
-        6493000,
-        4794000,
-        3871000,
-        3677000
-    ];
-
-    let womanAnnualIncome: number[] = [
-        1062000,
-        2407000,
-        3089000,
-        3147000,
-        2999000,
-        3017000,
-        2994000,
-        2958000,
-        2877000,
-        2283000,
-        1949000,
-        2066000
-    ];
-
-    for (let i = 0; i <= 11; i++) {
-        manAnnualIncomeList.push({
-            x: AnnualIncomeAge[i],
-            y: manAnnualIncome[i]
-        });
-        womanAnnualIncomeList.push({
-            x: AnnualIncomeAge[i],
-            y: womanAnnualIncome[i]
-        });
-    }
+    let manAnnualIncomeList: chartData[] = manAnnualIncomeData();
+    let womanAnnualIncomeList: chartData[] = womanAnnualIncomeData();
 
     let tickValueList: number[] = [];
     for (let i = 0; i <= 7000000; i += 1000000) {
         tickValueList.push(i);
     }
 
-    const manData: chartData[] = manAnnualIncomeList;
-    const womanData: chartData[] = womanAnnualIncomeList;
-
     useEffect(() => {
         setTimeout(() => {
             setSpinner(false);
-        }, 6000);
+        }, 3000);
     }, [spinner]);
 
     return (
@@ -92,7 +45,7 @@ const AnnualIncome: React.FC = () => {
                 <VictoryChart
                     theme={VictoryTheme.material}
                     height={height * 0.8}
-                    animate={{ duration: 5000, easing: 'bounce' }}
+                    animate={{ duration: 2000, easing: 'bounce' }}
                 >
                     <VictoryAxis />
                     <VictoryAxis
@@ -105,8 +58,8 @@ const AnnualIncome: React.FC = () => {
                         offset={10}
                         style={{ data: { width: 10 } }}
                     >
-                        <VictoryBar data={manData} />
-                        <VictoryBar data={womanData} />
+                        <VictoryBar data={manAnnualIncomeList} />
+                        <VictoryBar data={womanAnnualIncomeList} />
                     </VictoryGroup>
                 </VictoryChart>
             </View>
