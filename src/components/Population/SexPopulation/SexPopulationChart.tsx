@@ -125,7 +125,7 @@ const SexPopulation: React.FC = () => {
                         theme={VictoryTheme.material}
                         height={height * 0.8}
                         margin={2}
-                        animate={{ duration: 5000, easing: 'bounce' }}
+                        animate={{ duration: 2000, easing: 'bounce' }}
                     >
                         <VictoryAxis tickValues={tickXvalueList} />
                         <VictoryAxis

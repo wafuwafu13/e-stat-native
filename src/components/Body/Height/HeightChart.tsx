@@ -18,78 +18,14 @@ import Loading from '../../../elements/Loading';
 
 import { chartData } from '../../../types/chartData';
 
+import { manHeightData } from '../../../data/Body/manHeightData';
+import { womanHeightData } from '../../../data/Body/womanHeightData';
+
 const HeightChart: React.FC = () => {
     const [spinner, setSpinner] = useState<boolean>(true);
 
-    let manHeightList: chartData[] = [];
-    let womanHeightList: chartData[] = [];
-    let manHeight: number[] = [
-        79.0,
-        87.9,
-        95.1,
-        101.3,
-        108.2,
-        114.8,
-        123.2,
-        128.2,
-        133.7,
-        138.3,
-        144.7,
-        150.8,
-        160.3,
-        164.3,
-        168.6,
-        170.4,
-        170.3,
-        170.3,
-        171.3,
-        172.3,
-        172.0,
-        170.2,
-        171.4,
-        173.0,
-        170.5,
-        171.4
-    ];
-    let womanHeight: number[] = [
-        78.3,
-        87.8,
-        94.6,
-        101.5,
-        108.3,
-        116.6,
-        121.6,
-        126.1,
-        134.4,
-        139.8,
-        146.0,
-        151.1,
-        154.1,
-        156.8,
-        156.8,
-        157.4,
-        157.3,
-        157.5,
-        155.9,
-        159.5,
-        157.9,
-        158.5,
-        157.4,
-        157.3,
-        155.2,
-        158.8
-    ];
-
-    for (let i = 0; i <= 25; i++) {
-        manHeightList.push({
-            x: i + 1,
-            y: manHeight[i]
-        });
-        womanHeightList.push({
-            x: i + 1,
-            y: womanHeight[i]
-        });
-    }
+    let manHeightList: chartData[] = manHeightData();
+    let womanHeightList: chartData[] = womanHeightData();
 
     let tickList: number[] = [];
     for (let i = 1; i <= 26; i++) {
@@ -100,13 +36,10 @@ const HeightChart: React.FC = () => {
         tickValueList.push(i);
     }
 
-    const manData: chartData[] = manHeightList;
-    const womanData: chartData[] = womanHeightList;
-
     useEffect(() => {
         setTimeout(() => {
             setSpinner(false);
-        }, 6000);
+        }, 3000);
     }, [spinner]);
 
     return (
@@ -115,7 +48,7 @@ const HeightChart: React.FC = () => {
             <Text style={styles.title}>男女別平均身長(平成28年国民健康・栄養調査)</Text>
             <View style={styles.chart}>
                 <VictoryChart
-                    animate={{ duration: 5000, easing: 'bounce' }}
+                    animate={{ duration: 2000, easing: 'bounce' }}
                     theme={VictoryTheme.material}
                     height={height * 0.8}
                 >
@@ -126,8 +59,8 @@ const HeightChart: React.FC = () => {
                         offset={2}
                         style={{ data: { width: 1.5 } }}
                     >
-                        <VictoryLine data={manData} />
-                        <VictoryLine data={womanData} />
+                        <VictoryLine data={manHeightList} />
+                        <VictoryLine data={womanHeightList} />
                     </VictoryGroup>
                 </VictoryChart>
             </View>
