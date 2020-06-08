@@ -20,16 +20,15 @@ import { chartData } from '../../../types/chartData';
 import { manAnnualIncomeData } from '../../../data/Income/manAnnualIncomeData';
 import { womanAnnualIncomeData } from '../../../data/Income/womanAnnualIncomeData';
 
+import { tickValue } from '../../../data/tickValue';
+
 const AnnualIncome: React.FC = () => {
     const [spinner, setSpinner] = useState<boolean>(true);
 
     let manAnnualIncomeList: chartData[] = manAnnualIncomeData();
     let womanAnnualIncomeList: chartData[] = womanAnnualIncomeData();
 
-    let tickValueList: number[] = [];
-    for (let i = 0; i <= 7000000; i += 1000000) {
-        tickValueList.push(i);
-    }
+    let tickList: number[] = tickValue(0, 7000000, 1000000);
 
     useEffect(() => {
         setTimeout(() => {
@@ -51,7 +50,7 @@ const AnnualIncome: React.FC = () => {
                     <VictoryAxis
                         dependentAxis
                         tickFormat={(y: any) => `${y / 10000}万`}
-                        tickValues={tickValueList}
+                        tickValues={tickList}
                     />
                     <VictoryGroup
                         colorScale={['#3399FF', '#FF66CC']}

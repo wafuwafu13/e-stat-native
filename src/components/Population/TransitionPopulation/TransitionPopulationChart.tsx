@@ -19,20 +19,15 @@ import { chartData } from '../../../types/chartData';
 
 import { transitionPopulationData } from '../../../data/Population/transitionPopulationData';
 
+import { tickValue } from '../../../data/tickValue';
+
 const TransitionPopulationChart: React.FC = () => {
     const [spinner, setSpinner] = useState<boolean>(true);
 
     let transitionPopulationList: chartData[] = transitionPopulationData();
 
-    let tickXValueList: number[] = [];
-    for (let i = 1945; i <= 2015; i += 5) {
-        tickXValueList.push(i);
-    }
-
-    let tickYValueList: number[] = [];
-    for (let i = 70000000; i <= 120000000; i += 10000000) {
-        tickYValueList.push(i);
-    }
+    let tickXList: number[] = tickValue(1945, 2015, 5);
+    let tickYList: number[] = tickValue(70000000, 120000000, 10000000);
 
     useEffect(() => {
         setTimeout(() => {
@@ -51,11 +46,11 @@ const TransitionPopulationChart: React.FC = () => {
                     theme={VictoryTheme.material}
                     height={height * 0.8}
                 >
-                    <VictoryAxis tickValues={tickXValueList} />
+                    <VictoryAxis tickValues={tickXList} />
                     <VictoryAxis
                         dependentAxis
                         tickFormat={(y: any) => `${y / 100000000}億`}
-                        tickValues={tickYValueList}
+                        tickValues={tickYList}
                     />
                     <VictoryLine
                         data={transitionPopulationList}

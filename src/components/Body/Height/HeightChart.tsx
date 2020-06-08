@@ -21,20 +21,16 @@ import { chartData } from '../../../types/chartData';
 import { manHeightData } from '../../../data/Body/manHeightData';
 import { womanHeightData } from '../../../data/Body/womanHeightData';
 
+import { tickValue } from '../../../data/tickValue';
+
 const HeightChart: React.FC = () => {
     const [spinner, setSpinner] = useState<boolean>(true);
 
     let manHeightList: chartData[] = manHeightData();
     let womanHeightList: chartData[] = womanHeightData();
 
-    let tickList: number[] = [];
-    for (let i = 1; i <= 26; i++) {
-        tickList.push(i);
-    }
-    let tickValueList = [];
-    for (let i = 80; i <= 175; i += 5) {
-        tickValueList.push(i);
-    }
+    let tickXList: number[] = tickValue(1, 26, 1);
+    let tickYList: number[] = tickValue(80, 175, 5);
 
     useEffect(() => {
         setTimeout(() => {
@@ -52,8 +48,8 @@ const HeightChart: React.FC = () => {
                     theme={VictoryTheme.material}
                     height={height * 0.8}
                 >
-                    <VictoryAxis tickValues={tickList} />
-                    <VictoryAxis dependentAxis tickValues={tickValueList} />
+                    <VictoryAxis tickValues={tickXList} />
+                    <VictoryAxis dependentAxis tickValues={tickYList} />
                     <VictoryGroup
                         colorScale={['#3399FF', '#FF66CC']}
                         offset={2}

@@ -21,20 +21,16 @@ import { chartData } from '../../../types/chartData';
 import { manWeightData } from '../../../data/Body/manWeightData';
 import { womanWeightData } from '../../../data/Body/womanWeightData';
 
+import { tickValue } from '../../../data/tickValue';
+
 const WeightChart: React.FC = () => {
     const [spinner, setSpinner] = useState<boolean>(true);
 
     let manWeightList: chartData[] = manWeightData();
     let womanWeightList: chartData[] = womanWeightData();
 
-    let tickXList: number[] = [];
-    for (let i = 1; i <= 26; i++) {
-        tickXList.push(i);
-    }
-    let tickYList = [];
-    for (let i = 10; i <= 70; i += 5) {
-        tickYList.push(i);
-    }
+    let tickXList: number[] = tickValue(1, 26, 1);
+    let tickYList: number[] = tickValue(10, 70, 5);
 
     useEffect(() => {
         setTimeout(() => {

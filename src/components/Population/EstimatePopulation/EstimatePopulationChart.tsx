@@ -23,6 +23,8 @@ import { estimateSumPopulationData } from '../../../data/Population/estimateSumP
 import { estimateManPopulationData } from '../../../data/Population/estimateManPopulationData';
 import { estimateWomanPopulationData } from '../../../data/Population/estimateWomanPopulationData';
 
+import { tickValue } from '../../../data/tickValue';
+
 const EstimatePopulationChart: React.FC = () => {
     const [spinner, setSpinner] = useState<boolean>(true);
 
@@ -30,14 +32,8 @@ const EstimatePopulationChart: React.FC = () => {
     let manPopulationList: chartData[] = estimateManPopulationData();
     let womanPopulationList: chartData[] = estimateWomanPopulationData();
 
-    let tickXvalueList: number[] = [];
-    for (let i = 5; i <= 95; i += 5) {
-        tickXvalueList.push(i);
-    }
-    let tickYValueList: number[] = [];
-    for (let i = 250; i <= 2000; i += 250) {
-        tickYValueList.push(i);
-    }
+    let tickXList: number[] = tickValue(5, 95, 5);
+    let tickYList: number[] = tickValue(250, 2000, 250);
 
     useEffect(() => {
         setTimeout(() => {
@@ -56,11 +52,11 @@ const EstimatePopulationChart: React.FC = () => {
                     height={height * 0.8}
                     margin={2}
                 >
-                    <VictoryAxis tickValues={tickXvalueList} />
+                    <VictoryAxis tickValues={tickXList} />
                     <VictoryAxis
                         dependentAxis
                         tickFormat={(y: any) => `${y / 10}万`}
-                        tickValues={tickYValueList}
+                        tickValues={tickYList}
                     />
                     <VictoryGroup
                         colorScale={['#66CC66', '#3399FF', '#FF66CC']}

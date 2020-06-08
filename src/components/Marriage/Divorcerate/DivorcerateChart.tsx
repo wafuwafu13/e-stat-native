@@ -18,21 +18,15 @@ import Loading from '../../../elements/Loading';
 import { chartData } from '../../../types/chartData';
 import { divorcerateData } from '../../../data/Marriage/divorcerateData';
 
+import { tickValue } from '../../../data/tickValue';
+
 const DivorcerateChart: React.FC = () => {
     const [spinner, setSpinner] = useState<boolean>(true);
 
     let divorcerateList: chartData[] = divorcerateData();
 
-    let tickList: number[] = [];
-    for (let i = 1930; i <= 2015; i += 5) {
-        tickList.push(i);
-    }
-    let tickValueList = [];
-    for (let i = 5; i <= 30; i += 5) {
-        tickValueList.push(i);
-    }
-
-    const data: chartData[] = divorcerateList;
+    let tickXList: number[] = tickValue(1930, 2015, 5);
+    let tickYList: number[] = tickValue(5, 30, 5);
 
     useEffect(() => {
         setTimeout(() => {
@@ -50,9 +44,9 @@ const DivorcerateChart: React.FC = () => {
                     height={height * 0.8}
                     animate={{ duration: 2000, easing: 'bounce' }}
                 >
-                    <VictoryAxis tickValues={tickList} />
-                    <VictoryAxis dependentAxis tickValues={tickValueList} />
-                    <VictoryLine data={data} style={{ data: { stroke: 'purple' } }} />
+                    <VictoryAxis tickValues={tickXList} />
+                    <VictoryAxis dependentAxis tickValues={tickYList} />
+                    <VictoryLine data={divorcerateList} style={{ data: { stroke: 'purple' } }} />
                 </VictoryChart>
             </View>
         </View>
