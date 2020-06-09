@@ -1,5 +1,10 @@
 import React from 'react';
-import { StyleSheet, Text, View, Button } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
+import Icon from 'react-native-vector-icons/AntDesign';
+import {
+    widthPercentageToDP as wp,
+    heightPercentageToDP as hp
+} from 'react-native-responsive-screen';
 
 type Props = {
     toggle: () => void;
@@ -10,10 +15,11 @@ const SumMarriageModal: React.FC<Props> = (props) => {
 
     return (
         <View style={styles.container}>
-            <Text>人口動態調査の結果を表示します。</Text>
-            <Text>人口動態調査は、戸籍法および死産の届出に関する規程により届け出られた</Text>
-            <Text>出生、死亡、婚姻、離婚、死産の全数を対象として、毎月実施されます。</Text>
-            <Button title="閉じる" onPress={toggle} />
+            <Text style={styles.text}>1947年: 93万4千170件</Text>
+            <Text style={styles.text}>2017年: 60万6千866件</Text>
+            <TouchableOpacity onPress={toggle} style={styles.closeIcon}>
+                <Icon name="closecircle" size={wp('5%')} color="#807E7C" />
+            </TouchableOpacity>
         </View>
     );
 };
@@ -26,5 +32,14 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         backgroundColor: '#ffc'
+    },
+    text: {
+        fontSize: wp('3%'),
+        marginBottom: hp('3%')
+    },
+    closeIcon: {
+        position: 'absolute',
+        left: wp('2%'),
+        top: hp('5%')
     }
 });

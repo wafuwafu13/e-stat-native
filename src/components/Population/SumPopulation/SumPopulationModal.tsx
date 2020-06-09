@@ -1,5 +1,10 @@
 import React from 'react';
-import { StyleSheet, Text, View, Button } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
+import Icon from 'react-native-vector-icons/AntDesign';
+import {
+    widthPercentageToDP as wp,
+    heightPercentageToDP as hp
+} from 'react-native-responsive-screen';
 
 type Props = {
     toggle: () => void;
@@ -10,12 +15,10 @@ const SumPopulationModal: React.FC<Props> = (props) => {
 
     return (
         <View style={styles.container}>
-            <Text>平成27年に行われた国勢調査の結果を表示します。</Text>
-            <Text>
-                国勢調査は、日本に居住している全ての人および世帯を対象として5年ごとに実施される
-            </Text>
-            <Text>国の最も重要かつ基本的な統計調査です。</Text>
-            <Button title="閉じる" onPress={toggle} />
+            <Text style={styles.text}>総人口: 1億2千700万人</Text>
+            <TouchableOpacity onPress={toggle} style={styles.closeIcon}>
+                <Icon name="closecircle" size={wp('5%')} color="#807E7C" />
+            </TouchableOpacity>
         </View>
     );
 };
@@ -27,6 +30,15 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: '#ffc'
+        backgroundColor: '#ffc',
+        position: 'relative'
+    },
+    text: {
+        fontSize: wp('3%')
+    },
+    closeIcon: {
+        position: 'absolute',
+        left: wp('2%'),
+        top: hp('5%')
     }
 });

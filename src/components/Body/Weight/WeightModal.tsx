@@ -1,5 +1,10 @@
 import React from 'react';
-import { StyleSheet, Text, View, Button } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
+import Icon from 'react-native-vector-icons/AntDesign';
+import {
+    widthPercentageToDP as wp,
+    heightPercentageToDP as hp
+} from 'react-native-responsive-screen';
 
 type Props = {
     toggle: () => void;
@@ -10,12 +15,13 @@ const WeightPopulationModal: React.FC<Props> = (props) => {
 
     return (
         <View style={styles.container}>
-            <Text>平成28年国民健康・栄養調査の結果を表示します。</Text>
-            <Text>
-                国民健康・栄養調査は、毎年、食生活状況、各種身体・血液検査や飲酒、喫煙、運動習慣などを調べており、
-            </Text>
-            <Text>国における健康増進対策や生活習慣病対策に不可欠な調査です。</Text>
-            <Button title="閉じる" onPress={toggle} />
+            <Text style={styles.text}>12歳男性: 42.1kg</Text>
+            <Text style={styles.text}>12歳女性: 41.2kg</Text>
+            <Text style={styles.text}>25歳男性: 68.5kg</Text>
+            <Text style={styles.text}>25歳女性: 52.8kg</Text>
+            <TouchableOpacity onPress={toggle} style={styles.closeIcon}>
+                <Icon name="closecircle" size={wp('5%')} color="#807E7C" />
+            </TouchableOpacity>
         </View>
     );
 };
@@ -28,5 +34,14 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         backgroundColor: '#ffc'
+    },
+    text: {
+        fontSize: wp('3%'),
+        marginBottom: hp('3%')
+    },
+    closeIcon: {
+        position: 'absolute',
+        left: wp('2%'),
+        top: hp('5%')
     }
 });
