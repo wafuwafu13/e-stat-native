@@ -38,7 +38,6 @@ const SumMariageChart: React.FC = () => {
     return (
         <View style={styles.container}>
             <Loading visible={spinner} />
-            <Text style={styles.title}>結婚件数(人口動態調査)</Text>
             <View style={styles.chart}>
                 <VictoryChart
                     animate={{ duration: 2000, easing: 'bounce' }}

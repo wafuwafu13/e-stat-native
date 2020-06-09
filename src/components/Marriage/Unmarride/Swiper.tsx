@@ -1,7 +1,6 @@
 import React from 'react';
-import { StyleSheet, View, TouchableOpacity } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import Swiper from 'react-native-swiper';
-import Icon from 'react-native-vector-icons/FontAwesome5';
 import {
     widthPercentageToDP as wp,
     heightPercentageToDP as hp
@@ -28,16 +27,25 @@ const UnmarrideSwiper: React.FC<Props> = ({ navigation }) => {
             <View style={styles.container}>
                 <SwiperHeader
                     title="40~45歳男女の未婚率(国勢調査)"
+                    fontSize="3%"
                     onPress={() => navigation.goBack()}
                 />
                 <UnmarrideChart />
             </View>
             <View style={styles.container}>
-                <SwiperHeader title="男性未婚率" onPress={() => navigation.goBack()} />
+                <SwiperHeader
+                    title="男性未婚率"
+                    fontSize="3.5%"
+                    onPress={() => navigation.goBack()}
+                />
                 <ManUnmarrideData />
             </View>
             <View style={styles.container}>
-                <SwiperHeader title="男性未婚率" onPress={() => navigation.goBack()} />
+                <SwiperHeader
+                    title="男性未婚率"
+                    fontSize="3.5%"
+                    onPress={() => navigation.goBack()}
+                />
                 <WomanUnmarrideData />
             </View>
         </Swiper>

@@ -54,7 +54,7 @@ const AnnualIncome: React.FC = () => {
                     <VictoryGroup
                         colorScale={['#3399FF', '#FF66CC']}
                         offset={10}
-                        style={{ data: { width: 10 } }}
+                        style={{ data: { width: 3 } }}
                     >
                         <VictoryBar data={manAnnualIncomeList} />
                         <VictoryBar data={womanAnnualIncomeList} />

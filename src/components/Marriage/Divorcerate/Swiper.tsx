@@ -24,11 +24,15 @@ const DivorcerateSwiper: React.FC<Props> = ({ navigation }) => {
     return (
         <Swiper>
             <View style={styles.container}>
-                <SwiperHeader title="離婚率(人口動態調査)" onPress={() => navigation.goBack()} />
+                <SwiperHeader
+                    title="離婚率(人口動態調査)"
+                    fontSize="3.5%"
+                    onPress={() => navigation.goBack()}
+                />
                 <DivorcerateChart />
             </View>
             <View style={styles.container}>
-                <SwiperHeader title="離婚率" onPress={() => navigation.goBack()} />
+                <SwiperHeader title="離婚率" fontSize="3.5%" onPress={() => navigation.goBack()} />
                 <DivorcerateData />
             </View>
         </Swiper>

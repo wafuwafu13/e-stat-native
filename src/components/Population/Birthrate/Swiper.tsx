@@ -24,11 +24,19 @@ const BirthrateSwiper: React.FC<Props> = ({ navigation }) => {
     return (
         <Swiper>
             <View style={styles.container}>
-                <SwiperHeader title="合計特殊出生率" onPress={() => navigation.goBack()} />
+                <SwiperHeader
+                    title="合計特殊出生率"
+                    fontSize="3.5%"
+                    onPress={() => navigation.goBack()}
+                />
                 <BirthrateChart />
             </View>
             <View style={styles.container}>
-                <SwiperHeader title="合計特殊出生率" onPress={() => navigation.goBack()} />
+                <SwiperHeader
+                    title="合計特殊出生率"
+                    fontSize="3.5%"
+                    onPress={() => navigation.goBack()}
+                />
                 <BirthrateData />
             </View>
         </Swiper>

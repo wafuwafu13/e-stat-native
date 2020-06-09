@@ -30,16 +30,25 @@ const SexPopulationSwiper: React.FC<Props> = ({ navigation }) => {
             <View style={styles.container}>
                 <SwiperHeader
                     title="男女別総人口(平成27年国勢調査)"
+                    fontSize="3%"
                     onPress={() => navigation.goBack()}
                 />
                 <SexPopulationChart />
             </View>
             <View style={styles.container}>
-                <SwiperHeader title="男性人口" onPress={() => navigation.goBack()} />
+                <SwiperHeader
+                    title="男性人口"
+                    fontSize="3.5%"
+                    onPress={() => navigation.goBack()}
+                />
                 <ManPopulationData />
             </View>
             <View style={styles.container}>
-                <SwiperHeader title="女性人口" onPress={() => navigation.goBack()} />
+                <SwiperHeader
+                    title="女性人口"
+                    fontSize="3.5%"
+                    onPress={() => navigation.goBack()}
+                />
                 <WomanPopulationData />
             </View>
         </Swiper>

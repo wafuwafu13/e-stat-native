@@ -8,17 +8,18 @@ import {
 
 type Props = {
     title: string;
+    fontSize: string;
     onPress: () => void;
 };
 
 const SwiperHeader: React.FC<Props> = (props) => {
-    const { title, onPress } = props;
+    const { title, fontSize, onPress } = props;
     return (
         <Header
             leftComponent={<BackArrow onPress={onPress} />}
             centerComponent={{
                 text: title,
-                style: { color: '#5A4242', fontSize: wp('2.3%') }
+                style: { color: '#5A4242', fontSize: wp(fontSize) }
             }}
             backgroundColor="#F0FCFF"
         />

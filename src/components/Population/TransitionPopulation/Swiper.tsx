@@ -27,11 +27,19 @@ const TransitionPopulationSwiper: React.FC<Props> = ({ navigation }) => {
     return (
         <Swiper>
             <View style={styles.container}>
-                <SwiperHeader title="人口推移(国勢調査)" onPress={() => navigation.goBack()} />
+                <SwiperHeader
+                    title="人口推移(国勢調査)"
+                    fontSize="3%"
+                    onPress={() => navigation.goBack()}
+                />
                 <TransitionPopulationChart />
             </View>
             <View style={styles.container}>
-                <SwiperHeader title="人口推移" onPress={() => navigation.goBack()} />
+                <SwiperHeader
+                    title="人口推移"
+                    fontSize="3.5%"
+                    onPress={() => navigation.goBack()}
+                />
                 <TransitionPopulationData />
             </View>
         </Swiper>
