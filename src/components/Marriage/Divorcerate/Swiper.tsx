@@ -7,29 +7,26 @@ import {
     heightPercentageToDP as hp
 } from 'react-native-responsive-screen';
 
-import EstimatePopulationChart from './EstimatePopulationChart';
+import DivorcerateChart from './Chart';
 import Explanation from './Explanation';
 
 import { StackNavigationProp } from '@react-navigation/stack';
 import { RootStackParamList } from '../../../../App';
 
-type EstimatePopulationSwiperNavigationProp = StackNavigationProp<
-    RootStackParamList,
-    'EstimatePopulationSwiper'
->;
+type DivorcerateSwiperNavigationProp = StackNavigationProp<RootStackParamList, 'DivorcerateSwiper'>;
 
 type Props = {
-    navigation: EstimatePopulationSwiperNavigationProp;
+    navigation: DivorcerateSwiperNavigationProp;
 };
 
-const EstimatePopulationSwiper: React.FC<Props> = ({ navigation }) => {
+const DivorcerateSwiper: React.FC<Props> = ({ navigation }) => {
     return (
         <Swiper>
             <View style={styles.container}>
                 <TouchableOpacity onPress={() => navigation.goBack()} style={styles.modalIcon}>
                     <Icon name="arrow-left" size={wp('5%')} color="#807E7C" />
                 </TouchableOpacity>
-                <EstimatePopulationChart />
+                <DivorcerateChart />
             </View>
             <View style={styles.container}>
                 <Explanation />
@@ -38,7 +35,7 @@ const EstimatePopulationSwiper: React.FC<Props> = ({ navigation }) => {
     );
 };
 
-export default EstimatePopulationSwiper;
+export default DivorcerateSwiper;
 
 const styles = StyleSheet.create({
     container: {

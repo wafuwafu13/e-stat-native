@@ -7,26 +7,26 @@ import {
     heightPercentageToDP as hp
 } from 'react-native-responsive-screen';
 
-import HeightChart from './HeightChart';
+import Weighthart from './Chart';
 import Explanation from './Explanation';
 
 import { StackNavigationProp } from '@react-navigation/stack';
 import { RootStackParamList } from '../../../../App';
 
-type HeightSwiperNavigationProp = StackNavigationProp<RootStackParamList, 'HeightSwiper'>;
+type WeightSwiperNavigationProp = StackNavigationProp<RootStackParamList, 'WeightSwiper'>;
 
 type Props = {
-    navigation: HeightSwiperNavigationProp;
+    navigation: WeightSwiperNavigationProp;
 };
 
-const HeightSwiper: React.FC<Props> = ({ navigation }) => {
+const WeightSwiper: React.FC<Props> = ({ navigation }) => {
     return (
         <Swiper>
             <View style={styles.container}>
                 <TouchableOpacity onPress={() => navigation.goBack()} style={styles.modalIcon}>
                     <Icon name="arrow-left" size={wp('5%')} color="#807E7C" />
                 </TouchableOpacity>
-                <HeightChart />
+                <Weighthart />
             </View>
             <View style={styles.container}>
                 <Explanation />
@@ -35,7 +35,7 @@ const HeightSwiper: React.FC<Props> = ({ navigation }) => {
     );
 };
 
-export default HeightSwiper;
+export default WeightSwiper;
 
 const styles = StyleSheet.create({
     container: {

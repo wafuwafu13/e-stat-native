@@ -7,9 +7,9 @@ import {
     heightPercentageToDP as hp
 } from 'react-native-responsive-screen';
 
-import SumMarriageModal from './SumMarriage/SumMarriageModal';
-import UnmarrideModal from './Unmarride/UnmarrideModal';
-import DivorcerateModal from './Divorcerate/DivorcerateModal';
+import SumMarriageModal from './SumMarriage/Modal';
+import UnmarrideModal from './Unmarride/Modal';
+import DivorcerateModal from './Divorcerate/Modal';
 
 import SubMenuTitle from '../../elements/SubMenuTitle';
 import SubMenuIcon from '../../elements/SubMenuIcon';
