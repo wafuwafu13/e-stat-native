@@ -42,7 +42,7 @@ const UnmarrideSwiper: React.FC<Props> = ({ navigation }) => {
             </View>
             <View style={styles.container}>
                 <SwiperHeader
-                    title="男性未婚率"
+                    title="女性未婚率"
                     fontSize="3.5%"
                     onPress={() => navigation.goBack()}
                 />
