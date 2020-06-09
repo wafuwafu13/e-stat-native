@@ -1,42 +1,31 @@
 import React from 'react';
-import { StyleSheet, Text, ScrollView } from 'react-native';
+import { StyleSheet, Text, ScrollView, View, FlatList } from 'react-native';
 import {
     widthPercentageToDP as wp,
     heightPercentageToDP as hp
 } from 'react-native-responsive-screen';
 
+import { chartData } from '../../../types/chartData';
+import { sumPopulationData } from '../../../data/Population/sumPopulationData';
+
 const Explanation: React.FC = () => {
+    const data: chartData[] = sumPopulationData();
+
+    const renderData = ({ item }: { item: chartData }) => {
+        let itemY: string = String(item.y)
+        return (
+            <ScrollView>
+                <View style={styles.item}>
+                    <Text style={styles.text}>{item.x}歳</Text>
+                    <Text>{itemY.replace(/(\d)(?=(\d\d\d)+$)/g, "$1,")}人</Text>
+                </View>
+            </ScrollView>
+        );
+    };
     return (
-        <ScrollView style={styles.container}>
-            <Text style={styles.text}>
-                平成27年の総人口は
-                <Text style={{ color: 'red' }}>1億2千700万人</Text>
-                でした。
-            </Text>
-            <Text style={styles.text}>
-                66~68歳、つまり1947年~1949年生まれ(団塊の世代)が爆発的に多い理由は、第二次世界大戦の終戦が主な理由です。
-            </Text>
-            <Text style={styles.text}>
-                出生数は
-                <Text style={{ color: 'red' }}>270万人程度</Text>
-                であり、第一次ベビーブームと呼ばれました。
-            </Text>
-            <Text style={styles.text}>
-                41~44歳、つまり1971年~1974年生まれ(団塊ジュニア)あたりに再び人口が増加している理由は、団塊の世代が子供を作ったからで、この現象のことを第二次ベビーブームと呼びます。
-            </Text>
-            <Text style={styles.text}>
-                第三次ベビーブームが起こっていないのは、バブル崩壊、消費税増税、アジア通貨危機などの影響による経済の悪化が主な理由です。
-            </Text>
-            <Text style={styles.text}>
-                69,70歳、つまり1945,46年生まれが少ないのは戦争が影響しているためです。
-            </Text>
-            <Text style={styles.text}>
-                48歳、つまり1966年生まれが少ないのは干支が丙午(ひのえうま)であったためです。
-            </Text>
-            <Text style={styles.text}>
-                丙午年生まれの女性は、気性が激しく夫の命を縮めるという迷信があり、その迷信を信じる人が多かったようです。
-            </Text>
-        </ScrollView>
+        <View style={styles.container}>
+            <FlatList data={data} renderItem={renderData} />
+        </View>
     );
 };
 
@@ -45,10 +34,17 @@ export default Explanation;
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        margin: wp('7%')
+        alignItems: 'center'
+    },
+    item: {
+        flex: 1,
+        marginTop: hp('2%'),
+        marginBottom: hp('2%'),
+        justifyContent: 'center',
+        paddingLeft: wp('40%'),
+        paddingRight: wp('40%')
     },
     text: {
-        fontSize: wp('2%'),
-        marginBottom: wp('2%')
+        marginBottom: wp('0.3%')
     }
 });

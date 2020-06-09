@@ -1,7 +1,6 @@
 import React from 'react';
-import { StyleSheet, View, TouchableOpacity } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import Swiper from 'react-native-swiper';
-import Icon from 'react-native-vector-icons/FontAwesome5';
 import {
     widthPercentageToDP as wp,
     heightPercentageToDP as hp
@@ -12,6 +11,8 @@ import Explanation from './Explanation';
 
 import { StackNavigationProp } from '@react-navigation/stack';
 import { RootStackParamList } from '../../../../App';
+
+import SwiperHeader from '../../../elements/SwiperHeader';
 
 type SumPopulationSwiperNavigationProp = StackNavigationProp<
     RootStackParamList,
@@ -26,12 +27,14 @@ const SumPopulationSwiper: React.FC<Props> = ({ navigation }) => {
     return (
         <Swiper>
             <View style={styles.container}>
-                <TouchableOpacity onPress={() => navigation.goBack()} style={styles.modalIcon}>
-                    <Icon name="arrow-left" size={wp('5%')} color="#807E7C" />
-                </TouchableOpacity>
+                <SwiperHeader
+                    title="年齢別総人口(平成27年国勢調査)"
+                    onPress={() => navigation.goBack()}
+                />
                 <SumPopulationChart />
             </View>
             <View style={styles.container}>
+                <SwiperHeader title="総人口" onPress={() => navigation.goBack()} />
                 <Explanation />
             </View>
         </Swiper>

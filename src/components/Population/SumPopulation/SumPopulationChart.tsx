@@ -39,7 +39,6 @@ const SumPopulationChart: React.FC = () => {
     return (
         <View style={styles.container}>
             <Loading visible={spinner} />
-            <Text style={styles.title}>年齢別総人口(平成27年国勢調査)</Text>
             <View style={styles.chart}>
                 <VictoryChart
                     theme={VictoryTheme.material}
