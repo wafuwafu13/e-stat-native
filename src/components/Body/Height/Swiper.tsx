@@ -27,16 +27,25 @@ const HeightSwiper: React.FC<Props> = ({ navigation }) => {
             <View style={styles.container}>
                 <SwiperHeader
                     title="男女別平均身長(平成28年国民健康・栄養調査)"
+                    fontSize="2.5%"
                     onPress={() => navigation.goBack()}
                 />
                 <HeightChart />
             </View>
             <View style={styles.container}>
-                <SwiperHeader title="男性平均身長" onPress={() => navigation.goBack()} />
+                <SwiperHeader
+                    title="男性平均身長"
+                    fontSize="3.5%"
+                    onPress={() => navigation.goBack()}
+                />
                 <ManHeightData />
             </View>
             <View style={styles.container}>
-                <SwiperHeader title="女性平均身長" onPress={() => navigation.goBack()} />
+                <SwiperHeader
+                    title="女性平均身長"
+                    fontSize="3.5%"
+                    onPress={() => navigation.goBack()}
+                />
                 <WomanHeightData />
             </View>
         </Swiper>

@@ -29,12 +29,13 @@ const SumPopulationSwiper: React.FC<Props> = ({ navigation }) => {
             <View style={styles.container}>
                 <SwiperHeader
                     title="年齢別総人口(平成27年国勢調査)"
+                    fontSize="3%"
                     onPress={() => navigation.goBack()}
                 />
                 <SumPopulationChart />
             </View>
             <View style={styles.container}>
-                <SwiperHeader title="総人口" onPress={() => navigation.goBack()} />
+                <SwiperHeader title="総人口" fontSize="3.5%" onPress={() => navigation.goBack()} />
                 <SumPopulationData />
             </View>
         </Swiper>

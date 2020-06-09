@@ -27,16 +27,25 @@ const WeightSwiper: React.FC<Props> = ({ navigation }) => {
             <View style={styles.container}>
                 <SwiperHeader
                     title="男女別平均体重(平成28年国民健康・栄養調査)"
+                    fontSize="2.5%"
                     onPress={() => navigation.goBack()}
                 />
                 <WeightChart />
             </View>
             <View style={styles.container}>
-                <SwiperHeader title="男性平均体重" onPress={() => navigation.goBack()} />
+                <SwiperHeader
+                    title="男性平均体重"
+                    fontSize="3.5%"
+                    onPress={() => navigation.goBack()}
+                />
                 <ManWeightData />
             </View>
             <View style={styles.container}>
-                <SwiperHeader title="女性平均体重" onPress={() => navigation.goBack()} />
+                <SwiperHeader
+                    title="女性平均体重"
+                    fontSize="3.5%"
+                    onPress={() => navigation.goBack()}
+                />
                 <WomanWeightData />
             </View>
         </Swiper>

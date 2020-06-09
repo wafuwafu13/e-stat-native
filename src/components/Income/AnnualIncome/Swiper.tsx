@@ -30,16 +30,25 @@ const AnnualIncomeSwiper: React.FC<Props> = ({ navigation }) => {
             <View style={styles.container}>
                 <SwiperHeader
                     title="男女・年代別平均年収(平成28年民間給与実態統計調査)"
+                    fontSize="2.5%"
                     onPress={() => navigation.goBack()}
                 />
                 <AnnualIncomeChart />
             </View>
             <View style={styles.container}>
-                <SwiperHeader title="男性平均年収" onPress={() => navigation.goBack()} />
+                <SwiperHeader
+                    title="男性平均年収"
+                    fontSize="3.5%"
+                    onPress={() => navigation.goBack()}
+                />
                 <ManAnnualIncomeData />
             </View>
             <View style={styles.container}>
-                <SwiperHeader title="女性平均年収" onPress={() => navigation.goBack()} />
+                <SwiperHeader
+                    title="女性平均年収"
+                    fontSize="3.5%"
+                    onPress={() => navigation.goBack()}
+                />
                 <WomanAnnualIncomeData />
             </View>
         </Swiper>

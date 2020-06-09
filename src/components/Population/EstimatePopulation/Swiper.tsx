@@ -31,20 +31,33 @@ const EstimatePopulationSwiper: React.FC<Props> = ({ navigation }) => {
             <View style={styles.container}>
                 <SwiperHeader
                     title="人口推計(平成30年10月1日現在)"
+                    fontSize="3%"
                     onPress={() => navigation.goBack()}
                 />
                 <EstimatePopulationChart />
             </View>
             <View style={styles.container}>
-                <SwiperHeader title="推定総人口" onPress={() => navigation.goBack()} />
+                <SwiperHeader
+                    title="推定総人口"
+                    fontSize="3.5%"
+                    onPress={() => navigation.goBack()}
+                />
                 <EstimateSumPopulationData />
             </View>
             <View style={styles.container}>
-                <SwiperHeader title="推定男性人口" onPress={() => navigation.goBack()} />
+                <SwiperHeader
+                    title="推定男性人口"
+                    fontSize="3.5%"
+                    onPress={() => navigation.goBack()}
+                />
                 <EstimateManPopulationData />
             </View>
             <View style={styles.container}>
-                <SwiperHeader title="推定女性人口" onPress={() => navigation.goBack()} />
+                <SwiperHeader
+                    title="推定女性人口"
+                    fontSize="3.5%"
+                    onPress={() => navigation.goBack()}
+                />
                 <EstimateWomanPopulationData />
             </View>
         </Swiper>
