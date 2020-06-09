@@ -1,47 +1,44 @@
 import React from 'react';
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet, View, TouchableOpacity } from 'react-native';
 import Swiper from 'react-native-swiper';
+import Icon from 'react-native-vector-icons/FontAwesome5';
 import {
     widthPercentageToDP as wp,
     heightPercentageToDP as hp
 } from 'react-native-responsive-screen';
 
-import SumPopulationChart from './SumPopulationChart';
+import TransitionPopulationChart from './Chart';
 import Explanation from './Explanation';
 
 import { StackNavigationProp } from '@react-navigation/stack';
 import { RootStackParamList } from '../../../../App';
 
-import SwiperHeader from '../../../elements/SwiperHeader';
-
-type SumPopulationSwiperNavigationProp = StackNavigationProp<
+type TransitionPopulationSwiperNavigationProp = StackNavigationProp<
     RootStackParamList,
-    'SumPopulationSwiper'
+    'TransitionPopulationSwiper'
 >;
 
 type Props = {
-    navigation: SumPopulationSwiperNavigationProp;
+    navigation: TransitionPopulationSwiperNavigationProp;
 };
 
-const SumPopulationSwiper: React.FC<Props> = ({ navigation }) => {
+const TransitionPopulationSwiper: React.FC<Props> = ({ navigation }) => {
     return (
         <Swiper>
             <View style={styles.container}>
-                <SwiperHeader
-                    title="年齢別総人口(平成27年国勢調査)"
-                    onPress={() => navigation.goBack()}
-                />
-                <SumPopulationChart />
+                <TouchableOpacity onPress={() => navigation.goBack()} style={styles.modalIcon}>
+                    <Icon name="arrow-left" size={wp('5%')} color="#807E7C" />
+                </TouchableOpacity>
+                <TransitionPopulationChart />
             </View>
             <View style={styles.container}>
-                <SwiperHeader title="総人口" onPress={() => navigation.goBack()} />
                 <Explanation />
             </View>
         </Swiper>
     );
 };
 
-export default SumPopulationSwiper;
+export default TransitionPopulationSwiper;
 
 const styles = StyleSheet.create({
     container: {

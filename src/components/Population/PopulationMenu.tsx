@@ -7,11 +7,11 @@ import {
     heightPercentageToDP as hp
 } from 'react-native-responsive-screen';
 
-import SumPopulationModal from './SumPopulation/SumPopulationModal';
-import SexPopulationModal from './SexPopulation/SexPopulationModal';
-import EstimatePopulationModal from './EstimatePopulation/EstimatePopulationModal';
-import BirthrateModal from './Birthrate/BirthrateModal';
-import TransitionPopulationModal from './TransitionPopulation/TransitionPopulationModal';
+import SumPopulationModal from './SumPopulation/Modal';
+import SexPopulationModal from './SexPopulation/Modal';
+import EstimatePopulationModal from './EstimatePopulation/Modal';
+import BirthrateModal from './Birthrate/Modal';
+import TransitionPopulationModal from './TransitionPopulation/Modal';
 
 import SubMenuTitle from '../../elements/SubMenuTitle';
 import SubMenuIcon from '../../elements/SubMenuIcon';

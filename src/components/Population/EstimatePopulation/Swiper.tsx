@@ -7,29 +7,29 @@ import {
     heightPercentageToDP as hp
 } from 'react-native-responsive-screen';
 
-import AnnualIncomeChart from './AnnualIncomeChart';
+import EstimatePopulationChart from './Chart';
 import Explanation from './Explanation';
 
 import { StackNavigationProp } from '@react-navigation/stack';
 import { RootStackParamList } from '../../../../App';
 
-type AnnualIncomeSwiperNavigationProp = StackNavigationProp<
+type EstimatePopulationSwiperNavigationProp = StackNavigationProp<
     RootStackParamList,
-    'AnnualIncomeSwiper'
+    'EstimatePopulationSwiper'
 >;
 
 type Props = {
-    navigation: AnnualIncomeSwiperNavigationProp;
+    navigation: EstimatePopulationSwiperNavigationProp;
 };
 
-const AnnualIncomeSwiper: React.FC<Props> = ({ navigation }) => {
+const EstimatePopulationSwiper: React.FC<Props> = ({ navigation }) => {
     return (
         <Swiper>
             <View style={styles.container}>
                 <TouchableOpacity onPress={() => navigation.goBack()} style={styles.modalIcon}>
                     <Icon name="arrow-left" size={wp('5%')} color="#807E7C" />
                 </TouchableOpacity>
-                <AnnualIncomeChart />
+                <EstimatePopulationChart />
             </View>
             <View style={styles.container}>
                 <Explanation />
@@ -38,7 +38,7 @@ const AnnualIncomeSwiper: React.FC<Props> = ({ navigation }) => {
     );
 };
 
-export default AnnualIncomeSwiper;
+export default EstimatePopulationSwiper;
 
 const styles = StyleSheet.create({
     container: {

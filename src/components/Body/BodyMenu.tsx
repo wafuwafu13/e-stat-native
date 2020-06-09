@@ -7,8 +7,8 @@ import {
     heightPercentageToDP as hp
 } from 'react-native-responsive-screen';
 
-import HeightModal from './Height/HeightModal';
-import WeightModal from './Weight/WeightModal';
+import HeightModal from './Height/Modal';
+import WeightModal from './Weight/Modal';
 
 import SubMenuTitle from '../../elements/SubMenuTitle';
 import SubMenuIcon from '../../elements/SubMenuIcon';

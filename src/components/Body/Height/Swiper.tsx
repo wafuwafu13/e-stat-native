@@ -7,26 +7,26 @@ import {
     heightPercentageToDP as hp
 } from 'react-native-responsive-screen';
 
-import SumMarriageChart from './SumMarriageChart';
+import HeightChart from './Chart';
 import Explanation from './Explanation';
 
 import { StackNavigationProp } from '@react-navigation/stack';
 import { RootStackParamList } from '../../../../App';
 
-type SumMarriageSwiperNavigationProp = StackNavigationProp<RootStackParamList, 'SumMarriageSwiper'>;
+type HeightSwiperNavigationProp = StackNavigationProp<RootStackParamList, 'HeightSwiper'>;
 
 type Props = {
-    navigation: SumMarriageSwiperNavigationProp;
+    navigation: HeightSwiperNavigationProp;
 };
 
-const SumMarriageSwiper: React.FC<Props> = ({ navigation }) => {
+const HeightSwiper: React.FC<Props> = ({ navigation }) => {
     return (
         <Swiper>
             <View style={styles.container}>
                 <TouchableOpacity onPress={() => navigation.goBack()} style={styles.modalIcon}>
                     <Icon name="arrow-left" size={wp('5%')} color="#807E7C" />
                 </TouchableOpacity>
-                <SumMarriageChart />
+                <HeightChart />
             </View>
             <View style={styles.container}>
                 <Explanation />
@@ -35,7 +35,7 @@ const SumMarriageSwiper: React.FC<Props> = ({ navigation }) => {
     );
 };
 
-export default SumMarriageSwiper;
+export default HeightSwiper;
 
 const styles = StyleSheet.create({
     container: {

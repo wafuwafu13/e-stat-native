@@ -7,7 +7,7 @@ import {
     heightPercentageToDP as hp
 } from 'react-native-responsive-screen';
 
-import AnnualIncomeModal from './AnnualIncome/AnnualIncomeModal';
+import AnnualIncomeModal from './AnnualIncome/Modal';
 
 import SubMenuTitle from '../../elements/SubMenuTitle';
 import SubMenuIcon from '../../elements/SubMenuIcon';

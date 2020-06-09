@@ -7,29 +7,26 @@ import {
     heightPercentageToDP as hp
 } from 'react-native-responsive-screen';
 
-import SexPopulationChart from './SexPopulationChart';
+import BirthrateChart from './Chart';
 import Explanation from './Explanation';
 
 import { StackNavigationProp } from '@react-navigation/stack';
 import { RootStackParamList } from '../../../../App';
 
-type SexPopulationSwiperNavigationProp = StackNavigationProp<
-    RootStackParamList,
-    'SexPopulationSwiper'
->;
+type BirthrateSwiperNavigationProp = StackNavigationProp<RootStackParamList, 'BirthrateSwiper'>;
 
 type Props = {
-    navigation: SexPopulationSwiperNavigationProp;
+    navigation: BirthrateSwiperNavigationProp;
 };
 
-const SexPopulationSwiper: React.FC<Props> = ({ navigation }) => {
+const BirthrateSwiper: React.FC<Props> = ({ navigation }) => {
     return (
         <Swiper>
             <View style={styles.container}>
                 <TouchableOpacity onPress={() => navigation.goBack()} style={styles.modalIcon}>
                     <Icon name="arrow-left" size={wp('5%')} color="#807E7C" />
                 </TouchableOpacity>
-                <SexPopulationChart />
+                <BirthrateChart />
             </View>
             <View style={styles.container}>
                 <Explanation />
@@ -38,7 +35,7 @@ const SexPopulationSwiper: React.FC<Props> = ({ navigation }) => {
     );
 };
 
-export default SexPopulationSwiper;
+export default BirthrateSwiper;
 
 const styles = StyleSheet.create({
     container: {

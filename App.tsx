@@ -14,20 +14,20 @@ import {
 
 import HomeMenu from './src/components/HomeMenu';
 import PopulationMenu from './src/components/Population/PopulationMenu';
-import SumPopulationSwiper from './src/components/Population/SumPopulation/SumPopulationSwiper';
-import SexPopulationSwiper from './src/components/Population/SexPopulation/SexPopulationSwiper';
-import EstimatePopulationSwiper from './src/components/Population/EstimatePopulation/EstimatePopulationSwiper';
-import BirthrateSwiper from './src/components/Population/Birthrate/BirthrateSwiper';
-import TransitionPopulationSwiper from './src/components/Population/TransitionPopulation/TransitionPopulationSwiper';
+import SumPopulationSwiper from './src/components/Population/SumPopulation/Swiper';
+import SexPopulationSwiper from './src/components/Population/SexPopulation/Swiper';
+import EstimatePopulationSwiper from './src/components/Population/EstimatePopulation/Swiper';
+import BirthrateSwiper from './src/components/Population/Birthrate/Swiper';
+import TransitionPopulationSwiper from './src/components/Population/TransitionPopulation/Swiper';
 import BodyMenu from './src/components/Body/BodyMenu';
-import HeightSwiper from './src/components/Body/Height/HeightSwiper';
-import WeightSwiper from './src/components/Body/Weight/WeightSwiper';
+import HeightSwiper from './src/components/Body/Height/Swiper';
+import WeightSwiper from './src/components/Body/Weight/Swiper';
 import MarriageMenu from './src/components/Marriage/MarriageMenu';
-import SumMarriageSwiper from './src/components/Marriage/SumMarriage/SumMarriageSwiper';
-import UnmarrideSwiper from './src/components/Marriage/Unmarride/UnmarrideSwiper';
-import DivorcerateSwiper from './src/components/Marriage/Divorcerate/DivorcerateSwiper';
+import SumMarriageSwiper from './src/components/Marriage/SumMarriage/Swiper';
+import UnmarrideSwiper from './src/components/Marriage/Unmarride/Swiper';
+import DivorcerateSwiper from './src/components/Marriage/Divorcerate/Swiper';
 import IncomeMenu from './src/components/Income/IncomeMenu';
-import AnnualIncomeSwiper from './src/components/Income/AnnualIncome/AnnauIncomeSwiper';
+import AnnualIncomeSwiper from './src/components/Income/AnnualIncome/Swiper';
 import Overview from './src/components/Overview/Overview';
 
 export type RootStackParamList = {

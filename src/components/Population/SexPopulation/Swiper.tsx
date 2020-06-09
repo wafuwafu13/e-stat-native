@@ -7,26 +7,29 @@ import {
     heightPercentageToDP as hp
 } from 'react-native-responsive-screen';
 
-import Weighthart from './WeightChart';
+import SexPopulationChart from './Chart';
 import Explanation from './Explanation';
 
 import { StackNavigationProp } from '@react-navigation/stack';
 import { RootStackParamList } from '../../../../App';
 
-type WeightSwiperNavigationProp = StackNavigationProp<RootStackParamList, 'WeightSwiper'>;
+type SexPopulationSwiperNavigationProp = StackNavigationProp<
+    RootStackParamList,
+    'SexPopulationSwiper'
+>;
 
 type Props = {
-    navigation: WeightSwiperNavigationProp;
+    navigation: SexPopulationSwiperNavigationProp;
 };
 
-const WeightSwiper: React.FC<Props> = ({ navigation }) => {
+const SexPopulationSwiper: React.FC<Props> = ({ navigation }) => {
     return (
         <Swiper>
             <View style={styles.container}>
                 <TouchableOpacity onPress={() => navigation.goBack()} style={styles.modalIcon}>
                     <Icon name="arrow-left" size={wp('5%')} color="#807E7C" />
                 </TouchableOpacity>
-                <Weighthart />
+                <SexPopulationChart />
             </View>
             <View style={styles.container}>
                 <Explanation />
@@ -35,7 +38,7 @@ const WeightSwiper: React.FC<Props> = ({ navigation }) => {
     );
 };
 
-export default WeightSwiper;
+export default SexPopulationSwiper;
 
 const styles = StyleSheet.create({
     container: {
