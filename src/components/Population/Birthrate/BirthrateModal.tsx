@@ -1,5 +1,10 @@
 import React from 'react';
-import { StyleSheet, Text, View, Button } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
+import Icon from 'react-native-vector-icons/AntDesign';
+import {
+    widthPercentageToDP as wp,
+    heightPercentageToDP as hp
+} from 'react-native-responsive-screen';
 
 type Props = {
     toggle: () => void;
@@ -10,11 +15,11 @@ const BirthrateModal: React.FC<Props> = (props) => {
 
     return (
         <View style={styles.container}>
-            <Text>合計特殊出生率の推移を表示します。</Text>
-            <Text>
-                合計特殊出生率は、1人の女性が15歳から49歳までに産む子供の数の平均を示す値です。
-            </Text>
-            <Button title="閉じる" onPress={toggle} />
+            <Text style={styles.text}>1947年: 4.54</Text>
+            <Text style={styles.text}>2017年: 1.42</Text>
+            <TouchableOpacity onPress={toggle} style={styles.closeIcon}>
+                <Icon name="closecircle" size={wp('5%')} color="#807E7C" />
+            </TouchableOpacity>
         </View>
     );
 };
@@ -27,5 +32,14 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         backgroundColor: '#ffc'
+    },
+    text: {
+        fontSize: wp('3%'),
+        marginBottom: hp('3%')
+    },
+    closeIcon: {
+        position: 'absolute',
+        left: wp('2%'),
+        top: hp('5%')
     }
 });

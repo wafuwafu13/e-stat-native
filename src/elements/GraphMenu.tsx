@@ -20,7 +20,7 @@ const GraphMenu: React.FC<Props> = (props) => {
             </View>
             <View style={styles.menuContentsBottom}>
                 <View>
-                    <Text style={styles.explanation}>調査の詳細へ</Text>
+                    <Text style={styles.explanation}>データのまとめ</Text>
                 </View>
                 <TouchableOpacity style={styles.buttom} onPress={onPress}>
                     <Text style={styles.buttonText}>グラフを見る</Text>
