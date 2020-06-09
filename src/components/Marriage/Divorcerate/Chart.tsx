@@ -37,7 +37,6 @@ const DivorcerateChart: React.FC = () => {
     return (
         <View style={styles.container}>
             <Loading visible={spinner} />
-            <Text style={styles.title}>離婚率(人口動態調査)</Text>
             <View style={styles.chart}>
                 <VictoryChart
                     theme={VictoryTheme.material}

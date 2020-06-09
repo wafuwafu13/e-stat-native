@@ -18,7 +18,7 @@ const SwiperHeader: React.FC<Props> = (props) => {
             leftComponent={<BackArrow onPress={onPress} />}
             centerComponent={{
                 text: title,
-                style: { color: '#5A4242', fontSize: wp('3%') }
+                style: { color: '#5A4242', fontSize: wp('2.3%') }
             }}
             backgroundColor="#F0FCFF"
         />

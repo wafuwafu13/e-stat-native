@@ -41,7 +41,6 @@ const UnmarridChart: React.FC = () => {
     return (
         <View style={styles.container}>
             <Loading visible={spinner} />
-            <Text style={styles.title}>40~45歳男女の未婚率(国勢調査)</Text>
             <View style={styles.chart}>
                 <VictoryChart
                     theme={VictoryTheme.material}

@@ -41,7 +41,6 @@ const HeightChart: React.FC = () => {
     return (
         <View style={styles.container}>
             <Loading visible={spinner} />
-            <Text style={styles.title}>男女別平均身長(平成28年国民健康・栄養調査)</Text>
             <View style={styles.chart}>
                 <VictoryChart
                     animate={{ duration: 2000, easing: 'bounce' }}

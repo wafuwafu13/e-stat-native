@@ -6,18 +6,18 @@ import {
 } from 'react-native-responsive-screen';
 
 import { chartData } from '../../../types/chartData';
-import { sumPopulationData } from '../../../data/Population/sumPopulationData';
+import { sumMarriageData } from '../../../data/Marriage/sumMarriageData';
 
-const Explanation: React.FC = () => {
-    const data: chartData[] = sumPopulationData();
+const SumMarriageData: React.FC = () => {
+    const data: chartData[] = sumMarriageData();
 
     const renderData = ({ item }: { item: chartData }) => {
-        let itemY: string = String(item.y)
+        let itemY: string = String(item.y);
         return (
             <ScrollView>
                 <View style={styles.item}>
-                    <Text style={styles.text}>{item.x}歳</Text>
-                    <Text>{itemY.replace(/(\d)(?=(\d\d\d)+$)/g, "$1,")}人</Text>
+                    <Text style={styles.text}>{item.x}年</Text>
+                    <Text>{itemY.replace(/(\d)(?=(\d\d\d)+$)/g, '$1,')}件</Text>
                 </View>
             </ScrollView>
         );
@@ -29,7 +29,7 @@ const Explanation: React.FC = () => {
     );
 };
 
-export default Explanation;
+export default SumMarriageData;
 
 const styles = StyleSheet.create({
     container: {

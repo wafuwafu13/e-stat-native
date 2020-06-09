@@ -41,7 +41,6 @@ const BirthrateChart: React.FC = () => {
     return (
         <View style={styles.container}>
             <Loading visible={spinner} />
-            <Text style={styles.title}>合計特殊出生率</Text>
             <View style={styles.chart}>
                 <VictoryChart
                     theme={VictoryTheme.material}

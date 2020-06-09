@@ -44,7 +44,6 @@ const EstimatePopulationChart: React.FC = () => {
     return (
         <View style={styles.container}>
             <Loading visible={spinner} />
-            <Text style={styles.title}>人口推計(平成30年10月1日現在)</Text>
             <View style={styles.chart}>
                 <VictoryChart
                     animate={{ duration: 2000, easing: 'bounce' }}

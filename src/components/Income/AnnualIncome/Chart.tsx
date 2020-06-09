@@ -39,7 +39,6 @@ const AnnualIncome: React.FC = () => {
     return (
         <View style={styles.container}>
             <Loading visible={spinner} />
-            <Text style={styles.title}>男女・年代別平均年収(平成28年民間給与実態統計調査)</Text>
             <View style={styles.chart}>
                 <VictoryChart
                     theme={VictoryTheme.material}
