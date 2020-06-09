@@ -1,17 +1,18 @@
 import React from 'react';
-import { StyleSheet, View, TouchableOpacity } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import Swiper from 'react-native-swiper';
-import Icon from 'react-native-vector-icons/FontAwesome5';
 import {
     widthPercentageToDP as wp,
     heightPercentageToDP as hp
 } from 'react-native-responsive-screen';
 
 import SumMarriageChart from './Chart';
-import Explanation from './Explanation';
 
 import { StackNavigationProp } from '@react-navigation/stack';
 import { RootStackParamList } from '../../../../App';
+
+import SwiperHeader from '../../../elements/SwiperHeader';
+import SumMarriageData from './SumMarriageData';
 
 type SumMarriageSwiperNavigationProp = StackNavigationProp<RootStackParamList, 'SumMarriageSwiper'>;
 
@@ -23,13 +24,12 @@ const SumMarriageSwiper: React.FC<Props> = ({ navigation }) => {
     return (
         <Swiper>
             <View style={styles.container}>
-                <TouchableOpacity onPress={() => navigation.goBack()} style={styles.modalIcon}>
-                    <Icon name="arrow-left" size={wp('5%')} color="#807E7C" />
-                </TouchableOpacity>
+                <SwiperHeader title="結婚件数(人口動態調査)" onPress={() => navigation.goBack()} />
                 <SumMarriageChart />
             </View>
             <View style={styles.container}>
-                <Explanation />
+                <SwiperHeader title="結婚件数" onPress={() => navigation.goBack()} />
+                <SumMarriageData />
             </View>
         </Swiper>
     );

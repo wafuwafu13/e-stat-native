@@ -1,17 +1,19 @@
 import React from 'react';
-import { StyleSheet, View, TouchableOpacity } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import Swiper from 'react-native-swiper';
-import Icon from 'react-native-vector-icons/FontAwesome5';
 import {
     widthPercentageToDP as wp,
     heightPercentageToDP as hp
 } from 'react-native-responsive-screen';
 
-import Weighthart from './Chart';
-import Explanation from './Explanation';
+import WeightChart from './Chart';
+import ManWeightData from './ManWeightData';
+import WomanWeightData from './WomanWeightData';
 
 import { StackNavigationProp } from '@react-navigation/stack';
 import { RootStackParamList } from '../../../../App';
+
+import SwiperHeader from '../../../elements/SwiperHeader';
 
 type WeightSwiperNavigationProp = StackNavigationProp<RootStackParamList, 'WeightSwiper'>;
 
@@ -23,13 +25,19 @@ const WeightSwiper: React.FC<Props> = ({ navigation }) => {
     return (
         <Swiper>
             <View style={styles.container}>
-                <TouchableOpacity onPress={() => navigation.goBack()} style={styles.modalIcon}>
-                    <Icon name="arrow-left" size={wp('5%')} color="#807E7C" />
-                </TouchableOpacity>
-                <Weighthart />
+                <SwiperHeader
+                    title="男女別平均体重(平成28年国民健康・栄養調査)"
+                    onPress={() => navigation.goBack()}
+                />
+                <WeightChart />
             </View>
             <View style={styles.container}>
-                <Explanation />
+                <SwiperHeader title="男性平均体重" onPress={() => navigation.goBack()} />
+                <ManWeightData />
+            </View>
+            <View style={styles.container}>
+                <SwiperHeader title="女性平均体重" onPress={() => navigation.goBack()} />
+                <WomanWeightData />
             </View>
         </Swiper>
     );

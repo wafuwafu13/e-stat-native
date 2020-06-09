@@ -7,7 +7,7 @@ import {
 } from 'react-native-responsive-screen';
 
 import SumPopulationChart from './Chart';
-import Explanation from './Explanation';
+import SumPopulationData from './SumPopulationData';
 
 import { StackNavigationProp } from '@react-navigation/stack';
 import { RootStackParamList } from '../../../../App';
@@ -35,7 +35,7 @@ const SumPopulationSwiper: React.FC<Props> = ({ navigation }) => {
             </View>
             <View style={styles.container}>
                 <SwiperHeader title="総人口" onPress={() => navigation.goBack()} />
-                <Explanation />
+                <SumPopulationData />
             </View>
         </Swiper>
     );

@@ -1,17 +1,18 @@
 import React from 'react';
-import { StyleSheet, View, TouchableOpacity } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import Swiper from 'react-native-swiper';
-import Icon from 'react-native-vector-icons/FontAwesome5';
 import {
     widthPercentageToDP as wp,
     heightPercentageToDP as hp
 } from 'react-native-responsive-screen';
 
 import BirthrateChart from './Chart';
-import Explanation from './Explanation';
+import BirthrateData from './BirthrateData';
 
 import { StackNavigationProp } from '@react-navigation/stack';
 import { RootStackParamList } from '../../../../App';
+
+import SwiperHeader from '../../../elements/SwiperHeader';
 
 type BirthrateSwiperNavigationProp = StackNavigationProp<RootStackParamList, 'BirthrateSwiper'>;
 
@@ -23,13 +24,12 @@ const BirthrateSwiper: React.FC<Props> = ({ navigation }) => {
     return (
         <Swiper>
             <View style={styles.container}>
-                <TouchableOpacity onPress={() => navigation.goBack()} style={styles.modalIcon}>
-                    <Icon name="arrow-left" size={wp('5%')} color="#807E7C" />
-                </TouchableOpacity>
+                <SwiperHeader title="合計特殊出生率" onPress={() => navigation.goBack()} />
                 <BirthrateChart />
             </View>
             <View style={styles.container}>
-                <Explanation />
+                <SwiperHeader title="合計特殊出生率" onPress={() => navigation.goBack()} />
+                <BirthrateData />
             </View>
         </Swiper>
     );

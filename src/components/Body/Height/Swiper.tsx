@@ -1,17 +1,19 @@
 import React from 'react';
-import { StyleSheet, View, TouchableOpacity } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import Swiper from 'react-native-swiper';
-import Icon from 'react-native-vector-icons/FontAwesome5';
 import {
     widthPercentageToDP as wp,
     heightPercentageToDP as hp
 } from 'react-native-responsive-screen';
 
 import HeightChart from './Chart';
-import Explanation from './Explanation';
+import ManHeightData from './ManHeightData';
+import WomanHeightData from './WomanHeightData';
 
 import { StackNavigationProp } from '@react-navigation/stack';
 import { RootStackParamList } from '../../../../App';
+
+import SwiperHeader from '../../../elements/SwiperHeader';
 
 type HeightSwiperNavigationProp = StackNavigationProp<RootStackParamList, 'HeightSwiper'>;
 
@@ -23,13 +25,19 @@ const HeightSwiper: React.FC<Props> = ({ navigation }) => {
     return (
         <Swiper>
             <View style={styles.container}>
-                <TouchableOpacity onPress={() => navigation.goBack()} style={styles.modalIcon}>
-                    <Icon name="arrow-left" size={wp('5%')} color="#807E7C" />
-                </TouchableOpacity>
+                <SwiperHeader
+                    title="男女別平均身長(平成28年国民健康・栄養調査)"
+                    onPress={() => navigation.goBack()}
+                />
                 <HeightChart />
             </View>
             <View style={styles.container}>
-                <Explanation />
+                <SwiperHeader title="男性平均身長" onPress={() => navigation.goBack()} />
+                <ManHeightData />
+            </View>
+            <View style={styles.container}>
+                <SwiperHeader title="女性平均身長" onPress={() => navigation.goBack()} />
+                <WomanHeightData />
             </View>
         </Swiper>
     );

@@ -38,7 +38,6 @@ const TransitionPopulationChart: React.FC = () => {
     return (
         <View style={styles.container}>
             <Loading visible={spinner} />
-            <Text style={styles.title}>人口推移(国勢調査)</Text>
             <View style={styles.chart}>
                 <VictoryChart
                     style={styles.chart}

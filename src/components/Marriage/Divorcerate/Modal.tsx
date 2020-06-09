@@ -16,7 +16,7 @@ const DivorcerateModal: React.FC<Props> = (props) => {
     return (
         <View style={styles.container}>
             <Text style={styles.text}>1930年: 9.2%</Text>
-            <Text style={styles.text}>1930年: 26.3%</Text>
+            <Text style={styles.text}>2015年: 26.3%</Text>
             <TouchableOpacity onPress={toggle} style={styles.closeIcon}>
                 <Icon name="closecircle" size={wp('5%')} color="#807E7C" />
             </TouchableOpacity>

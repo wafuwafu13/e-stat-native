@@ -8,10 +8,13 @@ import {
 } from 'react-native-responsive-screen';
 
 import UnmarrideChart from './Chart';
-import Explanation from './Explanation';
+import ManUnmarrideData from './ManUnmarrideData';
+import WomanUnmarrideData from './WomanUnmarrideData';
 
 import { StackNavigationProp } from '@react-navigation/stack';
 import { RootStackParamList } from '../../../../App';
+
+import SwiperHeader from '../../../elements/SwiperHeader';
 
 type UnmarrideSwiperNavigationProp = StackNavigationProp<RootStackParamList, 'UnmarrideSwiper'>;
 
@@ -23,13 +26,19 @@ const UnmarrideSwiper: React.FC<Props> = ({ navigation }) => {
     return (
         <Swiper>
             <View style={styles.container}>
-                <TouchableOpacity onPress={() => navigation.goBack()} style={styles.modalIcon}>
-                    <Icon name="arrow-left" size={wp('5%')} color="#807E7C" />
-                </TouchableOpacity>
+                <SwiperHeader
+                    title="40~45歳男女の未婚率(国勢調査)"
+                    onPress={() => navigation.goBack()}
+                />
                 <UnmarrideChart />
             </View>
             <View style={styles.container}>
-                <Explanation />
+                <SwiperHeader title="男性未婚率" onPress={() => navigation.goBack()} />
+                <ManUnmarrideData />
+            </View>
+            <View style={styles.container}>
+                <SwiperHeader title="男性未婚率" onPress={() => navigation.goBack()} />
+                <WomanUnmarrideData />
             </View>
         </Swiper>
     );

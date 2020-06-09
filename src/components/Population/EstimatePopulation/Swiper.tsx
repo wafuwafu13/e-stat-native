@@ -1,14 +1,17 @@
 import React from 'react';
-import { StyleSheet, View, TouchableOpacity } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import Swiper from 'react-native-swiper';
-import Icon from 'react-native-vector-icons/FontAwesome5';
 import {
     widthPercentageToDP as wp,
     heightPercentageToDP as hp
 } from 'react-native-responsive-screen';
 
 import EstimatePopulationChart from './Chart';
-import Explanation from './Explanation';
+import EstimateSumPopulationData from './EstimateSumPopulationData';
+import EstimateManPopulationData from './EstimateManPopulationData';
+import EstimateWomanPopulationData from './EstimateWomanPopulationData';
+
+import SwiperHeader from '../../../elements/SwiperHeader';
 
 import { StackNavigationProp } from '@react-navigation/stack';
 import { RootStackParamList } from '../../../../App';
@@ -26,13 +29,23 @@ const EstimatePopulationSwiper: React.FC<Props> = ({ navigation }) => {
     return (
         <Swiper>
             <View style={styles.container}>
-                <TouchableOpacity onPress={() => navigation.goBack()} style={styles.modalIcon}>
-                    <Icon name="arrow-left" size={wp('5%')} color="#807E7C" />
-                </TouchableOpacity>
+                <SwiperHeader
+                    title="人口推計(平成30年10月1日現在)"
+                    onPress={() => navigation.goBack()}
+                />
                 <EstimatePopulationChart />
             </View>
             <View style={styles.container}>
-                <Explanation />
+                <SwiperHeader title="推定総人口" onPress={() => navigation.goBack()} />
+                <EstimateSumPopulationData />
+            </View>
+            <View style={styles.container}>
+                <SwiperHeader title="推定男性人口" onPress={() => navigation.goBack()} />
+                <EstimateManPopulationData />
+            </View>
+            <View style={styles.container}>
+                <SwiperHeader title="推定女性人口" onPress={() => navigation.goBack()} />
+                <EstimateWomanPopulationData />
             </View>
         </Swiper>
     );
