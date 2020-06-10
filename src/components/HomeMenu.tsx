@@ -81,9 +81,9 @@ const HomeMenu: React.FC<Props> = ({ navigation }) => {
                             </MenuItem>
                         </Animatable.View>
                         <Animatable.View animation="bounce" style={styles.menu}>
-                            <MenuItemTitle item="income">年 収</MenuItemTitle>
-                            <MenuItem item="income" onPress={() => goto('IncomeMenu')}>
-                                1つのグラフ
+                            <MenuItemTitle item="death">死 亡</MenuItemTitle>
+                            <MenuItem item="death" onPress={() => goto('DeathMenu')}>
+                                3つのグラフ
                             </MenuItem>
                         </Animatable.View>
                     </View>

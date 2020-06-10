@@ -32,6 +32,7 @@ import Overview from './src/components/Overview/Overview';
 import PrefectureMenu from './src/components/Prefecture/PrefectureMenu';
 import PrefecturePopulationSwiper from './src/components/Prefecture/Population/Swiper';
 import NaturalEnvironmentSwiper from './src/components/Prefecture/NaturalEnvironment/Swiper';
+import DeathMenu from './src/components/Death/DeathMenu'
 
 export type RootStackParamList = {
     HomeMenu: undefined;
@@ -54,6 +55,7 @@ export type RootStackParamList = {
     PrefectureMenu: undefined;
     PrefecturePopulationSwiper: undefined;
     NaturalEnvironmentSwiper: undefined;
+    DeathMenu: undefined
 };
 
 export type DrawerNavigatorParamList = {
@@ -63,6 +65,7 @@ export type DrawerNavigatorParamList = {
     結婚: undefined;
     年収: undefined;
     都道府県: undefined;
+    死亡: undefined;
     アプリについて: undefined;
 };
 
@@ -169,6 +172,11 @@ const App: React.FC = () => {
                     options={{ headerShown: false }}
                 />
                 <Stack.Screen
+                    name="DeathMenu"
+                    component={DeathMenu}
+                    options={{ headerShown: false }}
+                />
+                <Stack.Screen
                     name="Overview"
                     component={Overview}
                     options={{ headerShown: false }}
@@ -186,6 +194,7 @@ const App: React.FC = () => {
                 <Drawer.Screen name="結婚" component={MarriageMenu} />
                 <Drawer.Screen name="年収" component={IncomeMenu} />
                 <Drawer.Screen name="都道府県" component={PrefectureMenu} />
+                <Drawer.Screen name="死亡" component={DeathMenu} />
                 <Drawer.Screen name="アプリについて" component={Overview} />
             </Drawer.Navigator>
         </NavigationContainer>
