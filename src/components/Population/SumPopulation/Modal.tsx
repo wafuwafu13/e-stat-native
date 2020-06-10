@@ -17,7 +17,7 @@ const SumPopulationModal: React.FC<Props> = (props) => {
         <View style={styles.container}>
             <Text style={styles.text}>
                 <Text style={{ fontWeight: 'bold' }}>総人口</Text>は
-                <Text style={{ fontWeight: 'bold' }}>1億2千700万人</Text>。
+                <Text style={{ fontWeight: 'bold' }}>1億2700万人</Text>。
             </Text>
             <TouchableOpacity onPress={toggle} style={styles.closeIcon}>
                 <Icon name="closecircle" size={wp('5%')} color="#807E7C" />

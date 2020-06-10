@@ -19,10 +19,10 @@ const EstimatePopulationModal: React.FC<Props> = (props) => {
                 <Text style={{ fontWeight: 'bold' }}>推定人口</Text>は減少傾向にある。
             </Text>
             <Text style={styles.text}>
-                2025年の総人口は<Text style={{ fontWeight: 'bold' }}>1億2万2千人</Text>、
+                2025年の総人口は<Text style={{ fontWeight: 'bold' }}>1億2万2000人</Text>、
             </Text>
             <Text style={styles.text}>
-                2080年は<Text style={{ fontWeight: 'bold' }}>7千3百万人</Text>と推定されている。
+                2080年は<Text style={{ fontWeight: 'bold' }}>7300万人</Text>と推定されている。
             </Text>
             <TouchableOpacity onPress={toggle} style={styles.closeIcon}>
                 <Icon name="closecircle" size={wp('5%')} color="#807E7C" />

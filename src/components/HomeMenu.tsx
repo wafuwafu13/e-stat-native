@@ -98,10 +98,11 @@ export default HomeMenu;
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#F0FCFF'
+        backgroundColor: '#F0FCFF',
     },
     main: {
-        flex: 1
+        flex: 1,
+        marginBottom: wp('5%')
     },
     top: {
         position: 'relative',

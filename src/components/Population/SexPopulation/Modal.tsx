@@ -20,11 +20,11 @@ const SexPopulationModal: React.FC<Props> = (props) => {
             </Text>
             <Text style={styles.text}>
                 <Text style={{ color: 'blue' }}>男性</Text>は
-                <Text style={{ fontWeight: 'bold' }}>6千184万人</Text>。
+                <Text style={{ fontWeight: 'bold' }}>6184万人</Text>。
             </Text>
             <Text style={styles.text}>
                 <Text style={{ color: 'red' }}>女性</Text>は
-                <Text style={{ fontWeight: 'bold' }}>6千523万人</Text>。
+                <Text style={{ fontWeight: 'bold' }}>6523万人</Text>。
             </Text>
             <TouchableOpacity onPress={toggle} style={styles.closeIcon}>
                 <Icon name="closecircle" size={wp('5%')} color="#807E7C" />
