@@ -20,7 +20,7 @@ const NaturalEnvironmentModal: React.FC<Props> = (props) => {
                 <Text style={{ fontWeight: 'bold' }}>北海道</Text>で
                 <Text style={{ fontWeight: 'bold' }}>780万ha</Text>、47位は
                 <Text style={{ fontWeight: 'bold' }}>香川県</Text>で
-                <Text style={{ fontWeight: 'bold' }}>18万ha</Text>。{' '}
+                <Text style={{ fontWeight: 'bold' }}>18万ha</Text>。
             </Text>
             <Text style={styles.text}>
                 <Text style={{ fontWeight: 'bold' }}>年平均気温</Text>の1位は

@@ -17,13 +17,13 @@ const TransitionPopulationModal: React.FC<Props> = (props) => {
         <View style={styles.container}>
             <Text style={styles.text}>
                 <Text style={{ fontWeight: 'bold' }}>人口推移</Text>
-                は近年、増加傾向がなくなっている。
+                は増加している。
             </Text>
             <Text style={styles.text}>
-                1945年は<Text style={{ fontWeight: 'bold' }}>7千199万人</Text>。
+                1945年は<Text style={{ fontWeight: 'bold' }}>7199万人</Text>。
             </Text>
             <Text style={styles.text}>
-                2015年は<Text style={{ fontWeight: 'bold' }}>1億2千700万人</Text>。
+                2015年は<Text style={{ fontWeight: 'bold' }}>1億2700万人</Text>。
             </Text>
             <TouchableOpacity onPress={toggle} style={styles.closeIcon}>
                 <Icon name="closecircle" size={wp('5%')} color="#807E7C" />

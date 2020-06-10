@@ -20,7 +20,7 @@ const PrefecturePopulationModal: React.FC<Props> = (props) => {
                 <Text style={{ fontWeight: 'bold' }}>東京都</Text>で
                 <Text style={{ fontWeight: 'bold' }}>1380万人</Text>、47位は
                 <Text style={{ fontWeight: 'bold' }}>鳥取県</Text>で
-                <Text style={{ fontWeight: 'bold' }}>5600万人</Text>。
+                <Text style={{ fontWeight: 'bold' }}>560万人</Text>。
             </Text>
             <Text style={styles.text}>
                 <Text style={{ fontWeight: 'bold' }}>老年人口</Text>の1位は
