@@ -29,7 +29,9 @@ import DivorcerateSwiper from './src/components/Marriage/Divorcerate/Swiper';
 import IncomeMenu from './src/components/Income/IncomeMenu';
 import AnnualIncomeSwiper from './src/components/Income/AnnualIncome/Swiper';
 import Overview from './src/components/Overview/Overview';
-import PrefectureMenu from './src/components/Prefecture/PrefectureMenu'
+import PrefectureMenu from './src/components/Prefecture/PrefectureMenu';
+import PrefecturePopulationSwiper from './src/components/Prefecture/Population/Swiper';
+import NaturalEnvironmentSwiper from './src/components/Prefecture/NaturalEnvironment/Swiper';
 
 export type RootStackParamList = {
     HomeMenu: undefined;
@@ -50,6 +52,8 @@ export type RootStackParamList = {
     AnnualIncomeSwiper: undefined;
     Overview: undefined;
     PrefectureMenu: undefined;
+    PrefecturePopulationSwiper: undefined;
+    NaturalEnvironmentSwiper: undefined;
 };
 
 export type DrawerNavigatorParamList = {
@@ -152,6 +156,16 @@ const App: React.FC = () => {
                 <Stack.Screen
                     name="PrefectureMenu"
                     component={PrefectureMenu}
+                    options={{ headerShown: false }}
+                />
+                <Stack.Screen
+                    name="PrefecturePopulationSwiper"
+                    component={PrefecturePopulationSwiper}
+                    options={{ headerShown: false }}
+                />
+                <Stack.Screen
+                    name="NaturalEnvironmentSwiper"
+                    component={NaturalEnvironmentSwiper}
                     options={{ headerShown: false }}
                 />
                 <Stack.Screen
