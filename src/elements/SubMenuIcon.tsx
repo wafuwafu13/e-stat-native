@@ -6,15 +6,17 @@ import {
     heightPercentageToDP as hp
 } from 'react-native-responsive-screen';
 
+import { icon } from '../types/icon';
+
 type Props = {
-    item: string;
+    item: 'population' | 'body' | 'marriage' | 'income';
     children?: React.ReactNode;
 };
 
 const SubMenuIcon: React.FC<Props> = (props) => {
     const { item } = props;
 
-    const icon: any = {
+    const icon: icon = {
         population: <Icon name="child" size={wp('10%')} color="#4C8469" />,
         body: <Icon name="ruler" size={wp('10%')} color="#324CA8" />,
         marriage: <Icon name="heartbeat" size={wp('10%')} color="#9E1212" />,

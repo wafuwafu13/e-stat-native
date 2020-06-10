@@ -3,7 +3,7 @@ import React from 'react';
 import Spinner from 'react-native-loading-spinner-overlay';
 
 type Props = {
-    visible: any;
+    visible: boolean;
 };
 
 const Loading: React.FC<Props> = (props) => {
