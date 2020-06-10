@@ -15,9 +15,9 @@ const EstimatePopulationModal: React.FC<Props> = (props) => {
 
     return (
         <View style={styles.container}>
-            <Text style={styles.text}>総人口: 1億2千700万人</Text>
-            <Text style={styles.text}>男性人口: 6千184万人</Text>
-            <Text style={styles.text}>女性人口: 6千525万人</Text>
+            <Text style={styles.text}>1億2千700万人(総人口)</Text>
+            <Text style={styles.text}>6千184万人(男性人口)</Text>
+            <Text style={styles.text}>6千525万人(女性人口)</Text>
             <TouchableOpacity onPress={toggle} style={styles.closeIcon}>
                 <Icon name="closecircle" size={wp('5%')} color="#807E7C" />
             </TouchableOpacity>
@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
     },
     text: {
         fontSize: wp('3%'),
-        marginBottom: hp('3%')
+        marginBottom: hp('5%')
     },
     closeIcon: {
         position: 'absolute',

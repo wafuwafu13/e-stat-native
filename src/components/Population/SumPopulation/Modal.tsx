@@ -1,5 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
+import { Card } from 'react-native-elements';
 import Icon from 'react-native-vector-icons/AntDesign';
 import {
     widthPercentageToDP as wp,
@@ -15,10 +16,12 @@ const SumPopulationModal: React.FC<Props> = (props) => {
 
     return (
         <View style={styles.container}>
-            <Text style={styles.text}>総人口: 1億2千700万人</Text>
-            <TouchableOpacity onPress={toggle} style={styles.closeIcon}>
-                <Icon name="closecircle" size={wp('5%')} color="#807E7C" />
-            </TouchableOpacity>
+            <>
+                <Text style={styles.text}>1億2千700万人(総人口)</Text>
+                <TouchableOpacity onPress={toggle} style={styles.closeIcon}>
+                    <Icon name="closecircle" size={wp('5%')} color="#807E7C" />
+                </TouchableOpacity>
+            </>
         </View>
     );
 };

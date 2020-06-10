@@ -15,8 +15,17 @@ const SexPopulationModal: React.FC<Props> = (props) => {
 
     return (
         <View style={styles.container}>
-            <Text style={styles.text}>男性人口: 6千184万人</Text>
-            <Text style={styles.text}>女性人口: 6千523万人</Text>
+            <Text style={styles.text}>
+                <Text style={{ fontWeight: 'bold' }}>男女別総人口</Text>は以下の通りである。
+            </Text>
+            <Text style={styles.text}>
+                <Text style={{ color: 'blue' }}>男性</Text>は
+                <Text style={{ fontWeight: 'bold' }}>6千184万人</Text>。
+            </Text>
+            <Text style={styles.text}>
+                <Text style={{ color: 'red' }}>女性</Text>は
+                <Text style={{ fontWeight: 'bold' }}>6千523万人</Text>。
+            </Text>
             <TouchableOpacity onPress={toggle} style={styles.closeIcon}>
                 <Icon name="closecircle" size={wp('5%')} color="#807E7C" />
             </TouchableOpacity>
@@ -35,7 +44,7 @@ const styles = StyleSheet.create({
     },
     text: {
         fontSize: wp('3%'),
-        marginBottom: hp('3%')
+        marginBottom: hp('5%')
     },
     closeIcon: {
         position: 'absolute',

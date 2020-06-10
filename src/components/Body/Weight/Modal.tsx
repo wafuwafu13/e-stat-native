@@ -15,10 +15,21 @@ const WeightPopulationModal: React.FC<Props> = (props) => {
 
     return (
         <View style={styles.container}>
-            <Text style={styles.text}>12歳男性: 42.1kg</Text>
-            <Text style={styles.text}>12歳女性: 41.2kg</Text>
-            <Text style={styles.text}>25歳男性: 68.5kg</Text>
-            <Text style={styles.text}>25歳女性: 52.8kg</Text>
+            <Text style={styles.text}>
+                <Text style={{ fontWeight: 'bold' }}>平均体重</Text>は以下の通りである。
+            </Text>
+            <Text style={styles.text}>
+                12歳の<Text style={{ color: 'blue' }}>男性</Text>は
+                <Text style={{ fontWeight: 'bold' }}>42.1kg</Text>、
+                <Text style={{ color: 'red' }}>女性</Text>は
+                <Text style={{ fontWeight: 'bold' }}>41.2kg</Text>。
+            </Text>
+            <Text style={styles.text}>
+                25歳の<Text style={{ color: 'blue' }}>男性</Text>は
+                <Text style={{ fontWeight: 'bold' }}>68.5kg</Text>、
+                <Text style={{ color: 'red' }}>女性</Text>は
+                <Text style={{ fontWeight: 'bold' }}>52.8kg</Text>。
+            </Text>
             <TouchableOpacity onPress={toggle} style={styles.closeIcon}>
                 <Icon name="closecircle" size={wp('5%')} color="#807E7C" />
             </TouchableOpacity>
@@ -37,7 +48,7 @@ const styles = StyleSheet.create({
     },
     text: {
         fontSize: wp('3%'),
-        marginBottom: hp('3%')
+        marginBottom: hp('5%')
     },
     closeIcon: {
         position: 'absolute',

@@ -25,7 +25,7 @@ const BirthrateSwiper: React.FC<Props> = ({ navigation }) => {
         <Swiper>
             <View style={styles.container}>
                 <SwiperHeader
-                    title="合計特殊出生率"
+                    title="合計特殊出生率(人口動態調査)"
                     fontSize="3.5%"
                     onPress={() => navigation.goBack()}
                 />
