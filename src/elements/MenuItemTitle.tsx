@@ -5,18 +5,21 @@ import {
     heightPercentageToDP as hp
 } from 'react-native-responsive-screen';
 
+import { bgColor } from '../types/bgColor';
+
 type Props = {
-    item: string;
-    children?: React.ReactNode;
+    item: 'population' | 'body' | 'marriage' | 'income' | 'prefecture';
+    children: React.ReactNode;
 };
 
 const MenuItemTitle: React.FC<Props> = (props) => {
     const { item } = props;
-    const bgColor: any = {
+    const bgColor: bgColor = {
         population: '#99D260',
         body: '#56A7E2',
         marriage: '#FF5F5F',
-        income: '#FAFD71'
+        income: '#FAFD71',
+        prefecture: '#FA902F'
     };
 
     return (

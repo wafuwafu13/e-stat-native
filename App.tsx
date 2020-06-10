@@ -29,6 +29,7 @@ import DivorcerateSwiper from './src/components/Marriage/Divorcerate/Swiper';
 import IncomeMenu from './src/components/Income/IncomeMenu';
 import AnnualIncomeSwiper from './src/components/Income/AnnualIncome/Swiper';
 import Overview from './src/components/Overview/Overview';
+import PrefectureMenu from './src/components/Prefecture/PrefectureMenu'
 
 export type RootStackParamList = {
     HomeMenu: undefined;
@@ -48,6 +49,7 @@ export type RootStackParamList = {
     IncomeMenu: undefined;
     AnnualIncomeSwiper: undefined;
     Overview: undefined;
+    PrefectureMenu: undefined;
 };
 
 export type DrawerNavigatorParamList = {
@@ -56,6 +58,7 @@ export type DrawerNavigatorParamList = {
     身長_体重: undefined;
     結婚: undefined;
     年収: undefined;
+    都道府県: undefined;
     アプリについて: undefined;
 };
 
@@ -147,6 +150,11 @@ const App: React.FC = () => {
                     options={{ headerShown: false }}
                 />
                 <Stack.Screen
+                    name="PrefectureMenu"
+                    component={PrefectureMenu}
+                    options={{ headerShown: false }}
+                />
+                <Stack.Screen
                     name="Overview"
                     component={Overview}
                     options={{ headerShown: false }}
@@ -163,6 +171,7 @@ const App: React.FC = () => {
                 <Drawer.Screen name="身長_体重" component={BodyMenu} />
                 <Drawer.Screen name="結婚" component={MarriageMenu} />
                 <Drawer.Screen name="年収" component={IncomeMenu} />
+                <Drawer.Screen name="都道府県" component={PrefectureMenu} />
                 <Drawer.Screen name="アプリについて" component={Overview} />
             </Drawer.Navigator>
         </NavigationContainer>

@@ -7,7 +7,7 @@ import {
 } from 'react-native-responsive-screen';
 
 type Props = {
-    children?: React.ReactNode;
+    children: React.ReactNode;
 };
 
 const SubMenuTitle: React.FC<Props> = (props) => {
