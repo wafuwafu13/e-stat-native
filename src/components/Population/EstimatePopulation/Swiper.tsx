@@ -30,7 +30,7 @@ const EstimatePopulationSwiper: React.FC<Props> = ({ navigation }) => {
         <Swiper>
             <View style={styles.container}>
                 <SwiperHeader
-                    title="人口推計(平成30年10月1日現在)"
+                    title="推定人口(総務省「日本の統計 2018」)"
                     fontSize="3%"
                     onPress={() => navigation.goBack()}
                 />
