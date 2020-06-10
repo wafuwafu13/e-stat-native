@@ -10,19 +10,17 @@ import { chartData } from '../../../types/chartData';
 
 import { estimateWomanPopulationData } from '../../../data/Population/estimateWomanPopulationData';
 
-import { shapeData } from './shapeData';
-
 const EstimateWomanPopulationData: React.FC = () => {
     const data: chartData[] = estimateWomanPopulationData();
 
     const renderData = ({ item }: { item: chartData }) => {
-        let Y = shapeData(item.y);
+        let itemY: string = String(item.y);
         return (
             <ScrollView>
                 <Card>
                     <View style={styles.item}>
-                        <Text style={styles.x}>{item.x}歳</Text>
-                        <Text>{Y}万人</Text>
+                        <Text style={styles.x}>{item.x}年</Text>
+                        <Text>{itemY.replace(/(\d)(?=(\d\d\d)+$)/g, '$1,')}万人</Text>
                     </View>
                 </Card>
             </ScrollView>

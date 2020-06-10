@@ -88,19 +88,6 @@ const PopulationMenu: React.FC<Props> = ({ navigation }) => {
                                 男女別総人口
                             </GraphMenu>
                         </TouchableOpacity>
-                        <TouchableOpacity
-                            style={styles.menu}
-                            onPress={estimatePopulationToggleModal}
-                        >
-                            <Modal isVisible={estimatePopulationModalVisible}>
-                                <EstimatePopulationModal toggle={estimatePopulationToggleModal} />
-                            </Modal>
-                            <GraphMenu
-                                onPress={() => navigation.navigate('EstimatePopulationSwiper')}
-                            >
-                                人口推計
-                            </GraphMenu>
-                        </TouchableOpacity>
                         <TouchableOpacity style={styles.menu} onPress={birthrateToggleModal}>
                             <Modal isVisible={birthrateModalVisible}>
                                 <BirthrateModal toggle={birthrateToggleModal} />
@@ -122,6 +109,19 @@ const PopulationMenu: React.FC<Props> = ({ navigation }) => {
                                 onPress={() => navigation.navigate('TransitionPopulationSwiper')}
                             >
                                 人口推移
+                            </GraphMenu>
+                        </TouchableOpacity>
+                        <TouchableOpacity
+                            style={styles.menu}
+                            onPress={estimatePopulationToggleModal}
+                        >
+                            <Modal isVisible={estimatePopulationModalVisible}>
+                                <EstimatePopulationModal toggle={estimatePopulationToggleModal} />
+                            </Modal>
+                            <GraphMenu
+                                onPress={() => navigation.navigate('EstimatePopulationSwiper')}
+                            >
+                                推定人口
                             </GraphMenu>
                         </TouchableOpacity>
                     </View>

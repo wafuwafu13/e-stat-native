@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { StyleSheet, Text, View, Dimensions } from 'react-native';
 
 import {
-    VictoryBar,
+    VictoryLine,
     VictoryChart,
     VictoryGroup,
     VictoryTheme,
@@ -32,8 +32,8 @@ const EstimatePopulationChart: React.FC = () => {
     let manPopulationList: chartData[] = estimateManPopulationData();
     let womanPopulationList: chartData[] = estimateWomanPopulationData();
 
-    let tickXList: number[] = tickValue(5, 95, 5);
-    let tickYList: number[] = tickValue(250, 2000, 250);
+    let tickXList: number[] = tickValue(2020, 2080, 10);
+    let tickYList: number[] = tickValue(130000, 30000, 10000);
 
     useEffect(() => {
         setTimeout(() => {
@@ -54,7 +54,7 @@ const EstimatePopulationChart: React.FC = () => {
                     <VictoryAxis tickValues={tickXList} />
                     <VictoryAxis
                         dependentAxis
-                        tickFormat={(y: any) => `${y / 10}万`}
+                        tickFormat={(y: any) => `${y / 100000}億`}
                         tickValues={tickYList}
                     />
                     <VictoryGroup
@@ -62,9 +62,9 @@ const EstimatePopulationChart: React.FC = () => {
                         offset={2}
                         style={{ data: { width: 1.5 } }}
                     >
-                        <VictoryBar data={sumPopulationList} />
-                        <VictoryBar data={manPopulationList} />
-                        <VictoryBar data={womanPopulationList} />
+                        <VictoryLine data={sumPopulationList} />
+                        <VictoryLine data={manPopulationList} />
+                        <VictoryLine data={womanPopulationList} />
                     </VictoryGroup>
                 </VictoryChart>
             </View>
