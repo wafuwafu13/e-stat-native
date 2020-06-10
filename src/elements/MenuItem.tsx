@@ -7,7 +7,7 @@ import {
 } from 'react-native-responsive-screen';
 
 import { icon } from '../types/icon';
-import { bgColor } from '../types/bgColor'
+import { bgColor } from '../types/bgColor';
 
 type Props = {
     item: 'population' | 'body' | 'marriage' | 'income' | 'prefecture';
@@ -29,7 +29,7 @@ const MenuItem: React.FC<Props> = (props) => {
         body: <Icon name="ruler" size={wp('10%')} color="#324CA8" />,
         marriage: <Icon name="heartbeat" size={wp('10%')} color="#9E1212" />,
         income: <Icon name="money-bill-wave" size={wp('10%')} color="#E0BB5B" />,
-        prefecture:  <Icon name="globe-asia" size={wp('10%')} color="#966215" />
+        prefecture: <Icon name="globe-asia" size={wp('10%')} color="#966215" />
     };
 
     return (

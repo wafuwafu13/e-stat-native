@@ -9,9 +9,8 @@ import {
 
 import SumPopulationModal from '../Population/SumPopulation/Modal';
 import SexPopulationModal from '../Population/SexPopulation/Modal';
-import EstimatePopulationModal from '../Population/EstimatePopulation/Modal';
-import BirthrateModal from '../Population/Birthrate/Modal';
-import TransitionPopulationModal from '../Population/TransitionPopulation/Modal';
+import PrefecturePopulationModal from '../Prefecture/Population/Modal';
+import NaturalEnvironmentModal from '../Prefecture/NaturalEnvironment/Modal';
 
 import SubMenuTitle from '../../elements/SubMenuTitle';
 import SubMenuIcon from '../../elements/SubMenuIcon';
@@ -29,13 +28,6 @@ type Props = {
 const PopulationMenu: React.FC<Props> = ({ navigation }) => {
     const [sumPopulationModalVisible, setSumPopulationModalVisible] = useState<boolean>(false);
     const [sexPopulationModalVisible, setSexPopulationModalVisible] = useState<boolean>(false);
-    const [estimatePopulationModalVisible, setEstimatePopulationModalVisible] = useState<boolean>(
-        false
-    );
-    const [birthrateModalVisible, setBirthrateModalVisible] = useState<boolean>(false);
-    const [transitionPopulationModalVisible, setTransitionPopulationModalVisible] = useState<
-        boolean
-    >(false);
 
     const sumPopulationToggleModal = (): void => {
         setSumPopulationModalVisible(!sumPopulationModalVisible);
@@ -43,18 +35,6 @@ const PopulationMenu: React.FC<Props> = ({ navigation }) => {
 
     const sexPopulationToggleModal = (): void => {
         setSexPopulationModalVisible(!sexPopulationModalVisible);
-    };
-
-    const estimatePopulationToggleModal = (): void => {
-        setEstimatePopulationModalVisible(!estimatePopulationModalVisible);
-    };
-
-    const birthrateToggleModal = (): void => {
-        setBirthrateModalVisible(!birthrateModalVisible);
-    };
-
-    const transitionPopulationToggleModal = (): void => {
-        setTransitionPopulationModalVisible(!transitionPopulationModalVisible);
     };
 
     return (
@@ -74,54 +54,22 @@ const PopulationMenu: React.FC<Props> = ({ navigation }) => {
                     <View style={styles.menuContainer}>
                         <TouchableOpacity style={styles.menu} onPress={sumPopulationToggleModal}>
                             <Modal isVisible={sumPopulationModalVisible}>
-                                <SumPopulationModal toggle={sumPopulationToggleModal} />
+                                <PrefecturePopulationModal toggle={sumPopulationToggleModal} />
                             </Modal>
-                            <GraphMenu onPress={() => navigation.navigate('SumPopulationSwiper')}>
-                                年齢別総人口
+                            <GraphMenu
+                                onPress={() => navigation.navigate('PrefecturePopulationSwiper')}
+                            >
+                                人口
                             </GraphMenu>
                         </TouchableOpacity>
                         <TouchableOpacity style={styles.menu} onPress={sexPopulationToggleModal}>
                             <Modal isVisible={sexPopulationModalVisible}>
-                                <SexPopulationModal toggle={sexPopulationToggleModal} />
-                            </Modal>
-                            <GraphMenu onPress={() => navigation.navigate('SexPopulationSwiper')}>
-                                男女別総人口
-                            </GraphMenu>
-                        </TouchableOpacity>
-                        <TouchableOpacity style={styles.menu} onPress={birthrateToggleModal}>
-                            <Modal isVisible={birthrateModalVisible}>
-                                <BirthrateModal toggle={birthrateToggleModal} />
-                            </Modal>
-                            <GraphMenu onPress={() => navigation.navigate('BirthrateSwiper')}>
-                                合計特殊出生率
-                            </GraphMenu>
-                        </TouchableOpacity>
-                        <TouchableOpacity
-                            style={styles.menu}
-                            onPress={transitionPopulationToggleModal}
-                        >
-                            <Modal isVisible={transitionPopulationModalVisible}>
-                                <TransitionPopulationModal
-                                    toggle={transitionPopulationToggleModal}
-                                />
+                                <NaturalEnvironmentModal toggle={sexPopulationToggleModal} />
                             </Modal>
                             <GraphMenu
-                                onPress={() => navigation.navigate('TransitionPopulationSwiper')}
+                                onPress={() => navigation.navigate('NaturalEnvironmentSwiper')}
                             >
-                                人口推移
-                            </GraphMenu>
-                        </TouchableOpacity>
-                        <TouchableOpacity
-                            style={styles.menu}
-                            onPress={estimatePopulationToggleModal}
-                        >
-                            <Modal isVisible={estimatePopulationModalVisible}>
-                                <EstimatePopulationModal toggle={estimatePopulationToggleModal} />
-                            </Modal>
-                            <GraphMenu
-                                onPress={() => navigation.navigate('EstimatePopulationSwiper')}
-                            >
-                                推定人口
+                                自然環境
                             </GraphMenu>
                         </TouchableOpacity>
                     </View>
