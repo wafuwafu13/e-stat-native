@@ -10,7 +10,7 @@ import { icon } from '../types/icon';
 import { bgColor } from '../types/bgColor';
 
 type Props = {
-    item: 'population' | 'body' | 'marriage' | 'income' | 'prefecture';
+    item: 'population' | 'body' | 'marriage' | 'income' | 'prefecture' | 'death';
     onPress: () => void;
     children?: React.ReactNode;
 };
@@ -22,14 +22,16 @@ const MenuItem: React.FC<Props> = (props) => {
         body: '#56A7E2',
         marriage: '#FF5F5F',
         income: '#FAFD71',
-        prefecture: '#FA902F'
+        prefecture: '#FA902F',
+        death: '#E5ADFF'
     };
     const icon: icon = {
         population: <Icon name="child" size={wp('10%')} color="#4C8469" />,
         body: <Icon name="ruler" size={wp('10%')} color="#324CA8" />,
         marriage: <Icon name="heartbeat" size={wp('10%')} color="#9E1212" />,
         income: <Icon name="money-bill-wave" size={wp('10%')} color="#E0BB5B" />,
-        prefecture: <Icon name="globe-asia" size={wp('10%')} color="#966215" />
+        prefecture: <Icon name="globe-asia" size={wp('10%')} color="#966215" />,
+        death: <Icon name="hospital" size={wp('10%')} color="#A04DE1" />
     };
 
     return (

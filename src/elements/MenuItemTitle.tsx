@@ -8,7 +8,7 @@ import {
 import { bgColor } from '../types/bgColor';
 
 type Props = {
-    item: 'population' | 'body' | 'marriage' | 'income' | 'prefecture';
+    item: 'population' | 'body' | 'marriage' | 'income' | 'prefecture' | 'death';
     children: React.ReactNode;
 };
 
@@ -19,7 +19,8 @@ const MenuItemTitle: React.FC<Props> = (props) => {
         body: '#56A7E2',
         marriage: '#FF5F5F',
         income: '#FAFD71',
-        prefecture: '#FA902F'
+        prefecture: '#FA902F',
+        death: '#E5ADFF'
     };
 
     return (
