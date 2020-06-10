@@ -15,10 +15,21 @@ const AnnualIncomeModal: React.FC<Props> = (props) => {
 
     return (
         <View style={styles.container}>
-            <Text style={styles.text}>20~24歳男性: 274万円</Text>
-            <Text style={styles.text}>20~24歳女性: 240万円</Text>
-            <Text style={styles.text}>50~54歳男性: 660万円</Text>
-            <Text style={styles.text}>50~54歳女性: 228万円</Text>
+            <Text style={styles.text}>
+                <Text style={{ fontWeight: 'bold' }}>平均年収</Text>は以下の通りである。
+            </Text>
+            <Text style={styles.text}>
+                20~24歳の<Text style={{ color: 'blue' }}>男性</Text>は
+                <Text style={{ fontWeight: 'bold' }}>274万円</Text>、
+                <Text style={{ color: 'red' }}>女性</Text>は
+                <Text style={{ fontWeight: 'bold' }}>240万円</Text>。
+            </Text>
+            <Text style={styles.text}>
+                50~54歳の<Text style={{ color: 'blue' }}>男性</Text>は
+                <Text style={{ fontWeight: 'bold' }}>660万円</Text>、
+                <Text style={{ color: 'red' }}>女性</Text>は
+                <Text style={{ fontWeight: 'bold' }}>228万円</Text>。
+            </Text>
             <TouchableOpacity onPress={toggle} style={styles.closeIcon}>
                 <Icon name="closecircle" size={wp('5%')} color="#807E7C" />
             </TouchableOpacity>
@@ -37,7 +48,7 @@ const styles = StyleSheet.create({
     },
     text: {
         fontSize: wp('3%'),
-        marginBottom: hp('3%')
+        marginBottom: hp('5%')
     },
     closeIcon: {
         position: 'absolute',

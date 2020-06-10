@@ -15,8 +15,15 @@ const SumMarriageModal: React.FC<Props> = (props) => {
 
     return (
         <View style={styles.container}>
-            <Text style={styles.text}>1947年: 93万4千170件</Text>
-            <Text style={styles.text}>2017年: 60万6千866件</Text>
+            <Text style={styles.text}>
+                <Text style={{ fontWeight: 'bold' }}>結婚件数</Text>は減少傾向にある。
+            </Text>
+            <Text style={styles.text}>
+                1947年は<Text style={{ fontWeight: 'bold' }}>93万4千170件</Text>。
+            </Text>
+            <Text style={styles.text}>
+                2017年は<Text style={{ fontWeight: 'bold' }}>60万6千866件</Text>。
+            </Text>
             <TouchableOpacity onPress={toggle} style={styles.closeIcon}>
                 <Icon name="closecircle" size={wp('5%')} color="#807E7C" />
             </TouchableOpacity>
@@ -35,7 +42,7 @@ const styles = StyleSheet.create({
     },
     text: {
         fontSize: wp('3%'),
-        marginBottom: hp('3%')
+        marginBottom: hp('5%')
     },
     closeIcon: {
         position: 'absolute',

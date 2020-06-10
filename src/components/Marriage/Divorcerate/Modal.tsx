@@ -15,8 +15,15 @@ const DivorcerateModal: React.FC<Props> = (props) => {
 
     return (
         <View style={styles.container}>
-            <Text style={styles.text}>1930年: 9.2%</Text>
-            <Text style={styles.text}>2015年: 26.3%</Text>
+            <Text style={styles.text}>
+                <Text style={{ fontWeight: 'bold' }}>離婚率</Text>は増加傾向にある。
+            </Text>
+            <Text style={styles.text}>
+                1930年は<Text style={{ fontWeight: 'bold' }}>9.2%</Text>。
+            </Text>
+            <Text style={styles.text}>
+                2015年は<Text style={{ fontWeight: 'bold' }}>26.3%</Text>。
+            </Text>
             <TouchableOpacity onPress={toggle} style={styles.closeIcon}>
                 <Icon name="closecircle" size={wp('5%')} color="#807E7C" />
             </TouchableOpacity>
@@ -35,7 +42,7 @@ const styles = StyleSheet.create({
     },
     text: {
         fontSize: wp('3%'),
-        marginBottom: hp('3%')
+        marginBottom: hp('5%')
     },
     closeIcon: {
         position: 'absolute',
