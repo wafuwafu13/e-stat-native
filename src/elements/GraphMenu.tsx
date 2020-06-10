@@ -7,7 +7,7 @@ import {
 
 type Props = {
     onPress: () => void;
-    children?: React.ReactNode;
+    children: React.ReactNode;
 };
 
 const GraphMenu: React.FC<Props> = (props) => {
@@ -23,7 +23,7 @@ const GraphMenu: React.FC<Props> = (props) => {
                     <Text style={styles.explanation}>概要を見る</Text>
                 </View>
                 <TouchableOpacity style={styles.buttom} onPress={onPress}>
-                    <Text style={styles.buttonText}>グラフを見る</Text>
+                    <Text style={styles.buttonText}>詳細を見る</Text>
                 </TouchableOpacity>
             </View>
         </View>

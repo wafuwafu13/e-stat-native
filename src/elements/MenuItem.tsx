@@ -7,33 +7,29 @@ import {
 } from 'react-native-responsive-screen';
 
 import { icon } from '../types/icon';
+import { bgColor } from '../types/bgColor'
 
 type Props = {
-    item: 'population' | 'body' | 'marriage' | 'income';
+    item: 'population' | 'body' | 'marriage' | 'income' | 'prefecture';
     onPress: () => void;
     children?: React.ReactNode;
 };
 
-type Color = {
-    population: string;
-    body: string;
-    marriage: string;
-    income: string;
-};
-
 const MenuItem: React.FC<Props> = (props) => {
     const { item, onPress } = props;
-    const bgColor: Color = {
+    const bgColor: bgColor = {
         population: '#99D260',
         body: '#56A7E2',
         marriage: '#FF5F5F',
-        income: '#FAFD71'
+        income: '#FAFD71',
+        prefecture: '#FA902F'
     };
     const icon: icon = {
         population: <Icon name="child" size={wp('10%')} color="#4C8469" />,
         body: <Icon name="ruler" size={wp('10%')} color="#324CA8" />,
         marriage: <Icon name="heartbeat" size={wp('10%')} color="#9E1212" />,
-        income: <Icon name="money-bill-wave" size={wp('10%')} color="#E0BB5B" />
+        income: <Icon name="money-bill-wave" size={wp('10%')} color="#E0BB5B" />,
+        prefecture:  <Icon name="globe-asia" size={wp('10%')} color="#966215" />
     };
 
     return (

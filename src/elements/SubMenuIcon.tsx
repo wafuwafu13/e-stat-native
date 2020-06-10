@@ -9,8 +9,8 @@ import {
 import { icon } from '../types/icon';
 
 type Props = {
-    item: 'population' | 'body' | 'marriage' | 'income';
-    children?: React.ReactNode;
+    item: 'population' | 'body' | 'marriage' | 'income' | 'prefecture';
+    children: React.ReactNode;
 };
 
 const SubMenuIcon: React.FC<Props> = (props) => {
@@ -20,7 +20,8 @@ const SubMenuIcon: React.FC<Props> = (props) => {
         population: <Icon name="child" size={wp('10%')} color="#4C8469" />,
         body: <Icon name="ruler" size={wp('10%')} color="#324CA8" />,
         marriage: <Icon name="heartbeat" size={wp('10%')} color="#9E1212" />,
-        income: <Icon name="money-bill-wave" size={wp('10%')} color="#E0BB5B" />
+        income: <Icon name="money-bill-wave" size={wp('10%')} color="#E0BB5B" />,
+        prefecture: <Icon name="globe-asia" size={wp('10%')} color="#966215" />
     };
 
     return (

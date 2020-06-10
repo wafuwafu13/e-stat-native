@@ -45,7 +45,7 @@ const HomeMenu: React.FC<Props> = ({ navigation }) => {
                 <View style={styles.main}>
                     <View style={styles.top}>
                         <DrawerIcon onPress={() => navigation.toggleDrawer()} />
-                        <Text style={styles.title}>選べるグラフ</Text>
+                        <Text style={styles.title}>選べる項目</Text>
                     </View>
                     <View style={styles.menuContainer}>
                         <Animatable.View animation="bounce" style={styles.menu}>
@@ -68,7 +68,19 @@ const HomeMenu: React.FC<Props> = ({ navigation }) => {
                         </Animatable.View>
                     </View>
                     <View style={styles.menuContainer}>
-                        <Animatable.View animation="bounce" style={styles.menu2}>
+                        <Animatable.View animation="bounce" style={styles.menu}>
+                            <MenuItemTitle item="income">年 収</MenuItemTitle>
+                            <MenuItem item="income" onPress={() => goto('IncomeMenu')}>
+                                1つのグラフ
+                            </MenuItem>
+                        </Animatable.View>
+                        <Animatable.View animation="bounce" style={styles.menu}>
+                            <MenuItemTitle item="prefecture">都道府県</MenuItemTitle>
+                            <MenuItem item="prefecture" onPress={() => goto('PrefectureMenu')}>
+                                5つのランキング
+                            </MenuItem>
+                        </Animatable.View>
+                        <Animatable.View animation="bounce" style={styles.menu}>
                             <MenuItemTitle item="income">年 収</MenuItemTitle>
                             <MenuItem item="income" onPress={() => goto('IncomeMenu')}>
                                 1つのグラフ
@@ -108,12 +120,6 @@ const styles = StyleSheet.create({
     },
     menu: {
         flex: 1,
-        height: hp('50%'),
-        marginLeft: wp('2%'),
-        marginRight: wp('2%')
-    },
-    menu2: {
-        flex: 0.3,
         height: hp('50%'),
         marginLeft: wp('2%'),
         marginRight: wp('2%')

@@ -3,4 +3,5 @@ export type icon = {
     body: JSX.Element;
     marriage: JSX.Element;
     income: JSX.Element;
+    prefecture: JSX.Element
 };
