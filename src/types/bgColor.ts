@@ -4,5 +4,5 @@ export type bgColor = {
     marriage: string;
     income: string;
     prefecture: string;
-    death: string
+    death: string;
 };

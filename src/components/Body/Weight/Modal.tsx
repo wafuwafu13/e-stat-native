@@ -10,7 +10,7 @@ type Props = {
     toggle: () => void;
 };
 
-const WeightPopulationModal: React.FC<Props> = (props) => {
+const WeightModal: React.FC<Props> = (props) => {
     const { toggle } = props;
 
     return (
@@ -37,7 +37,7 @@ const WeightPopulationModal: React.FC<Props> = (props) => {
     );
 };
 
-export default WeightPopulationModal;
+export default WeightModal;
 
 const styles = StyleSheet.create({
     container: {

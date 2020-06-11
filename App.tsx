@@ -32,7 +32,9 @@ import Overview from './src/components/Overview/Overview';
 import PrefectureMenu from './src/components/Prefecture/PrefectureMenu';
 import PrefecturePopulationSwiper from './src/components/Prefecture/Population/Swiper';
 import NaturalEnvironmentSwiper from './src/components/Prefecture/NaturalEnvironment/Swiper';
-import DeathMenu from './src/components/Death/DeathMenu'
+import DeathMenu from './src/components/Death/DeathMenu';
+import SuicideSwiper from './src/components/Death/Suicide/Swiper';
+import TrafficAccidentSwiper from './src/components/Death/TrafficAccident/Swiper';
 
 export type RootStackParamList = {
     HomeMenu: undefined;
@@ -55,7 +57,9 @@ export type RootStackParamList = {
     PrefectureMenu: undefined;
     PrefecturePopulationSwiper: undefined;
     NaturalEnvironmentSwiper: undefined;
-    DeathMenu: undefined
+    DeathMenu: undefined;
+    SuicideSwiper: undefined;
+    TrafficAccidentSwiper: undefined;
 };
 
 export type DrawerNavigatorParamList = {
@@ -174,6 +178,16 @@ const App: React.FC = () => {
                 <Stack.Screen
                     name="DeathMenu"
                     component={DeathMenu}
+                    options={{ headerShown: false }}
+                />
+                <Stack.Screen
+                    name="SuicideSwiper"
+                    component={SuicideSwiper}
+                    options={{ headerShown: false }}
+                />
+                <Stack.Screen
+                    name="TrafficAccidentSwiper"
+                    component={TrafficAccidentSwiper}
                     options={{ headerShown: false }}
                 />
                 <Stack.Screen
