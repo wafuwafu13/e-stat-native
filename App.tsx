@@ -1,16 +1,12 @@
 import React from 'react';
-import { StyleSheet, View, Text, ScrollView } from 'react-native';
-
-import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
-import { createDrawerNavigator } from '@react-navigation/drawer';
-
-import Icon from 'react-native-vector-icons/FontAwesome5';
-import { YellowBox } from 'react-native';
 import {
     widthPercentageToDP as wp,
     heightPercentageToDP as hp
 } from 'react-native-responsive-screen';
+
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import { createDrawerNavigator } from '@react-navigation/drawer';
 
 import HomeMenu from './src/components/HomeMenu';
 import PopulationMenu from './src/components/Population/PopulationMenu';
@@ -201,7 +197,11 @@ const App: React.FC = () => {
 
     return (
         <NavigationContainer>
-            <Drawer.Navigator>
+            <Drawer.Navigator
+                drawerStyle={{
+                    width: wp('30%')
+                }}
+            >
                 <Drawer.Screen name="ホーム" children={createStack} />
                 <Drawer.Screen name="人口" component={PopulationMenu} />
                 <Drawer.Screen name="身長_体重" component={BodyMenu} />

@@ -26,7 +26,7 @@ const Overview: React.FC<Props> = ({ navigation }) => {
     return (
         <View style={styles.container}>
             <View style={styles.modalIcon}>
-            <DrawerIcon onPress={() => navigation.toggleDrawer()}/>
+                <DrawerIcon onPress={() => navigation.toggleDrawer()} />
             </View>
             <View style={styles.text}>
                 <Text style={styles.explanation}>
@@ -51,13 +51,12 @@ const styles = StyleSheet.create({
         position: 'absolute',
         left: wp('2%'),
         top: wp('2%')
-
     },
     text: {
         position: 'relative'
     },
     explanation: {
-        fontSize: wp('2.5%'),
+        fontSize: wp('2.5%')
     },
     profile: {
         position: 'absolute',
