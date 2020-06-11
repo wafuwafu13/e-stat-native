@@ -35,7 +35,7 @@ const HomeMenu: React.FC<Props> = ({ navigation }) => {
             await soundObject.loadAsync(require('../../assets/sounds/decision.mp3'));
             await soundObject.playAsync();
         } catch (error) {
-            console.log('error...');
+            console.log(error);
         }
     }
 
