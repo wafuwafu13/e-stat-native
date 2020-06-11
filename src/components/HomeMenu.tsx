@@ -27,11 +27,11 @@ type Props = {
 };
 
 const HomeMenu: React.FC<Props> = ({ navigation }) => {
-    const soundObject = new Audio.Sound();
 
     async function goto(destination: any): Promise<void> {
         navigation.navigate(destination);
         try {
+            const soundObject = new Audio.Sound();
             await soundObject.loadAsync(require('../../assets/sounds/decision.mp3'));
             await soundObject.playAsync();
         } catch (error) {
