@@ -1,6 +1,5 @@
 import React from 'react';
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
-import Icon from 'react-native-vector-icons/FontAwesome5';
 import {
     widthPercentageToDP as wp,
     heightPercentageToDP as hp
@@ -26,7 +25,9 @@ type Props = {
 const Overview: React.FC<Props> = ({ navigation }) => {
     return (
         <View style={styles.container}>
-            <DrawerIcon onPress={() => navigation.toggleDrawer()} />
+            <View style={styles.modalIcon}>
+            <DrawerIcon onPress={() => navigation.toggleDrawer()}/>
+            </View>
             <View style={styles.text}>
                 <Text style={styles.explanation}>
                     このサービスは、政府統計総合窓口(e-Stat)のAPI機能を使用していますが、サービスの内容は国によって保証されたものではありません。
@@ -42,15 +43,21 @@ export default Overview;
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        padding: wp('3%'),
+        justifyContent: 'center',
+        alignItems: 'center',
         backgroundColor: '#CCCCCC'
+    },
+    modalIcon: {
+        position: 'absolute',
+        left: wp('2%'),
+        top: wp('2%')
+
     },
     text: {
         position: 'relative'
     },
     explanation: {
         fontSize: wp('2.5%'),
-        marginTop: wp('10%')
     },
     profile: {
         position: 'absolute',
