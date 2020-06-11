@@ -7,9 +7,8 @@ import {
     heightPercentageToDP as hp
 } from 'react-native-responsive-screen';
 
-// import SumMarriageModal from '../Marrigage/SumMarriage/Modal';
-// import UnmarrideModal from './Unmarride/Modal';
-// import DivorcerateModal from './Divorcerate/Modal';
+import SuicideModal from './Suicide/Modal';
+import TrafficAccidentModal from './TrafficAccident/Modal';
 
 import SubMenuTitle from '../../elements/SubMenuTitle';
 import SubMenuIcon from '../../elements/SubMenuIcon';
@@ -27,18 +26,13 @@ type Props = {
 const DeathMenu: React.FC<Props> = ({ navigation }) => {
     const [sumMarriageModalVisible, setSumMarriageModalVisible] = useState<boolean>(false);
     const [unmarrideModalVisible, setUnmarrideModalVisible] = useState<boolean>(false);
-    const [divorcerateModalVisible, setDivorcerateModalVisible] = useState<boolean>(false);
 
-    const sumMarriageToggleModal = (): void => {
+    const suicideToggleModal = (): void => {
         setSumMarriageModalVisible(!sumMarriageModalVisible);
     };
 
-    const unmarrideToggleModal = (): void => {
+    const trafficAccidentToggleModal = (): void => {
         setUnmarrideModalVisible(!unmarrideModalVisible);
-    };
-
-    const divorcerateToggleModal = (): void => {
-        setDivorcerateModalVisible(!divorcerateModalVisible);
     };
 
     return (
@@ -56,28 +50,20 @@ const DeathMenu: React.FC<Props> = ({ navigation }) => {
             <ScrollView>
                 <View>
                     <View style={styles.menuContainer}>
-                        <TouchableOpacity style={styles.menu} onPress={sumMarriageToggleModal}>
+                        <TouchableOpacity style={styles.menu} onPress={suicideToggleModal}>
                             <Modal isVisible={sumMarriageModalVisible}>
-                                {/* <SumMarriageModal toggle={sumMarriageToggleModal} /> */}
+                                <SuicideModal toggle={suicideToggleModal} />
                             </Modal>
-                            <GraphMenu onPress={() => navigation.navigate('SumMarriageSwiper')}>
-                                結婚件数
+                            <GraphMenu onPress={() => navigation.navigate('SuicideSwiper')}>
+                                自殺
                             </GraphMenu>
                         </TouchableOpacity>
-                        <TouchableOpacity style={styles.menu} onPress={unmarrideToggleModal}>
+                        <TouchableOpacity style={styles.menu} onPress={trafficAccidentToggleModal}>
                             <Modal isVisible={unmarrideModalVisible}>
-                                {/* <UnmarrideModal toggle={unmarrideToggleModal} /> */}
+                                <TrafficAccidentModal toggle={trafficAccidentToggleModal} />
                             </Modal>
-                            <GraphMenu onPress={() => navigation.navigate('UnmarrideSwiper')}>
-                                40~45歳男女の未婚率
-                            </GraphMenu>
-                        </TouchableOpacity>
-                        <TouchableOpacity style={styles.menu} onPress={divorcerateToggleModal}>
-                            <Modal isVisible={divorcerateModalVisible}>
-                                {/* <DivorcerateModal toggle={divorcerateToggleModal} /> */}
-                            </Modal>
-                            <GraphMenu onPress={() => navigation.navigate('DivorcerateSwiper')}>
-                                離婚率
+                            <GraphMenu onPress={() => navigation.navigate('TrafficAccidentSwiper')}>
+                                交通事故
                             </GraphMenu>
                         </TouchableOpacity>
                     </View>

@@ -10,25 +10,18 @@ type Props = {
     toggle: () => void;
 };
 
-const HeightModal: React.FC<Props> = (props) => {
+const TrafficAccidentModal: React.FC<Props> = (props) => {
     const { toggle } = props;
 
     return (
         <View style={styles.container}>
             <Text style={styles.text}>
-                <Text style={{ fontWeight: 'bold' }}>平均身長</Text>は以下の通りである。
+                <Text style={{ fontWeight: 'bold' }}>死亡交通事故数</Text>は減少傾向にある。
             </Text>
             <Text style={styles.text}>
-                12歳の<Text style={{ color: 'blue' }}>男性</Text>は
-                <Text style={{ fontWeight: 'bold' }}>150.8cm</Text>、
-                <Text style={{ color: 'red' }}>女性</Text>は
-                <Text style={{ fontWeight: 'bold' }}>151.1cm</Text>。
-            </Text>
-            <Text style={styles.text}>
-                25歳の<Text style={{ color: 'blue' }}>男性</Text>は
-                <Text style={{ fontWeight: 'bold' }}>170.5cm</Text>、
-                <Text style={{ color: 'red' }}>女性</Text>は
-                <Text style={{ fontWeight: 'bold' }}>155.2cm</Text>。
+                2005年は
+                <Text style={{ fontWeight: 'bold' }}>6937人</Text>、 2019年は
+                <Text style={{ fontWeight: 'bold' }}>3215人</Text>。
             </Text>
             <TouchableOpacity onPress={toggle} style={styles.closeIcon}>
                 <Icon name="closecircle" size={wp('5%')} color="#807E7C" />
@@ -37,7 +30,7 @@ const HeightModal: React.FC<Props> = (props) => {
     );
 };
 
-export default HeightModal;
+export default TrafficAccidentModal;
 
 const styles = StyleSheet.create({
     container: {

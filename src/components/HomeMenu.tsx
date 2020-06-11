@@ -98,7 +98,7 @@ export default HomeMenu;
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#F0FCFF',
+        backgroundColor: '#F0FCFF'
     },
     main: {
         flex: 1,
