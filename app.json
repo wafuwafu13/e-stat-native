@@ -23,6 +23,9 @@
             "infoPlist": {
                 "UIBackgroundModes": ["audio"]
             }
+        },
+        "android": {
+            "package": "jp.wafuwafu.toukei"
         }
     }
 }
