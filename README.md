@@ -1,6 +1,9 @@
+<img width="1028" alt="スクリーンショット 2020-06-13 23 03 22" src="https://user-images.githubusercontent.com/50798936/84570707-212fc800-adca-11ea-9872-c8027847f7a1.png">
+
+
 ## :globe_with_meridians:  App URL
 
-### [日本統計 | 文系学生と学ぶ社会統計学](https://apps.apple.com/jp/app/%E6%97%A5%E6%9C%AC%E7%B5%B1%E8%A8%88-%E6%96%87%E7%B3%BB%E5%AD%A6%E7%94%9F%E3%81%A8%E5%AD%A6%E3%81%B6%E7%A4%BE%E4%BC%9A%E7%B5%B1%E8%A8%88%E5%AD%A6/id1491159876)
+### [日本統計 | 文系学生と学ぶ社会統計学](https://japanese-statistics.jimdofree.com/)
 
 ## :eyes: Relation Product
 
