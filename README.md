@@ -8,7 +8,3 @@
 ## :eyes: Relation Product
 
 ### [e-stat-population](https://github.com/wafuwafu13/e-stat-population)
-
-## :pencil2:  Output Article
-
-### [個人開発をしたので技術とマーケティングの観点からまとめる](https://qiita.com/wafuwafu13/items/3c1ad74e8984d67e0a95)
